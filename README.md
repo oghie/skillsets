@@ -24,6 +24,7 @@ instead of surface-level answers.
 | `skills/realtime-systems-coding` | Concurrent, parallel, distributed, real-time, and network-dataplane systems; locks/monitors, RMS/EDF scheduling, DPDK/XDP, kernel bypass. |
 | `skills/tech-leadership` | CTO and technology leadership: strategy, cybersecurity, requirements, framework selection, people, delivery, risk, KPIs, roadmap, budgeting, and governance. |
 | `skills/academic-research-journal` | Evaluate, design, draft, and revise academic articles, literature/systematic reviews, journal submissions, and source/integrity audits. |
+| `skills/cyber-security-operations` | Cyber security operations: detection/hunting, DFIR/forensics, incident response, vulnerability management, supply chain security, DevSecOps, crypto/AI emerging threats, and offensive security. |
 
 ## Layout
 

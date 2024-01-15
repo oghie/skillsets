@@ -1,6 +1,6 @@
 # skillsets for Hermes
 
-This repository is a single plugin that bundles eight self-contained engineering and research skills compatible with Hermes Agent. Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
+This repository is a single plugin that bundles nine self-contained engineering and research skills compatible with Hermes Agent. Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
 
 ## Install for Hermes
 
@@ -13,6 +13,7 @@ Then restart Hermes or run `/reload-skills`. Skills auto-surface by name and des
 ## Skills
 
 - `skills/android-offsec` — Android offensive security, forensic extraction, mobile app exploitation.
+- `skills/cyber-security-operations` — Cyber security operations: detection, DFIR, SOC, vuln management, DevSecOps.
 - `skills/academic-research-journal` — Evaluate, design, draft, revise academic articles and reviews.
 - `skills/data-architect-engineering` — Design, review, migrate, optimize SQL/NoSQL/vector/graph systems.
 - `skills/device-driver-development` — Linux kernel device drivers, modules, device tree, DMA/IRQ.

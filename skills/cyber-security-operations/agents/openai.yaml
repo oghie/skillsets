@@ -1,0 +1,8 @@
+interface:
+  display_name: "Cyber Security Operations"
+  short_description: "Route to one of 800+ authorized offensive and defensive security playbooks, mapped to MITRE ATT&CK, D3FEND, and NIST CSF."
+  brand_color: "#DC2626"
+  default_prompt: "Use $cyber-security-operations to run authorized cybersecurity work - threat detection and hunting, SOC and incident response, DFIR and malware analysis, threat intel, cloud/network/app/API/identity/OT security, vulnerability and compliance, and authorized red-team or penetration testing under signed rules of engagement - by routing to one vetted playbook."
+
+policy:
+  allow_implicit_invocation: true
