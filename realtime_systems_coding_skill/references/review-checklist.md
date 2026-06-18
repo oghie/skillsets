@@ -14,6 +14,11 @@
 - Non-blocking buffers are not reused before completion.
 - Message types, tags, and ranks cannot cross protocol contexts accidentally.
 - Unsafe states are named as `NOTSAFE` or equivalent.
+- Custom mutual exclusion protocols identify Dijkstra condition assumptions, intent flags, turn/tie-break state, and bounded waiting arguments.
+- Monitor code names the signal semantics: AS, SC, SX, SW, or SU.
+- SX/SW/SU code does not treat preemptive signal behavior as if it were SC.
+- SC code rechecks conditions after wake and is safe against signal stealing.
+- Nested monitor calls are forbidden, modeled, or explicitly supported by the runtime.
 
 ## Liveness And Fairness
 - Deadlock scenarios were considered.
@@ -21,6 +26,9 @@
 - Fairness assumptions are explicit and tied to scheduler/runtime/hardware evidence.
 - Signal/notify operations cannot leave waiters blocked indefinitely.
 - Timeout and cancellation paths release resources.
+- Guarded alternatives do not rely on nondeterministic choice being random.
+- CSP repetitive orders have termination, failure, or matching-communication paths.
+- Remote calls and rendezvous accept paths cannot leave clients queued forever without timeout or termination policy.
 
 ## Real-Time
 - `Ci`, `Ti`, `Di`, priority, phase, and blocking `Bi` are recorded.
@@ -43,3 +51,4 @@
 - Thread/rank/task creation and joining are structured.
 - Logs do not introduce new blocking inside hot locks.
 - Tests include stress, schedule perturbation, and regression cases for the bug class.
+- Diagrams or timelines exist for nontrivial interleavings, monitor queues, message passing, priority inversion, or task deadlines.

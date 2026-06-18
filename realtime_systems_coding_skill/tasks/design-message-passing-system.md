@@ -14,6 +14,8 @@ The task involves channels, actors, MPI, distributed processes, RPC/RMI-like cal
 5. Define the completion rule and buffer ownership.
 6. Write deadlock and termination scenarios.
 7. Add timeout, cancellation, and peer-failure behavior.
+8. For CSP, RPC/RMI, remote invocation, or rendezvous entry points, read `references/distributed-programming-models.md`.
+9. For nontrivial protocols, draw the message timeline or guarded-server diagram with `tasks/model-with-diagrams.md`.
 
 ## Synchronous Design
 - Ensure every blocking send has a matching receive in all legal states.
@@ -35,6 +37,8 @@ The task involves channels, actors, MPI, distributed processes, RPC/RMI-like cal
 - Guards must be side-effect free.
 - Recompute guard readiness each loop iteration.
 - Add a termination message or condition so server processes do not wait forever after clients stop.
+- Do not assume nondeterministic selection is fair or random.
+- For repetitive guarded commands, prove that execution can match, fail, or terminate rather than deadlock.
 
 ## MPI Notes
 - Use communicators to isolate protocol contexts.
@@ -49,3 +53,6 @@ The task involves channels, actors, MPI, distributed processes, RPC/RMI-like cal
 - Can a message be received in the wrong protocol state?
 - Can a server wait forever after all clients terminate?
 - Can cancellation leak an in-flight operation?
+- Can a guarded alternative starve another ready alternative?
+- Are RMI/RPC parameters passed by copy or reference intentionally?
+- Does each rendezvous accept block state what is atomic?

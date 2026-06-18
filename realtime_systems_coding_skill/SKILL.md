@@ -10,9 +10,13 @@ Treat every task as a state, timing, and synchronization contract. Identify the 
 
 ## Knowledge Grounding
 - Use `references/knowledge-map.md` for the conceptual map.
-- Use `references/shared-memory-synchronization.md` for locks, semaphores, monitors, condition variables, Java/POSIX patterns, and mutual exclusion algorithms.
-- Use `references/message-passing-distributed.md` for rendezvous, buffered/non-blocking communication, guarded commands, CSP-style design, MPI, and SPMD systems.
+- Use `references/shared-memory-synchronization.md` for locks, semaphores, monitors, condition variables, and Java/POSIX patterns.
+- Use `references/mutual-exclusion-algorithms.md` for Dijkstra conditions, refinement flow, Dekker, Peterson, N-process filters, busy waiting, and custom mutual exclusion proof.
+- Use `references/monitor-signalling-semantics.md` for AS, SC, SX, SW, SU, signal stealing, urgent queues, nested monitor calls, and monitor verification rules.
+- Use `references/message-passing-distributed.md` for rendezvous, buffered/non-blocking communication, MPI, and SPMD systems.
+- Use `references/distributed-programming-models.md` for CSP guarded commands, alternative/repetitive orders, lack of fairness, RPC/RMI, remote invocation, and rendezvous entry points.
 - Use `references/realtime-scheduling-analysis.md` for clocks, timers, drift, task attributes, RMS, EDF, blocking, priority inversion, and aperiodic servers.
+- Use `references/flow-and-diagram-patterns.md` when a diagram, timeline, proof flow, monitor queue model, message-passing sequence, or Gantt-style task model would make the work safer.
 - Use `references/development-environments/abstraction-level-map.md` before choosing ASIC/FPGA, accelerator/offload, bare-metal, VM, container, or edge targets.
 
 ## First Pass
@@ -24,11 +28,13 @@ Treat every task as a state, timing, and synchronization contract. Identify the 
 
 ## Required Reads By Task
 - Intake, modeling, or ambiguous requirements: `tasks/intake-and-modeling.md`.
-- Shared-memory synchronization: `tasks/design-shared-memory-concurrency.md`.
-- Message passing, MPI, distributed server processes, or rendezvous: `tasks/design-message-passing-system.md`.
+- Shared-memory synchronization: `tasks/design-shared-memory-concurrency.md`, plus `references/mutual-exclusion-algorithms.md` for custom protocols and `references/monitor-signalling-semantics.md` for monitor/condition signalling.
+- Message passing, MPI, distributed server processes, CSP, RPC/RMI, or rendezvous: `tasks/design-message-passing-system.md` and `references/distributed-programming-models.md`.
 - Periodic, sporadic, aperiodic, deadline, or priority work: `tasks/design-realtime-scheduler.md`.
 - High-performance implementation: `tasks/implement-high-performance-pattern.md`.
 - Race, deadlock, starvation, drift, missed deadline, or intermittent failures: `tasks/diagnose-concurrency-bug.md`.
+- Correctness argument, invariants, non-interference, monitor proof, or property review: `tasks/derive-correctness-proof.md`.
+- Diagram, timeline, state machine, queue model, or Gantt-style explanation: `tasks/model-with-diagrams.md`.
 - Final validation and review: `tasks/verify-and-test-concurrent-realtime.md` and `references/review-checklist.md`.
 
 ## Design Heuristics
@@ -37,7 +43,9 @@ Treat every task as a state, timing, and synchronization contract. Identify the 
 - Prefer blocking primitives over busy waiting unless latency constraints, hardware context, or a measured spin duration justify spinning.
 - Use hierarchical lock/semaphore ordering for nested resources; document the order and release in reverse order.
 - For monitors, associate each logical wait condition with the narrowest available condition variable and signal only when the condition is true.
+- For monitor signalling, name the assumed semantics. SC, SX, SW, and SU have different post-signal obligations.
 - For message passing, choose blocking for safety and simplicity; choose non-blocking only with explicit completion checks before mutating buffers.
+- For guarded alternatives, never depend on nondeterministic choice being random or fair unless the runtime contract proves it.
 - For real-time work, distinguish sufficient tests from exact evidence; utilization alone is not proof when blocking, sporadic jobs, or resource sharing exists.
 
 ## Script Helpers
@@ -47,6 +55,7 @@ Treat every task as a state, timing, and synchronization contract. Identify the 
 
 ## Verification Gate
 - For shared memory, name the protected data, synchronization object, acquisition order, blocking behavior, and invariant.
+- For monitors, name AS/SC/SX/SW/SU semantics, condition predicates, signal placement, and any nested monitor call policy.
 - For message passing, name sender, receiver, channel/tag/communicator, buffering mode, completion rule, and deadlock scenario considered.
 - For real-time tasks, name Ci, Ti, Di, priority, phase, blocking Bi, clock granularity, timeout policy, and drift-control method.
 - Validate with code inspection plus at least one dynamic strategy: stress interleavings, sanitizer, deterministic scheduler, timeline simulation, trace, or runtime deadline monitor.

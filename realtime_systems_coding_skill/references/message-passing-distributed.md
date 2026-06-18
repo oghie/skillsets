@@ -31,6 +31,7 @@ Use message passing when execution units do not share memory, when ownership tra
 - Selective wait chooses one ready guarded command nondeterministically.
 - Re-execute the selective wait loop to recompute readiness; readiness is determined at the start of one select execution.
 - Guards should not have side effects. This allows failed or waiting guards to be evaluated without changing process state.
+- For CSP alternative/repetitive order, lack of fairness, deadlock conditions, and guarded server patterns, read `distributed-programming-models.md`.
 
 ## CSP-Style Modeling
 - CSP-style processes communicate only by messages; global shared variables are not allowed.
@@ -51,6 +52,7 @@ Use message passing when execution units do not share memory, when ownership tra
 - Remote procedure calls and remote method invocation make distributed interaction look local, but failure, latency, retries, and partial execution remain distributed-system concerns.
 - Rendezvous-style entry points can encode both service selection and synchronization.
 - Nondeterministic service selection can improve responsiveness, but priority selection changes the fairness model.
+- For RPC/RMI parameter passing, stubs/registries, remote invocation entry points, accept blocks, and rendezvous selection semantics, read `distributed-programming-models.md`.
 
 ## Design Checklist
 - Name the source, destination, channel/tag/communicator, data type, buffer owner, and completion signal.

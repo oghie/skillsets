@@ -13,8 +13,10 @@ The task involves threads/processes sharing memory, critical sections, locks, se
    - Atomic variable only for narrow lock-free state with a clear memory-order contract.
 4. Define acquisition and release order.
 5. Write the invariant and forbidden state.
-6. Add cancellation, timeout, and error-path release rules.
-7. Verify with static review plus stress or sanitizer/model checking when available.
+6. For monitors, name the signal semantics: AS, SC, SX, SW, or SU.
+7. For custom mutual exclusion, prove the Dijkstra-style conditions or use `references/mutual-exclusion-algorithms.md`.
+8. Add cancellation, timeout, and error-path release rules.
+9. Verify with static review plus stress or sanitizer/model checking when available.
 
 ## Mutex Pattern
 - One mutex protects one coherent group of shared state.
@@ -33,7 +35,9 @@ The task involves threads/processes sharing memory, critical sections, locks, se
 - Use one condition per logical waiting condition when possible.
 - Check condition before waiting and after wake.
 - Signal only after making the condition true.
-- Be explicit about signal semantics: signal-and-continue requires rechecking.
+- Be explicit about signal semantics: SC requires rechecking; SX requires signal-and-exit discipline; SU uses an urgent signaller queue.
+- Read `references/monitor-signalling-semantics.md` before designing or changing monitor signalling behavior.
+- For nontrivial monitors, draw a queue diagram using `tasks/model-with-diagrams.md`.
 
 ## Java Pattern
 - Prefer `synchronized` or `java.util.concurrent` primitives over ad hoc volatile flags.
@@ -46,5 +50,9 @@ The task involves threads/processes sharing memory, critical sections, locks, se
 - Can all processes be waiting forever?
 - Can one process be overtaken forever?
 - Can a signal be lost?
+- Can a signal be stolen?
+- Does the monitor invariant hold before every wait and procedure exit?
+- Does signal placement match AS/SC/SX/SW/SU semantics?
+- Can nested monitor calls block progress?
 - Can a timeout path leave the state locked?
 - Can an invariant be false between protected operations?

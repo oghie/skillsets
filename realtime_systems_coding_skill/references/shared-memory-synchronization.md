@@ -46,6 +46,7 @@ Use mutual exclusion when a set of statements must behave as one indivisible act
 - Signal-and-exit, signal-and-wait, and urgent signals are preemptive variants; they hand control toward the signaled process more directly.
 - Avoid `signal_all` style loops under preemptive semantics unless each awakened process is guaranteed to satisfy its condition.
 - Use priority condition variables when the wake-up order must follow urgency rather than FIFO order.
+- For AS, SC, SX, SW, SU, signal stealing, urgent queues, equivalence rules, nested monitor calls, and monitor verification, read `monitor-signalling-semantics.md`.
 
 ## Java-Style Monitors
 - `synchronized` methods or blocks protect code through an object lock.
@@ -59,3 +60,4 @@ Use mutual exclusion when a set of statements must behave as one indivisible act
 - Dekker combines intent flags with a turn variable to resolve simultaneous entry attempts.
 - Peterson gives a compact two-process mutual exclusion algorithm using intent flags and a turn variable.
 - Software-only mutual exclusion algorithms are valuable for reasoning, but production code should prefer tested runtime primitives unless the target level requires custom primitives.
+- For Dijkstra conditions, refinement stages, Dekker verification, Peterson N-process filters, and bounded overtaking reasoning, read `mutual-exclusion-algorithms.md`.

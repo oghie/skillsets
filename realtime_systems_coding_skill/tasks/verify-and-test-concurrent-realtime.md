@@ -19,6 +19,9 @@ Before claiming a concurrent, distributed, high-performance, or real-time change
 - Inspect every lock/semaphore acquisition order.
 - Inspect every non-blocking operation for completion.
 - Inspect every periodic loop for drift.
+- Inspect monitor signal semantics: AS, SC, SX, SW, or SU.
+- Inspect guarded commands for side effects, deadlock, and fairness assumptions.
+- Inspect diagrams or timelines for nontrivial protocols.
 
 ## Dynamic Tests
 - Run with different CPU counts and affinities.
@@ -38,6 +41,8 @@ Before claiming a concurrent, distributed, high-performance, or real-time change
 - Test message delay, duplication, peer crash, queue saturation, and partition.
 - Verify communicator/tag/channel isolation.
 - Verify in-flight operations complete or cancel during shutdown.
+- Test remote call timeout and server-side shared data protection.
+- Test rendezvous selection and accept queue behavior when multiple clients are ready.
 
 ## Completion Report
 Report:
