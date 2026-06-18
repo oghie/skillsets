@@ -1,0 +1,6 @@
+interface:
+  display_name: "Device Driver Development"
+  short_description: "Linux driver engineering workflows"
+  default_prompt: "Use $device-driver-development to design, implement, review, or debug a Linux kernel device driver."
+policy:
+  allow_implicit_invocation: true
