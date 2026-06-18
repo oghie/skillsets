@@ -74,7 +74,7 @@ Use for:
 
 ```mermaid
 flowchart TD
-  Signal[c.signal()] --> HasWaiter{waiter exists?}
+  Signal["c.signal()"] --> HasWaiter{waiter exists?}
   HasWaiter -- no --> Continue[No condition waiter resumed]
   HasWaiter -- yes --> SC[SC: signaller continues]
   HasWaiter -- yes --> SX[SX: signaller exits]
@@ -156,8 +156,8 @@ Use for:
 ```mermaid
 flowchart TD
   Start[Server loop] --> Eval[Evaluate guarded commands]
-  Eval --> P{producer ready and size < N?}
-  Eval --> C{consumer ready and size > 0?}
+  Eval --> P{"producer ready and size < N?"}
+  Eval --> C{"consumer ready and size > 0?"}
   P -- yes --> Put[Accept producer message]
   C -- yes --> Take[Accept consumer request]
   P -- no --> Wait[Wait or try other guard]
