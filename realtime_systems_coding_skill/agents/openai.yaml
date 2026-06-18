@@ -1,0 +1,8 @@
+interface:
+  display_name: "Realtime Systems Coding"
+  short_description: "Concurrent, distributed, and real-time systems engineering"
+  brand_color: "#0F766E"
+  default_prompt: "Use $realtime-systems-coding to design, implement, review, or debug concurrent and real-time systems code."
+
+policy:
+  allow_implicit_invocation: true
