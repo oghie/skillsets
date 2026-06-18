@@ -14,9 +14,10 @@ The task involves threads/processes sharing memory, critical sections, locks, se
 4. Define acquisition and release order.
 5. Write the invariant and forbidden state.
 6. For monitors, name the signal semantics: AS, SC, SX, SW, or SU.
-7. For custom mutual exclusion, prove the Dijkstra-style conditions or use `references/mutual-exclusion-algorithms.md`.
-8. Add cancellation, timeout, and error-path release rules.
-9. Verify with static review plus stress or sanitizer/model checking when available.
+7. If the problem resembles a canonical exercise pattern, read `tasks/apply-exercise-patterns.md` before drafting pseudocode.
+8. For custom mutual exclusion, prove the Dijkstra-style conditions or use `references/mutual-exclusion-algorithms.md`.
+9. Add cancellation, timeout, and error-path release rules.
+10. Verify with static review plus stress or sanitizer/model checking when available.
 
 ## Mutex Pattern
 - One mutex protects one coherent group of shared state.
@@ -37,6 +38,7 @@ The task involves threads/processes sharing memory, critical sections, locks, se
 - Signal only after making the condition true.
 - Be explicit about signal semantics: SC requires rechecking; SX requires signal-and-exit discipline; SU uses an urgent signaller queue.
 - Read `references/monitor-signalling-semantics.md` before designing or changing monitor signalling behavior.
+- Read `references/exercise-derived-patterns.md` for monitor pseudocode templates such as portable semaphores, rendezvous, encoded-count buffers, readers-writers, bridge traffic, resource allocation, and service pipelines.
 - For nontrivial monitors, draw a queue diagram using `tasks/model-with-diagrams.md`.
 
 ## Java Pattern

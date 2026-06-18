@@ -101,6 +101,7 @@ Review use:
 - Check whether `turn` can be changed by a passive owner.
 - Check whether a process can be overtaken indefinitely.
 - Check whether a modification changes safety, reachability, liveness, or fairness.
+- For additional exercise-derived pseudocode patterns and counterexample workflow, read `exercise-derived-patterns.md`.
 
 ## Busy Waiting
 Busy waiting consumes CPU or memory-bus cycles without useful progress. It can be acceptable only when:

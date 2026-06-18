@@ -18,6 +18,7 @@
 - Monitor code names the signal semantics: AS, SC, SX, SW, or SU.
 - SX/SW/SU code does not treat preemptive signal behavior as if it were SC.
 - SC code rechecks conditions after wake and is safe against signal stealing.
+- Canonical synchronization code maps to a known invariant-driven pattern or explains why no pattern fits.
 - Nested monitor calls are forbidden, modeled, or explicitly supported by the runtime.
 
 ## Liveness And Fairness
@@ -25,6 +26,7 @@
 - Starvation scenarios were considered.
 - Fairness assumptions are explicit and tied to scheduler/runtime/hardware evidence.
 - Signal/notify operations cannot leave waiters blocked indefinitely.
+- Lost-signal scenarios are checked when one side can signal before the other waits.
 - Timeout and cancellation paths release resources.
 - Guarded alternatives do not rely on nondeterministic choice being random.
 - CSP repetitive orders have termination, failure, or matching-communication paths.

@@ -161,6 +161,7 @@ Practical rules:
 - For preemptive signals, the unblocking condition can be part of the postcondition of `c.wait()` because no third process can steal the condition before the waiter resumes.
 - For SC signals, `c.signal()` behaves like a null statement with respect to permanent monitor variables because the signaller keeps the monitor.
 - Assertion-based safety proofs do not by themselves guarantee liveness. Missing signals or bad waits can still leave processes blocked forever.
+- For reusable pseudocode patterns that exercise these rules, read `exercise-derived-patterns.md`.
 
 ## Review Checklist
 - Which signal semantics is assumed: AS, SC, SX, SW, or SU?
