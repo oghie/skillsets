@@ -1141,6 +1141,3 @@ Use this when the user wants a fast evaluation.
 | Writing/cohesion | /5 | | |
 | Journal readiness | /5 | | |
 
-## 18. Source basis
-
-This skill distills the evaluation logic of *Evaluating Research in Academic Journals: A Practical Guide to Realistic Evaluation* by Maria Tcherni-Buzzeo and Fred Pyrczak, 8th edition, Routledge, 2024, and extends it into a practical AI-agent workflow for academic writing, research design, peer-review simulation, and journal manuscript production.
