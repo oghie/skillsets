@@ -1,6 +1,6 @@
 ---
 name: software-architecture-engineering-uap
-description: Use when designing, evaluating, documenting, modernizing, or implementing software architecture, including requirements refinement, system context analysis, architecture style selection, functional/information/behavior/deployment views, NFR tactics, architecture evaluation, ADR/RFC work, and engineering execution plans.
+description: Use when designing, evaluating, documenting, modernizing, or implementing software architecture, including requirements refinement, system context analysis, architecture style selection, functional/information/behavior/deployment views, NFR tactics, identity/IAM/authentication/authorization/session/MFA/passwordless/audit design, architecture evaluation, ADR/RFC work, and engineering execution plans.
 ---
 
 # Software Architecture Engineering UAP
@@ -9,7 +9,7 @@ description: Use when designing, evaluating, documenting, modernizing, or implem
 Treat architecture as traceable engineering: requirements -> context -> schematic style choices -> architecture views -> NFR tactics -> evaluation -> implementation work. Do not recommend structure, technology, or patterns without naming the forces, trade-offs, evidence, and validation path.
 
 ## First Pass
-1. Classify the task: greenfield design, architecture review, modernization, decomposition, API/service design, data architecture, deployment planning, NFR design, evaluation, ADR/RFC, or implementation planning.
+1. Classify the task: greenfield design, architecture review, modernization, decomposition, API/service design, data architecture, IAM/auth design, deployment planning, NFR design, evaluation, ADR/RFC, or implementation planning.
 2. Identify scope and risk: users, stakeholders, business goals, current system evidence, constraints, critical workflows, quality attributes, team/deployment context, and reversibility.
 3. Tailor the Unified Architecture Process: lightweight for local low-risk changes; full A1-A6 for high-risk, distributed, regulated, long-lived, or irreversible decisions.
 4. Decide the visual artifacts needed: boundary/context, use case, component, class/data, activity, sequence, state, deployment, style schematic, or NFR conformance map.
@@ -21,6 +21,7 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - External actors, integrations, data flows, system boundaries, or operational environment: `tasks/system-context-analysis.md` and `references/context-and-views.md`.
 - Architecture style choice, schematic structure, decomposition, or modernization target: `tasks/schematic-architecture-design.md` and `references/architecture-style-catalog.md`.
 - Functional, information, behavior, or deployment design: `tasks/architecture-view-design.md`, `references/context-and-views.md`, and `references/diagram-visualization-guide.md`.
+- Identity, IAM, authentication, authorization, sessions, tokens, MFA, passwordless, account lifecycle, admin users, audit logs, or auth API design: `tasks/identity-access-design.md` and `references/iam-auth-architecture.md`.
 - Performance, security, availability, modifiability, observability, compliance, or other NFR work: `tasks/nfr-and-conformance-design.md` and `references/nfr-tactics-and-conformance.md`.
 - Architecture evaluation, review gate, design risk assessment, or validation plan: `tasks/architecture-evaluation.md` and `references/architecture-evaluation-methods.md`.
 - Existing system review, refactor, migration, or modernization: `tasks/architecture-review-and-modernization.md`.
@@ -37,6 +38,7 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - Preserve dependency direction and data ownership before optimizing for frameworks.
 - Prefer modular monoliths when independent deployment, team autonomy, or scale isolation is not yet justified.
 - Use layered, MVC-family, N-tier, client-server, broker, dispatcher, event-driven, pub-sub, service-oriented, microservice, pipe-filter, repository, edge, controller, or plugin styles only when their forces match the system.
+- Treat identity and access as a cross-cutting architecture boundary: session/token design, authorization checks, MFA recovery, admin surfaces, audit logs, and key management must be explicit.
 - Never accept "scalable", "secure", "fast", "reliable", or "cloud native" without measurable scenarios and verification.
 - Connect every NFR tactic to affected views: functional components, data ownership, behavior/control flow, deployment topology, tests, observability, and operations.
 

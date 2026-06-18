@@ -47,6 +47,7 @@ For major recommendations, use:
 - Use cases and user-visible workflows.
 - Functional components and interfaces.
 - Domain objects, persistence, data ownership, and schemas.
+- Identity, authentication, authorization, sessions, MFA, admin controls, and audit logging.
 - Behavior flows, async semantics, retries, ordering, idempotency, and failure paths.
 - Deployment nodes, execution environments, networks, secrets, and operational ownership.
 - NFR tactics for performance, availability, security, privacy, observability, modifiability, scalability, deployability, and compliance.

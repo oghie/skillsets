@@ -53,6 +53,15 @@ Use this checklist before finalizing architecture, ADRs, RFCs, modernization pla
 - Tactics are evaluated for side effects.
 - Security, privacy, observability, availability, performance, and deployability are not just claimed.
 
+## Identity And Access
+- Authentication, authorization, identity, credential, and session responsibilities are separated.
+- Session/token TTL, rotation, revocation, logout-all, and stolen-token response are defined.
+- MFA setup, challenge, disable, recovery, and factor deletion include step-up and abuse controls.
+- Passwordless, password reset, email verification, and resend flows resist account enumeration.
+- Admin role/status APIs prevent self-escalation, tenant escape, and unaudited privilege changes.
+- Audit events cover login, refresh, logout, password reset/change, MFA changes, session revocation, account lifecycle, and admin changes.
+- Cryptographic keys, token signing keys, reset tokens, recovery codes, and secrets have storage, rotation, and malformed-input handling rules.
+
 ## Evaluation
 - Highest-risk elements have an evaluation method.
 - Scenario walk-throughs cover critical workflows and quality attributes.

@@ -123,6 +123,46 @@ STYLE_RISKS = (
 )
 
 
+AUTH_RISKS = (
+    (
+        "auth_without_session_model",
+        r"\b(auth|authentication|login|logout|session|refresh token|access token)\b",
+        (r"\bsession\b", r"\btoken\b", r"\bttl\b", r"\bexpir(y|ation|e)\b", r"\brevok(e|ation)\b", r"\blogout\b"),
+        "Auth mentioned without session/token TTL, expiration, revocation, or logout model.",
+    ),
+    (
+        "jwt_without_key_controls",
+        r"\bjwt\b|\bjson web token\b",
+        (r"\bissuer\b", r"\baudience\b", r"\bexpiry\b", r"\bexp\b", r"\bkey id\b", r"\bkid\b", r"\bjwks\b", r"\brotation\b"),
+        "JWT mentioned without issuer/audience/expiry/key-id/JWKS/rotation controls.",
+    ),
+    (
+        "refresh_token_without_rotation",
+        r"\brefresh token(s)?\b",
+        (r"\brotat(e|ion)\b", r"\breuse detection\b", r"\btoken family\b", r"\brevok(e|ation)\b"),
+        "Refresh tokens mentioned without rotation, reuse detection, token-family, or revocation rules.",
+    ),
+    (
+        "password_without_storage_controls",
+        r"\bpassword(s)?\b",
+        (r"\bargon2\b", r"\bbcrypt\b", r"\bscrypt\b", r"\bhash(ed|ing)?\b", r"\bsalt\b", r"\bpepper\b", r"\brate[- ]?limit\b"),
+        "Passwords mentioned without hashing/KDF, salt/pepper, or rate-limit controls.",
+    ),
+    (
+        "mfa_without_recovery",
+        r"\bmfa\b|\bmulti[- ]?factor\b|\btotp\b|\bwebauthn\b|\bpasskey(s)?\b",
+        (r"\brecover(y)?\b", r"\bbackup code(s)?\b", r"\bstep[- ]?up\b", r"\bdevice loss\b", r"\bdisable\b"),
+        "MFA mentioned without recovery, backup codes, step-up, device-loss, or disable rules.",
+    ),
+    (
+        "admin_users_without_audit",
+        r"\badmin user(s)?\b|\brole change\b|\buser status\b|\bprivilege\b",
+        (r"\baudit\b", r"\bseparation of duties\b", r"\bself[- ]?escalation\b", r"\btenant\b"),
+        "Admin/user privilege operations mentioned without audit, separation-of-duties, self-escalation, or tenant controls.",
+    ),
+)
+
+
 VAGUE_QUALITY = re.compile(
     r"\b(fast|scalable|secure|reliable|resilient|robust|high performance|cloud native)\b",
     re.IGNORECASE,
@@ -157,6 +197,10 @@ def audit_file(path: Path) -> list[str]:
             findings.append(f"{path}: {check.severity}: {check.name}: {check.message}")
 
     for name, trigger, guards, message in STYLE_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in AUTH_RISKS:
         if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
             findings.append(f"{path}: warn: {name}: {message}")
 

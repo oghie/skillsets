@@ -37,7 +37,7 @@ Examples:
 | Scalability | Stateless services, horizontal scaling, partitioning, sharding, read replicas, queueing, autoscaling, CDN/edge, bounded contexts |
 | Availability | Redundancy, failover, health checks, circuit breakers, graceful degradation, multi-zone deployment, backup/restore, disaster recovery |
 | Reliability | Idempotency, retries with budgets, timeouts, sagas, outbox pattern, dead-letter queues, reconciliation jobs, invariant checks |
-| Security | Least privilege, authentication, authorization, input validation, encryption, secrets management, audit logs, threat modeling |
+| Security | Least privilege, authentication, authorization, MFA/step-up, session revocation, token rotation, input validation, encryption, secrets management, audit logs, threat modeling |
 | Privacy | Data minimization, consent, purpose limitation, retention/deletion, pseudonymization, residency controls, access review |
 | Observability | Structured logs, metrics, traces, correlation IDs, service-level indicators, alerts, dashboards, runbooks |
 | Modifiability | Cohesion, dependency inversion, adapters, stable interfaces, feature flags, plugin boundaries, automated regression tests |
@@ -74,6 +74,7 @@ Evaluate each candidate tactic against:
 - Performance target without workload model.
 - Availability target without dependency failure analysis.
 - Security claim without trust boundaries and authorization model.
+- IAM design without token/session expiry, revocation, MFA recovery, admin authorization, and audit events.
 - Scalability claim with shared mutable state and no partition strategy.
 - Event-driven reliability claim without idempotency and replay policy.
 - Cache tactic without invalidation and consistency rules.
