@@ -1,0 +1,6 @@
+interface:
+  display_name: "Academic Research Journal"
+  short_description: "Academic article evaluation and drafting"
+  default_prompt: "Use $academic-research-journal to evaluate, design, revise, or prepare an academic manuscript for journal submission."
+policy:
+  allow_implicit_invocation: true
