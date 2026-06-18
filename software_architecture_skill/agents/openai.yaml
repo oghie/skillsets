@@ -1,0 +1,8 @@
+interface:
+  display_name: "Software Architecture Engineering"
+  short_description: "Design, review, and validate architectures"
+  brand_color: "#2563EB"
+  default_prompt: "Use $software-architecture-engineering-uap to design, evaluate, or document a software architecture with traceable decisions."
+
+policy:
+  allow_implicit_invocation: true
