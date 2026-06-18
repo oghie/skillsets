@@ -115,6 +115,42 @@ Use for:
 - Async offload queues.
 - Buffer ownership reviews.
 
+## Network Dataplane Pipeline
+
+```mermaid
+flowchart LR
+  NIC[NIC queue] --> XDP[XDP/eBPF]
+  XDP -->|pass| K[Kernel stack]
+  XDP -->|redirect| UX[AF_XDP or devmap]
+  K --> TC[Linux TC/eBPF]
+  TC --> S[Socket application]
+  NIC --> PMD[DPDK/VPP poll-mode]
+  PMD --> UA[User dataplane]
+```
+
+Use for:
+- Choosing kernel socket, XDP, AF_XDP, Linux TC, DPDK, or VPP placement.
+- Showing where packet ownership changes and where completion is observed.
+
+## TCP Handoff Timeline
+
+```mermaid
+sequenceDiagram
+  participant A as Current owner
+  participant B as Target owner
+  participant R as Redirect plane
+  A->>A: quiesce flow
+  A->>B: transfer TCP/TLS state
+  B->>R: install target rewrite
+  B-->>A: owner ready
+  A->>R: install redirect
+  A->>A: unblock flow
+```
+
+Use for:
+- TCP connection offload, flow migration, and software-to-hardware redirect transitions.
+- Checking stale-rule, partial-handoff, and packet-reorder failures.
+
 ## CSP Guarded Server
 
 ```mermaid

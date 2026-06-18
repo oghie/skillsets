@@ -40,6 +40,12 @@ The task asks for performance, throughput, low latency, offload, lock reduction,
 - Add fallback and reset handling.
 - Include device queue delay in latency budget.
 
+## Network Dataplane Patterns
+- For DPDK, VPP, eBPF, XDP, AF_XDP, Linux TC, SR-IOV, RoCEv2/RDMA, or SmartNIC/DPU work, use `tasks/design-network-dataplane-system.md`.
+- Define RSS, queue, NAPI, IRQ, worker, and NUMA placement before comparing throughput.
+- Treat map updates, hardware rules, queue pairs, completion queues, and packet buffers as shared state with explicit ownership.
+- Measure low-load CPU burn and high-load p99 latency; both matter for busy polling and kernel bypass.
+
 ## Verification
 - Run the static scanner.
 - Run unit tests and stress tests.

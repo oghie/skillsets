@@ -17,6 +17,7 @@
 - Multiprocessor with shared memory: true parallelism exists, and shared memory synchronization must preserve consistency.
 - Multi-computer or distributed processors: each processor has independent memory; communication requires messages over an interconnect.
 - Multiprocessing models include SISD, SIMD, MISD, and MIMD. MIMD maps naturally to modern multi-threaded and multi-process software but creates contention and deadlock risks.
+- Network dataplanes add NIC queues, interrupt moderation, NAPI polling, RSS steering, completion queues, and device offload as execution shapes that must be modeled explicitly.
 
 ## Synchronization Families
 - Mutual exclusion prevents more than one process from executing a critical section at the same time.
@@ -24,6 +25,7 @@
 - Low-level options include interrupt masking, test-and-set locks, and semaphores.
 - High-level options include monitors, condition variables, Java synchronized methods/blocks, and language-native channel/actor abstractions.
 - Message-passing options include synchronous rendezvous, buffered communication, non-blocking operations, guarded commands, MPI point-to-point, and collective communication.
+- Network I/O options include kernel sockets, XDP/eBPF, Linux TC, AF_XDP, DPDK/VPP, SR-IOV, RoCEv2/RDMA, and SmartNIC/DPU offload.
 
 ## Correctness Properties
 - Safety: forbidden states are never reached. Examples include "two tasks never enter the same critical section together" and "a consumer never removes from an empty buffer."
@@ -41,4 +43,5 @@
 - Producer-consumer buffer diagrams separate mutual exclusion from empty/full conditional synchronization.
 - Monitor queue diagrams separate input queue, condition queues, and urgent signaler queues.
 - Message-passing timeline diagrams distinguish rendezvous waiting, buffered copy, and non-blocking unsafe-buffer intervals.
+- Dataplane diagrams distinguish kernel hooks, NIC queues, worker affinity, hardware/software rule activation, and completion ownership.
 - Gantt charts expose task release, preemption, response time, deadline misses, and priority inversion.

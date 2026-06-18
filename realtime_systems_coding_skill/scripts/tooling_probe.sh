@@ -22,6 +22,12 @@ for tool in taskset chrt perf trace-cmd ftrace dtrace ltrace strace cyclictest s
 done
 
 echo
+echo "Network dataplane and kernel bypass"
+for tool in ip ethtool tc ss bpftool bpftrace xdp-loader xdpdump xdpsock dpdk-testpmd testpmd pktgen vpp vppctl ovs-vsctl ovs-ofctl rdma ibv_devinfo ibstat devlink; do
+  check_tool "$tool"
+done
+
+echo
 echo "MPI and distributed execution"
 for tool in mpicc mpicxx mpirun mpiexec ompi_info; do
   check_tool "$tool"

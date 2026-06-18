@@ -44,6 +44,14 @@ Before claiming a concurrent, distributed, high-performance, or real-time change
 - Test remote call timeout and server-side shared data protection.
 - Test rendezvous selection and accept queue behavior when multiple clients are ready.
 
+## Network Dataplane Tests
+- Verify RSS/queue/worker/NUMA mapping with runtime evidence.
+- Capture IRQ counts, NAPI or poll-loop behavior, queue drops, ring occupancy, and NIC counters.
+- Test low-load idle behavior and high-load saturation for busy polling or IRQ suspension designs.
+- Test eBPF map churn, Linux TC rule insert/remove, hardware offload fallback, and rollback after partial failure.
+- Test SR-IOV VF reset, PF reset, device plugin restart, link flap, and queue resize where applicable.
+- For RDMA/RoCEv2, test CQ overflow, QP error, memory deregistration, congestion, and completion handling.
+
 ## Completion Report
 Report:
 - Properties verified.

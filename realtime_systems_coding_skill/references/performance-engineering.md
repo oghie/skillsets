@@ -27,6 +27,14 @@
 - Avoid symmetric blocking send patterns without a proven matching receive order.
 - Use topology-aware placement and communicator grouping when communication is not all-to-all.
 
+## Network Dataplane Efficiency
+- Read `network-dataplane-and-kernel-bypass.md` before choosing DPDK, VPP, XDP/eBPF, AF_XDP, SR-IOV, RoCEv2/RDMA, or SmartNIC/DPU offload.
+- Treat RSS, RX/TX queue count, IRQ affinity, worker pinning, and NUMA placement as first-order design inputs.
+- Kernel bypass is not automatically faster; account for dedicated cores, hugepages, polling, packet batching, and operational fallback.
+- For eBPF/XDP/Linux TC, keep fast-path decisions bounded and put complex policy in a control plane.
+- For RDMA/RoCEv2, benchmark completion queue handling, memory registration cost, fabric congestion, and p99 tail latency.
+- For hardware rule offload, measure rule install/remove latency and the software fallback path during churn.
+
 ## Hardware And Runtime Placement
 - Offload work when transfer overhead, synchronization overhead, and error handling are lower than CPU execution cost.
 - Keep control loops near the timing source and actuator when jitter matters.

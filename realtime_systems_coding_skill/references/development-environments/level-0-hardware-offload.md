@@ -5,6 +5,8 @@ Use this level when a CPU delegates work to domain-specific or near-device hardw
 
 ## Typical Technologies
 - DPU and SmartNIC datapaths.
+- RNIC/RDMA and RoCEv2 transport offload.
+- Linux TC hardware rule offload and near-NIC packet steering.
 - GPU kernels and streams.
 - TPU or other ML accelerators.
 - QPU jobs with host orchestration.
@@ -14,6 +16,7 @@ Use this level when a CPU delegates work to domain-specific or near-device hardw
 - Host code submits work asynchronously.
 - Device queues, streams, command buffers, or doorbells become the synchronization boundary.
 - Buffers may be copied, mapped, pinned, shared coherently, or owned exclusively by the device until completion.
+- Completion queues, event queues, or device acknowledgments define when ownership returns to host code.
 
 ## Real-Time Considerations
 - Offload is useful only if transfer latency, queueing delay, and completion handling fit the deadline.
@@ -24,6 +27,8 @@ Use this level when a CPU delegates work to domain-specific or near-device hardw
 - Make buffer lifetime explicit: host-owned, in-flight, device-owned, completed, reusable.
 - Do not mutate input or output buffers until completion is proven.
 - Separate submission, synchronization, completion, and error recovery paths.
+- For SmartNIC/DPU and hardware TC offload through Linux TC or equivalent control planes, model software fallback, hardware rule activation, rule removal, and reset re-synchronization.
+- For RoCEv2/RDMA, model memory registration, queue pair state, completion queue overflow, and fabric congestion behavior.
 - Batch only when batching delay is acceptable.
 - Keep host/device clock assumptions explicit; timestamps from different domains may not be directly comparable.
 
@@ -32,6 +37,7 @@ Use this level when a CPU delegates work to domain-specific or near-device hardw
 - Benchmark copy time, enqueue time, execution time, completion latency, and p99 tail.
 - Verify memory visibility and cache coherency rules for the platform.
 - Stress with multiple outstanding operations and queue saturation.
+- Test device reset, rule churn, VF/PF reset if applicable, and late completion after cancellation.
 
 ## When Not To Use
 - Do not offload small tasks where transfer and synchronization dominate.

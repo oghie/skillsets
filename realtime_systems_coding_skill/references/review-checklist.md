@@ -46,11 +46,14 @@
 - Non-blocking communication overlaps with independent work.
 - Benchmarks include tail latency, jitter, and deadline misses.
 - Placement across CPUs, NUMA, accelerators, VMs, containers, or edge regions is intentional.
+- Network dataplane designs name RSS policy, RX/TX queues, NAPI IDs, IRQ affinity, worker pinning, NUMA placement, and packet buffer ownership.
+- eBPF/XDP/Linux TC, DPDK/VPP, SR-IOV, RDMA/RoCEv2, and hardware offload paths define completion, rollback, and reset behavior.
 
 ## Implementation
 - Error paths unlock, signal, close, or cancel consistently.
 - Resource lifetimes outlive outstanding work.
 - Thread/rank/task creation and joining are structured.
 - Logs do not introduce new blocking inside hot locks.
+- Dataplane rule updates cannot leave stale redirects, leaked map entries, unreclaimed mbufs/UMEM frames, or registered memory.
 - Tests include stress, schedule perturbation, and regression cases for the bug class.
 - Diagrams or timelines exist for nontrivial interleavings, monitor queues, message passing, priority inversion, or task deadlines.

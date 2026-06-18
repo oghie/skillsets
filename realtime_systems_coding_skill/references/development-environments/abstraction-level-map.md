@@ -7,10 +7,10 @@ Use this map before choosing the implementation target for concurrent or real-ti
 | Level | Name | Typical Targets | Main Risk |
 | --- | --- | --- | --- |
 | -1 | Silicon and physical circuits | ASIC, FPGA | Hardware timing, synthesis, signal integrity, verification cost |
-| 0 | Delegated execution and offload | DPU, SmartNIC, GPU, TPU, QPU | Transfer latency, queue completion, memory ownership |
-| 1 | Direct hardware access | Bare-metal, RTOS, MCU, direct Linux RT paths | Interrupt latency, timer precision, bounded blocking |
-| 2 | Infrastructure virtualization | VM, IaaS, virtual NIC/storage | Hypervisor jitter, noisy neighbors, clock drift |
-| 3 | Dynamic orchestration | Containers, Kubernetes, cloud-native runtimes | cgroups, scheduling interference, network variability |
+| 0 | Delegated execution and offload | DPU, SmartNIC, RNIC/RDMA, GPU, TPU, QPU | Transfer latency, queue completion, memory ownership |
+| 1 | Direct hardware access | Bare-metal, RTOS, MCU, direct Linux RT paths, XDP/eBPF, DPDK/VPP | Interrupt latency, timer precision, queue affinity, bounded blocking |
+| 2 | Infrastructure virtualization | VM, IaaS, virtual NIC/storage, SR-IOV VF | Hypervisor jitter, noisy neighbors, clock drift, VF reset |
+| 3 | Dynamic orchestration | Containers, Kubernetes, cloud-native runtimes, SR-IOV device plugins | cgroups, scheduling interference, network variability, hardware resource placement |
 | 4 | Spatial distribution and edge | Workers, Greengrass, V8 isolates, WasmEdge, KubeEdge, OpenYurt, EdgeX Foundry, K3s | Geographic latency, consistency, runtime limits |
 
 ## Selection Rules
@@ -26,6 +26,7 @@ Use this map before choosing the implementation target for concurrent or real-ti
 - What is the smallest atomic action at this level?
 - What memory is shared, copied, pinned, mapped, or transferred?
 - What is the completion signal for asynchronous work?
+- What queue, completion queue, interrupt, or polling loop determines progress?
 - What scheduling fairness or priority policy is actually enforced?
 - What failure mode releases resources and unblocks waiters?
 
