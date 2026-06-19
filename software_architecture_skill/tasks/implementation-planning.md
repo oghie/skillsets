@@ -7,7 +7,9 @@ Use this after architecture direction is selected or when turning ADR/RFC output
 Require:
 - Selected decision and alternatives.
 - Affected components, data, behavior, and deployment views.
+- Development/operation view impacts when repository structure, CI checks, runbooks, upgrades, or production controls are involved.
 - NFR tactics and verification targets.
+- Cost/estimate assumptions and uncertainty drivers when delivery or runtime cost matters.
 - Compatibility and migration constraints.
 - Repository and ownership context.
 
@@ -20,8 +22,9 @@ Plan in this order:
 4. Behavior flows and failure handling.
 5. NFR tactics and operational controls.
 6. Tests and verification automation.
-7. Deployment, rollout, monitoring, and rollback.
-8. Cleanup and documentation.
+7. Architecture fitness checks and CI guardrails.
+8. Deployment, rollout, monitoring, and rollback.
+9. Cleanup and documentation.
 
 ## Task Template
 
@@ -49,6 +52,8 @@ Include:
 - Migration tests and rollback dry run.
 - Load/performance checks for NFRs.
 - Security/privacy tests where applicable.
+- Architecture constraint checks for enforced package/layer/service boundaries.
+- Cost/performance model update checks when estimates drove the decision.
 - Observability checks.
 - Production smoke/canary criteria.
 

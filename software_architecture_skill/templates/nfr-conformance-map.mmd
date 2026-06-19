@@ -1,0 +1,18 @@
+flowchart TB
+  NFR[NFR Scenario]
+  F[Facts / Policies] --> C[Desirable Criteria]
+  C --> CT[Candidate Tactics]
+  CT --> ST[Selected Tactics]
+  ST --> FV[Functional View Impact]
+  ST --> IV[Information View Impact]
+  ST --> BV[Behavior View Impact]
+  ST --> DV[Deployment View Impact]
+  ST --> DEV[Development View Impact]
+  ST --> OPS[Operation View Impact]
+  FV --> V[Verification Evidence]
+  IV --> V
+  BV --> V
+  DV --> V
+  DEV --> V
+  OPS --> V
+  V --> NFR

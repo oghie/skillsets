@@ -1,0 +1,8 @@
+flowchart LR
+  Subject[Subject] -->|request action on resource| PEP[Policy Enforcement Point]
+  PEP --> PDP[Policy Decision Point]
+  PDP --> PAP[(Policy Administration Point)]
+  PDP --> PIP[(Policy Information Point)]
+  PDP -->|permit / deny / challenge / redact| PEP
+  PEP -->|permitted action| Resource[(Protected Resource)]
+  PEP --> Audit[(Security Audit Log)]

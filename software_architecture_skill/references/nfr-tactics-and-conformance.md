@@ -51,8 +51,8 @@ Examples:
 Use this map to prove that quality concerns changed the design:
 
 ```markdown
-| NFR | Facts/Policies | Criteria | Selected Tactics | Functional Impact | Information Impact | Behavior Impact | Deployment Impact | Verification |
-|---|---|---|---|---|---|---|---|---|
+| NFR | Facts/Policies | Criteria | Selected Tactics | Functional Impact | Information Impact | Behavior Impact | Deployment Impact | Development Impact | Operation Impact | Verification |
+|---|---|---|---|---|---|---|---|---|---|---|
 ```
 
 Fill all impacted views. A tactic that has no impact is usually not a tactic; it is an intention.
@@ -74,7 +74,10 @@ Evaluate each candidate tactic against:
 - Performance target without workload model.
 - Availability target without dependency failure analysis.
 - Security claim without trust boundaries and authorization model.
+- Security claim without policy enforcement point, decision model, misuse cases, or audit semantics.
 - IAM design without token/session expiry, revocation, MFA recovery, admin authorization, and audit events.
+- Cost claim without estimate range, assumptions, risk reserve, and update trigger.
+- Performance claim without workload model, resource-usage matrix, queueing/simulation rationale, benchmark, or trace evidence.
 - Scalability claim with shared mutable state and no partition strategy.
 - Event-driven reliability claim without idempotency and replay policy.
 - Cache tactic without invalidation and consistency rules.
@@ -92,3 +95,5 @@ Evaluate each candidate tactic against:
 | Modifiability | Dependency check, module boundary test, refactor spike |
 | Deployability | Canary result, rollback test, migration dry run |
 | Observability | Dashboard, alert firing test, trace sample, incident drill |
+| Cost | Estimate record, PERT/WBS/resource-usage model, TCO comparison, risk reserve burn-down |
+| Modularity | Dependency check, package boundary fitness function, coupling/cohesion metric trend |

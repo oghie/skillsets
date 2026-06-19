@@ -12,6 +12,7 @@ Inspect before judging:
 - Background jobs, queues, events, and schedulers.
 - Infrastructure and deployment manifests.
 - CI/CD, tests, observability, logs, alerts, and runbooks.
+- Architecture fitness functions, dependency rules, package boundaries, and import constraints.
 - Existing ADRs, RFCs, diagrams, incidents, and support tickets.
 
 ## Current-State Model
@@ -26,6 +27,8 @@ Build a concise current-state view:
 | Data ownership |
 | Behavior flows |
 | Deployment |
+| Development structure |
+| Operation |
 | NFRs |
 ```
 
@@ -39,6 +42,7 @@ Build a concise current-state view:
 6. Select migration strategy.
 7. Plan increments with compatibility and rollback.
 8. Define validation and operational readiness.
+9. Add architecture-as-code checks for target boundaries that need ongoing enforcement.
 
 ## Migration Strategies
 
@@ -62,6 +66,8 @@ Build a concise current-state view:
 - Observability afterthought.
 - Over-distribution without team or NFR justification.
 - Security and privacy controls added only at the edge.
+- Diagrams and ADRs no longer match repository/package/service structure.
+- No cost or uncertainty model for modernization alternatives.
 
 ## Output
 
@@ -72,4 +78,5 @@ Produce:
 - Migration increments.
 - Data compatibility plan.
 - Testing and observability plan.
+- Architecture fitness checks or manual governance checks.
 - Rollout and rollback plan.

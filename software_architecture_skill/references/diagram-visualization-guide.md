@@ -14,8 +14,12 @@ Use diagrams to expose architecture decisions. A diagram is useful when it clari
 | Show component collaboration over time | Sequence diagram |
 | Show object lifecycle | State machine |
 | Show runtime placement | Deployment diagram |
+| Show implementation structure | Development view map or package/component diagram |
+| Show production operation | Operation view map, runbook flow, or operational dependency map |
 | Show style integration | Schematic architecture diagram |
 | Show NFR traceability | Conformance map |
+| Show security enforcement | Reference Monitor / PEP-PDP policy flow |
+| Show architecture-as-code alignment | Diagram/spec/repo/fitness-function alignment map |
 
 ## Visual Conventions
 
@@ -76,9 +80,30 @@ Use diagrams to expose architecture decisions. A diagram is useful when it clari
 - Network links, protocols, trust zones, and managed services are clear.
 - Operational dependencies such as queues, schedulers, caches, and observability are included when relevant.
 
+### Development
+- Logical components map to repositories, packages, modules, namespaces, or generated-code areas.
+- Dependency rules and allowed directions are visible.
+- Shared libraries and framework adapters have explicit ownership.
+- Fitness functions or CI checks are named when boundaries must be enforced.
+
+### Operation
+- Health checks, alerts, SLOs, backup/restore, migrations, rollback, and runbooks are visible when architecturally relevant.
+- Operational actors and emergency/break-glass paths are included.
+- Secret/key/certificate rotation and audit retention are shown when security or compliance depends on them.
+
 ### NFR Conformance
 - Each NFR links to facts/policies, criteria, tactics, impacted views, and verification evidence.
 - Tactics that change behavior, data, or deployment are visible.
+
+### Security Enforcement
+- Subject, protected resource, action, policy source, enforcement point, decision point, and audit log are visible.
+- Deny, challenge, and failure paths are represented, not only permit paths.
+- Trust boundaries and tenant/data classification boundaries are explicit.
+
+### Architecture-As-Code
+- Diagrams, constraint spec, repository structure, and executable checks are all represented.
+- Logical names map to physical paths/packages/services.
+- Failed check semantics are clear: code drift, stale diagram, stale spec, or intentional architecture change.
 
 ## Mermaid Guidance
 
@@ -112,3 +137,11 @@ sequenceDiagram
 ```
 
 Keep generated diagrams small enough to review. If a diagram becomes unreadable, split it by view or scenario.
+
+## Bundled Templates
+
+Use these Mermaid templates as starting points:
+- `templates/uap-flow.mmd`
+- `templates/nfr-conformance-map.mmd`
+- `templates/reference-monitor.mmd`
+- `templates/architecture-as-code-alignment.mmd`

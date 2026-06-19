@@ -9,6 +9,7 @@ Use styles as reusable structural ideas. Most systems combine styles, so evaluat
 3. Evaluate liabilities: coupling, latency, deployment burden, testing complexity, data ownership, governance, observability, and team fit.
 4. Integrate selected styles into one schematic architecture.
 5. Refine generic elements into domain terms and validate against key scenarios.
+6. Add dependency, data-access, policy, or operational fitness checks when a style introduces enforceable constraints.
 
 ## Data-Flow Styles
 
@@ -91,6 +92,15 @@ Use styles as reusable structural ideas. Most systems combine styles, so evaluat
 | IoT/control system | Edge + sensor-controller-actuator + event-driven |
 | Extensible product platform | Microkernel + plugin + layered + repository |
 | Large autonomous teams | Domain-aligned services + event-driven + API gateway/broker |
+
+## Style Instantiation Rules
+
+When composing styles:
+- instantiate each style with domain-specific component names before combining it with other styles;
+- preserve the style's essential structural property, such as layer direction, pipe/filter ordering, broker mediation, event decoupling, or plugin/core separation;
+- define connector semantics: sync/async, protocol, ownership, failure behavior, retries, ordering, security, and observability;
+- state which style governs each part of the schematic architecture;
+- document conflicts between styles, such as layered shortcuts introduced by event handlers or shared repositories introduced into microservices.
 
 ## Rejection Guidance
 

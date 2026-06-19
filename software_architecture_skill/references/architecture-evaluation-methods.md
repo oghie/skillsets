@@ -28,6 +28,7 @@ Evaluate the target elements that carry decision risk:
 | SBAR | Brownfield architecture reengineering | Current-state deficiencies and refactoring priorities |
 | PATS | Performance evaluation through scenarios | Performance risks, bottlenecks, scenario metrics |
 | Model-Based Evaluation | Structural, behavioral, or quality modeling | Quantitative/qualitative model findings |
+| Architecture Fitness Function | Governed architecture rules and drift detection | Executable constraint result and remediation path |
 | PoC-Based Evaluation | Feasibility of a narrow technical assumption | Go/no-go evidence for a specific uncertainty |
 | Prototype/Spike | Unknown technical feasibility | Evidence, constraints, revised design |
 | Benchmark/Load Test | Performance, latency, throughput, capacity | Metrics, bottlenecks, tuning actions |
@@ -107,6 +108,7 @@ Common models:
 - Component-and-connector models for structure and dependency risk.
 - Dependency graphs for modularity and change impact.
 - Queueing models for latency, throughput, and resource contention.
+- Resource-usage matrices for workload-to-resource cost/performance reasoning.
 - Markov models for reliability and state-transition probabilities.
 - Statecharts for complex state-dependent behavior with hierarchy or concurrency.
 - Network simulation models for topology, latency, packet/flow behavior, and capacity.
@@ -121,6 +123,18 @@ Representative techniques:
 - Abstract State Machines for operational semantics.
 - Petri Nets for concurrency, synchronization, liveness, deadlock, and reachability.
 - Temporal logic/model checking for ordering, safety, and liveness properties.
+
+## Architecture-As-Code Evaluation
+
+Use architecture-as-code evaluation when the design contains rules that can be checked repeatedly:
+- allowed dependency direction;
+- logical component to package/path mapping;
+- layer and database access constraints;
+- contract compatibility;
+- security enforcement paths;
+- code metrics with thresholds.
+
+Treat a failed fitness function as evidence of misalignment. Decide whether code, diagrams, constraint specs, or the architecture decision should change.
 
 ## PoC And Prototype Evaluation
 

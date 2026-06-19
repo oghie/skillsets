@@ -71,6 +71,20 @@ REQUIRED_COVERAGE = (
         "Document should address deployment, runtime, network, or infrastructure.",
     ),
     Check(
+        "development_or_operation",
+        (
+            r"\bdevelopment view\b",
+            r"\boperation view\b",
+            r"\brepositor(y|ies)\b",
+            r"\bpackage(s)?\b",
+            r"\bmodule boundary\b",
+            r"\brunbook\b",
+            r"\bbackup\b",
+            r"\brestore\b",
+        ),
+        "Document should address development view, operation view, repository/package boundaries, or production operations when architecture decisions affect implementation or runtime support.",
+    ),
+    Check(
         "decision",
         (r"\bdecision\b", r"\brationale\b", r"\balternative(s)?\b", r"\btrade[- ]?off(s)?\b"),
         "Document should record decisions, rationale, alternatives, or trade-offs.",
@@ -111,14 +125,62 @@ STYLE_RISKS = (
     (
         "security_without_boundary",
         r"\bsecure\b|\bsecurity\b|\bauthentication\b|\bauthorization\b",
-        (r"\btrust boundar(y|ies)\b", r"\bleast privilege\b", r"\baudit\b", r"\bthreat model\b", r"\brole(s)?\b"),
-        "Security mentioned without trust boundaries, least privilege, audit, threat model, or roles.",
+        (
+            r"\btrust boundar(y|ies)\b",
+            r"\bleast privilege\b",
+            r"\baudit\b",
+            r"\bthreat model\b",
+            r"\brole(s)?\b",
+            r"\breference monitor\b",
+            r"\bpolicy enforcement\b",
+            r"\bpolicy decision\b",
+        ),
+        "Security mentioned without trust boundaries, least privilege, audit, threat model, roles, or explicit policy enforcement/decision model.",
     ),
     (
         "availability_without_failure_model",
         r"\bavailability\b|\bhighly available\b|\bha\b|\bfailover\b",
         (r"\bfailure\b", r"\bdependency\b", r"\brecovery\b", r"\brto\b", r"\brpo\b", r"\bbackup\b"),
         "Availability mentioned without dependency failure, recovery, RTO/RPO, backup, or failover analysis.",
+    ),
+)
+
+ARCHITECTURE_AS_CODE_RISKS = (
+    (
+        "layered_without_fitness_function",
+        r"\blayered\b|\blayer(s)?\b",
+        (r"\bfitness function\b", r"\bdependency rule\b", r"\barchitecture[- ]as[- ]code\b", r"\bimport rule\b", r"\bconstraint\b"),
+        "Layered architecture mentioned without dependency constraints, fitness functions, or architecture-as-code checks.",
+    ),
+    (
+        "architecture_as_code_without_mapping",
+        r"\barchitecture[- ]as[- ]code\b|\bfitness function\b|\bADL\b",
+        (r"\bdirectory\b", r"\bpackage\b", r"\bnamespace\b", r"\bpath\b", r"\bconstraint\b", r"\bcomponent\b"),
+        "Architecture-as-code mentioned without mapping logical components to physical directories/packages/namespaces and constraints.",
+    ),
+)
+
+COST_ESTIMATION_RISKS = (
+    (
+        "cost_without_estimation_model",
+        r"\bcost\b|\beffort\b|\bschedule\b|\btco\b|\boperational cost\b",
+        (r"\bestimat(e|ion)\b", r"\bPERT\b", r"\bWBS\b", r"\bfunction point(s)?\b", r"\brisk reserve\b", r"\bresource usage\b"),
+        "Cost/effort/schedule mentioned without estimation method, WBS, PERT, function points, risk reserve, or resource-usage model.",
+    ),
+    (
+        "performance_without_workload_model",
+        r"\bperformance\b|\blatency\b|\bthroughput\b|\bcapacity\b",
+        (r"\bworkload\b", r"\bresource usage\b", r"\bqueueing\b", r"\bbenchmark\b", r"\bload test\b", r"\bp95\b", r"\bp99\b"),
+        "Performance mentioned without workload, resource-usage, queueing, benchmark, load-test, or percentile target.",
+    ),
+)
+
+PRINCIPLE_RISKS = (
+    (
+        "modularity_without_principles",
+        r"\bmodule(s)?\b|\bcomponent(s)?\b|\bpackage(s)?\b|\bservice(s)?\b",
+        (r"\bcohesion\b", r"\bcoupling\b", r"\bKISS\b", r"\bYAGNI\b", r"\bDRY\b", r"\bSOLID\b", r"\bseparation of concerns\b"),
+        "Modularity mentioned without coupling/cohesion or design-principle reasoning.",
     ),
 )
 
@@ -201,6 +263,18 @@ def audit_file(path: Path) -> list[str]:
             findings.append(f"{path}: warn: {name}: {message}")
 
     for name, trigger, guards, message in AUTH_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in ARCHITECTURE_AS_CODE_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in COST_ESTIMATION_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in PRINCIPLE_RISKS:
         if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
             findings.append(f"{path}: warn: {name}: {message}")
 

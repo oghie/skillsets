@@ -10,6 +10,7 @@ Use this when quality attributes drive design or when quality claims need valida
 4. Evaluate tactics against trade-offs.
 5. Integrate selected tactics into architecture views.
 6. Validate conformance.
+7. Add cost, uncertainty, and operation/development impacts when tactics affect delivery or runtime ownership.
 
 ## Facts And Policies
 
@@ -46,6 +47,8 @@ Use:
 |---|---|---|---|---|---|---|---|---|
 ```
 
+Use the extended table in `references/nfr-tactics-and-conformance.md` when development or operation views matter.
+
 ## Integration Guidance
 
 - Performance tactics often affect information and deployment views.
@@ -53,6 +56,8 @@ Use:
 - Security tactics affect all boundaries, interfaces, data stores, and deployment nodes.
 - Observability tactics affect behavior flows, runtime artifacts, and incident response.
 - Modifiability tactics affect component boundaries, interfaces, tests, and dependency rules.
+- Cost tactics affect estimate assumptions, runtime resources, workload models, and update triggers.
+- Architecture-as-code tactics affect development view, dependency rules, and CI checks.
 
 ## Completion Criteria
 

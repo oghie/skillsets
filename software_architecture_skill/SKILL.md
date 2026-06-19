@@ -1,6 +1,6 @@
 ---
 name: software-architecture-engineering-uap
-description: Use when designing, evaluating, documenting, modernizing, or implementing software architecture, including requirements refinement, system context analysis, architecture style selection, functional/information/behavior/deployment views, NFR tactics, identity/IAM/authentication/authorization/session/MFA/passwordless/audit design, architecture evaluation, ADR/RFC work, and engineering execution plans.
+description: Use when designing, evaluating, documenting, modernizing, or implementing software architecture, including requirements refinement, context analysis, architecture style selection, functional/information/behavior/deployment/development/operation views, NFR tactics, IAM/auth, security patterns, cost estimation, architecture-as-code fitness functions, ADR/RFC work, and engineering execution plans.
 ---
 
 # Software Architecture Engineering UAP
@@ -9,10 +9,10 @@ description: Use when designing, evaluating, documenting, modernizing, or implem
 Treat architecture as traceable engineering: requirements -> context -> schematic style choices -> architecture views -> NFR tactics -> evaluation -> implementation work. Do not recommend structure, technology, or patterns without naming the forces, trade-offs, evidence, and validation path.
 
 ## First Pass
-1. Classify the task: greenfield design, architecture review, modernization, decomposition, API/service design, data architecture, IAM/auth design, deployment planning, NFR design, evaluation, ADR/RFC, or implementation planning.
+1. Classify the task: greenfield design, architecture review, modernization, decomposition, API/service design, data architecture, IAM/auth design, security-pattern design, cost-aware decision, deployment/operation planning, architecture-as-code governance, NFR design, evaluation, ADR/RFC, or implementation planning.
 2. Identify scope and risk: users, stakeholders, business goals, current system evidence, constraints, critical workflows, quality attributes, team/deployment context, and reversibility.
 3. Tailor the Unified Architecture Process: lightweight for local low-risk changes; full A1-A6 for high-risk, distributed, regulated, long-lived, or irreversible decisions.
-4. Decide the visual artifacts needed: boundary/context, use case, component, class/data, activity, sequence, state, deployment, style schematic, or NFR conformance map.
+4. Decide the visual artifacts needed: boundary/context, use case, component, class/data, activity, sequence, state, deployment, development/operation, style schematic, NFR conformance map, policy enforcement map, or fitness-function map.
 5. Define verification before recommending: repository inspection, docs review, scenario walk-through, prototype, benchmark, threat model, operational review, or implementation test plan.
 
 ## Required Reads By Task
@@ -20,12 +20,17 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - Ambiguous requirements, stakeholder conflict, or missing acceptance criteria: `tasks/requirements-refinement.md`.
 - External actors, integrations, data flows, system boundaries, or operational environment: `tasks/system-context-analysis.md` and `references/context-and-views.md`.
 - Architecture style choice, schematic structure, decomposition, or modernization target: `tasks/schematic-architecture-design.md` and `references/architecture-style-catalog.md`.
-- Functional, information, behavior, or deployment design: `tasks/architecture-view-design.md`, `references/context-and-views.md`, and `references/diagram-visualization-guide.md`.
+- Design principles, modularity, coupling/cohesion, KISS, SOLID, DRY, YAGNI, SoC, package boundaries, or code-level architecture heuristics: `references/design-principles-and-modularity.md`.
+- Functional, information, behavior, deployment, development, or operation design: `tasks/architecture-view-design.md`, `references/context-and-views.md`, `references/development-and-operation-views.md`, and `references/diagram-visualization-guide.md`.
 - Identity, IAM, authentication, authorization, sessions, tokens, MFA, passwordless, account lifecycle, admin users, audit logs, or auth API design: `tasks/identity-access-design.md` and `references/iam-auth-architecture.md`.
+- Security patterns, access-control models, policy engines, reference monitor, RBAC/ABAC/PBAC/ACL/capability, security logger/auditor, secure middleware/network patterns, misuse cases, or threat-driven design: `tasks/security-pattern-architecture-design.md` and `references/security-architecture-patterns.md`.
+- Cost, estimation, schedule/effort risk, operational cost, total ownership cost, performance capacity, resource-usage modeling, PERT/WBS/function points/COCOMO-style reasoning, or queueing models: `tasks/cost-aware-architecture-decision.md` and `references/cost-estimation-and-performance-models.md`.
+- Architecture-as-code, ADL-lite constraints, dependency rules, layer/database constraints, fitness functions, repository/package alignment, or architecture drift: `tasks/architecture-as-code-governance.md` and `references/architecture-as-code-and-fitness-functions.md`.
 - Performance, security, availability, modifiability, observability, compliance, or other NFR work: `tasks/nfr-and-conformance-design.md` and `references/nfr-tactics-and-conformance.md`.
 - Architecture evaluation, review gate, design risk assessment, or validation plan: `tasks/architecture-evaluation.md` and `references/architecture-evaluation-methods.md`.
 - Existing system review, refactor, migration, or modernization: `tasks/architecture-review-and-modernization.md`.
 - ADR/RFC writing, implementation breakdown, rollout, tests, or repository mapping: `tasks/implementation-planning.md` and `references/engineering-translation.md`.
+- Quick UAP activity-step-task reminders or SRS intake extraction: `references/uap-appendix-artifact-playbooks.md`.
 - Final architecture quality check: `references/review-checklist.md`.
 
 ## Decision Discipline
@@ -33,14 +38,17 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - For each major decision, state the decision, rationale, alternatives rejected, trade-offs, consequences, validation method, and engineering impact.
 - Prefer the smallest viable architecture. Add distribution, indirection, async flow, shared platforms, or style complexity only when forces justify the cost.
 - Treat diagrams as executable thinking aids: every diagram must clarify a boundary, ownership rule, interaction, deployment constraint, NFR impact, or implementation task.
+- For cost-sensitive decisions, report estimate range, assumptions, uncertainty drivers, risk reserve, and update trigger.
+- For governed boundaries, turn architecture rules into fitness functions or local verification commands when feasible.
 
 ## Architecture Heuristics
 - Preserve dependency direction and data ownership before optimizing for frameworks.
 - Prefer modular monoliths when independent deployment, team autonomy, or scale isolation is not yet justified.
 - Use layered, MVC-family, N-tier, client-server, broker, dispatcher, event-driven, pub-sub, service-oriented, microservice, pipe-filter, repository, edge, controller, or plugin styles only when their forces match the system.
 - Treat identity and access as a cross-cutting architecture boundary: session/token design, authorization checks, MFA recovery, admin surfaces, audit logs, and key management must be explicit.
+- Treat security as pattern-driven architecture, not only auth endpoints: define protected resources, subjects, policy model, enforcement points, decisions, audit events, and misuse cases.
 - Never accept "scalable", "secure", "fast", "reliable", or "cloud native" without measurable scenarios and verification.
-- Connect every NFR tactic to affected views: functional components, data ownership, behavior/control flow, deployment topology, tests, observability, and operations.
+- Connect every NFR tactic to affected views: functional components, data ownership, behavior/control flow, deployment topology, development structure, operations, tests, observability, and rollback.
 
 ## Evidence And Verification
 - Inspect code, tests, schemas, API contracts, infra manifests, logs, ADRs, docs, and diagrams before judging an existing system.
@@ -50,6 +58,7 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 
 ## Script Helper
 - Run `scripts/architecture_static_audit.py <file-or-dir>` for a heuristic scan of architecture docs, ADRs, RFCs, and Markdown design plans for missing context, NFRs, view coverage, decision rationale, and common style risks.
+- Run `scripts/architecture_constraint_audit.py --root <repo> --config <constraints.json>` for lightweight architecture-as-code checks over component path mappings, allowed dependencies, and forbidden imports.
 
 ## Output Standard
-Lead with the architecture judgment or proposed path. Name assumptions, decision drivers, selected process depth, key diagrams/views, risks, validation commands or checks, and residual uncertainty. For implementation work, include repository impact, task breakdown, tests, rollout, observability, and rollback.
+Lead with the architecture judgment or proposed path. Name assumptions, decision drivers, selected process depth, key diagrams/views, risks, cost/uncertainty when relevant, validation commands or checks, and residual uncertainty. For implementation work, include repository impact, task breakdown, tests, rollout, observability, and rollback.

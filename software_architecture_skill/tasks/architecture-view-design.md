@@ -1,6 +1,6 @@
 # Architecture View Design
 
-Use this when converting schematic architecture into implementable functional, information, behavior, and deployment views.
+Use this when converting schematic architecture into implementable functional, information, behavior, deployment, development, and operation views.
 
 ## A4a Functional View
 
@@ -65,6 +65,24 @@ Output:
 |---|---|---|---|---|---|
 ```
 
+## Optional Development View
+
+Create this when implementation structure, repository layout, package boundaries, or architecture-as-code checks matter.
+
+```markdown
+| Logical Component | Path/Package/Service | Allowed Dependencies | Forbidden Dependencies | Owner | Fitness Check |
+|---|---|---|---|---|---|
+```
+
+## Optional Operation View
+
+Create this when production operation changes architecture risk.
+
+```markdown
+| Runtime Concern | Owner | Procedure/Runbook | Alert/SLO | Backup/Restore/Rotation | Verification |
+|---|---|---|---|---|---|
+```
+
 ## Cross-View Validation
 
 Before finalizing:
@@ -72,4 +90,5 @@ Before finalizing:
 - Every data owner has allowed writers/readers.
 - Every critical behavior maps to deployed runtimes.
 - Every external dependency appears in context and deployment views.
-- Every NFR tactic is visible in at least one view.
+- Every NFR tactic is visible in at least one view and, when relevant, development or operation views.
+- Every enforceable boundary has a manual or executable check.
