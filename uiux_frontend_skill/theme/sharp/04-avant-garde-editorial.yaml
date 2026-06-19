@@ -1,0 +1,302 @@
+# Avant-Garde High Editorial — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: avant-garde-editorial
+  name: Avant-Garde High Editorial
+  category: sharp
+  version: "1.0.0"
+  primary_mode: both
+  summary: Haute-couture magazine layout — asymmetric sharp-cropped imagery, oversized overlapping serif type, no visible card borders.
+  description: >
+    Borrows the language of high-fashion print. Big serif display type overlaps
+    images cropped at hard angles; layout is asymmetric and confident. There are
+    almost no UI chrome elements — the composition itself is the interface.
+  keywords: [editorial, fashion, magazine, serif, asymmetric, overlap, luxury]
+  mood: [elegant, daring, sophisticated, expressive]
+  use_cases: [luxury e-commerce, fashion editorials, creative agencies, lookbooks]
+  avoid_when: [utility dashboards, dense data apps, accessibility-first government services]
+  references: [Vogue/Harper's Bazaar layouts, fashion lookbooks, swiss-vs-expressive editorial]
+
+typography:
+  font_families:
+    display:
+      stack: "'Playfair Display', 'Times New Roman', serif"
+      source: google-fonts
+      weights: [400, 700, 900]
+      note: High-contrast didone-style serif for oversized headlines.
+    heading:
+      stack: "'Playfair Display', serif"
+      source: google-fonts
+      weights: [700, 900]
+    body:
+      stack: "'Inter', 'Helvetica Neue', sans-serif"
+      source: google-fonts
+      weights: [400, 500]
+  scale:
+    base_size: "17px"
+    ratio: 1.618
+    steps:
+      display: "7.594rem"
+      h1: "4.693rem"
+      h2: "2.901rem"
+      h3: "1.793rem"
+      h4: "1.25rem"
+      body_lg: "1.25rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 0.95
+    normal: 1.5
+    relaxed: 1.7
+  letter_spacing:
+    tight: "-0.03em"
+    normal: "0em"
+    wide: "0.18em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "none"
+      style: none
+    per_role:
+      display: { font_style: italic, letter_spacing: "-0.03em" }
+      overline: { text_transform: uppercase, letter_spacing: "0.18em" }
+
+color:
+  light:
+    recommended: true
+    background: "#f7f5f0"
+    surface: "#f7f5f0"
+    surface_alt: "#ece8e0"
+    text_primary: "#1a1a1a"
+    text_secondary: "#4a4a4a"
+    text_muted: "#8a8a82"
+    text_inverse: "#f7f5f0"
+    border: "#1a1a1a"
+    accent: "#b5121b"
+    accent_secondary: "#1a1a1a"
+    accent_tertiary: "#9a8866"
+    interactive:
+      default: "#1a1a1a"
+      hover: "#b5121b"
+      active: "#8a0d14"
+      focus_ring: "#b5121b"
+      disabled: "#cfcabf"
+    status:
+      error: "#b5121b"
+      warning: "#9a6b00"
+      success: "#3a6b3a"
+      info: "#2a4a6b"
+    overlay: "rgba(26,26,26,0.55)"
+    gradients: {}
+    note: Warm ivory paper tone, near-black ink, one couture red. Color is rare and deliberate.
+  dark:
+    recommended: true
+    background: "#121110"
+    surface: "#121110"
+    surface_alt: "#1c1a18"
+    text_primary: "#f2efe9"
+    text_secondary: "#c4bfb6"
+    text_muted: "#8a847a"
+    text_inverse: "#121110"
+    border: "#f2efe9"
+    accent: "#ff4d57"
+    accent_secondary: "#f2efe9"
+    accent_tertiary: "#c4a96b"
+    interactive:
+      default: "#f2efe9"
+      hover: "#ff4d57"
+      active: "#e03540"
+      focus_ring: "#ff4d57"
+      disabled: "#3a3631"
+    status:
+      error: "#ff4d57"
+      warning: "#e0a32a"
+      success: "#6bbf6b"
+      info: "#6b9fd6"
+    overlay: "rgba(0,0,0,0.65)"
+    gradients: {}
+    note: Editorial dark — gallery black with warm ivory text.
+
+radius:
+  philosophy: "Sharp crops; no rounding. Drama from angles, not curves."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "40px", "64px", "96px", "160px"]
+  grid:
+    columns: 12
+    gutter: "32px"
+    margin: "48px"
+    max_width: "1440px"
+  density: airy
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Minimal borders; thin rules occasionally separate columns. Cards usually have none."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: none
+  philosophy: "No shadows. Layering via overlap and z-order of type over image."
+  tokens:
+    sm: "none"
+    md: "none"
+    lg: "none"
+
+motion:
+  duration:
+    fast: "200ms"
+    base: "400ms"
+    slow: "700ms"
+  easing:
+    standard: "cubic-bezier(0.22, 1, 0.36, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "slow, cinematic reveals; parallax between type and imagery"
+  reduced_motion_note: "Replace parallax with simple fades."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "fine paper grain overlay, opacity 0.04"
+  overlays: [grain]
+  patterns: []
+  glow: "none"
+  special:
+    - "Oversized type overlapping sharp-cropped imagery"
+    - "Asymmetric, off-grid placement with intentional negative space"
+    - "Diagonal / angled image crops via clip-path"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #1a1a1a"
+      padding: "14px 28px"
+      background: "transparent"
+      color: "#1a1a1a"
+      shadow: "none"
+      font: "body, uppercase, wide"
+      hover: "background: #1a1a1a; color: #f7f5f0"
+      active: "background: #b5121b; border-color: #b5121b"
+      focus: "outline: 1px solid #b5121b; outline-offset: 3px"
+    secondary:
+      shape: text-link
+      radius: "0px"
+      border: "0 0 1px 0 solid #1a1a1a"
+      padding: "4px 0"
+      background: "transparent"
+      color: "#1a1a1a"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#b5121b"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "0 0 1px 0 solid #1a1a1a"
+    background: "transparent"
+    padding: "8px 0"
+    placeholder_color: "#8a8a82"
+    focus: "border-bottom-color: #b5121b"
+    note: "Underline-only fields keep the editorial minimalism."
+  card:
+    radius: "0px"
+    border: "none"
+    background: "transparent"
+    padding: "0px"
+    shadow: "none"
+    hover: "image scale(1.02)"
+  container:
+    max_width: "1440px"
+    padding: "48px"
+    section_gap: "160px"
+    note: "Very large vertical rhythm between editorial spreads."
+  navbar:
+    height: "80px"
+    background: "transparent"
+    border: "none"
+    shadow: "none"
+    blur: "none"
+    item_style: "wide-tracked uppercase links, serif logotype centered"
+    note: "Floats over the hero; no solid bar."
+  sidebar:
+    width: "0px"
+    background: "transparent"
+    border: "none"
+    item_style: "Editorial layouts rarely use sidebars; prefer full-width spreads."
+  modal:
+    radius: "0px"
+    background: "#f7f5f0"
+    border: "1px solid #1a1a1a"
+    shadow: "none"
+    overlay: "rgba(26,26,26,0.55)"
+  badge:
+    radius: "0px"
+    border: "1px solid #1a1a1a"
+    background: "transparent"
+    color: "#1a1a1a"
+    padding: "2px 10px"
+    font: "body, uppercase, wide"
+  table:
+    header_background: "transparent"
+    row_border: "1px solid #ddd8cf"
+    zebra: "none"
+    cell_padding: "16px 12px"
+  tabs:
+    indicator: "wide-tracked label; active in red"
+    radius: "0px"
+    active: "color #b5121b"
+    inactive: "color #8a8a82"
+
+iconography:
+  style: outline
+  stroke_width: "1px"
+  library: "thin elegant line icons; use sparingly"
+  note: "Icons are secondary to typography."
+
+imagery:
+  treatment: [sharp-crop, high-contrast, duotone]
+  border_radius: "0px"
+  filter: "contrast(1.05) saturate(0.95)"
+  note: "Hero imagery is the centerpiece; angled clip-path crops and full-bleed placement."
+
+guidelines:
+  do:
+    - "Use oversized serif display type"
+    - "Overlap type and imagery deliberately"
+    - "Embrace asymmetry and white space"
+    - "Reserve color for rare, dramatic accents"
+  dont:
+    - "Don't box content in bordered cards"
+    - "Don't center everything symmetrically"
+    - "Don't crowd the layout"
+
+implementation_hints:
+  css_variables_prefix: "--ed-"
+  framework_agnostic: true
+  tailwind_note: "Use clamp() for fluid oversized type; clip-path for angled crops; CSS grid with overlapping grid-areas."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500&display=swap"
+  accessibility_note: "Overlapping type over images needs guaranteed contrast — add scrims or text shadows behind text on imagery."

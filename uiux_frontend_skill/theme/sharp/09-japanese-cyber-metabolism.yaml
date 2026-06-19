@@ -1,0 +1,307 @@
+# Japanese Cyber-Metabolism — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: japanese-cyber-metabolism
+  name: Japanese Cyber-Metabolism
+  category: sharp
+  version: "1.0.0"
+  primary_mode: both
+  summary: Dense modular layout (classic Japanese-web information density) fused with modern cyber accents in tightly stacked sharp boxes.
+  description: >
+    Maximizes screen utility. Many small, sharp-cornered modules are packed
+    tightly into a tight grid, each a self-contained capsule of data, accented
+    with neon and Japanese typography. Maximalist density done deliberately.
+  keywords: [japanese, cyber, modular, dense, metabolism, information-dense, neon, capsule]
+  mood: [intense, technical, energetic, maximalist]
+  use_cases: [complex crypto dashboards, esports platforms, large-scale data directories, trading terminals]
+  avoid_when: [minimalist marketing pages, low-information consumer apps, casual onboarding flows]
+  references: [classic Japanese web portals, Metabolism architecture, cyberpunk HUDs, kakaku.com density]
+
+typography:
+  font_families:
+    display:
+      stack: "'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif"
+      source: google-fonts
+      weights: [500, 700, 900]
+      note: Supports CJK; pairs with Latin grotesque.
+    body:
+      stack: "'Noto Sans JP', 'Inter', sans-serif"
+      source: google-fonts
+      weights: [400, 500, 700]
+    mono:
+      stack: "'IBM Plex Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400, 500]
+  scale:
+    base_size: "13px"
+    ratio: 1.2
+    steps:
+      display: "2.488rem"
+      h1: "2.074rem"
+      h2: "1.728rem"
+      h3: "1.44rem"
+      h4: "1.2rem"
+      body_lg: "1rem"
+      body: "0.8125rem"
+      body_sm: "0.6875rem"
+      caption: "0.625rem"
+      overline: "0.625rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 1.2
+    normal: 1.45
+    relaxed: 1.6
+  letter_spacing:
+    tight: "0em"
+    normal: "0.01em"
+    wide: "0.08em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#ff2d6f"
+      style: box
+    per_role:
+      overline: { text_transform: uppercase, letter_spacing: "0.08em" }
+
+color:
+  light:
+    recommended: true
+    background: "#eef0f2"
+    surface: "#ffffff"
+    surface_alt: "#e4e7eb"
+    text_primary: "#0d1117"
+    text_secondary: "#3a414a"
+    text_muted: "#6a727c"
+    text_inverse: "#ffffff"
+    border: "#0d1117"
+    accent: "#ff2d6f"
+    accent_secondary: "#00b3c4"
+    accent_tertiary: "#5b3df5"
+    interactive:
+      default: "#ff2d6f"
+      hover: "#e01a59"
+      active: "#c01049"
+      focus_ring: "#5b3df5"
+      disabled: "#c4c9cf"
+    status:
+      error: "#e60039"
+      warning: "#e08a00"
+      success: "#00936b"
+      info: "#0070c4"
+    overlay: "rgba(13,17,23,0.5)"
+    gradients: {}
+    note: Crisp light data UI; neon magenta/cyan accents for signals and highlights.
+  dark:
+    recommended: true
+    background: "#06080c"
+    surface: "#0e1218"
+    surface_alt: "#161c24"
+    text_primary: "#e6edf3"
+    text_secondary: "#a8b3bf"
+    text_muted: "#6a737d"
+    text_inverse: "#06080c"
+    border: "#222a33"
+    accent: "#ff3d7f"
+    accent_secondary: "#22e0e0"
+    accent_tertiary: "#8a6dff"
+    interactive:
+      default: "#ff3d7f"
+      hover: "#ff66a0"
+      active: "#e0205f"
+      focus_ring: "#22e0e0"
+      disabled: "#2a323b"
+    status:
+      error: "#ff4d6a"
+      warning: "#ffb01f"
+      success: "#22d39a"
+      info: "#3da0ff"
+    overlay: "rgba(0,0,0,0.7)"
+    gradients:
+      signal: "linear-gradient(90deg, #ff3d7f 0%, #8a6dff 100%)"
+    note: Dark cyber terminal — neon accents glow against near-black panels.
+
+radius:
+  philosophy: "Tightly packed sharp modules. border-radius 0 to maximize edge alignment."
+  default: "0px"
+  scale:
+    none: "0px"
+    sm: "2px"
+
+spacing:
+  base: "4px"
+  scale: ["0px", "2px", "4px", "8px", "12px", "16px", "24px", "32px"]
+  grid:
+    columns: 16
+    gutter: "4px"
+    margin: "8px"
+    max_width: "1600px"
+  density: dense
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Thin hairlines separate densely packed modules; accent borders flag active/important cells."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: layered
+  philosophy: "Depth from stacking and z-index, not blur. Active modules lift via accent border + subtle glow."
+  tokens:
+    sm: "0 1px 0 rgba(13,17,23,0.08)"
+    md: "0 2px 4px rgba(13,17,23,0.12)"
+    lg: "0 4px 12px rgba(13,17,23,0.16)"
+  dark_tokens:
+    sm: "0 0 0 1px #222a33"
+    md: "0 0 8px rgba(255,61,127,0.25)"
+    lg: "0 0 16px rgba(34,224,224,0.3)"
+
+motion:
+  duration:
+    fast: "80ms"
+    base: "140ms"
+    slow: "240ms"
+  easing:
+    standard: "cubic-bezier(0.2, 0, 0, 1)"
+    entrance: "cubic-bezier(0, 0, 0.2, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.34, 1.3, 0.64, 1)"
+  signature: "fast, data-ticker movement; values flip and counters animate; subtle scanning highlights"
+  reduced_motion_note: "Freeze tickers/counters to final values; disable scanning highlight."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "optional fine grid texture, opacity 0.04"
+  overlays: ["scanlines: very subtle, dark mode only"]
+  patterns: ["grid: dense module grid", "dot-grid: background"]
+  glow: "neon edge glow on active modules (dark mode)"
+  special:
+    - "Capsule modules packed edge-to-edge with hairline gutters"
+    - "Mixed CJK + Latin labels, vertical text accents"
+    - "Live data tickers, sparklines, status LEDs"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #ff2d6f"
+      padding: "6px 14px"
+      background: "#ff2d6f"
+      color: "#ffffff"
+      shadow: "none"
+      font: "body, medium"
+      hover: "filter: brightness(1.1)"
+      active: "filter: brightness(0.9)"
+      focus: "outline: 1px solid #5b3df5; outline-offset: 1px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #0d1117"
+      padding: "6px 14px"
+      background: "transparent"
+      color: "#0d1117"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#ff2d6f"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #c4c9cf"
+    background: "#ffffff"
+    padding: "5px 8px"
+    placeholder_color: "#6a727c"
+    focus: "border-color: #ff2d6f"
+    note: "Compact data-entry fields."
+  card:
+    radius: "0px"
+    border: "1px solid #d4d9df"
+    background: "#ffffff"
+    padding: "10px"
+    shadow: "0 1px 0 rgba(13,17,23,0.08)"
+    hover: "border-color: #ff2d6f"
+  container:
+    max_width: "1600px"
+    padding: "8px"
+    section_gap: "4px"
+    note: "Wide, dense grid; minimal gaps between modules."
+  navbar:
+    height: "40px"
+    background: "#0d1117"
+    border: "0 0 1px 0 solid #222a33"
+    shadow: "none"
+    blur: "none"
+    item_style: "compact mono labels, status LEDs, neon active underline"
+    note: "Dense top bar packed with utilities and indicators."
+  sidebar:
+    width: "200px"
+    background: "#0e1218"
+    border: "0 1px 0 0 solid #222a33"
+    item_style: "tight rows with icons + counts; active row neon left-border"
+  modal:
+    radius: "0px"
+    background: "#0e1218"
+    border: "1px solid #ff3d7f"
+    shadow: "0 0 24px rgba(255,61,127,0.3)"
+    overlay: "rgba(0,0,0,0.7)"
+  badge:
+    radius: "0px"
+    border: "1px solid currentColor"
+    background: "transparent"
+    color: "#ff2d6f"
+    padding: "0px 5px"
+    font: "mono, uppercase"
+  table:
+    header_background: "#0d1117"
+    row_border: "1px solid #e4e7eb"
+    zebra: "#f4f6f8"
+    cell_padding: "4px 8px"
+  tabs:
+    indicator: "2px neon underline; active tab brighter"
+    radius: "0px"
+    active: "color #ff2d6f; border-bottom 2px solid #ff2d6f"
+    inactive: "color #6a727c"
+
+iconography:
+  style: outline
+  stroke_width: "1.25px"
+  library: "compact technical line icons + status glyphs"
+  note: "Small icons (14-16px); LED-style status dots."
+
+imagery:
+  treatment: ["sharp-crop", "high-contrast", "duotone"]
+  border_radius: "0px"
+  filter: "none"
+  note: "Thumbnails framed in hairline cells; charts/sparklines preferred over photos."
+
+guidelines:
+  do:
+    - "Pack modular capsules tightly with hairline gutters"
+    - "Use neon magenta/cyan as signal colors"
+    - "Embrace high information density"
+    - "Mix CJK and Latin labels for authenticity"
+  dont:
+    - "Don't round corners or add big margins"
+    - "Don't oversimplify — density is the aesthetic"
+    - "Don't use soft pastel palettes"
+
+implementation_hints:
+  css_variables_prefix: "--jcm-"
+  framework_agnostic: true
+  tailwind_note: "Use a 16-col grid, tiny spacing scale, neon accent tokens, and glow shadows for dark mode."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+  accessibility_note: "High density needs careful contrast and hit-target sizing; provide a comfortable-density toggle for accessibility."

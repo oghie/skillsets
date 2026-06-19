@@ -1,0 +1,297 @@
+# De Stijl / Neoplasticism — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: de-stijl-neoplasticism
+  name: De Stijl Neoplasticism
+  category: sharp
+  version: "1.0.0"
+  primary_mode: light
+  summary: Mondrian-inspired — bold black grid lines dividing the canvas into rectangles filled with pure primary colors.
+  description: >
+    The interface is a composition. Heavy black verticals and horizontals carve
+    the page into asymmetric rectangles; a few are filled with pure red, blue,
+    or yellow, the rest left white. Strict primaries, no diagonals, no curves.
+  keywords: [de-stijl, mondrian, neoplasticism, primary-colors, grid, geometric, art]
+  mood: [bold, artistic, structured, iconic]
+  use_cases: [digital art museums, interactive creative portfolios, art-education platforms]
+  avoid_when: [data-dense apps, subtle brand systems, content needing many colors]
+  references: [Piet Mondrian, Theo van Doesburg, De Stijl movement (1917-1931)]
+
+typography:
+  font_families:
+    display:
+      stack: "'Archivo', 'Futura', 'Helvetica Neue', sans-serif"
+      source: google-fonts
+      weights: [600, 800]
+      note: Geometric grotesque echoing the movement's typography.
+    body:
+      stack: "'Archivo', 'Helvetica Neue', Arial, sans-serif"
+      source: google-fonts
+      weights: [400, 600]
+  scale:
+    base_size: "16px"
+    ratio: 1.414
+    steps:
+      display: "5.653rem"
+      h1: "3.998rem"
+      h2: "2.827rem"
+      h3: "2rem"
+      h4: "1.414rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 600
+    bold: 800
+    black: 800
+  line_height:
+    tight: 1.0
+    normal: 1.4
+    relaxed: 1.6
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "0em"
+    wide: "0.05em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: uppercase
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#ffd500"
+      style: box
+    per_role:
+      body: { text_transform: none }
+
+color:
+  light:
+    recommended: true
+    background: "#f5f2e9"
+    surface: "#ffffff"
+    surface_alt: "#f0ede3"
+    text_primary: "#0a0a0a"
+    text_secondary: "#2a2a2a"
+    text_muted: "#6a6a6a"
+    text_inverse: "#ffffff"
+    border: "#0a0a0a"
+    accent: "#d4001a"
+    accent_secondary: "#0b3d91"
+    accent_tertiary: "#ffd500"
+    interactive:
+      default: "#d4001a"
+      hover: "#b00016"
+      active: "#8a0011"
+      focus_ring: "#0b3d91"
+      disabled: "#cccccc"
+    status:
+      error: "#d4001a"
+      warning: "#ffd500"
+      success: "#1a7a3a"
+      info: "#0b3d91"
+    overlay: "rgba(10,10,10,0.6)"
+    gradients: {}
+    note: Mondrian primaries — pure red, blue, yellow on warm white, divided by pure black. Use color blocks sparingly.
+  dark:
+    recommended: false
+    background: "#0a0a0a"
+    surface: "#161616"
+    surface_alt: "#1f1f1f"
+    text_primary: "#f5f2e9"
+    text_secondary: "#cccccc"
+    text_muted: "#888888"
+    text_inverse: "#0a0a0a"
+    border: "#f5f2e9"
+    accent: "#ff2233"
+    accent_secondary: "#3a6aff"
+    accent_tertiary: "#ffd500"
+    interactive:
+      default: "#ff2233"
+      hover: "#ff4a57"
+      active: "#e0101f"
+      focus_ring: "#3a6aff"
+      disabled: "#3a3a3a"
+    status:
+      error: "#ff2233"
+      warning: "#ffd500"
+      success: "#33b35a"
+      info: "#3a6aff"
+    overlay: "rgba(0,0,0,0.7)"
+    gradients: {}
+    note: "Off-mode adaptation — grid lines flip to white on black, primaries brightened. Less canonical than light."
+
+radius:
+  philosophy: "Pure rectangles only. border-radius 0; no diagonals or curves anywhere."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "64px"]
+  grid:
+    columns: 12
+    gutter: "0px"
+    margin: "0px"
+    max_width: "1400px"
+  density: comfortable
+
+border:
+  default_width: "6px"
+  style: solid
+  philosophy: "Thick black lines ARE the design — they partition the canvas into colored blocks."
+  width:
+    hairline: "2px"
+    thin: "3px"
+    thick: "6px"
+    heavy: "10px"
+
+elevation:
+  type: none
+  philosophy: "Flat. No depth — the composition lives in one plane."
+  tokens:
+    sm: "none"
+    md: "none"
+    lg: "none"
+
+motion:
+  duration:
+    fast: "120ms"
+    base: "240ms"
+    slow: "400ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0, 0, 0.2, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.4, 0, 0.2, 1)"
+  signature: "blocks slide/resize along grid axes; only horizontal/vertical movement"
+  reduced_motion_note: "Replace block resizing with instant color fills."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: ["grid: asymmetric black grid as the core layout device"]
+  glow: "none"
+  special:
+    - "Asymmetric grid of rectangles, a few filled with one primary each"
+    - "Only horizontal and vertical lines — never diagonal"
+    - "Generous white space between color blocks"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "6px solid #0a0a0a"
+      padding: "14px 28px"
+      background: "#d4001a"
+      color: "#ffffff"
+      shadow: "none"
+      font: "display, uppercase"
+      hover: "background: #b00016"
+      active: "background: #8a0011"
+      focus: "outline: 4px solid #0b3d91; outline-offset: 0"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "6px solid #0a0a0a"
+      padding: "14px 28px"
+      background: "#ffd500"
+      color: "#0a0a0a"
+      shadow: "none"
+    ghost:
+      background: "#ffffff"
+      color: "#0a0a0a"
+      border: "6px solid #0a0a0a"
+  input:
+    radius: "0px"
+    border: "3px solid #0a0a0a"
+    background: "#ffffff"
+    padding: "12px 14px"
+    placeholder_color: "#6a6a6a"
+    focus: "border-color: #0b3d91"
+    note: "Plain white well framed by black."
+  card:
+    radius: "0px"
+    border: "6px solid #0a0a0a"
+    background: "#ffffff"
+    padding: "24px"
+    shadow: "none"
+    hover: "background: #f0ede3"
+  container:
+    max_width: "1400px"
+    padding: "0px"
+    section_gap: "0px"
+    note: "Full-bleed grid; black lines abut directly with no gutter."
+  navbar:
+    height: "80px"
+    background: "#ffffff"
+    border: "0 0 6px 0 solid #0a0a0a"
+    shadow: "none"
+    blur: "none"
+    item_style: "blocks separated by 6px black dividers; one item may be a primary fill"
+    note: "Reads as the top band of the composition."
+  sidebar:
+    width: "280px"
+    background: "#ffd500"
+    border: "0 6px 0 0 solid #0a0a0a"
+    item_style: "stacked blocks divided by black lines; active block = red"
+  modal:
+    radius: "0px"
+    background: "#ffffff"
+    border: "10px solid #0a0a0a"
+    shadow: "none"
+    overlay: "rgba(10,10,10,0.6)"
+  badge:
+    radius: "0px"
+    border: "3px solid #0a0a0a"
+    background: "#0b3d91"
+    color: "#ffffff"
+    padding: "2px 8px"
+    font: "display, uppercase"
+  table:
+    header_background: "#0a0a0a"
+    row_border: "3px solid #0a0a0a"
+    zebra: "none"
+    cell_padding: "12px 16px"
+  tabs:
+    indicator: "active tab filled with a primary; others white"
+    radius: "0px"
+    active: "background #d4001a; color #ffffff; border 6px solid #0a0a0a"
+    inactive: "background #ffffff; border 6px solid #0a0a0a"
+
+iconography:
+  style: filled
+  stroke_width: "6px"
+  library: "geometric block icons built from rectangles"
+  note: "Construct icons from primary-color rectangles and black bars."
+
+imagery:
+  treatment: ["sharp-crop", "high-contrast"]
+  border_radius: "0px"
+  filter: "none"
+  note: "Images sit inside grid cells framed by thick black; consider duotone in a primary."
+
+guidelines:
+  do:
+    - "Build layouts from an asymmetric black grid"
+    - "Fill only a few cells with pure primaries"
+    - "Keep most of the canvas white"
+    - "Use only horizontal and vertical lines"
+  dont:
+    - "Don't use diagonals, curves, or rounded corners"
+    - "Don't use non-primary colors or gradients"
+    - "Don't fill every cell — restraint is the point"
+
+implementation_hints:
+  css_variables_prefix: "--ds-"
+  framework_agnostic: true
+  tailwind_note: "Use CSS grid with thick borders as gridlines (gap + black background trick, or explicit borders); restrict palette to 3 primaries + black + white."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap"
+  accessibility_note: "Primary red/blue on white meet contrast; ensure text on yellow is black, and red/blue text passes 4.5:1."

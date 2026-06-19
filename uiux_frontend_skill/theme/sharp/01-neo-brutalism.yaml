@@ -1,0 +1,306 @@
+# Neo-Brutalism — sharp category. See theme/_schema/style.schema.yaml for field meaning.
+
+identity:
+  id: neo-brutalism
+  name: Neo-Brutalism
+  category: sharp
+  version: "1.0.0"
+  primary_mode: both
+  summary: Thick solid outlines, pure-black hard-drop shadows with no blur, and high-contrast color blocks on sharp 0px corners.
+  description: >
+    Anti-establishment but structured. Heavy borders carry the layout, shadows
+    are offset solid blocks rather than soft glows, and color is used in flat,
+    confident slabs. Nothing is subtle.
+  keywords: [brutalist, high-contrast, hard-shadow, flat-color, bold-border, raw]
+  mood: [aggressive, confident, playful, raw, energetic]
+  use_cases: [designer portfolios, creator-economy platforms, streetwear brands, indie SaaS landing pages]
+  avoid_when: [data-dense enterprise dashboards, audiences needing a calm/soft tone, dense long-form reading apps]
+  references: [Gumroad redesign, Figma brutalist UI kits, web brutalism movement]
+
+typography:
+  font_families:
+    display:
+      stack: "'Archivo Black', system-ui, sans-serif"
+      source: google-fonts
+      weights: [400]
+      note: Single ultra-heavy weight used for headlines and CTAs.
+    body:
+      stack: "'Space Grotesk', system-ui, sans-serif"
+      source: google-fonts
+      weights: [400, 500, 700]
+    mono:
+      stack: "'Space Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400, 700]
+  scale:
+    base_size: "16px"
+    ratio: 1.333
+    steps:
+      display: "4.209rem"
+      h1: "3.157rem"
+      h2: "2.369rem"
+      h3: "1.777rem"
+      h4: "1.333rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 1.0
+    normal: 1.4
+    relaxed: 1.6
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "0em"
+    wide: "0.08em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: uppercase
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "3px 3px 0 #000000"
+    highlight:
+      color: "#ffde00"
+      style: marker
+    per_role:
+      display: { text_transform: uppercase, text_shadow: "4px 4px 0 #000000" }
+      body: { text_transform: none }
+
+color:
+  light:
+    recommended: true
+    background: "#fffdf5"
+    surface: "#ffffff"
+    surface_alt: "#ffde00"
+    text_primary: "#000000"
+    text_secondary: "#1a1a1a"
+    text_muted: "#555555"
+    text_inverse: "#ffffff"
+    border: "#000000"
+    accent: "#ff5470"
+    accent_secondary: "#00e0c6"
+    accent_tertiary: "#5b5bff"
+    interactive:
+      default: "#ff5470"
+      hover: "#ff2d55"
+      active: "#e0204a"
+      focus_ring: "#5b5bff"
+      disabled: "#cccccc"
+    status:
+      error: "#ff0000"
+      warning: "#ff8c00"
+      success: "#00c853"
+      info: "#2962ff"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients: {}
+    note: Black on yellow/white passes AA easily. Keep text pure black; borders pure black.
+  dark:
+    recommended: true
+    background: "#0a0a0a"
+    surface: "#161616"
+    surface_alt: "#ffde00"
+    text_primary: "#ffffff"
+    text_secondary: "#e0e0e0"
+    text_muted: "#999999"
+    text_inverse: "#000000"
+    border: "#ffffff"
+    accent: "#ffde00"
+    accent_secondary: "#00e0c6"
+    accent_tertiary: "#ff5470"
+    interactive:
+      default: "#ffde00"
+      hover: "#ffe94d"
+      active: "#e6c700"
+      focus_ring: "#00e0c6"
+      disabled: "#444444"
+    status:
+      error: "#ff5470"
+      warning: "#ffb000"
+      success: "#00e676"
+      info: "#5b8cff"
+    overlay: "rgba(0,0,0,0.8)"
+    gradients: {}
+    note: In dark mode borders/shadows flip to white. Accent yellow surfaces keep black text.
+
+radius:
+  philosophy: "border-radius 0 everywhere — corners stay sharp"
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "4px", "8px", "16px", "24px", "32px", "48px", "64px", "96px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1200px"
+  density: comfortable
+
+border:
+  default_width: "3px"
+  style: solid
+  philosophy: "Thick black (or white in dark mode) outlines are the primary structural element."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "3px"
+    heavy: "5px"
+
+elevation:
+  type: hard-drop
+  philosophy: "Solid offset shadows, zero blur, pure black. Hover pulls the element into its shadow."
+  tokens:
+    sm: "2px 2px 0 0 #000000"
+    md: "4px 4px 0 0 #000000"
+    lg: "8px 8px 0 0 #000000"
+  dark_tokens:
+    sm: "2px 2px 0 0 #ffffff"
+    md: "4px 4px 0 0 #ffffff"
+    lg: "8px 8px 0 0 #ffffff"
+
+motion:
+  duration:
+    fast: "80ms"
+    base: "120ms"
+    slow: "200ms"
+  easing:
+    standard: "cubic-bezier(0.2, 0, 0, 1)"
+    entrance: "cubic-bezier(0, 0, 0.2, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+  signature: "snappy and instant — minimal easing, press = translate into shadow"
+  reduced_motion_note: "Disable translate-on-hover; keep instant state changes."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: ["dot-grid: optional 1px black dots on background"]
+  glow: "none"
+  special:
+    - "Press interaction: translate(Npx, Npx) toward shadow offset, then remove shadow"
+    - "Sticker/label motifs with thick borders and slight rotation"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "3px solid #000000"
+      padding: "12px 24px"
+      background: "#ff5470"
+      color: "#000000"
+      shadow: "4px 4px 0 0 #000000"
+      font: "display, uppercase"
+      hover: "transform: translate(2px,2px); box-shadow: 2px 2px 0 0 #000000"
+      active: "transform: translate(4px,4px); box-shadow: none"
+      focus: "outline: 3px solid #5b5bff; outline-offset: 2px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "3px solid #000000"
+      padding: "12px 24px"
+      background: "#ffffff"
+      color: "#000000"
+      shadow: "4px 4px 0 0 #000000"
+    ghost:
+      background: "transparent"
+      color: "#000000"
+      border: "3px solid #000000"
+  input:
+    radius: "0px"
+    border: "3px solid #000000"
+    background: "#ffffff"
+    padding: "12px 16px"
+    placeholder_color: "#555555"
+    focus: "box-shadow: 4px 4px 0 0 #5b5bff"
+    note: "No rounded corners; focus shows a colored hard shadow."
+  card:
+    radius: "0px"
+    border: "3px solid #000000"
+    background: "#ffffff"
+    padding: "24px"
+    shadow: "8px 8px 0 0 #000000"
+    hover: "transform: translate(2px,2px); box-shadow: 6px 6px 0 0 #000000"
+  container:
+    max_width: "1200px"
+    padding: "24px"
+    section_gap: "64px"
+    note: "Generous gaps between blocky sections."
+  navbar:
+    height: "72px"
+    background: "#ffde00"
+    border: "0 0 3px 0 solid #000000"
+    shadow: "0 4px 0 0 #000000"
+    blur: "none"
+    item_style: "uppercase display font, hover underline thick 3px"
+    note: "Sticky bar reads as a solid color slab with a hard bottom edge."
+  sidebar:
+    width: "260px"
+    background: "#ffffff"
+    border: "0 3px 0 0 solid #000000"
+    item_style: "block rows with 3px bottom borders; active row = accent fill"
+  modal:
+    radius: "0px"
+    background: "#ffffff"
+    border: "3px solid #000000"
+    shadow: "12px 12px 0 0 #000000"
+    overlay: "rgba(0,0,0,0.6)"
+  badge:
+    radius: "0px"
+    border: "2px solid #000000"
+    background: "#ffde00"
+    color: "#000000"
+    padding: "2px 8px"
+    font: "mono, uppercase"
+  table:
+    header_background: "#000000"
+    row_border: "2px solid #000000"
+    zebra: "none"
+    cell_padding: "12px 16px"
+  tabs:
+    indicator: "active tab gets accent fill + 3px black border, others transparent"
+    radius: "0px"
+    active: "background #ff5470; border 3px solid #000000"
+    inactive: "background transparent; border 3px solid #000000"
+
+iconography:
+  style: filled
+  stroke_width: "3px"
+  library: "Phosphor (bold) or custom heavy-stroke icons"
+  note: "Thick, chunky icons that match border weight."
+
+imagery:
+  treatment: [sharp-crop, high-contrast, thick-border]
+  border_radius: "0px"
+  filter: "contrast(1.1)"
+  note: "Frame images with the same 3px black border; optional duotone for cohesion."
+
+guidelines:
+  do:
+    - "Use solid offset shadows with zero blur"
+    - "Keep all corners at 0px"
+    - "Commit to high-contrast flat color blocks"
+    - "Make borders thick and consistent (3px)"
+  dont:
+    - "Don't use soft/blurred drop shadows"
+    - "Don't round corners"
+    - "Don't use subtle gradients or pastel washes"
+    - "Don't mix thin and thick borders randomly"
+
+implementation_hints:
+  css_variables_prefix: "--nb-"
+  framework_agnostic: true
+  tailwind_note: "Map shadow tokens to a custom boxShadow scale; set borderRadius.DEFAULT to 0. Use ring utilities off."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+  accessibility_note: "Pure black text on light/yellow surfaces is very high contrast; ensure focus rings remain visible against accent fills."

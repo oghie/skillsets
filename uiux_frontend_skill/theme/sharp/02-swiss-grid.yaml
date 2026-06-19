@@ -1,0 +1,296 @@
+# Swiss International Typographic Grid — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: swiss-grid
+  name: Swiss International Typographic Grid
+  category: sharp
+  version: "1.0.0"
+  primary_mode: both
+  summary: Absolute fidelity to a mathematical grid, large sans-serif type, and negative space as the only separator.
+  description: >
+    Every container is a pure rectangle aligned to a strict column grid.
+    Hierarchy comes from type size and whitespace, not from borders or color.
+    Red is the lone accent against black and white.
+  keywords: [swiss, international-typographic, grid, helvetica, whitespace, minimal]
+  mood: [precise, rational, calm, authoritative]
+  use_cases: [financial analytics dashboards, architecture firms, news portals, editorial systems]
+  avoid_when: [playful consumer apps, brands needing warmth or whimsy, dense skeuomorphic experiences]
+  references: [Josef Müller-Brockmann, Helvetica, International Typographic Style]
+
+typography:
+  font_families:
+    display:
+      stack: "'Helvetica Neue', 'Inter', Arial, sans-serif"
+      source: system
+      weights: [400, 700]
+      note: Helvetica/Neue Haas is canonical; Inter is the free substitute.
+    body:
+      stack: "'Inter', 'Helvetica Neue', Arial, sans-serif"
+      source: google-fonts
+      weights: [400, 500, 700]
+  scale:
+    base_size: "16px"
+    ratio: 1.5
+    steps:
+      display: "5.063rem"
+      h1: "3.375rem"
+      h2: "2.25rem"
+      h3: "1.5rem"
+      h4: "1.25rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.6875rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.05
+    normal: 1.4
+    relaxed: 1.6
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.06em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "none"
+      style: none
+    per_role:
+      overline: { text_transform: uppercase }
+
+color:
+  light:
+    recommended: true
+    background: "#ffffff"
+    surface: "#ffffff"
+    surface_alt: "#f2f2f2"
+    text_primary: "#111111"
+    text_secondary: "#444444"
+    text_muted: "#767676"
+    text_inverse: "#ffffff"
+    border: "#111111"
+    accent: "#e3000f"
+    accent_secondary: "#111111"
+    accent_tertiary: "#767676"
+    interactive:
+      default: "#e3000f"
+      hover: "#c00009"
+      active: "#a30008"
+      focus_ring: "#111111"
+      disabled: "#cccccc"
+    status:
+      error: "#e3000f"
+      warning: "#b25e00"
+      success: "#0a7d33"
+      info: "#0050b3"
+    overlay: "rgba(17,17,17,0.5)"
+    gradients: {}
+    note: Red used sparingly as the single accent. Hierarchy via type scale + whitespace, not color.
+  dark:
+    recommended: true
+    background: "#0d0d0d"
+    surface: "#161616"
+    surface_alt: "#1f1f1f"
+    text_primary: "#f4f4f4"
+    text_secondary: "#bbbbbb"
+    text_muted: "#888888"
+    text_inverse: "#0d0d0d"
+    border: "#f4f4f4"
+    accent: "#ff3b30"
+    accent_secondary: "#f4f4f4"
+    accent_tertiary: "#888888"
+    interactive:
+      default: "#ff3b30"
+      hover: "#ff5b52"
+      active: "#e0241a"
+      focus_ring: "#f4f4f4"
+      disabled: "#3a3a3a"
+    status:
+      error: "#ff3b30"
+      warning: "#ff9f0a"
+      success: "#30d158"
+      info: "#409cff"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients: {}
+    note: Same restraint in dark; red brightens slightly to hold contrast.
+
+radius:
+  philosophy: "Pure rectangles. border-radius 0."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "64px", "96px", "128px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "32px"
+    max_width: "1280px"
+  density: airy
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Hairline rules used only to delineate the grid; whitespace does most of the separating."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: none
+  philosophy: "No shadows. Depth is implied by the grid and whitespace alone."
+  tokens:
+    sm: "none"
+    md: "none"
+    lg: "none"
+
+motion:
+  duration:
+    fast: "100ms"
+    base: "160ms"
+    slow: "240ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0, 0, 0.2, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.4, 0, 0.2, 1)"
+  signature: "restrained and linear — motion never draws attention"
+  reduced_motion_note: "Cross-fades only; no movement."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: ["column-grid overlay: optional thin guides during layout"]
+  glow: "none"
+  special:
+    - "Baseline grid alignment for all type"
+    - "Asymmetric layouts balanced by whitespace"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "none"
+      padding: "12px 24px"
+      background: "#e3000f"
+      color: "#ffffff"
+      shadow: "none"
+      font: "body, medium"
+      hover: "background: #c00009"
+      active: "background: #a30008"
+      focus: "outline: 2px solid #111111; outline-offset: 2px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #111111"
+      padding: "12px 24px"
+      background: "transparent"
+      color: "#111111"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#e3000f"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #111111"
+    background: "#ffffff"
+    padding: "10px 12px"
+    placeholder_color: "#767676"
+    focus: "border-color: #e3000f"
+    note: "Single hairline underline or full box; no rounding."
+  card:
+    radius: "0px"
+    border: "1px solid #e0e0e0"
+    background: "#ffffff"
+    padding: "32px"
+    shadow: "none"
+    hover: "border-color: #111111"
+  container:
+    max_width: "1280px"
+    padding: "32px"
+    section_gap: "96px"
+    note: "Wide margins; sections separated by whitespace."
+  navbar:
+    height: "64px"
+    background: "#ffffff"
+    border: "0 0 1px 0 solid #111111"
+    shadow: "none"
+    blur: "none"
+    item_style: "small caps labels, generous letter-spacing, hover red underline"
+    note: "Hairline bottom rule only."
+  sidebar:
+    width: "240px"
+    background: "#ffffff"
+    border: "0 1px 0 0 solid #e0e0e0"
+    item_style: "left-aligned text rows, active marked with red bar"
+  modal:
+    radius: "0px"
+    background: "#ffffff"
+    border: "1px solid #111111"
+    shadow: "none"
+    overlay: "rgba(17,17,17,0.5)"
+  badge:
+    radius: "0px"
+    border: "1px solid #111111"
+    background: "transparent"
+    color: "#111111"
+    padding: "2px 8px"
+    font: "body, uppercase, wide"
+  table:
+    header_background: "#ffffff"
+    row_border: "1px solid #e0e0e0"
+    zebra: "none"
+    cell_padding: "12px 16px"
+  tabs:
+    indicator: "2px red underline under active tab"
+    radius: "0px"
+    active: "color #111111; border-bottom 2px solid #e3000f"
+    inactive: "color #767676; border-bottom 2px solid transparent"
+
+iconography:
+  style: outline
+  stroke_width: "1.5px"
+  library: "Feather or custom geometric line icons"
+  note: "Minimal, geometric, consistent stroke."
+
+imagery:
+  treatment: [sharp-crop, grid-aligned, high-contrast]
+  border_radius: "0px"
+  filter: "none"
+  note: "Full-bleed or grid-cell images; black-and-white photography fits well."
+
+guidelines:
+  do:
+    - "Align everything to a strict column + baseline grid"
+    - "Let whitespace carry hierarchy"
+    - "Limit color to black, white, and one red accent"
+    - "Use large, confident type"
+  dont:
+    - "Don't add decorative shadows or borders"
+    - "Don't round corners"
+    - "Don't introduce a second accent color"
+
+implementation_hints:
+  css_variables_prefix: "--sw-"
+  framework_agnostic: true
+  tailwind_note: "Use a 12-col grid, disable shadows, set a single accent color, and a generous spacing scale."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+  accessibility_note: "High black/white contrast is excellent; ensure red accent meets 4.5:1 when used on text."

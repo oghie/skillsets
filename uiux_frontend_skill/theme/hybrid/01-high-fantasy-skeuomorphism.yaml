@@ -1,0 +1,321 @@
+# High Fantasy / Medieval Skeuomorphism — hybrid category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: high-fantasy-skeuomorphism
+  name: High Fantasy Medieval Skeuomorphism
+  category: hybrid
+  version: "1.0.0"
+  primary_mode: dark
+  summary: Raster-textured fantasy UI — riveted metal buttons, aged wood/parchment panels, and engraved serif/blackletter type for total immersion.
+  description: >
+    The interface is a physical artifact from an epic-fantasy world. Buttons look
+    like forged metal with rivets, panels are carved wood or weathered stone, and
+    headings are engraved serif or blackletter. The goal is psychological
+    immersion — a portal into the fiction, not a software app.
+  keywords: [fantasy, medieval, skeuomorphism, ornate, engraved, wood, metal, immersive, gothic]
+  mood: [epic, ornate, immersive, heroic, ancient]
+  use_cases: [AAA game promo sites, fantasy film campaigns, TTRPG companions, fantasy MMO portals]
+  avoid_when: [productivity/SaaS tools, minimalist brands, accessibility-first or text-heavy apps]
+  references: [Lord of the Rings, Skyrim, The Witcher, Diablo menus, illuminated manuscripts]
+
+typography:
+  font_families:
+    display:
+      stack: "'Cinzel Decorative', 'Cinzel', serif"
+      source: google-fonts
+      weights: [700, 900]
+      note: Engraved Roman capitals for titles; reserve blackletter for special accents.
+    heading:
+      stack: "'Cinzel', 'Trajan Pro', serif"
+      source: google-fonts
+      weights: [500, 700]
+    body:
+      stack: "'EB Garamond', 'Garamond', serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+    mono:
+      stack: "'IM Fell English', serif"
+      source: google-fonts
+      weights: [400]
+      note: For 'inscribed' numerals/labels.
+  scale:
+    base_size: "17px"
+    ratio: 1.333
+    steps:
+      display: "5.378rem"
+      h1: "4.035rem"
+      h2: "3.026rem"
+      h3: "2.27rem"
+      h4: "1.703rem"
+      body_lg: "1.25rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.8125rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 1.15
+    normal: 1.6
+    relaxed: 1.8
+  letter_spacing:
+    tight: "0em"
+    normal: "0.02em"
+    wide: "0.14em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 1px 0 #00000099, 0 2px 3px rgba(0,0,0,0.6)"
+    highlight:
+      color: "#c9a227"
+      style: box
+    per_role:
+      display: { text_transform: uppercase, letter_spacing: "0.14em", text_shadow: "0 1px 1px #2a1a08, 0 2px 4px rgba(0,0,0,0.7)" }
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: true
+    background: "#e8dcc0"
+    surface: "#f2e8d0"
+    surface_alt: "#ddccab"
+    text_primary: "#3a2a14"
+    text_secondary: "#5c4424"
+    text_muted: "#8a6f48"
+    text_inverse: "#f2e8d0"
+    border: "#7a5a2e"
+    accent: "#9a2b1e"
+    accent_secondary: "#1f5a3a"
+    accent_tertiary: "#b8860b"
+    interactive:
+      default: "#9a2b1e"
+      hover: "#7e2218"
+      active: "#641a12"
+      focus_ring: "#b8860b"
+      disabled: "#c4b290"
+    status:
+      error: "#9a2b1e"
+      warning: "#b8860b"
+      success: "#1f5a3a"
+      info: "#2a4a6a"
+    overlay: "rgba(58,42,20,0.5)"
+    gradients:
+      parchment: "radial-gradient(circle at 50% 40%, #f6eed6 0%, #e2d2ab 100%)"
+    note: "Light variant = aged parchment/scroll. Warm vellum with oxblood, forest, and gold heraldry accents."
+  dark:
+    recommended: true
+    background: "#1a120a"
+    surface: "#2a1d10"
+    surface_alt: "#352510"
+    text_primary: "#ecdcb8"
+    text_secondary: "#c4a877"
+    text_muted: "#8f7a52"
+    text_inverse: "#1a120a"
+    border: "#6a4a22"
+    accent: "#c9a227"
+    accent_secondary: "#b5402f"
+    accent_tertiary: "#2f7a52"
+    interactive:
+      default: "#c9a227"
+      hover: "#dcb63a"
+      active: "#a8851c"
+      focus_ring: "#b5402f"
+      disabled: "#4a3a22"
+    status:
+      error: "#c0392b"
+      warning: "#c9a227"
+      success: "#3c8a5c"
+      info: "#3a6a8a"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients:
+      wood: "linear-gradient(180deg, #3a2810 0%, #241608 100%)"
+      gold: "linear-gradient(180deg, #e6c84e 0%, #c9a227 45%, #8a6a14 100%)"
+    note: Dark mahogany wood + forged metal; antique gold is the primary heraldic accent, oxblood for warnings.
+
+radius:
+  philosophy: "Mostly hard/ornamental — corners are framed by carved or metal borders, occasionally slightly rounded like worn edges."
+  default: "4px"
+  scale:
+    none: "0px"
+    sm: "3px"
+    md: "6px"
+    lg: "10px"
+    xl: "16px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "72px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "32px"
+    max_width: "1200px"
+  density: comfortable
+
+border:
+  default_width: "2px"
+  style: solid
+  philosophy: "Ornate framed borders — carved wood, beveled metal, or filigree corners (use border-image with raster textures)."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "4px"
+    heavy: "8px"
+
+elevation:
+  type: bevel
+  philosophy: "Raster-lit bevels and inner glow make metal/wood look forged and dimensional; deep shadow grounds panels."
+  tokens:
+    sm: "0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,235,180,0.3)"
+    md: "0 6px 14px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,235,180,0.35), inset 0 -2px 4px rgba(0,0,0,0.4)"
+    lg: "0 16px 36px rgba(0,0,0,0.6), inset 0 2px 0 rgba(255,235,180,0.4), inset 0 -3px 6px rgba(0,0,0,0.5)"
+  dark_tokens:
+    sm: "0 2px 4px rgba(0,0,0,0.6), inset 0 1px 0 rgba(201,162,39,0.25)"
+    md: "0 6px 14px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,162,39,0.3), inset 0 -2px 4px rgba(0,0,0,0.6)"
+    lg: "0 16px 36px rgba(0,0,0,0.8), inset 0 2px 0 rgba(201,162,39,0.35), inset 0 -3px 6px rgba(0,0,0,0.7)"
+
+motion:
+  duration:
+    fast: "150ms"
+    base: "320ms"
+    slow: "600ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "weighty and ceremonial — panels unfurl like scrolls, metal glints on hover, torch-flicker ambience"
+  reduced_motion_note: "Disable flicker/glint and scroll-unfurl; use simple fades."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "raster wood-grain / parchment / metal textures as backgrounds (PNG/SVG)"
+  overlays: ["vignette", "grime: light", "torch-glow ambience"]
+  patterns: ["filigree corner ornaments", "heraldic motifs"]
+  glow: "warm gold rim-light / ember glow on key elements"
+  special:
+    - "Raster textures (wood, stone, hammered metal, parchment) are core — not flat color"
+    - "Riveted metal buttons and filigree/border-image frames"
+    - "Engraved/embossed text via layered text-shadow"
+    - "Heraldic crests, wax seals, and ornamental dividers"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "4px"
+      border: "2px solid #6a4a22"
+      padding: "12px 26px"
+      background: "linear-gradient(180deg, #e6c84e 0%, #c9a227 45%, #8a6a14 100%)"
+      color: "#2a1d08"
+      shadow: "0 4px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,245,200,0.6), inset 0 -2px 3px rgba(0,0,0,0.4)"
+      font: "heading, uppercase"
+      hover: "filter: brightness(1.08); gold glint"
+      active: "transform: translateY(1px); box-shadow inset 0 2px 4px rgba(0,0,0,0.5)"
+      focus: "outline: 2px solid #b5402f; outline-offset: 3px"
+    secondary:
+      shape: rectangle
+      radius: "4px"
+      border: "2px solid #6a4a22"
+      padding: "12px 26px"
+      background: "linear-gradient(180deg, #3a2810 0%, #241608 100%)"
+      color: "#ecdcb8"
+      shadow: "0 3px 6px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,162,39,0.25)"
+    ghost:
+      background: "transparent"
+      color: "#c9a227"
+      border: "1px solid #6a4a22"
+  input:
+    radius: "3px"
+    border: "2px solid #6a4a22"
+    background: "#241608"
+    padding: "12px 16px"
+    placeholder_color: "#8f7a52"
+    focus: "border-color: #c9a227; box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)"
+    note: "Inset 'carved' field; consider a parchment-textured variant in light mode."
+  card:
+    radius: "6px"
+    border: "4px solid #6a4a22"
+    background: "linear-gradient(180deg, #2a1d10 0%, #1f1409 100%)"
+    padding: "28px"
+    shadow: "0 16px 36px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,162,39,0.25)"
+    hover: "box-shadow: 0 20px 44px rgba(0,0,0,0.75)"
+  container:
+    max_width: "1200px"
+    padding: "32px"
+    section_gap: "72px"
+    note: "Panels framed like portals/altarpieces; ornamental dividers between sections."
+  navbar:
+    height: "80px"
+    background: "linear-gradient(180deg, #2a1d10 0%, #1a120a 100%)"
+    border: "0 0 4px 0 solid #6a4a22"
+    shadow: "0 4px 16px rgba(0,0,0,0.6)"
+    blur: "none"
+    item_style: "engraved uppercase serif labels; active item gold underline/crest"
+    note: "Reads like a carved banner or stone lintel; central heraldic crest logo."
+  sidebar:
+    width: "280px"
+    background: "linear-gradient(180deg, #241608 0%, #1a120a 100%)"
+    border: "0 4px 0 0 solid #6a4a22"
+    item_style: "scroll/tome rows; active row illuminated gold with rivets"
+  modal:
+    radius: "8px"
+    background: "linear-gradient(180deg, #2a1d10 0%, #1f1409 100%)"
+    border: "6px solid #6a4a22"
+    shadow: "0 32px 80px rgba(0,0,0,0.85)"
+    overlay: "rgba(0,0,0,0.6)"
+  badge:
+    radius: "3px"
+    border: "1px solid #8a6a14"
+    background: "linear-gradient(180deg, #e6c84e 0%, #c9a227 100%)"
+    color: "#2a1d08"
+    padding: "2px 10px"
+    font: "heading, uppercase"
+  table:
+    header_background: "#352510"
+    row_border: "1px solid #4a3a22"
+    zebra: "#241608"
+    cell_padding: "12px 18px"
+  tabs:
+    indicator: "active tab is an illuminated gold-framed plaque"
+    radius: "4px"
+    active: "background gold gradient; color #2a1d08; rivets"
+    inactive: "background #2a1d10; color #8f7a52"
+
+iconography:
+  style: engraved
+  stroke_width: "2px"
+  library: "heraldic / fantasy glyphs, runes, crests"
+  note: "Gold or engraved icons; swords, shields, scrolls, runes."
+
+imagery:
+  treatment: ["high-contrast", "duotone", "grain"]
+  border_radius: "4px"
+  filter: "sepia(0.2) contrast(1.1) brightness(0.95)"
+  note: "Painterly fantasy art framed in ornate borders; warm torch-lit grade; vignette."
+
+guidelines:
+  do:
+    - "Use real raster textures (wood, metal, parchment, stone)"
+    - "Frame elements with ornate/riveted borders"
+    - "Engrave headings with layered text-shadow"
+    - "Lead the dark palette with antique gold + oxblood"
+  dont:
+    - "Don't use flat modern minimalism"
+    - "Don't use bright neon or pastel colors"
+    - "Don't overload body text with blackletter (keep it readable)"
+
+implementation_hints:
+  css_variables_prefix: "--fant-"
+  framework_agnostic: true
+  tailwind_note: "Use background-image textures + border-image for ornate frames; gold/wood as gradient tokens; bevels as custom boxShadow; keep blackletter for accents only."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cinzel+Decorative:wght@700;900&family=EB+Garamond:wght@400;500;600&family=IM+Fell+English&display=swap"
+  accessibility_note: "Ornate serifs + textures hurt legibility — keep body copy in clean Garamond at adequate size/contrast; provide text-shadow that doesn't reduce contrast; honor reduced-motion for flicker."

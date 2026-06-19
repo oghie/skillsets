@@ -1,0 +1,306 @@
+# Soft Neumorphism — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: soft-neumorphism
+  name: Soft Neumorphism
+  category: rounded
+  version: "1.0.0"
+  primary_mode: both
+  summary: Elements extruded from a single-color background using paired light/dark shadows — soft, monochromatic, tactile.
+  description: >
+    Everything appears pressed out of (or into) the same surface. The defining
+    rule — element background MUST equal the page background — with one light
+    shadow (top-left) and one dark shadow (bottom-right), both derived from that
+    base color, creating a subtle embossed/debossed look.
+  keywords: [neumorphism, soft-ui, embossed, debossed, monochromatic, extruded, tactile]
+  mood: [soft, calm, minimal, refined, quiet]
+  use_cases: [audio/DAW software, advanced calculators, smart-device controls, minimalist dashboards]
+  avoid_when: [content needing strong contrast, accessibility-critical apps, data-dense UIs]
+  references: [neumorphism / soft UI trend, neumorphism.io, skeuomorphic-minimalist hybrid]
+
+typography:
+  font_families:
+    display:
+      stack: "'Poppins', 'Inter', sans-serif"
+      source: google-fonts
+      weights: [500, 600]
+    body:
+      stack: "'Inter', system-ui, sans-serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+  scale:
+    base_size: "16px"
+    ratio: 1.2
+    steps:
+      display: "2.986rem"
+      h1: "2.488rem"
+      h2: "2.074rem"
+      h3: "1.728rem"
+      h4: "1.44rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 600
+    black: 600
+  line_height:
+    tight: 1.25
+    normal: 1.55
+    relaxed: 1.7
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.04em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "none"
+      style: none
+    per_role:
+      overline: { text_transform: uppercase, letter_spacing: "0.04em" }
+
+color:
+  light:
+    recommended: true
+    background: "#e0e5ec"
+    surface: "#e0e5ec"
+    surface_alt: "#d6dbe3"
+    text_primary: "#4a5568"
+    text_secondary: "#6b7280"
+    text_muted: "#9aa3b2"
+    text_inverse: "#e0e5ec"
+    border: "transparent"
+    accent: "#6d7bf5"
+    accent_secondary: "#f57b9c"
+    accent_tertiary: "#3dc9b0"
+    interactive:
+      default: "#6d7bf5"
+      hover: "#5b6af0"
+      active: "#4a59e0"
+      focus_ring: "#6d7bf5"
+      disabled: "#b8bfca"
+    status:
+      error: "#e05c6b"
+      warning: "#e0a04a"
+      success: "#4ab088"
+      info: "#5b8cf0"
+    overlay: "rgba(74,85,104,0.35)"
+    gradients: {}
+    note: "CRITICAL: surface MUST equal background (#e0e5ec). Shadows are derived light (#ffffff) + dark (#a3b1c6) from this base. Accent color used only sparingly for active states."
+  dark:
+    recommended: true
+    background: "#2c2f36"
+    surface: "#2c2f36"
+    surface_alt: "#33363e"
+    text_primary: "#d8dce4"
+    text_secondary: "#aab0bc"
+    text_muted: "#71777f"
+    text_inverse: "#2c2f36"
+    border: "transparent"
+    accent: "#8a96ff"
+    accent_secondary: "#ff9ab5"
+    accent_tertiary: "#4fdcc2"
+    interactive:
+      default: "#8a96ff"
+      hover: "#9aa5ff"
+      active: "#7884f0"
+      focus_ring: "#8a96ff"
+      disabled: "#45484f"
+    status:
+      error: "#f07685"
+      warning: "#f0b566"
+      success: "#5cc89c"
+      info: "#76a4ff"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients: {}
+    note: "CRITICAL: surface MUST equal background (#2c2f36). Derived light shadow (#383b44), dark shadow (#202227)."
+
+radius:
+  philosophy: "Soft, generous rounding so the extrusion reads smoothly."
+  default: "20px"
+  scale:
+    none: "0px"
+    sm: "12px"
+    md: "20px"
+    lg: "28px"
+    xl: "40px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "64px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1080px"
+  density: comfortable
+
+border:
+  default_width: "0px"
+  style: none
+  philosophy: "No borders — depth comes entirely from the paired light/dark shadows."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "1px"
+    heavy: "2px"
+
+elevation:
+  type: soft
+  philosophy: "Convex (raised) = outer light+dark shadow. Concave (pressed) = inset light+dark shadow. Both derived from the base bg color."
+  tokens:
+    sm: "5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff"
+    md: "8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff"
+    lg: "12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff"
+  dark_tokens:
+    sm: "5px 5px 10px #202227, -5px -5px 10px #383b44"
+    md: "8px 8px 16px #202227, -8px -8px 16px #383b44"
+    lg: "12px 12px 24px #202227, -12px -12px 24px #383b44"
+
+motion:
+  duration:
+    fast: "120ms"
+    base: "240ms"
+    slow: "360ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "press toggles convex -> concave (outer shadow becomes inset)"
+  reduced_motion_note: "Keep instant convex/concave swap without scale animation."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: []
+  glow: "none"
+  special:
+    - "Convex/concave shadow pairs are the entire visual language"
+    - "Pressed/active states invert outer shadow to inset"
+    - "Toggles, knobs, and sliders feel physically embossed"
+
+components:
+  button:
+    primary:
+      shape: rounded
+      radius: "16px"
+      border: "none"
+      padding: "14px 28px"
+      background: "#e0e5ec"
+      color: "#6d7bf5"
+      shadow: "6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff"
+      font: "body, semibold"
+      hover: "box-shadow: 4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff"
+      active: "box-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff"
+      focus: "outline: 2px solid #6d7bf5; outline-offset: 4px"
+    secondary:
+      shape: rounded
+      radius: "16px"
+      border: "none"
+      padding: "14px 28px"
+      background: "#e0e5ec"
+      color: "#6b7280"
+      shadow: "inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff"
+    ghost:
+      background: "transparent"
+      color: "#6d7bf5"
+      border: "none"
+  input:
+    radius: "14px"
+    border: "none"
+    background: "#e0e5ec"
+    padding: "14px 18px"
+    placeholder_color: "#9aa3b2"
+    focus: "box-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff"
+    note: "Always concave (inset) — fields look pressed into the surface."
+  card:
+    radius: "24px"
+    border: "none"
+    background: "#e0e5ec"
+    padding: "28px"
+    shadow: "8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff"
+    hover: "box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff"
+  container:
+    max_width: "1080px"
+    padding: "24px"
+    section_gap: "48px"
+    note: "Same base color throughout; everything emerges from one surface."
+  navbar:
+    height: "68px"
+    background: "#e0e5ec"
+    border: "none"
+    shadow: "0 8px 16px #a3b1c6"
+    blur: "none"
+    item_style: "convex pill items; active item pressed (concave)"
+    note: "Bar is the same color as the page, lifted only by shadow."
+  sidebar:
+    width: "260px"
+    background: "#e0e5ec"
+    border: "none"
+    item_style: "rows raised convex; active row pressed concave"
+  modal:
+    radius: "28px"
+    background: "#e0e5ec"
+    border: "none"
+    shadow: "16px 16px 32px #a3b1c6, -16px -16px 32px #ffffff"
+    overlay: "rgba(74,85,104,0.35)"
+  badge:
+    radius: "999px"
+    border: "none"
+    background: "#e0e5ec"
+    color: "#6b7280"
+    padding: "4px 12px"
+    font: "body, semibold"
+  table:
+    header_background: "#e0e5ec"
+    row_border: "none"
+    zebra: "#d9dee6"
+    cell_padding: "14px 18px"
+  tabs:
+    indicator: "active tab pressed concave; inactive tabs convex"
+    radius: "14px"
+    active: "box-shadow inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff; color #6d7bf5"
+    inactive: "box-shadow 4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff"
+
+iconography:
+  style: outline
+  stroke_width: "2px"
+  library: "rounded line icons; can be embossed via subtle shadow"
+  note: "Soft, rounded; keep monochrome to match the surface."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "20px"
+  filter: "none"
+  note: "Images sit in concave wells; keep imagery muted to fit the soft palette."
+
+guidelines:
+  do:
+    - "Keep element background equal to page background"
+    - "Derive both shadows (light + dark) from the base color"
+    - "Use convex for raised, inset for pressed/inputs"
+    - "Use accent color only for active/important states"
+  dont:
+    - "Don't put neumorphic elements on a different-colored background (the effect breaks)"
+    - "Don't rely on it for primary text contrast — pair with real text colors"
+    - "Don't use borders"
+
+implementation_hints:
+  css_variables_prefix: "--neu-"
+  framework_agnostic: true
+  tailwind_note: "Define base, light-shadow, and dark-shadow color tokens; encode convex/concave as custom boxShadow tokens; element bg = page bg."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600&display=swap"
+  accessibility_note: "Neumorphism is notoriously low-contrast — its biggest weakness. Ensure ALL interactive elements have a clear non-shadow indicator (color/text) and that text meets 4.5:1; do not signal state with shadow alone."

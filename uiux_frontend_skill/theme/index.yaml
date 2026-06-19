@@ -1,0 +1,371 @@
+---
+meta:
+  description: Registry of all style definitions. Generated from the style files;
+    do not edit by hand.
+  total: 23
+  categories:
+    hybrid: 3
+    rounded: 10
+    sharp: 10
+styles:
+- id: high-fantasy-skeuomorphism
+  name: High Fantasy Medieval Skeuomorphism
+  category: hybrid
+  path: theme/hybrid/01-high-fantasy-skeuomorphism.yaml
+  primary_mode: dark
+  summary: Raster-textured fantasy UI — riveted metal buttons, aged wood/parchment
+    panels, and engraved serif/blackletter type for total immersion.
+  keywords:
+  - fantasy
+  - medieval
+  - skeuomorphism
+  - ornate
+  - engraved
+  - wood
+  - metal
+  - immersive
+  - gothic
+- id: diegetic-web-design
+  name: Diegetic Web Design
+  category: hybrid
+  path: theme/hybrid/02-diegetic-web-design.yaml
+  primary_mode: light
+  summary: UI designed as an in-universe physical object — a grimoire, a rolled treasure
+    map, or a tavern noticeboard — with wax seals and paper folds.
+  keywords:
+  - diegetic
+  - in-universe
+  - grimoire
+  - map
+  - tavern-board
+  - wax-seal
+  - paper
+  - immersive
+  - narrative
+- id: dark-fantasy-grunge
+  name: Dark Fantasy Grunge
+  category: hybrid
+  path: theme/hybrid/03-dark-fantasy-grunge.yaml
+  primary_mode: dark
+  summary: Grim skeuomorphism — obsidian stone and rusted iron, burnt-edged parchment,
+    with grime, ash, and blood-splatter overlays.
+  keywords:
+  - dark-fantasy
+  - grunge
+  - grim
+  - obsidian
+  - rusted-iron
+  - blood
+  - ash
+  - gothic
+  - souls-like
+- id: claymorphism
+  name: Tactile Claymorphism
+  category: rounded
+  path: theme/rounded/01-claymorphism.yaml
+  primary_mode: light
+  summary: Puffy 3D clay surfaces — everything rounded, with paired inner shadows
+    for a soft, inflated, pressable volume.
+  keywords:
+  - clay
+  - claymorphism
+  - 3d
+  - puffy
+  - soft
+  - pastel
+  - inflated
+  - tactile
+- id: perfect-squircle
+  name: Perfect Squircle (Super-Ellipse)
+  category: rounded
+  path: theme/rounded/02-perfect-squircle.yaml
+  primary_mode: both
+  summary: iOS-style superellipse corners with seamless straight-to-curve transitions,
+    clean surfaces, and restrained depth.
+  keywords:
+  - squircle
+  - superellipse
+  - ios
+  - smooth
+  - premium
+  - continuous-curvature
+  - clean
+- id: liquid-glassmorphism
+  name: Liquid Glassmorphism
+  category: rounded
+  path: theme/rounded/03-liquid-glassmorphism.yaml
+  primary_mode: both
+  summary: Frosted translucent glass cards with heavy corner rounding, floating over
+    slow-moving liquid blob gradients.
+  keywords:
+  - glass
+  - glassmorphism
+  - frosted
+  - blur
+  - translucent
+  - blob
+  - liquid
+  - depth
+- id: chunky-toy-ui
+  name: Chunky Toy UI
+  category: rounded
+  path: theme/rounded/04-chunky-toy-ui.yaml
+  primary_mode: light
+  summary: Plastic-toy interface — thick pill buttons, giant rounded icons, bright
+    colored drop shadows, and bouncy animation.
+  keywords:
+  - chunky
+  - toy
+  - gamified
+  - bouncy
+  - pill
+  - playful
+  - duolingo
+  - kids
+- id: organic-wabi-sabi
+  name: Organic Wabi-Sabi
+  category: rounded
+  path: theme/rounded/05-organic-wabi-sabi.yaml
+  primary_mode: light
+  summary: Intentionally asymmetric, non-geometric rounded forms like river stones,
+    paired with earth tones and grain texture.
+  keywords:
+  - wabi-sabi
+  - organic
+  - asymmetric
+  - earth-tones
+  - grain
+  - calm
+  - imperfect
+  - natural
+- id: aurora-holographic
+  name: Aurora Holographic UI
+  category: rounded
+  path: theme/rounded/06-aurora-holographic.yaml
+  primary_mode: dark
+  summary: Soft glowing mesh-gradient background (aurora) with extremely rounded,
+    semi-transparent cards floating over the light.
+  keywords:
+  - aurora
+  - holographic
+  - mesh-gradient
+  - glow
+  - iridescent
+  - dreamy
+  - dark
+  - ambient
+- id: soft-neumorphism
+  name: Soft Neumorphism
+  category: rounded
+  path: theme/rounded/07-soft-neumorphism.yaml
+  primary_mode: both
+  summary: Elements extruded from a single-color background using paired light/dark
+    shadows — soft, monochromatic, tactile.
+  keywords:
+  - neumorphism
+  - soft-ui
+  - embossed
+  - debossed
+  - monochromatic
+  - extruded
+  - tactile
+- id: biophilic-fluidity
+  name: Biophilic Fluidity
+  category: rounded
+  path: theme/rounded/08-biophilic-fluidity.yaml
+  primary_mode: light
+  summary: Nature-derived organic forms — cards and buttons with different radii per
+    corner, like leaves or petals, in living greens.
+  keywords:
+  - biophilic
+  - organic
+  - nature
+  - leaf
+  - fluid
+  - green
+  - growth
+  - asymmetric
+- id: y2k-bubblegum-pop
+  name: Y2K Bubblegum Pop
+  category: rounded
+  path: theme/rounded/09-y2k-bubblegum-pop.yaml
+  primary_mode: light
+  summary: Glossy bubblegum plastic — super-rounded, light-reflecting 3D elements,
+    chrome accents, and hot pink/purple chromatics.
+  keywords:
+  - y2k
+  - bubblegum
+  - glossy
+  - chrome
+  - holographic
+  - plastic
+  - sparkle
+  - retro-future
+- id: mid-century-pill
+  name: Mid-Century Modern Pill
+  category: rounded
+  path: theme/rounded/10-mid-century-pill.yaml
+  primary_mode: light
+  summary: Pill shapes (border-radius 999px) used everywhere — not just buttons but
+    images, tags, and nav — with retro pastel palettes.
+  keywords:
+  - mid-century
+  - pill
+  - capsule
+  - retro
+  - pastel
+  - mustard
+  - teal
+  - terracotta
+  - warm
+- id: neo-brutalism
+  name: Neo-Brutalism
+  category: sharp
+  path: theme/sharp/01-neo-brutalism.yaml
+  primary_mode: both
+  summary: Thick solid outlines, pure-black hard-drop shadows with no blur, and high-contrast
+    color blocks on sharp 0px corners.
+  keywords:
+  - brutalist
+  - high-contrast
+  - hard-shadow
+  - flat-color
+  - bold-border
+  - raw
+- id: swiss-grid
+  name: Swiss International Typographic Grid
+  category: sharp
+  path: theme/sharp/02-swiss-grid.yaml
+  primary_mode: both
+  summary: Absolute fidelity to a mathematical grid, large sans-serif type, and negative
+    space as the only separator.
+  keywords:
+  - swiss
+  - international-typographic
+  - grid
+  - helvetica
+  - whitespace
+  - minimal
+- id: monospace-crt-terminal
+  name: Monospace CRT Terminal (Tech-Noir)
+  category: sharp
+  path: theme/sharp/03-monospace-crt-terminal.yaml
+  primary_mode: dark
+  summary: Command-line aesthetic — pure black background, 1px hairlines, monospace
+    type, phosphor neon accents.
+  keywords:
+  - terminal
+  - crt
+  - monospace
+  - hacker
+  - phosphor
+  - hairline
+  - tech-noir
+- id: avant-garde-editorial
+  name: Avant-Garde High Editorial
+  category: sharp
+  path: theme/sharp/04-avant-garde-editorial.yaml
+  primary_mode: both
+  summary: Haute-couture magazine layout — asymmetric sharp-cropped imagery, oversized
+    overlapping serif type, no visible card borders.
+  keywords:
+  - editorial
+  - fashion
+  - magazine
+  - serif
+  - asymmetric
+  - overlap
+  - luxury
+- id: riot-grrrl-punk-zine
+  name: Riot Grrrl Punk Zine
+  category: sharp
+  path: theme/sharp/05-riot-grrrl-punk-zine.yaml
+  primary_mode: both
+  summary: Deliberately slanted type, torn-paper edges, roughly cut photo collage,
+    and photocopier texture.
+  keywords:
+  - punk
+  - zine
+  - collage
+  - photocopy
+  - ransom-note
+  - diy
+  - grunge
+  - slanted
+- id: hyper-minimalist-wireframe
+  name: Hyper-Minimalist Wireframe
+  category: sharp
+  path: theme/sharp/06-hyper-minimalist-wireframe.yaml
+  primary_mode: light
+  summary: A UI that looks unfinished on purpose — no fills, only 1px gray/black strokes
+    on sharp 0px corners.
+  keywords:
+  - wireframe
+  - blueprint
+  - lo-fi
+  - outline
+  - structural
+  - minimal
+  - hairline
+- id: retro-os-gui
+  name: Retro OS GUI (Windows 95 / Mac OS 9)
+  category: sharp
+  path: theme/sharp/07-retro-os-gui.yaml
+  primary_mode: light
+  summary: 90s operating-system aesthetic — gray bevels, hard raised/sunken edges,
+    classic system blue, sharp dialog windows.
+  keywords:
+  - retro
+  - windows95
+  - macos9
+  - bevel
+  - skeuomorphic-lite
+  - system-gray
+  - nostalgia
+- id: de-stijl-neoplasticism
+  name: De Stijl Neoplasticism
+  category: sharp
+  path: theme/sharp/08-de-stijl-neoplasticism.yaml
+  primary_mode: light
+  summary: Mondrian-inspired — bold black grid lines dividing the canvas into rectangles
+    filled with pure primary colors.
+  keywords:
+  - de-stijl
+  - mondrian
+  - neoplasticism
+  - primary-colors
+  - grid
+  - geometric
+  - art
+- id: japanese-cyber-metabolism
+  name: Japanese Cyber-Metabolism
+  category: sharp
+  path: theme/sharp/09-japanese-cyber-metabolism.yaml
+  primary_mode: both
+  summary: Dense modular layout (classic Japanese-web information density) fused with
+    modern cyber accents in tightly stacked sharp boxes.
+  keywords:
+  - japanese
+  - cyber
+  - modular
+  - dense
+  - metabolism
+  - information-dense
+  - neon
+  - capsule
+- id: industrial-scifi-hud
+  name: Industrial Sci-Fi HUD
+  category: sharp
+  path: theme/sharp/10-industrial-scifi-hud.yaml
+  primary_mode: dark
+  summary: Military / spacecraft heads-up display — geometric chamfered (45-degree
+    cut) edges, never rounded, with technical readouts.
+  keywords:
+  - hud
+  - sci-fi
+  - military
+  - chamfered
+  - telemetry
+  - cockpit
+  - technical
+  - brackets

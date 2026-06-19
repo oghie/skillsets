@@ -1,0 +1,308 @@
+# Tactile Claymorphism — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: claymorphism
+  name: Tactile Claymorphism
+  category: rounded
+  version: "1.0.0"
+  primary_mode: light
+  summary: Puffy 3D clay surfaces — everything rounded, with paired inner shadows for a soft, inflated, pressable volume.
+  description: >
+    UI elements look molded from soft clay. Large corner radii plus a double
+    inner shadow (one light, one dark) create a squishy, voluminous feel, with a
+    gentle outer drop shadow lifting elements off pastel backgrounds.
+  keywords: [clay, claymorphism, 3d, puffy, soft, pastel, inflated, tactile]
+  mood: [friendly, playful, soft, approachable, cheerful]
+  use_cases: [millennial fintech apps, education apps, personal task managers, onboarding flows]
+  avoid_when: [dense data dashboards, austere enterprise tools, high-contrast accessibility-first UIs]
+  references: [claymorphism trend, 3D illustration UI, Hype4 claymorphism article]
+
+typography:
+  font_families:
+    display:
+      stack: "'Quicksand', 'Nunito', sans-serif"
+      source: google-fonts
+      weights: [500, 700]
+      note: Rounded geometric sans matches the soft forms.
+    body:
+      stack: "'Nunito', 'Quicksand', sans-serif"
+      source: google-fonts
+      weights: [400, 600, 700]
+  scale:
+    base_size: "16px"
+    ratio: 1.25
+    steps:
+      display: "3.052rem"
+      h1: "2.441rem"
+      h2: "1.953rem"
+      h3: "1.563rem"
+      h4: "1.25rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 600
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.55
+    relaxed: 1.7
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.04em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#ffd6e7"
+      style: marker
+    per_role:
+      overline: { text_transform: uppercase, letter_spacing: "0.04em" }
+
+color:
+  light:
+    recommended: true
+    background: "#eef0fb"
+    surface: "#f7f8ff"
+    surface_alt: "#e6e9fa"
+    text_primary: "#3a3a5c"
+    text_secondary: "#6a6a8c"
+    text_muted: "#9a9ab8"
+    text_inverse: "#ffffff"
+    border: "#dfe2f5"
+    accent: "#7c6bff"
+    accent_secondary: "#ff8fb1"
+    accent_tertiary: "#5cd1c4"
+    interactive:
+      default: "#7c6bff"
+      hover: "#6a58f0"
+      active: "#5a48e0"
+      focus_ring: "#ff8fb1"
+      disabled: "#cfd2ea"
+    status:
+      error: "#ff6b8a"
+      warning: "#ffb25c"
+      success: "#5cd1a0"
+      info: "#6bb6ff"
+    overlay: "rgba(58,58,92,0.4)"
+    gradients:
+      clay: "linear-gradient(145deg, #ffffff 0%, #e6e9fa 100%)"
+    note: Soft pastel base. Accents are saturated but gentle; text is desaturated navy for warmth.
+  dark:
+    recommended: true
+    background: "#23233a"
+    surface: "#2c2c47"
+    surface_alt: "#34345a"
+    text_primary: "#eceaff"
+    text_secondary: "#b8b6d8"
+    text_muted: "#85839e"
+    text_inverse: "#23233a"
+    border: "#3a3a5c"
+    accent: "#9a8bff"
+    accent_secondary: "#ff9fc0"
+    accent_tertiary: "#6fe0d2"
+    interactive:
+      default: "#9a8bff"
+      hover: "#aa9bff"
+      active: "#8779f0"
+      focus_ring: "#ff9fc0"
+      disabled: "#3a3a5c"
+    status:
+      error: "#ff7d99"
+      warning: "#ffc070"
+      success: "#6fdcb0"
+      info: "#7fc0ff"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients:
+      clay: "linear-gradient(145deg, #34345a 0%, #23233a 100%)"
+    note: Deep indigo clay; inner shadows use lighter/darker indigo to keep the molded look.
+
+radius:
+  philosophy: "Everything is generously rounded — soft clay has no sharp edges."
+  default: "24px"
+  scale:
+    none: "0px"
+    sm: "12px"
+    md: "20px"
+    lg: "28px"
+    xl: "40px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "40px", "56px", "80px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1120px"
+  density: comfortable
+
+border:
+  default_width: "0px"
+  style: none
+  philosophy: "No outlines — form is defined by shadow volume, not borders."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: inner
+  philosophy: "Paired inner shadows (light top-left, dark bottom-right) inflate the surface; soft outer shadow lifts it."
+  tokens:
+    sm: "8px 8px 16px rgba(58,58,92,0.12), inset 2px 2px 4px rgba(255,255,255,0.9), inset -2px -2px 4px rgba(58,58,92,0.08)"
+    md: "12px 12px 24px rgba(58,58,92,0.16), inset 3px 3px 6px rgba(255,255,255,0.9), inset -3px -3px 6px rgba(58,58,92,0.1)"
+    lg: "20px 20px 40px rgba(58,58,92,0.2), inset 4px 4px 8px rgba(255,255,255,0.95), inset -4px -4px 8px rgba(58,58,92,0.12)"
+  dark_tokens:
+    sm: "8px 8px 16px rgba(0,0,0,0.4), inset 2px 2px 4px rgba(255,255,255,0.06), inset -2px -2px 4px rgba(0,0,0,0.4)"
+    md: "12px 12px 24px rgba(0,0,0,0.45), inset 3px 3px 6px rgba(255,255,255,0.07), inset -3px -3px 6px rgba(0,0,0,0.45)"
+    lg: "20px 20px 40px rgba(0,0,0,0.5), inset 4px 4px 8px rgba(255,255,255,0.08), inset -4px -4px 8px rgba(0,0,0,0.5)"
+
+motion:
+  duration:
+    fast: "120ms"
+    base: "240ms"
+    slow: "400ms"
+  easing:
+    standard: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+  signature: "soft squish — elements compress on press and spring back"
+  reduced_motion_note: "Replace squish/spring with simple opacity/scale fades."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: []
+  glow: "none"
+  special:
+    - "Double inner shadow to inflate every surface"
+    - "Press = scale(0.97) + deepened inner shadow"
+    - "Often paired with 3D clay illustrations/icons"
+
+components:
+  button:
+    primary:
+      shape: pill
+      radius: "999px"
+      border: "none"
+      padding: "14px 28px"
+      background: "#7c6bff"
+      color: "#ffffff"
+      shadow: "6px 6px 14px rgba(124,107,255,0.4), inset 2px 2px 4px rgba(255,255,255,0.4), inset -2px -2px 4px rgba(0,0,0,0.1)"
+      font: "display, bold"
+      hover: "transform: translateY(-1px)"
+      active: "transform: scale(0.97)"
+      focus: "outline: 3px solid rgba(255,143,177,0.6); outline-offset: 3px"
+    secondary:
+      shape: pill
+      radius: "999px"
+      border: "none"
+      padding: "14px 28px"
+      background: "#f7f8ff"
+      color: "#7c6bff"
+      shadow: "8px 8px 16px rgba(58,58,92,0.12), inset 2px 2px 4px rgba(255,255,255,0.9), inset -2px -2px 4px rgba(58,58,92,0.08)"
+    ghost:
+      background: "transparent"
+      color: "#7c6bff"
+      border: "none"
+  input:
+    radius: "20px"
+    border: "none"
+    background: "#eef0fb"
+    padding: "14px 18px"
+    placeholder_color: "#9a9ab8"
+    focus: "box-shadow: inset 3px 3px 6px rgba(58,58,92,0.12), inset -3px -3px 6px rgba(255,255,255,0.9)"
+    note: "Sunken (debossed) field via inset shadow."
+  card:
+    radius: "28px"
+    border: "none"
+    background: "#f7f8ff"
+    padding: "28px"
+    shadow: "12px 12px 24px rgba(58,58,92,0.16), inset 3px 3px 6px rgba(255,255,255,0.9), inset -3px -3px 6px rgba(58,58,92,0.1)"
+    hover: "transform: translateY(-2px)"
+  container:
+    max_width: "1120px"
+    padding: "24px"
+    section_gap: "56px"
+    note: "Roomy, soft spacing."
+  navbar:
+    height: "72px"
+    background: "#f7f8ff"
+    border: "none"
+    shadow: "0 8px 24px rgba(58,58,92,0.1)"
+    blur: "none"
+    item_style: "pill nav items; active item filled accent with clay shadow"
+    note: "Floating rounded bar."
+  sidebar:
+    width: "260px"
+    background: "#eef0fb"
+    border: "none"
+    item_style: "rounded rows; active row raised clay pill"
+  modal:
+    radius: "32px"
+    background: "#f7f8ff"
+    border: "none"
+    shadow: "20px 20px 50px rgba(58,58,92,0.25)"
+    overlay: "rgba(58,58,92,0.4)"
+  badge:
+    radius: "999px"
+    border: "none"
+    background: "#ffd6e7"
+    color: "#c0436b"
+    padding: "4px 12px"
+    font: "body, bold"
+  table:
+    header_background: "#eef0fb"
+    row_border: "none"
+    zebra: "#f2f3fd"
+    cell_padding: "14px 18px"
+  tabs:
+    indicator: "active tab is a raised clay pill"
+    radius: "999px"
+    active: "background #7c6bff; color #ffffff; clay shadow"
+    inactive: "background transparent; color #6a6a8c"
+
+iconography:
+  style: duotone
+  stroke_width: "2px"
+  library: "rounded 3D-ish icons or duotone rounded sets"
+  note: "Soft, rounded, chunky icons; 3D clay icons fit best."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "24px"
+  filter: "none"
+  note: "Rounded image masks; pairs well with 3D clay illustrations."
+
+guidelines:
+  do:
+    - "Use large radii and paired inner shadows"
+    - "Keep a soft pastel palette"
+    - "Add a gentle outer shadow to lift elements"
+    - "Make presses squish and spring"
+  dont:
+    - "Don't use sharp corners or hard outlines"
+    - "Don't use harsh high-contrast colors"
+    - "Don't flatten the inner shadow (it's what makes it clay)"
+
+implementation_hints:
+  css_variables_prefix: "--clay-"
+  framework_agnostic: true
+  tailwind_note: "Encode the multi-part inner+outer shadows as custom boxShadow tokens; large borderRadius scale; pastel color tokens."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Nunito:wght@400;600;700&display=swap"
+  accessibility_note: "Pastel-on-pastel can fail contrast; verify text colors meet 4.5:1 and don't rely on shadow alone to indicate state."

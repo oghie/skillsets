@@ -1,0 +1,308 @@
+# Liquid Glassmorphism — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: liquid-glassmorphism
+  name: Liquid Glassmorphism
+  category: rounded
+  version: "1.0.0"
+  primary_mode: both
+  summary: Frosted translucent glass cards with heavy corner rounding, floating over slow-moving liquid blob gradients.
+  description: >
+    Cards are semi-transparent frosted glass (backdrop blur + subtle white
+    border + soft shadow), layered above a colorful, slowly drifting blob/mesh
+    background. Depth comes from translucency and blur, not solid fills.
+  keywords: [glass, glassmorphism, frosted, blur, translucent, blob, liquid, depth]
+  mood: [airy, modern, dreamy, premium, light]
+  use_cases: [music streaming apps, weather apps, consumer tech product landing pages, dashboards over imagery]
+  avoid_when: [text-heavy reading apps, low-end devices (blur cost), strict accessibility/contrast contexts]
+  references: [macOS/iOS frosted panels, glassmorphism trend, Apple Liquid Glass, dribbble glass UI]
+
+typography:
+  font_families:
+    display:
+      stack: "'Poppins', 'Inter', system-ui, sans-serif"
+      source: google-fonts
+      weights: [500, 600, 700]
+    body:
+      stack: "'Inter', system-ui, sans-serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+  scale:
+    base_size: "16px"
+    ratio: 1.25
+    steps:
+      display: "3.052rem"
+      h1: "2.441rem"
+      h2: "1.953rem"
+      h3: "1.563rem"
+      h4: "1.25rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 600
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.55
+    relaxed: 1.7
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.03em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 1px 2px rgba(0,0,0,0.15)"
+    highlight:
+      color: "rgba(255,255,255,0.3)"
+      style: box
+    per_role:
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: true
+    background: "#eaf0ff"
+    surface: "rgba(255,255,255,0.55)"
+    surface_alt: "rgba(255,255,255,0.35)"
+    text_primary: "#1a2238"
+    text_secondary: "#445069"
+    text_muted: "#7a83a8"
+    text_inverse: "#ffffff"
+    border: "rgba(255,255,255,0.6)"
+    accent: "#5b7cfa"
+    accent_secondary: "#ff7eb6"
+    accent_tertiary: "#46d6c8"
+    interactive:
+      default: "#5b7cfa"
+      hover: "#4a6bf0"
+      active: "#3a5ae0"
+      focus_ring: "#ff7eb6"
+      disabled: "rgba(120,130,160,0.4)"
+    status:
+      error: "#ff5d73"
+      warning: "#ffae42"
+      success: "#3ecf8e"
+      info: "#5b7cfa"
+    overlay: "rgba(26,34,56,0.35)"
+    gradients:
+      blob: "radial-gradient(circle at 20% 30%, #ff9ecd 0%, transparent 45%), radial-gradient(circle at 80% 20%, #8ab4ff 0%, transparent 45%), radial-gradient(circle at 50% 80%, #7ef0d6 0%, transparent 50%)"
+    note: Glass surfaces are rgba white over a soft pastel blob background. Keep text dark for legibility on glass.
+  dark:
+    recommended: true
+    background: "#0c1024"
+    surface: "rgba(255,255,255,0.08)"
+    surface_alt: "rgba(255,255,255,0.05)"
+    text_primary: "#f2f5ff"
+    text_secondary: "#c0c8e0"
+    text_muted: "#8089a8"
+    text_inverse: "#0c1024"
+    border: "rgba(255,255,255,0.16)"
+    accent: "#7b9cff"
+    accent_secondary: "#ff9ecd"
+    accent_tertiary: "#5ce0d0"
+    interactive:
+      default: "#7b9cff"
+      hover: "#90abff"
+      active: "#6a8bf0"
+      focus_ring: "#ff9ecd"
+      disabled: "rgba(255,255,255,0.12)"
+    status:
+      error: "#ff6f84"
+      warning: "#ffbb55"
+      success: "#4cdc9a"
+      info: "#7b9cff"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients:
+      blob: "radial-gradient(circle at 25% 25%, #5b2a8c 0%, transparent 45%), radial-gradient(circle at 75% 30%, #1d3a8c 0%, transparent 45%), radial-gradient(circle at 55% 80%, #0a6e6e 0%, transparent 50%)"
+    note: Dark glass — low-opacity white fills over deep saturated blobs. Border is a faint white hairline.
+
+radius:
+  philosophy: "Heavily rounded glass panes. Large radii reinforce the liquid, pebble-like feel."
+  default: "24px"
+  scale:
+    none: "0px"
+    sm: "14px"
+    md: "22px"
+    lg: "32px"
+    xl: "44px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "44px", "64px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1140px"
+  density: comfortable
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "A 1px translucent-white inner border catches light along the glass edge."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "1.5px"
+    heavy: "2px"
+
+elevation:
+  type: glass-blur
+  philosophy: "Backdrop blur + soft diffuse shadow + bright edge define floating glass. No hard shadows."
+  tokens:
+    sm: "0 4px 16px rgba(26,34,56,0.1), inset 0 1px 0 rgba(255,255,255,0.5)"
+    md: "0 8px 32px rgba(26,34,56,0.14), inset 0 1px 0 rgba(255,255,255,0.5)"
+    lg: "0 16px 48px rgba(26,34,56,0.18), inset 0 1px 0 rgba(255,255,255,0.6)"
+  dark_tokens:
+    sm: "0 4px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12)"
+    md: "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12)"
+    lg: "0 16px 48px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.16)"
+
+motion:
+  duration:
+    fast: "200ms"
+    base: "400ms"
+    slow: "800ms"
+  easing:
+    standard: "cubic-bezier(0.22, 1, 0.36, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.3, 0.64, 1)"
+  signature: "slow drifting background blobs; gentle parallax of glass layers"
+  reduced_motion_note: "Freeze blob animation; keep static gradient background."
+
+texture_and_effects:
+  backdrop_filter: "blur(16px) saturate(160%)"
+  noise: "very subtle grain on glass, opacity 0.03, to avoid banding"
+  overlays: []
+  patterns: []
+  glow: "soft colored bloom from background blobs"
+  special:
+    - "backdrop-filter: blur() is mandatory on glass surfaces"
+    - "Animated multi-radial blob/mesh background"
+    - "Bright 1px inner top border to simulate light hitting glass"
+    - "Layered glass panes at different blur/opacity for depth"
+
+components:
+  button:
+    primary:
+      shape: pill
+      radius: "999px"
+      border: "1px solid rgba(255,255,255,0.4)"
+      padding: "12px 24px"
+      background: "rgba(91,124,250,0.85)"
+      color: "#ffffff"
+      shadow: "0 8px 24px rgba(91,124,250,0.4)"
+      font: "display, semibold"
+      hover: "background: rgba(91,124,250,0.95)"
+      active: "transform: scale(0.98)"
+      focus: "outline: 3px solid rgba(255,126,182,0.5); outline-offset: 2px"
+    secondary:
+      shape: pill
+      radius: "999px"
+      border: "1px solid rgba(255,255,255,0.6)"
+      padding: "12px 24px"
+      background: "rgba(255,255,255,0.45)"
+      color: "#1a2238"
+      shadow: "0 4px 16px rgba(26,34,56,0.1)"
+    ghost:
+      background: "transparent"
+      color: "#5b7cfa"
+      border: "none"
+  input:
+    radius: "16px"
+    border: "1px solid rgba(255,255,255,0.5)"
+    background: "rgba(255,255,255,0.35)"
+    padding: "12px 16px"
+    placeholder_color: "rgba(68,80,105,0.7)"
+    focus: "border-color: rgba(91,124,250,0.8); box-shadow: 0 0 0 3px rgba(91,124,250,0.2)"
+    note: "Glass field; apply backdrop-filter for true frost."
+  card:
+    radius: "32px"
+    border: "1px solid rgba(255,255,255,0.5)"
+    background: "rgba(255,255,255,0.55)"
+    padding: "28px"
+    shadow: "0 8px 32px rgba(26,34,56,0.14), inset 0 1px 0 rgba(255,255,255,0.5)"
+    hover: "transform: translateY(-2px)"
+  container:
+    max_width: "1140px"
+    padding: "24px"
+    section_gap: "64px"
+    note: "Generous spacing so glass layers can overlap and breathe."
+  navbar:
+    height: "64px"
+    background: "rgba(255,255,255,0.45)"
+    border: "0 0 1px 0 solid rgba(255,255,255,0.5)"
+    shadow: "0 4px 24px rgba(26,34,56,0.1)"
+    blur: "blur(16px) saturate(160%)"
+    item_style: "pill nav items; active item a brighter glass pill"
+    note: "Floating frosted bar."
+  sidebar:
+    width: "260px"
+    background: "rgba(255,255,255,0.35)"
+    border: "0 1px 0 0 solid rgba(255,255,255,0.4)"
+    item_style: "rounded glass rows; active row brighter frost + accent text"
+  modal:
+    radius: "32px"
+    background: "rgba(255,255,255,0.65)"
+    border: "1px solid rgba(255,255,255,0.6)"
+    shadow: "0 24px 64px rgba(26,34,56,0.25)"
+    overlay: "rgba(26,34,56,0.35)"
+  badge:
+    radius: "999px"
+    border: "1px solid rgba(255,255,255,0.5)"
+    background: "rgba(255,255,255,0.4)"
+    color: "#1a2238"
+    padding: "3px 10px"
+    font: "body, semibold"
+  table:
+    header_background: "rgba(255,255,255,0.3)"
+    row_border: "1px solid rgba(255,255,255,0.3)"
+    zebra: "rgba(255,255,255,0.15)"
+    cell_padding: "12px 16px"
+  tabs:
+    indicator: "active tab a brighter glass pill"
+    radius: "999px"
+    active: "background rgba(255,255,255,0.6); color #1a2238"
+    inactive: "color #445069"
+
+iconography:
+  style: outline
+  stroke_width: "1.75px"
+  library: "rounded line icons (Lucide / Phosphor light)"
+  note: "Thin rounded icons; can be filled white at low opacity on glass."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "24px"
+  filter: "saturate(1.1)"
+  note: "Vivid imagery sits behind/within glass; rounded masks; let color bleed through blur."
+
+guidelines:
+  do:
+    - "Use backdrop-filter blur on every glass surface"
+    - "Place a colorful blob/mesh behind glass to give it something to refract"
+    - "Add a bright 1px top inner border"
+    - "Keep text dark/light enough to pass contrast over glass"
+  dont:
+    - "Don't use glass over flat single-color backgrounds (nothing to blur)"
+    - "Don't stack too many blur layers (performance)"
+    - "Don't rely on glass alone for text contrast"
+
+implementation_hints:
+  css_variables_prefix: "--glass-"
+  framework_agnostic: true
+  tailwind_note: "Use backdrop-blur + bg-white/40 + border-white/50; define blob background as a utility; provide a no-backdrop-filter fallback (solid translucent fill)."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+  accessibility_note: "Translucent text backgrounds are a contrast risk — add a semi-opaque scrim behind text and test against the lightest area of the blob."

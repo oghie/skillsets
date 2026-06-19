@@ -1,0 +1,8 @@
+interface:
+  display_name: "UIUX Frontend Engineering"
+  short_description: "Design and build tested interfaces"
+  brand_color: "#0F766E"
+  default_prompt: "Use $uiux-frontend-engineering to design, implement, and validate a frontend UI with UX evidence, accessibility, responsive behavior, and theme tokens."
+
+policy:
+  allow_implicit_invocation: true

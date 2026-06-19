@@ -1,0 +1,306 @@
+# Organic Wabi-Sabi — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: organic-wabi-sabi
+  name: Organic Wabi-Sabi
+  category: rounded
+  version: "1.0.0"
+  primary_mode: light
+  summary: Intentionally asymmetric, non-geometric rounded forms like river stones, paired with earth tones and grain texture.
+  description: >
+    Beauty in imperfection. Corners are rounded unevenly (different radius per
+    corner), shapes feel hand-formed like pebbles or puddles, the palette is
+    warm and earthy, and a soft paper grain texture grounds everything.
+  keywords: [wabi-sabi, organic, asymmetric, earth-tones, grain, calm, imperfect, natural]
+  mood: [calm, grounded, natural, serene, warm]
+  use_cases: [mindfulness / mental-health platforms, natural skincare brands, slow-living journals, wellness apps]
+  avoid_when: [high-energy gaming, precise data tools, tech products needing a clinical feel]
+  references: [Japanese wabi-sabi aesthetic, ceramics, natural earth palettes, organic blob shapes]
+
+typography:
+  font_families:
+    display:
+      stack: "'Fraunces', 'Cormorant Garamond', serif"
+      source: google-fonts
+      weights: [300, 400, 500]
+      note: Soft optical serif with organic warmth.
+    body:
+      stack: "'Inter', 'Mulish', sans-serif"
+      source: google-fonts
+      weights: [400, 500]
+  scale:
+    base_size: "17px"
+    ratio: 1.272
+    steps:
+      display: "3.583rem"
+      h1: "2.817rem"
+      h2: "2.215rem"
+      h3: "1.741rem"
+      h4: "1.369rem"
+      body_lg: "1.2rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 500
+    black: 500
+  line_height:
+    tight: 1.25
+    normal: 1.65
+    relaxed: 1.85
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.08em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#e8dcc4"
+      style: marker
+    per_role:
+      display: { font_style: italic }
+      overline: { text_transform: uppercase, letter_spacing: "0.08em" }
+
+color:
+  light:
+    recommended: true
+    background: "#f3ede1"
+    surface: "#faf6ee"
+    surface_alt: "#ebe2d2"
+    text_primary: "#3a342b"
+    text_secondary: "#5c5446"
+    text_muted: "#8a8071"
+    text_inverse: "#faf6ee"
+    border: "#d6c9b3"
+    accent: "#a0764b"
+    accent_secondary: "#7a8466"
+    accent_tertiary: "#b5483a"
+    interactive:
+      default: "#a0764b"
+      hover: "#8a6440"
+      active: "#745234"
+      focus_ring: "#7a8466"
+      disabled: "#d0c6b6"
+    status:
+      error: "#b5483a"
+      warning: "#c08a3e"
+      success: "#6e8a52"
+      info: "#5c7a82"
+    overlay: "rgba(58,52,43,0.4)"
+    gradients: {}
+    note: Warm earth tones — clay, sage, terracotta, ochre on oatmeal paper. Muted and natural.
+  dark:
+    recommended: true
+    background: "#26221c"
+    surface: "#2f2a22"
+    surface_alt: "#383128"
+    text_primary: "#ede5d6"
+    text_secondary: "#c4baa6"
+    text_muted: "#8f8675"
+    text_inverse: "#26221c"
+    border: "#473f33"
+    accent: "#c89a6a"
+    accent_secondary: "#9aa680"
+    accent_tertiary: "#d06554"
+    interactive:
+      default: "#c89a6a"
+      hover: "#d6aa7c"
+      active: "#b0855a"
+      focus_ring: "#9aa680"
+      disabled: "#473f33"
+    status:
+      error: "#d06554"
+      warning: "#d6a558"
+      success: "#88a468"
+      info: "#7898a0"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients: {}
+    note: Dark earth — roasted browns and dim sage. Warm, low-glare, candle-lit feel.
+
+radius:
+  philosophy: "Asymmetric, hand-formed rounding — vary the radius per corner so shapes read as organic pebbles, not perfect rectangles."
+  default: "32px 40px 28px 44px"
+  scale:
+    none: "0px"
+    sm: "12px 18px 14px 20px"
+    md: "28px 36px 24px 40px"
+    lg: "44px 56px 40px 60px"
+    xl: "60% 40% 55% 45% / 50% 55% 45% 50%"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "40px", "64px", "96px"]
+  grid:
+    columns: 12
+    gutter: "32px"
+    margin: "32px"
+    max_width: "1040px"
+  density: airy
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Soft, low-contrast borders if any; forms are usually defined by gentle fills and shadow."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "1.5px"
+    heavy: "2px"
+
+elevation:
+  type: soft
+  philosophy: "Very soft, diffuse, warm-tinted shadows — like objects resting on a table in soft light."
+  tokens:
+    sm: "0 4px 12px rgba(58,52,43,0.08)"
+    md: "0 8px 24px rgba(58,52,43,0.1)"
+    lg: "0 16px 40px rgba(58,52,43,0.12)"
+  dark_tokens:
+    sm: "0 4px 12px rgba(0,0,0,0.35)"
+    md: "0 8px 24px rgba(0,0,0,0.4)"
+    lg: "0 16px 40px rgba(0,0,0,0.45)"
+
+motion:
+  duration:
+    fast: "200ms"
+    base: "450ms"
+    slow: "800ms"
+  easing:
+    standard: "cubic-bezier(0.33, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "slow, breathing, gentle — like wind or water; nothing snaps"
+  reduced_motion_note: "Replace breathing/morph with static states."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "warm paper grain overlay, opacity 0.06"
+  overlays: ["grain"]
+  patterns: []
+  glow: "none"
+  special:
+    - "Per-corner uneven radii and blob border-radius (% syntax) for cards/avatars"
+    - "Subtle paper/clay grain texture across surfaces"
+    - "Hand-drawn underlines and imperfect dividers"
+
+components:
+  button:
+    primary:
+      shape: organic
+      radius: "20px 26px 18px 28px"
+      border: "none"
+      padding: "14px 28px"
+      background: "#a0764b"
+      color: "#faf6ee"
+      shadow: "0 4px 12px rgba(58,52,43,0.12)"
+      font: "body, medium"
+      hover: "background: #8a6440"
+      active: "transform: translateY(1px)"
+      focus: "outline: 2px solid #7a8466; outline-offset: 3px"
+    secondary:
+      shape: organic
+      radius: "20px 26px 18px 28px"
+      border: "1px solid #d6c9b3"
+      padding: "14px 28px"
+      background: "transparent"
+      color: "#3a342b"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#a0764b"
+      border: "none"
+  input:
+    radius: "18px 22px 16px 24px"
+    border: "1px solid #d6c9b3"
+    background: "#faf6ee"
+    padding: "14px 18px"
+    placeholder_color: "#8a8071"
+    focus: "border-color: #a0764b"
+    note: "Softly rounded, uneven field."
+  card:
+    radius: "32px 40px 28px 44px"
+    border: "none"
+    background: "#faf6ee"
+    padding: "28px"
+    shadow: "0 8px 24px rgba(58,52,43,0.1)"
+    hover: "transform: translateY(-2px)"
+  container:
+    max_width: "1040px"
+    padding: "32px"
+    section_gap: "96px"
+    note: "Lots of breathing room; slow vertical rhythm."
+  navbar:
+    height: "72px"
+    background: "rgba(243,237,225,0.85)"
+    border: "none"
+    shadow: "0 4px 16px rgba(58,52,43,0.06)"
+    blur: "blur(8px)"
+    item_style: "plain warm text links; active item underlined with a hand-drawn stroke"
+    note: "Quiet, unobtrusive."
+  sidebar:
+    width: "260px"
+    background: "#ebe2d2"
+    border: "none"
+    item_style: "organic rounded rows; active row soft clay fill"
+  modal:
+    radius: "40px 48px 36px 52px"
+    background: "#faf6ee"
+    border: "none"
+    shadow: "0 24px 60px rgba(58,52,43,0.2)"
+    overlay: "rgba(58,52,43,0.4)"
+  badge:
+    radius: "999px"
+    border: "none"
+    background: "#e8dcc4"
+    color: "#5c5446"
+    padding: "3px 12px"
+    font: "body, medium"
+  table:
+    header_background: "#ebe2d2"
+    row_border: "1px solid #e2d7c4"
+    zebra: "#f6f0e6"
+    cell_padding: "14px 18px"
+  tabs:
+    indicator: "hand-drawn underline stroke under active tab"
+    radius: "999px"
+    active: "color #a0764b; underline accent"
+    inactive: "color #8a8071"
+
+iconography:
+  style: hand-drawn
+  stroke_width: "1.5px"
+  library: "soft hand-drawn / organic line icons"
+  note: "Slightly imperfect, rounded line caps; nothing rigidly geometric."
+
+imagery:
+  treatment: ["grain", "rounded-mask"]
+  border_radius: "60% 40% 55% 45% / 50% 55% 45% 50%"
+  note: "Blob-masked imagery, warm color grade, paper grain over photos."
+
+guidelines:
+  do:
+    - "Vary corner radii to feel hand-formed"
+    - "Use a warm, muted earth palette"
+    - "Add subtle grain texture"
+    - "Give content generous breathing space"
+  dont:
+    - "Don't use perfectly symmetric geometry"
+    - "Don't use bright saturated or cold colors"
+    - "Don't use hard shadows or sharp corners"
+
+implementation_hints:
+  css_variables_prefix: "--ws-"
+  framework_agnostic: true
+  tailwind_note: "Use arbitrary border-radius values per corner; blob shapes via border-radius % syntax; grain via an overlay element; earthy color tokens."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&display=swap"
+  accessibility_note: "Muted earth tones can be low-contrast; verify text meets 4.5:1; ensure focus states are visible against warm fills."

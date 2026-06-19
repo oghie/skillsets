@@ -1,0 +1,9 @@
+flowchart LR
+  Plan[Plan: goals, scope, assumptions] --> Discover[Discover: research and evidence]
+  Discover --> Explore[Explore: alternatives and sketches]
+  Explore --> Define[Define: wireframes, IA, microcopy]
+  Define --> Design[Design: visual system and prototype]
+  Design --> Validate[Validate: test and measure]
+  Validate --> Deliver[Deliver: handoff, QA, release]
+  Validate -- iterate --> Define
+  Deliver -- product feedback --> Plan

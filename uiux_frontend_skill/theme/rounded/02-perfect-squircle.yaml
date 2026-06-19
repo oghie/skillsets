@@ -1,0 +1,306 @@
+# Perfect Squircle (Super-Ellipse) — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: perfect-squircle
+  name: Perfect Squircle (Super-Ellipse)
+  category: rounded
+  version: "1.0.0"
+  primary_mode: both
+  summary: iOS-style superellipse corners with seamless straight-to-curve transitions, clean surfaces, and restrained depth.
+  description: >
+    Not an ordinary rounded corner — a mathematically smooth squircle where the
+    transition from edge to curve is continuous (G2). Surfaces are clean and
+    light, shadows are soft and short, typography is precise. Premium calm.
+  keywords: [squircle, superellipse, ios, smooth, premium, continuous-curvature, clean]
+  mood: [calm, premium, precise, friendly, refined]
+  use_cases: [smartphone OS UIs, smart-home control apps, premium lifestyle apps, settings interfaces]
+  avoid_when: [edgy/brutalist brands, ultra-dense data tools, retro aesthetics]
+  references: [Apple Human Interface Guidelines, iOS app icons, Figma squircle, continuous corners]
+
+typography:
+  font_families:
+    display:
+      stack: "-apple-system, 'SF Pro Display', 'Inter', system-ui, sans-serif"
+      source: system
+      weights: [500, 600, 700]
+      note: SF Pro on Apple platforms; Inter is the closest free substitute.
+    body:
+      stack: "-apple-system, 'SF Pro Text', 'Inter', system-ui, sans-serif"
+      source: system
+      weights: [400, 500, 600]
+  scale:
+    base_size: "17px"
+    ratio: 1.2
+    steps:
+      display: "2.986rem"
+      h1: "2.488rem"
+      h2: "2.074rem"
+      h3: "1.728rem"
+      h4: "1.44rem"
+      body_lg: "1.2rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 600
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.47
+    relaxed: 1.65
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "-0.01em"
+    wide: "0.02em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#d6e4ff"
+      style: box
+    per_role:
+      overline: { text_transform: uppercase, letter_spacing: "0.02em" }
+
+color:
+  light:
+    recommended: true
+    background: "#f2f2f7"
+    surface: "#ffffff"
+    surface_alt: "#e9e9ef"
+    text_primary: "#1c1c1e"
+    text_secondary: "#3a3a3c"
+    text_muted: "#8e8e93"
+    text_inverse: "#ffffff"
+    border: "#d1d1d6"
+    accent: "#007aff"
+    accent_secondary: "#34c759"
+    accent_tertiary: "#ff9500"
+    interactive:
+      default: "#007aff"
+      hover: "#0a6fe0"
+      active: "#0a5cc0"
+      focus_ring: "#007aff"
+      disabled: "#c7c7cc"
+    status:
+      error: "#ff3b30"
+      warning: "#ff9500"
+      success: "#34c759"
+      info: "#007aff"
+    overlay: "rgba(0,0,0,0.4)"
+    gradients: {}
+    note: System light palette — neutral grays with iOS system accent colors. Clean and calm.
+  dark:
+    recommended: true
+    background: "#000000"
+    surface: "#1c1c1e"
+    surface_alt: "#2c2c2e"
+    text_primary: "#ffffff"
+    text_secondary: "#ebebf5"
+    text_muted: "#8e8e93"
+    text_inverse: "#000000"
+    border: "#38383a"
+    accent: "#0a84ff"
+    accent_secondary: "#30d158"
+    accent_tertiary: "#ff9f0a"
+    interactive:
+      default: "#0a84ff"
+      hover: "#3a9bff"
+      active: "#0a6fe0"
+      focus_ring: "#0a84ff"
+      disabled: "#3a3a3c"
+    status:
+      error: "#ff453a"
+      warning: "#ff9f0a"
+      success: "#30d158"
+      info: "#0a84ff"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients: {}
+    note: True-black/elevated-gray system dark palette with brighter system accents.
+
+radius:
+  philosophy: "Continuous-curvature squircles. Use superellipse corners, not plain border-radius, on large surfaces."
+  default: "16px"
+  scale:
+    none: "0px"
+    sm: "10px"
+    md: "16px"
+    lg: "22px"
+    xl: "34px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "4px", "8px", "12px", "16px", "20px", "32px", "44px", "64px"]
+  grid:
+    columns: 12
+    gutter: "16px"
+    margin: "20px"
+    max_width: "1080px"
+  density: comfortable
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Hairline separators only; surfaces are mostly borderless and defined by fill + soft shadow."
+  width:
+    hairline: "0.5px"
+    thin: "1px"
+    thick: "1.5px"
+    heavy: "2px"
+
+elevation:
+  type: soft
+  philosophy: "Short, soft, low-opacity shadows; subtle layering between system grays."
+  tokens:
+    sm: "0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08)"
+    md: "0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06)"
+    lg: "0 12px 32px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08)"
+  dark_tokens:
+    sm: "0 1px 2px rgba(0,0,0,0.4)"
+    md: "0 4px 12px rgba(0,0,0,0.5)"
+    lg: "0 12px 32px rgba(0,0,0,0.6)"
+
+motion:
+  duration:
+    fast: "150ms"
+    base: "300ms"
+    slow: "500ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "cubic-bezier(0.34, 1.3, 0.64, 1)"
+  signature: "smooth spring-based transitions, fluid sheet/modal slides"
+  reduced_motion_note: "Cross-fade instead of slide/spring."
+
+texture_and_effects:
+  backdrop_filter: "blur(20px) saturate(180%)"
+  noise: "none"
+  overlays: []
+  patterns: []
+  glow: "none"
+  special:
+    - "Squircle corners via SVG mask / superellipse, not plain radius, on app icons and large cards"
+    - "Frosted material for navigation/sheets (system blur)"
+    - "Grouped inset lists (iOS settings style)"
+
+components:
+  button:
+    primary:
+      shape: rounded
+      radius: "14px"
+      border: "none"
+      padding: "14px 22px"
+      background: "#007aff"
+      color: "#ffffff"
+      shadow: "none"
+      font: "body, bold"
+      hover: "filter: brightness(0.96)"
+      active: "filter: brightness(0.9); transform: scale(0.98)"
+      focus: "outline: 3px solid rgba(0,122,255,0.4); outline-offset: 2px"
+    secondary:
+      shape: rounded
+      radius: "14px"
+      border: "none"
+      padding: "14px 22px"
+      background: "rgba(0,122,255,0.12)"
+      color: "#007aff"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#007aff"
+      border: "none"
+  input:
+    radius: "12px"
+    border: "1px solid #d1d1d6"
+    background: "#ffffff"
+    padding: "12px 16px"
+    placeholder_color: "#8e8e93"
+    focus: "border-color: #007aff; box-shadow: 0 0 0 3px rgba(0,122,255,0.15)"
+    note: "Rounded field; grouped inset variant for lists."
+  card:
+    radius: "22px"
+    border: "none"
+    background: "#ffffff"
+    padding: "20px"
+    shadow: "0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06)"
+    hover: "transform: translateY(-1px); box-shadow: 0 12px 32px rgba(0,0,0,0.12)"
+  container:
+    max_width: "1080px"
+    padding: "20px"
+    section_gap: "44px"
+    note: "Comfortable spacing; grouped sections."
+  navbar:
+    height: "56px"
+    background: "rgba(255,255,255,0.8)"
+    border: "0 0 0.5px 0 solid #d1d1d6"
+    shadow: "none"
+    blur: "blur(20px) saturate(180%)"
+    item_style: "title centered, actions as text/SF symbols; large-title scroll variant"
+    note: "Frosted system bar."
+  sidebar:
+    width: "280px"
+    background: "rgba(242,242,247,0.8)"
+    border: "0 0.5px 0 0 solid #d1d1d6"
+    item_style: "rounded selection pill; SF-symbol + label rows"
+  modal:
+    radius: "34px"
+    background: "#ffffff"
+    border: "none"
+    shadow: "0 12px 40px rgba(0,0,0,0.2)"
+    overlay: "rgba(0,0,0,0.4)"
+  badge:
+    radius: "999px"
+    border: "none"
+    background: "#ff3b30"
+    color: "#ffffff"
+    padding: "2px 8px"
+    font: "body, bold"
+  table:
+    header_background: "transparent"
+    row_border: "0.5px solid #d1d1d6"
+    zebra: "none"
+    cell_padding: "12px 16px"
+  tabs:
+    indicator: "segmented control: active segment gets white squircle pill on gray track"
+    radius: "999px"
+    active: "background #ffffff; color #1c1c1e; soft shadow"
+    inactive: "color #8e8e93"
+
+iconography:
+  style: outline
+  stroke_width: "1.5px"
+  library: "SF Symbols (Apple) or rounded line set like Lucide"
+  note: "Consistent optical weight; rounded line caps."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "22px"
+  filter: "none"
+  note: "Squircle-masked thumbnails; app-icon style superellipse masks."
+
+guidelines:
+  do:
+    - "Use continuous squircle corners on large surfaces and icons"
+    - "Keep shadows soft and short"
+    - "Use system grays + a single accent"
+    - "Apply frosted blur to navigation and sheets"
+  dont:
+    - "Don't use hard offset shadows"
+    - "Don't over-saturate; stay calm and neutral"
+    - "Don't mix many radii inconsistently"
+
+implementation_hints:
+  css_variables_prefix: "--sq-"
+  framework_agnostic: true
+  tailwind_note: "Plain border-radius approximates squircles; for true superellipse use an SVG mask or the 'corner-shape: squircle' CSS where supported. Use system font stack."
+  font_loading:
+    - "System fonts (SF Pro on Apple); fallback https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  accessibility_note: "Respect Dynamic Type scaling; maintain 4.5:1 contrast; frosted bars need a solid fallback for legibility."

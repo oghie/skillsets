@@ -1,0 +1,11 @@
+flowchart TB
+  Theme[Theme style file] --> Tokens[Semantic tokens]
+  Tokens --> Layout[Grid, spacing, radius, typography]
+  Tokens --> Components[Component variants and states]
+  Layout --> Mobile[Mobile constraints]
+  Layout --> Desktop[Desktop constraints]
+  Components --> Accessibility[Accessibility contracts]
+  Components --> QA[Visual QA screenshots]
+  Mobile --> QA
+  Desktop --> QA
+  Accessibility --> QA

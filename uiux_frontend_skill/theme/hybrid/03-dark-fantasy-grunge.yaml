@@ -1,0 +1,317 @@
+# Dark Fantasy Grunge — hybrid category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: dark-fantasy-grunge
+  name: Dark Fantasy Grunge
+  category: hybrid
+  version: "1.0.0"
+  primary_mode: dark
+  summary: Grim skeuomorphism — obsidian stone and rusted iron, burnt-edged parchment, with grime, ash, and blood-splatter overlays.
+  description: >
+    The bleak cousin of high-fantasy. Warm wood is replaced by black obsidian,
+    corroded iron, and charred parchment. Surfaces are scarred and stained;
+    accents are ember-orange, blood-crimson, and sickly necrotic green. Heavy,
+    oppressive, and atmospheric.
+  keywords: [dark-fantasy, grunge, grim, obsidian, rusted-iron, blood, ash, gothic, souls-like]
+  mood: [grim, oppressive, foreboding, brutal, atmospheric]
+  use_cases: [dark-fantasy game promos (souls-like / Diablo), metal band sites, horror experiences, grimdark TTRPGs]
+  avoid_when: [family/kids products, wellness/finance apps, bright consumer brands, accessibility-first apps]
+  references: [Dark Souls, Elden Ring, Diablo, grimdark art, distressed metal textures]
+
+typography:
+  font_families:
+    display:
+      stack: "'Cinzel Decorative', 'Cinzel', serif"
+      source: google-fonts
+      weights: [700, 900]
+    heading:
+      stack: "'Metamorphous', 'Cinzel', serif"
+      source: google-fonts
+      weights: [400]
+      note: Weathered display serif for ominous headings.
+    body:
+      stack: "'EB Garamond', 'Spectral', serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+  scale:
+    base_size: "17px"
+    ratio: 1.333
+    steps:
+      display: "5.378rem"
+      h1: "4.035rem"
+      h2: "3.026rem"
+      h3: "2.27rem"
+      h4: "1.703rem"
+      body_lg: "1.25rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.8125rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 1.1
+    normal: 1.6
+    relaxed: 1.8
+  letter_spacing:
+    tight: "0em"
+    normal: "0.02em"
+    wide: "0.16em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 1px 2px #000000, 0 0 12px rgba(176,60,30,0.35)"
+    highlight:
+      color: "#7a1f12"
+      style: box
+    per_role:
+      display: { text_transform: uppercase, letter_spacing: "0.16em", text_shadow: "0 2px 3px #000000, 0 0 18px rgba(200,70,20,0.4)" }
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: false
+    background: "#b8b0a4"
+    surface: "#ccc4b6"
+    surface_alt: "#b0a698"
+    text_primary: "#1a1612"
+    text_secondary: "#3a342c"
+    text_muted: "#6a6258"
+    text_inverse: "#ccc4b6"
+    border: "#5a534a"
+    accent: "#8a2418"
+    accent_secondary: "#4a5a2a"
+    accent_tertiary: "#7a5a1a"
+    interactive:
+      default: "#8a2418"
+      hover: "#6e1c12"
+      active: "#56140c"
+      focus_ring: "#7a5a1a"
+      disabled: "#9a9286"
+    status:
+      error: "#8a2418"
+      warning: "#a8761a"
+      success: "#4a5a2a"
+      info: "#3a4a5a"
+    overlay: "rgba(26,22,18,0.55)"
+    gradients:
+      ash: "linear-gradient(180deg, #ccc4b6 0%, #aaa094 100%)"
+    note: "Off-mode adaptation — overcast/ashen daylight. Grime and rust remain; dark is the canonical mode."
+  dark:
+    recommended: true
+    background: "#0c0a09"
+    surface: "#161310"
+    surface_alt: "#1f1b16"
+    text_primary: "#d8cdbc"
+    text_secondary: "#a89a84"
+    text_muted: "#6e6254"
+    text_inverse: "#0c0a09"
+    border: "#3a322a"
+    accent: "#b03c1e"
+    accent_secondary: "#7a1f12"
+    accent_tertiary: "#6e7a3a"
+    interactive:
+      default: "#b03c1e"
+      hover: "#c8501f"
+      active: "#8a2c14"
+      focus_ring: "#c87a1f"
+      disabled: "#332c24"
+    status:
+      error: "#a02418"
+      warning: "#b8841f"
+      success: "#6e7a3a"
+      info: "#4a6478"
+    overlay: "rgba(0,0,0,0.7)"
+    gradients:
+      obsidian: "linear-gradient(180deg, #1c1814 0%, #0a0807 100%)"
+      iron: "linear-gradient(180deg, #3a322a 0%, #1a1612 50%, #2a241e 100%)"
+      ember: "radial-gradient(circle at 50% 60%, #c8501f 0%, #7a1f12 60%, transparent 80%)"
+    note: Near-black obsidian, corroded iron grays, charred parchment. Ember-orange and blood-crimson accents; sickly green for the unnatural.
+
+radius:
+  philosophy: "Hard, chipped, and irregular — corners look broken or forged, never cleanly rounded."
+  default: "2px"
+  scale:
+    none: "0px"
+    sm: "2px"
+    md: "4px"
+    lg: "8px"
+    xl: "12px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "72px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "32px"
+    max_width: "1200px"
+  density: comfortable
+
+border:
+  default_width: "2px"
+  style: solid
+  philosophy: "Corroded metal edges, chipped stone frames, and burnt parchment borders (border-image with distressed textures)."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "4px"
+    heavy: "8px"
+
+elevation:
+  type: bevel
+  philosophy: "Heavy, oppressive shadow; faint ember inner glow; pitted metal highlights. Everything feels weighty and grounded in darkness."
+  tokens:
+    sm: "0 2px 6px rgba(0,0,0,0.6), inset 0 1px 0 rgba(120,100,80,0.2)"
+    md: "0 8px 18px rgba(0,0,0,0.7), inset 0 1px 0 rgba(120,100,80,0.2), inset 0 -2px 6px rgba(0,0,0,0.6)"
+    lg: "0 20px 44px rgba(0,0,0,0.8), inset 0 2px 0 rgba(140,110,80,0.25), inset 0 -3px 8px rgba(0,0,0,0.7)"
+  dark_tokens:
+    sm: "0 2px 6px rgba(0,0,0,0.7), inset 0 1px 0 rgba(176,60,30,0.15)"
+    md: "0 8px 18px rgba(0,0,0,0.8), inset 0 1px 0 rgba(176,60,30,0.18)"
+    lg: "0 20px 44px rgba(0,0,0,0.9), inset 0 2px 0 rgba(200,80,30,0.2)"
+
+motion:
+  duration:
+    fast: "160ms"
+    base: "360ms"
+    slow: "700ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.1, 0.64, 1)"
+  signature: "slow, heavy, dread-laden — embers drift, fog rolls, elements grind into place; ember pulse on hover"
+  reduced_motion_note: "Freeze embers/fog; disable pulse; simple fades only."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "heavy distressed grain — soot, scratches, rust pitting (PNG/SVG overlays)"
+  overlays: ["vignette: heavy", "grime", "ash/dust motes", "blood-splatter accents", "burnt-paper edges"]
+  patterns: ["cracked-stone texture", "corroded-metal texture"]
+  glow: "ember/forge glow behind key elements; sickly green glow for cursed/unnatural states"
+  special:
+    - "Obsidian/stone and rusted-iron raster textures replace flat fills"
+    - "Burnt, frayed parchment edges (mask/clip-path) on panels"
+    - "Blood-splatter and grime overlays on hero areas"
+    - "Drifting embers / fog particles and a heavy vignette"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "2px"
+      border: "2px solid #3a322a"
+      padding: "13px 28px"
+      background: "linear-gradient(180deg, #3a322a 0%, #1a1612 50%, #2a241e 100%)"
+      color: "#d8cdbc"
+      shadow: "0 4px 10px rgba(0,0,0,0.7), inset 0 1px 0 rgba(176,60,30,0.2)"
+      font: "heading, uppercase"
+      hover: "border-color: #b03c1e; box-shadow: 0 4px 10px rgba(0,0,0,0.7), 0 0 16px rgba(176,60,30,0.4)"
+      active: "transform: translateY(1px); filter: brightness(0.92)"
+      focus: "outline: 2px solid #c87a1f; outline-offset: 3px"
+    secondary:
+      shape: rectangle
+      radius: "2px"
+      border: "2px solid #3a322a"
+      padding: "13px 28px"
+      background: "#161310"
+      color: "#a89a84"
+      shadow: "0 3px 8px rgba(0,0,0,0.6)"
+    ghost:
+      background: "transparent"
+      color: "#b03c1e"
+      border: "1px solid #3a322a"
+  input:
+    radius: "2px"
+    border: "2px solid #3a322a"
+    background: "#0c0a09"
+    padding: "12px 16px"
+    placeholder_color: "#6e6254"
+    focus: "border-color: #b03c1e; box-shadow: inset 0 1px 6px rgba(0,0,0,0.8), 0 0 10px rgba(176,60,30,0.3)"
+    note: "Pitted iron-framed field, deeply inset."
+  card:
+    radius: "4px"
+    border: "2px solid #2a241e"
+    background: "linear-gradient(180deg, #1c1814 0%, #0a0807 100%)"
+    padding: "28px"
+    shadow: "0 20px 44px rgba(0,0,0,0.85), inset 0 1px 0 rgba(176,60,30,0.12)"
+    hover: "border-color: #5a4a2a; box-shadow: 0 24px 50px rgba(0,0,0,0.9), 0 0 24px rgba(176,60,30,0.2)"
+  container:
+    max_width: "1200px"
+    padding: "32px"
+    section_gap: "72px"
+    note: "Panels framed in corroded iron; heavy vignette focuses the eye inward."
+  navbar:
+    height: "76px"
+    background: "linear-gradient(180deg, #161310 0%, #0c0a09 100%)"
+    border: "0 0 2px 0 solid #3a322a"
+    shadow: "0 4px 18px rgba(0,0,0,0.7)"
+    blur: "none"
+    item_style: "engraved uppercase serif; active item ember underline/glow; crest sigil logo"
+    note: "Iron lintel with an ember-lit sigil."
+  sidebar:
+    width: "280px"
+    background: "linear-gradient(180deg, #0c0a09 0%, #161310 100%)"
+    border: "0 2px 0 0 solid #3a322a"
+    item_style: "stone-tablet rows; active row ember glow + crimson sigil"
+  modal:
+    radius: "6px"
+    background: "linear-gradient(180deg, #1c1814 0%, #0a0807 100%)"
+    border: "4px solid #3a322a"
+    shadow: "0 36px 90px rgba(0,0,0,0.95)"
+    overlay: "rgba(0,0,0,0.7)"
+  badge:
+    radius: "2px"
+    border: "1px solid #5a140c"
+    background: "#7a1f12"
+    color: "#e0cdbc"
+    padding: "2px 10px"
+    font: "heading, uppercase"
+  table:
+    header_background: "#1f1b16"
+    row_border: "1px solid #2a241e"
+    zebra: "#100d0b"
+    cell_padding: "12px 18px"
+  tabs:
+    indicator: "active tab framed in glowing ember iron"
+    radius: "2px"
+    active: "background #1f1b16; color #b03c1e; box-shadow 0 0 12px rgba(176,60,30,0.4)"
+    inactive: "background #0c0a09; color #6e6254"
+
+iconography:
+  style: engraved
+  stroke_width: "2px"
+  library: "grim sigils, runes, swords, skulls, eldritch glyphs"
+  note: "Corroded/ember-lit icons; cursed glyphs may glow sickly green."
+
+imagery:
+  treatment: ["duotone", "high-contrast", "grain"]
+  border_radius: "2px"
+  filter: "contrast(1.15) brightness(0.8) saturate(0.85) sepia(0.1)"
+  note: "Desaturated, high-contrast grimdark art; ash/grime overlays; burnt edges; heavy vignette."
+
+guidelines:
+  do:
+    - "Use obsidian/stone and rusted-iron textures, not flat fills"
+    - "Lead with ember-orange and blood-crimson accents on near-black"
+    - "Add grime, ash, vignette, and burnt-edge overlays"
+    - "Keep an oppressive, weighty, atmospheric mood"
+  dont:
+    - "Don't use bright, warm, or cheerful colors"
+    - "Don't use clean rounded shapes or soft pastels"
+    - "Don't let glow/texture crush body-text legibility"
+
+implementation_hints:
+  css_variables_prefix: "--grim-"
+  framework_agnostic: true
+  tailwind_note: "Layer distressed background-images + border-image for corroded frames; ember/iron/obsidian as gradient tokens; ember glow as custom boxShadow; particles via canvas/SVG."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700&family=Metamorphous&family=EB+Garamond:wght@400;500;600&display=swap"
+  accessibility_note: "Very dark, low-contrast, textured surfaces are a serious a11y risk — guarantee body text ≥ 4.5:1 against its actual textured background, keep glow off body copy, and honor reduced-motion for embers/fog."

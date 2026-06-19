@@ -1,0 +1,63 @@
+# ============================================================================
+# SHARED REFERENCE — Curated named palettes.
+# ----------------------------------------------------------------------------
+# These complement _shared/palette-carbon.yaml. Both are OPTIONAL references —
+# no style is required to use them. Each palette is a 5-swatch family with named
+# swatches and hex values, ordered roughly from light to dark so a consumer can
+# map them to background -> surface -> accent -> text without guessing.
+# ============================================================================
+
+meta:
+  count: 5
+  note: 5-swatch curated palettes. Pair freely; not tied to any single style.
+
+palettes:
+  sage-rose:
+    title: Sage & Rose
+    note: Muted, soft and calm — dusty pinks with sage green and a deep slate.
+    swatches:
+      metallic_pink: "#edafbb"
+      pale_pink:     "#f7e1d7"
+      timberwolf:    "#dedbd2"
+      ash_green:     "#b0c4b1"
+      outer_space:   "#4a5759"
+
+  dusty-lavender:
+    title: Dusty Lavender
+    note: Moody purple range from near-black to pale blush — elegant and quiet.
+    swatches:
+      black:          "#000000"
+      japanese_violet: "#502f4c"
+      old_lavender:   "#70587c"
+      lavender_gray:  "#c8b8db"
+      lavender_blush: "#f5eaec"
+
+  sunset-coral:
+    title: Sunset Coral
+    note: Warm graduated oranges from soft rajah to vivid sunset — energetic warmth.
+    swatches:
+      rajah:           "#f7b267"
+      atomic_tangerine: "#f79d65"
+      coral:           "#f4845f"
+      bittersweet:     "#f27059"
+      sunset_orange:   "#f25c54"
+
+  deep-sea-blue:
+    title: Deep Sea Blue
+    note: Deep navy to bright cyan — confident, techy, high-contrast pop at the bright end.
+    swatches:
+      oxford_blue:      "#0b132b"
+      yankees_blue:     "#1c2541"
+      police_blue:      "#3a506b"
+      sea_serpent:      "#5bc0be"
+      fluorescent_cyan: "#6fffe9"
+
+  warm-pastel:
+    title: Warm Pastel
+    note: Friendly retro pastels — honey yellow, linen, tea rose, sage and coral.
+    swatches:
+      hunyadi_yellow: "#f6bd60"
+      linen:          "#f7ede2"
+      tea_rose:       "#f5cac3"
+      morning_green:  "#84a59d"
+      light_coral:    "#f28482"

@@ -1,0 +1,303 @@
+# Retro OS GUI (Windows 95 / Mac OS 9) — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: retro-os-gui
+  name: Retro OS GUI (Windows 95 / Mac OS 9)
+  category: sharp
+  version: "1.0.0"
+  primary_mode: light
+  summary: 90s operating-system aesthetic — gray bevels, hard raised/sunken edges, classic system blue, sharp dialog windows.
+  description: >
+    Recreates the chrome of 1990s desktop software. Buttons appear raised via
+    hard light/dark bevels, windows have title bars with a colored gradient,
+    and the palette is system gray with classic blue selection highlights.
+  keywords: [retro, windows95, macos9, bevel, skeuomorphic-lite, system-gray, nostalgia]
+  mood: [nostalgic, utilitarian, playful-retro, familiar]
+  use_cases: [Web3 projects, nostalgia marketing campaigns, retro utility apps, indie games]
+  avoid_when: [modern premium brands, minimalist products, mobile-first touch UIs]
+  references: [Windows 95, Mac OS 9 Platinum, 98.css, classic desktop UI]
+
+typography:
+  font_families:
+    display:
+      stack: "'Pixelify Sans', 'Tahoma', 'MS Sans Serif', sans-serif"
+      source: google-fonts
+      weights: [400, 700]
+      note: Pixelify Sans evokes bitmap system fonts; Tahoma is the closest websafe substitute.
+    body:
+      stack: "Tahoma, 'Geneva', 'MS Sans Serif', Verdana, sans-serif"
+      source: system
+      weights: [400, 700]
+    mono:
+      stack: "'Courier New', monospace"
+      source: system
+      weights: [400]
+  scale:
+    base_size: "13px"
+    ratio: 1.2
+    steps:
+      display: "1.728rem"
+      h1: "1.44rem"
+      h2: "1.2rem"
+      h3: "1.1rem"
+      h4: "1rem"
+      body_lg: "1rem"
+      body: "0.8125rem"
+      body_sm: "0.6875rem"
+      caption: "0.6875rem"
+      overline: "0.6875rem"
+  weights:
+    regular: 400
+    medium: 400
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.1
+    normal: 1.3
+    relaxed: 1.5
+  letter_spacing:
+    tight: "0em"
+    normal: "0em"
+    wide: "0.02em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "1px 1px 0 #ffffff"
+    highlight:
+      color: "#000080"
+      style: box
+    per_role:
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: true
+    background: "#008080"
+    surface: "#c0c0c0"
+    surface_alt: "#dfdfdf"
+    text_primary: "#000000"
+    text_secondary: "#404040"
+    text_muted: "#808080"
+    text_inverse: "#ffffff"
+    border: "#000000"
+    accent: "#000080"
+    accent_secondary: "#008080"
+    accent_tertiary: "#800080"
+    interactive:
+      default: "#000080"
+      hover: "#1084d0"
+      active: "#0a246a"
+      focus_ring: "#000000"
+      disabled: "#808080"
+    status:
+      error: "#aa0000"
+      warning: "#aa5500"
+      success: "#007700"
+      info: "#000080"
+    overlay: "rgba(0,0,0,0.4)"
+    gradients:
+      titlebar: "linear-gradient(90deg, #000080 0%, #1084d0 100%)"
+    note: Canonical Win95 desktop teal background, silver chrome, navy title bars. Bevels do the depth.
+  dark:
+    recommended: false
+    background: "#1a1a1a"
+    surface: "#3a3a3a"
+    surface_alt: "#4a4a4a"
+    text_primary: "#e0e0e0"
+    text_secondary: "#b0b0b0"
+    text_muted: "#808080"
+    text_inverse: "#000000"
+    border: "#000000"
+    accent: "#1084d0"
+    accent_secondary: "#00a0a0"
+    accent_tertiary: "#a040a0"
+    interactive:
+      default: "#1084d0"
+      hover: "#3aa0e0"
+      active: "#0a6aa0"
+      focus_ring: "#ffffff"
+      disabled: "#606060"
+    status:
+      error: "#ff5555"
+      warning: "#e0a040"
+      success: "#55bb55"
+      info: "#5aa0e0"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients:
+      titlebar: "linear-gradient(90deg, #0a3a6a 0%, #1084d0 100%)"
+    note: "Off-mode adaptation — a 'dark theme' control panel. Bevels still drive depth with darker grays."
+
+radius:
+  philosophy: "Hard rectangular windows and controls. border-radius 0."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "4px"
+  scale: ["0px", "2px", "4px", "8px", "12px", "16px", "24px", "32px"]
+  grid:
+    columns: 12
+    gutter: "8px"
+    margin: "8px"
+    max_width: "1024px"
+  density: compact
+
+border:
+  default_width: "2px"
+  style: solid
+  philosophy: "Two-tone bevel borders create the raised/sunken 3D illusion (light top-left, dark bottom-right)."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: bevel
+  philosophy: "Outset bevel = raised (buttons), inset bevel = sunken (inputs/wells). No blur shadows."
+  tokens:
+    sm: "inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff, inset -2px -2px 0 #404040, inset 2px 2px 0 #dfdfdf"
+    md: "inset -1px -1px 0 #404040, inset 1px 1px 0 #ffffff, inset -2px -2px 0 #808080, inset 2px 2px 0 #dfdfdf"
+    lg: "2px 2px 0 #000000"
+
+motion:
+  duration:
+    fast: "0ms"
+    base: "0ms"
+    slow: "100ms"
+  easing:
+    standard: "steps(1)"
+    entrance: "steps(1)"
+    exit: "steps(1)"
+    bounce: "linear"
+  signature: "instant — period-accurate UIs had no transitions"
+  reduced_motion_note: "Already motion-free; nothing to disable."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "optional 1-bit dither pattern on desktop background"
+  overlays: ["bevel"]
+  patterns: ["dither: 50% checkerboard for disabled/striped fills"]
+  glow: "none"
+  special:
+    - "Raised bevel on buttons; pressed state swaps to inset bevel"
+    - "Title bars with gradient + window controls (min/max/close) as beveled squares"
+    - "Dotted focus rectangle (1px black dashed) inside focused buttons"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #000000"
+      padding: "4px 12px"
+      background: "#c0c0c0"
+      color: "#000000"
+      shadow: "inset -1px -1px 0 #404040, inset 1px 1px 0 #ffffff, inset -2px -2px 0 #808080, inset 2px 2px 0 #dfdfdf"
+      font: "body"
+      hover: "background: #c8c8c8"
+      active: "box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #ffffff; padding: 5px 11px 3px 13px"
+      focus: "outline: 1px dotted #000000; outline-offset: -4px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #000000"
+      padding: "4px 12px"
+      background: "#c0c0c0"
+      color: "#000000"
+      shadow: "inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff"
+    ghost:
+      background: "transparent"
+      color: "#000080"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #808080"
+    background: "#ffffff"
+    padding: "3px 6px"
+    placeholder_color: "#808080"
+    focus: "outline: 1px dotted #000000"
+    note: "Sunken inset bevel field (text well)."
+  card:
+    radius: "0px"
+    border: "1px solid #808080"
+    background: "#c0c0c0"
+    padding: "12px"
+    shadow: "inset -1px -1px 0 #404040, inset 1px 1px 0 #ffffff, inset -2px -2px 0 #808080, inset 2px 2px 0 #dfdfdf"
+    hover: "none"
+  container:
+    max_width: "1024px"
+    padding: "8px"
+    section_gap: "16px"
+    note: "Windowed panels rather than flowing sections."
+  navbar:
+    height: "28px"
+    background: "linear-gradient(90deg, #000080 0%, #1084d0 100%)"
+    border: "1px solid #000000"
+    shadow: "inset 1px 1px 0 #ffffff"
+    blur: "none"
+    item_style: "title-bar style; white bold text; beveled window controls on the right"
+    note: "Acts like a window title bar / menu bar."
+  sidebar:
+    width: "200px"
+    background: "#c0c0c0"
+    border: "1px solid #808080"
+    item_style: "tree-list rows; selected row navy bg / white text"
+  modal:
+    radius: "0px"
+    background: "#c0c0c0"
+    border: "1px solid #000000"
+    shadow: "inset -1px -1px 0 #404040, inset 1px 1px 0 #ffffff, 2px 2px 0 #000000"
+    overlay: "rgba(0,0,0,0.4)"
+  badge:
+    radius: "0px"
+    border: "1px solid #808080"
+    background: "#dfdfdf"
+    color: "#000000"
+    padding: "1px 5px"
+    font: "body"
+  table:
+    header_background: "#c0c0c0"
+    row_border: "1px solid #808080"
+    zebra: "none"
+    cell_padding: "3px 8px"
+  tabs:
+    indicator: "raised beveled tab for active; active tab connects to panel"
+    radius: "0px"
+    active: "background #c0c0c0; bevel outset; border-bottom none"
+    inactive: "background #b0b0b0; bevel reduced"
+
+iconography:
+  style: pixel
+  stroke_width: "1px"
+  library: "16x16 / 32x32 pixel icons"
+  note: "Bitmap-style icons; limited palette; aliased edges."
+
+imagery:
+  treatment: ["sharp-crop", "high-contrast"]
+  border_radius: "0px"
+  filter: "none"
+  note: "Frame images in sunken bevel wells; optional 256-color/dither look."
+
+guidelines:
+  do:
+    - "Use two-tone bevels for raised/sunken depth"
+    - "Keep the system gray + navy palette"
+    - "Make pressed buttons invert their bevel"
+    - "Use pixel icons and compact spacing"
+  dont:
+    - "Don't add blur shadows or rounded corners"
+    - "Don't animate transitions"
+    - "Don't use modern gradients beyond the title bar"
+
+implementation_hints:
+  css_variables_prefix: "--os-"
+  framework_agnostic: true
+  tailwind_note: "Encode bevels as custom boxShadow tokens; consider the 98.css library for reference; image-rendering: pixelated for icons."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap"
+  accessibility_note: "Dotted focus rectangles are period-accurate but ensure they're visible; provide larger hit targets for touch."

@@ -1,0 +1,308 @@
+# Aurora Holographic UI — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: aurora-holographic
+  name: Aurora Holographic UI
+  category: rounded
+  version: "1.0.0"
+  primary_mode: dark
+  summary: Soft glowing mesh-gradient background (aurora) with extremely rounded, semi-transparent cards floating over the light.
+  description: >
+    The hero is the light itself — a soft, blurred mesh gradient that glows like
+    an aurora. UI elements use extreme corner radii and gentle translucency so
+    they never break the organic glow behind them. Iridescent and dreamy.
+  keywords: [aurora, holographic, mesh-gradient, glow, iridescent, dreamy, dark, ambient]
+  mood: [dreamy, futuristic, premium, calm, magical]
+  use_cases: [crypto wallets, meditation apps, VR/AR interfaces, AI product landing pages]
+  avoid_when: [dense data tools, text-heavy apps, low-end devices, strict-contrast contexts]
+  references: [mesh gradients, aurora backgrounds, holographic/iridescent trend, Stripe/Linear gradient heroes]
+
+typography:
+  font_families:
+    display:
+      stack: "'Sora', 'Space Grotesk', sans-serif"
+      source: google-fonts
+      weights: [400, 600, 700]
+    body:
+      stack: "'Inter', system-ui, sans-serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+  scale:
+    base_size: "16px"
+    ratio: 1.25
+    steps:
+      display: "3.815rem"
+      h1: "3.052rem"
+      h2: "2.441rem"
+      h3: "1.953rem"
+      h4: "1.563rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 600
+    black: 700
+  line_height:
+    tight: 1.15
+    normal: 1.55
+    relaxed: 1.7
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "0em"
+    wide: "0.05em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 2px 12px rgba(0,0,0,0.25)"
+    highlight:
+      color: "rgba(255,255,255,0.12)"
+      style: box
+    per_role:
+      display: { text_shadow: "0 4px 24px rgba(120,80,255,0.35)" }
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: false
+    background: "#f4f0ff"
+    surface: "rgba(255,255,255,0.6)"
+    surface_alt: "rgba(255,255,255,0.4)"
+    text_primary: "#1c1733"
+    text_secondary: "#403a5c"
+    text_muted: "#7a7396"
+    text_inverse: "#ffffff"
+    border: "rgba(255,255,255,0.7)"
+    accent: "#7c5cff"
+    accent_secondary: "#ff6ec7"
+    accent_tertiary: "#3ad6e0"
+    interactive:
+      default: "#7c5cff"
+      hover: "#6a4af0"
+      active: "#5a3ae0"
+      focus_ring: "#ff6ec7"
+      disabled: "rgba(120,115,150,0.4)"
+    status:
+      error: "#ff5d8f"
+      warning: "#ffb24d"
+      success: "#3ecf9a"
+      info: "#5c9cff"
+    overlay: "rgba(28,23,51,0.3)"
+    gradients:
+      aurora: "radial-gradient(at 20% 20%, #c9b8ff 0%, transparent 50%), radial-gradient(at 80% 25%, #ffc2ec 0%, transparent 50%), radial-gradient(at 60% 80%, #b8f0ff 0%, transparent 50%)"
+    note: "Off-mode adaptation — pale daytime aurora. The glow reads far weaker on light; dark is canonical."
+  dark:
+    recommended: true
+    background: "#070512"
+    surface: "rgba(255,255,255,0.06)"
+    surface_alt: "rgba(255,255,255,0.04)"
+    text_primary: "#f4f1ff"
+    text_secondary: "#c4bce0"
+    text_muted: "#8079a0"
+    text_inverse: "#070512"
+    border: "rgba(255,255,255,0.12)"
+    accent: "#9d7bff"
+    accent_secondary: "#ff7ed4"
+    accent_tertiary: "#4fe0ec"
+    interactive:
+      default: "#9d7bff"
+      hover: "#b094ff"
+      active: "#8a68f0"
+      focus_ring: "#ff7ed4"
+      disabled: "rgba(255,255,255,0.1)"
+    status:
+      error: "#ff6f9c"
+      warning: "#ffc266"
+      success: "#4cdcaa"
+      info: "#6fb0ff"
+    overlay: "rgba(0,0,0,0.55)"
+    gradients:
+      aurora: "radial-gradient(at 20% 20%, #5b2a9c 0%, transparent 50%), radial-gradient(at 80% 25%, #9c2a7a 0%, transparent 50%), radial-gradient(at 55% 80%, #1a5a8c 0%, transparent 55%), radial-gradient(at 40% 50%, #2a8c7a 0%, transparent 60%)"
+    note: Deep near-black void lit by a multi-stop radial mesh aurora. Cards are faint glass so the glow shows through.
+
+radius:
+  philosophy: "Extreme rounding so cards read as soft glowing pebbles that don't fracture the light behind them."
+  default: "28px"
+  scale:
+    none: "0px"
+    sm: "16px"
+    md: "24px"
+    lg: "36px"
+    xl: "48px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "72px", "112px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1160px"
+  density: airy
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Faint translucent-white hairline edges catch the aurora light."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "1.5px"
+    heavy: "2px"
+
+elevation:
+  type: glass-blur
+  philosophy: "Glow + blur instead of shadow. Cards have soft bloom and a faint inner top light."
+  tokens:
+    sm: "0 8px 32px rgba(120,80,255,0.12), inset 0 1px 0 rgba(255,255,255,0.4)"
+    md: "0 16px 48px rgba(120,80,255,0.16), inset 0 1px 0 rgba(255,255,255,0.5)"
+    lg: "0 24px 72px rgba(120,80,255,0.22), inset 0 1px 0 rgba(255,255,255,0.6)"
+  dark_tokens:
+    sm: "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)"
+    md: "0 16px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)"
+    lg: "0 24px 72px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.16)"
+
+motion:
+  duration:
+    fast: "300ms"
+    base: "700ms"
+    slow: "1400ms"
+  easing:
+    standard: "cubic-bezier(0.22, 1, 0.36, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "the aurora drifts and morphs slowly and endlessly; cards fade and float in"
+  reduced_motion_note: "Freeze the aurora to a static gradient; keep simple fades."
+
+texture_and_effects:
+  backdrop_filter: "blur(24px) saturate(140%)"
+  noise: "fine grain over the gradient, opacity 0.04, to prevent banding"
+  overlays: ["grain"]
+  patterns: []
+  glow: "ambient bloom from the aurora mesh; accent text gets a colored text-shadow"
+  special:
+    - "Animated multi-stop radial mesh-gradient background (the aurora)"
+    - "Cards are low-opacity glass with backdrop blur so the aurora shows through"
+    - "Iridescent gradient borders/text on key accents"
+
+components:
+  button:
+    primary:
+      shape: pill
+      radius: "999px"
+      border: "1px solid rgba(255,255,255,0.2)"
+      padding: "14px 28px"
+      background: "linear-gradient(135deg, #9d7bff 0%, #ff7ed4 100%)"
+      color: "#ffffff"
+      shadow: "0 8px 32px rgba(157,123,255,0.4)"
+      font: "display, semibold"
+      hover: "filter: brightness(1.08)"
+      active: "transform: scale(0.98)"
+      focus: "outline: 3px solid rgba(255,126,212,0.5); outline-offset: 2px"
+    secondary:
+      shape: pill
+      radius: "999px"
+      border: "1px solid rgba(255,255,255,0.25)"
+      padding: "14px 28px"
+      background: "rgba(255,255,255,0.06)"
+      color: "#f4f1ff"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#9d7bff"
+      border: "none"
+  input:
+    radius: "18px"
+    border: "1px solid rgba(255,255,255,0.16)"
+    background: "rgba(255,255,255,0.05)"
+    padding: "14px 18px"
+    placeholder_color: "rgba(196,188,224,0.6)"
+    focus: "border-color: rgba(157,123,255,0.7); box-shadow: 0 0 0 3px rgba(157,123,255,0.2)"
+    note: "Glass field with backdrop blur."
+  card:
+    radius: "36px"
+    border: "1px solid rgba(255,255,255,0.12)"
+    background: "rgba(255,255,255,0.06)"
+    padding: "32px"
+    shadow: "0 16px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)"
+    hover: "transform: translateY(-3px)"
+  container:
+    max_width: "1160px"
+    padding: "24px"
+    section_gap: "112px"
+    note: "Very airy; let the aurora breathe between sections."
+  navbar:
+    height: "68px"
+    background: "rgba(7,5,18,0.4)"
+    border: "0 0 1px 0 solid rgba(255,255,255,0.1)"
+    shadow: "none"
+    blur: "blur(24px) saturate(140%)"
+    item_style: "ghost text links; active item iridescent gradient text"
+    note: "Translucent floating bar over the glow."
+  sidebar:
+    width: "260px"
+    background: "rgba(255,255,255,0.04)"
+    border: "0 1px 0 0 solid rgba(255,255,255,0.1)"
+    item_style: "rounded glass rows; active row faint gradient fill"
+  modal:
+    radius: "36px"
+    background: "rgba(20,16,40,0.7)"
+    border: "1px solid rgba(255,255,255,0.16)"
+    shadow: "0 32px 80px rgba(0,0,0,0.6)"
+    overlay: "rgba(0,0,0,0.55)"
+  badge:
+    radius: "999px"
+    border: "1px solid rgba(255,255,255,0.2)"
+    background: "rgba(255,255,255,0.08)"
+    color: "#f4f1ff"
+    padding: "3px 12px"
+    font: "body, medium"
+  table:
+    header_background: "rgba(255,255,255,0.04)"
+    row_border: "1px solid rgba(255,255,255,0.08)"
+    zebra: "rgba(255,255,255,0.02)"
+    cell_padding: "14px 18px"
+  tabs:
+    indicator: "active tab gets a gradient pill or iridescent underline"
+    radius: "999px"
+    active: "background rgba(255,255,255,0.1); color #f4f1ff"
+    inactive: "color #8079a0"
+
+iconography:
+  style: outline
+  stroke_width: "1.5px"
+  library: "thin rounded line icons (Lucide)"
+  note: "Subtle; can use gradient strokes on hero icons."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "36px"
+  filter: "saturate(1.1)"
+  note: "Imagery glows within glass; let aurora color spill over edges."
+
+guidelines:
+  do:
+    - "Make the mesh-gradient aurora the centerpiece"
+    - "Use extreme corner radii on translucent cards"
+    - "Add faint white inner edges to catch light"
+    - "Animate the aurora slowly and continuously"
+  dont:
+    - "Don't use opaque solid cards that block the glow"
+    - "Don't use sharp corners"
+    - "Don't pack dense data over the gradient (legibility)"
+
+implementation_hints:
+  css_variables_prefix: "--aurora-"
+  framework_agnostic: true
+  tailwind_note: "Define the aurora as a layered radial-gradient background; animate background-position; glass via backdrop-blur + low-opacity white; provide static fallback."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+  accessibility_note: "Text over a moving gradient is a contrast hazard — anchor text on a slightly more opaque glass panel and verify contrast against the brightest aurora region. Provide reduced-motion."

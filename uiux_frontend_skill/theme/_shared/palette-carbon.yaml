@@ -1,0 +1,62 @@
+# ============================================================================
+# SHARED REFERENCE — IBM Carbon palette.
+# ----------------------------------------------------------------------------
+# These are NOT mandatory for any style. Per project decision, every style
+# defines its own colors. This file provides the Carbon palette as an optional
+# reference, useful for styles whose aesthetic genuinely fits Carbon
+# (Swiss Grid, Hyper-Minimalist Wireframe, Monospace CRT, Industrial HUD).
+#
+# Layout: categorical accent palettes for light/dark backgrounds, plus alert/
+# status colors for light/dark. Token names follow IBM Carbon (e.g. "Purple 70").
+# ============================================================================
+
+meta:
+  system: IBM Carbon Design System
+  note: Categorical accent palettes + alert/status colors, for light and dark.
+
+# 14-color categorical accent palette recommended for LIGHT backgrounds.
+accents:
+  light:
+    purple_70:  "#6929c4"
+    cyan_50:    "#1192e8"
+    teal_70:    "#005d5d"
+    magenta_70: "#9f1853"
+    red_50:     "#fa4d56"
+    red_90:     "#570408"
+    green_60:   "#198038"
+    blue_80:    "#002d9c"
+    magenta_50: "#ee538b"
+    yellow_50:  "#b28600"
+    teal_50:    "#009d9a"
+    cyan_90:    "#012749"
+    orange_70:  "#8a3800"
+    purple_50:  "#a56eff"
+  # 14-color categorical accent palette recommended for DARK backgrounds.
+  dark:
+    purple_60:  "#8a3ffc"
+    cyan_40:    "#33b1ff"
+    teal_60:    "#007d79"
+    magenta_40: "#ff7eb6"
+    red_50:     "#fa4d56"
+    red_10:     "#fff1f1"
+    green_30:   "#6fdc8c"
+    blue_50:    "#4589ff"
+    magenta_60: "#d12771"
+    yellow_40:  "#d2a106"
+    teal_40:    "#08bdba"
+    cyan_20:    "#bae6ff"
+    orange_60:  "#ba4e00"
+    purple_30:  "#d4bbff"
+
+# Alert / semantic status colors.
+status:
+  light:
+    error:   "#da1e28"   # Red 60
+    warning: "#ff832b"   # Orange 40
+    caution: "#f1c21b"   # Yellow 30
+    success: "#198038"   # Green 60
+  dark:
+    error:   "#fa4d56"   # Red 50
+    warning: "#ff832b"   # Orange 40
+    caution: "#f1c21b"   # Yellow 30
+    success: "#24a148"   # Green 50

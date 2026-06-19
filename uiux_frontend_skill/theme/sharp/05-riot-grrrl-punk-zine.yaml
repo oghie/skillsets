@@ -1,0 +1,309 @@
+# Riot Grrrl Punk Zine — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: riot-grrrl-punk-zine
+  name: Riot Grrrl Punk Zine
+  category: sharp
+  version: "1.0.0"
+  primary_mode: both
+  summary: Deliberately slanted type, torn-paper edges, roughly cut photo collage, and photocopier texture.
+  description: >
+    A cut-and-paste zine made digital. Type is skewed and rotated, ransom-note
+    mixed, photos are torn and taped at angles, and everything looks run through
+    a high-contrast photocopier. Energy over polish.
+  keywords: [punk, zine, collage, photocopy, ransom-note, diy, grunge, slanted]
+  mood: [rebellious, raw, energetic, loud, handmade]
+  use_cases: [indie music festivals, subculture magazines, skate/streetwear campaigns, event promo]
+  avoid_when: [corporate/finance products, accessibility-critical apps, calm wellness brands]
+  references: [riot grrrl zines, punk flyers, ransom-note typography, photocopy art]
+
+typography:
+  font_families:
+    display:
+      stack: "'Anton', 'Arial Black', sans-serif"
+      source: google-fonts
+      weights: [400]
+      note: Condensed heavy display for shouting headlines.
+    heading:
+      stack: "'Special Elite', 'Courier New', monospace"
+      source: google-fonts
+      weights: [400]
+      note: Typewriter face for ransom-note mix.
+    body:
+      stack: "'Courier Prime', 'Courier New', monospace"
+      source: google-fonts
+      weights: [400, 700]
+  scale:
+    base_size: "16px"
+    ratio: 1.414
+    steps:
+      display: "5.653rem"
+      h1: "3.998rem"
+      h2: "2.827rem"
+      h3: "2rem"
+      h4: "1.414rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.8125rem"
+      overline: "0.8125rem"
+  weights:
+    regular: 400
+    medium: 400
+    bold: 700
+    black: 700
+  line_height:
+    tight: 0.9
+    normal: 1.35
+    relaxed: 1.6
+  letter_spacing:
+    tight: "-0.04em"
+    normal: "0em"
+    wide: "0.05em"
+  treatments:
+    font_style: normal
+    transform: "skewX(-7deg) rotate(-2deg)"
+    text_transform: uppercase
+    text_decoration: "none"
+    text_stroke: "1px #000000"
+    text_shadow: "2px 2px 0 #ff1f8f"
+    highlight:
+      color: "#fff200"
+      style: marker
+    per_role:
+      display: { transform: "skewX(-9deg) rotate(-3deg)", text_stroke: "2px #000000" }
+      heading: { transform: "rotate(1.5deg)" }
+      body: { transform: "none", text_transform: none }
+
+color:
+  light:
+    recommended: true
+    background: "#f2f0e9"
+    surface: "#ffffff"
+    surface_alt: "#e6e4dc"
+    text_primary: "#0a0a0a"
+    text_secondary: "#2a2a2a"
+    text_muted: "#6a6a6a"
+    text_inverse: "#ffffff"
+    border: "#0a0a0a"
+    accent: "#ff1f8f"
+    accent_secondary: "#fff200"
+    accent_tertiary: "#00d0ff"
+    interactive:
+      default: "#ff1f8f"
+      hover: "#e6007a"
+      active: "#cc006d"
+      focus_ring: "#fff200"
+      disabled: "#bdbdbd"
+    status:
+      error: "#ff0000"
+      warning: "#ff8a00"
+      success: "#00b34a"
+      info: "#0080ff"
+    overlay: "rgba(10,10,10,0.7)"
+    gradients: {}
+    note: Photocopy paper tone with hot-pink and acid-yellow spot colors. High contrast B/W base.
+  dark:
+    recommended: true
+    background: "#0a0a0a"
+    surface: "#141414"
+    surface_alt: "#1c1c1c"
+    text_primary: "#f2f0e9"
+    text_secondary: "#cccccc"
+    text_muted: "#888888"
+    text_inverse: "#0a0a0a"
+    border: "#f2f0e9"
+    accent: "#ff3d9a"
+    accent_secondary: "#fff200"
+    accent_tertiary: "#00e5ff"
+    interactive:
+      default: "#ff3d9a"
+      hover: "#ff66b0"
+      active: "#e6007a"
+      focus_ring: "#fff200"
+      disabled: "#3a3a3a"
+    status:
+      error: "#ff4040"
+      warning: "#ffa733"
+      success: "#33d177"
+      info: "#3399ff"
+    overlay: "rgba(0,0,0,0.85)"
+    gradients: {}
+    note: Xerox-negative feel — inverted high contrast with the same hot spot colors.
+
+radius:
+  philosophy: "Torn/cut edges, never rounded. border-radius 0; ragged clip-paths instead."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "4px", "8px", "16px", "24px", "40px", "64px"]
+  grid:
+    columns: 12
+    gutter: "16px"
+    margin: "16px"
+    max_width: "1200px"
+  density: dense
+
+border:
+  default_width: "3px"
+  style: solid
+  philosophy: "Thick scrappy outlines, dashed tape edges, and torn clip-paths."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "3px"
+    heavy: "6px"
+
+elevation:
+  type: hard-drop
+  philosophy: "Hard offset shadows like stacked taped paper; slight rotation per layer."
+  tokens:
+    sm: "2px 2px 0 #000000"
+    md: "4px 4px 0 #000000"
+    lg: "6px 6px 0 #ff1f8f"
+  dark_tokens:
+    sm: "2px 2px 0 #f2f0e9"
+    md: "4px 4px 0 #f2f0e9"
+    lg: "6px 6px 0 #ff3d9a"
+
+motion:
+  duration:
+    fast: "60ms"
+    base: "120ms"
+    slow: "220ms"
+  easing:
+    standard: "steps(2)"
+    entrance: "cubic-bezier(0.2, 0, 0, 1)"
+    exit: "steps(1)"
+    bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+  signature: "jittery, jump-cut; elements snap and shake slightly on hover"
+  reduced_motion_note: "Disable shake/jitter; keep instant transitions."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "heavy photocopier grain + toner speckle, opacity 0.12"
+  overlays: [grain, "paper-tear", halftone]
+  patterns: ["halftone-dots: on accent fills"]
+  glow: "none"
+  special:
+    - "Torn-paper edges via clip-path / mask"
+    - "Tape strips (rotated translucent rectangles) at element corners"
+    - "Ransom-note mixed type sizes and faces"
+    - "Slight random rotation per element (-3deg..3deg)"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "3px solid #000000"
+      padding: "10px 22px"
+      background: "#ff1f8f"
+      color: "#000000"
+      shadow: "4px 4px 0 #000000"
+      font: "display, uppercase, skewed"
+      hover: "transform: rotate(-1deg) translate(1px,1px); box-shadow: 2px 2px 0 #000000"
+      active: "transform: translate(4px,4px); box-shadow: none"
+      focus: "outline: 3px dashed #fff200; outline-offset: 2px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "3px solid #000000"
+      padding: "10px 22px"
+      background: "#fff200"
+      color: "#000000"
+      shadow: "4px 4px 0 #000000"
+    ghost:
+      background: "transparent"
+      color: "#ff1f8f"
+      border: "3px dashed #000000"
+  input:
+    radius: "0px"
+    border: "3px solid #000000"
+    background: "#ffffff"
+    padding: "10px 12px"
+    placeholder_color: "#6a6a6a"
+    focus: "box-shadow: 4px 4px 0 #ff1f8f"
+    note: "Looks like a form scrawled on a flyer."
+  card:
+    radius: "0px"
+    border: "3px solid #000000"
+    background: "#ffffff"
+    padding: "20px"
+    shadow: "6px 6px 0 #000000"
+    hover: "transform: rotate(-1deg)"
+  container:
+    max_width: "1200px"
+    padding: "16px"
+    section_gap: "48px"
+    note: "Collage layout; overlap encouraged."
+  navbar:
+    height: "64px"
+    background: "#fff200"
+    border: "0 0 3px 0 solid #000000"
+    shadow: "0 4px 0 #000000"
+    blur: "none"
+    item_style: "skewed uppercase labels, hover marker-highlight"
+    note: "Looks like a torn banner across the top."
+  sidebar:
+    width: "240px"
+    background: "#ffffff"
+    border: "0 3px 0 0 solid #000000"
+    item_style: "stacked taped labels with rotation"
+  modal:
+    radius: "0px"
+    background: "#ffffff"
+    border: "3px solid #000000"
+    shadow: "8px 8px 0 #ff1f8f"
+    overlay: "rgba(10,10,10,0.7)"
+  badge:
+    radius: "0px"
+    border: "2px solid #000000"
+    background: "#fff200"
+    color: "#000000"
+    padding: "2px 8px"
+    font: "heading, uppercase"
+  table:
+    header_background: "#000000"
+    row_border: "2px dashed #000000"
+    zebra: "none"
+    cell_padding: "10px 14px"
+  tabs:
+    indicator: "active tab highlighted with marker color + rotation"
+    radius: "0px"
+    active: "background #fff200; transform rotate(-1deg)"
+    inactive: "background transparent"
+
+iconography:
+  style: hand-drawn
+  stroke_width: "3px"
+  library: "scrappy hand-drawn / marker-style icons"
+  note: "Imperfect, sketchy icons; avoid clean geometric sets."
+
+imagery:
+  treatment: [high-contrast, halftone, "sharp-crop"]
+  border_radius: "0px"
+  filter: "grayscale(1) contrast(1.6) brightness(1.05)"
+  note: "Photocopied black-and-white look; tear edges; tape at corners; slight rotation."
+
+guidelines:
+  do:
+    - "Skew and rotate type for energy"
+    - "Mix type sizes and faces (ransom-note)"
+    - "Use torn edges, tape, and heavy grain"
+    - "Keep base black/white, punch with hot-pink and acid-yellow"
+  dont:
+    - "Don't make it tidy or perfectly aligned"
+    - "Don't round corners"
+    - "Don't skew or rotate body copy (keep it readable)"
+
+implementation_hints:
+  css_variables_prefix: "--punk-"
+  framework_agnostic: true
+  tailwind_note: "Use transform/skew utilities on headings only; clip-path for torn edges; SVG/PNG grain overlay; randomize rotation via nth-child."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap"
+  accessibility_note: "Keep body text upright and unskewed; ensure skewed headings still meet contrast; honor reduced-motion for shake effects."

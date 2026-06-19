@@ -1,0 +1,10 @@
+flowchart LR
+  Wireframe[Wireframe] --> TestWireframe[Test wireframe]
+  TestWireframe --> RefineStructure[Refine structure]
+  RefineStructure --> VisualDesign[Visual design]
+  VisualDesign --> TestVisual[Test visual design]
+  TestVisual --> Prototype[Coded or clickable prototype]
+  Prototype --> QA[QA and release checks]
+  TestWireframe -- usability issue --> Wireframe
+  TestVisual -- hierarchy or trust issue --> VisualDesign
+  QA -- implementation drift --> Prototype

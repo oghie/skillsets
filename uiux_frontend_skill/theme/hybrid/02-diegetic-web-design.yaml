@@ -1,0 +1,318 @@
+# Diegetic Web Design — hybrid category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: diegetic-web-design
+  name: Diegetic Web Design
+  category: hybrid
+  version: "1.0.0"
+  primary_mode: light
+  summary: UI designed as an in-universe physical object — a grimoire, a rolled treasure map, or a tavern noticeboard — with wax seals and paper folds.
+  description: >
+    A branch of skeuomorphism where the interface is not chrome on top of a
+    world but an object inside it. Navigation is a spellbook's tabs, a modal is a
+    sealed letter, a menu is pinned notes on a tavern board. Interactions are
+    diegetic: wax seals break, pages turn, maps unroll.
+  keywords: [diegetic, in-universe, grimoire, map, tavern-board, wax-seal, paper, immersive, narrative]
+  mood: [immersive, narrative, tactile, mysterious, crafted]
+  use_cases: [story-driven game sites, interactive fiction, ARG/puzzle experiences, themed event microsites]
+  avoid_when: [productivity tools, data dashboards, anything needing fast scannability or strict a11y]
+  references: [Diablo grimoire menus, treasure-map UIs, in-game journals, escape-room props]
+
+typography:
+  font_families:
+    display:
+      stack: "'Cinzel', 'Trajan Pro', serif"
+      source: google-fonts
+      weights: [500, 700]
+      note: Inscribed titles, as if tooled into the cover.
+    heading:
+      stack: "'IM Fell English SC', 'IM Fell English', serif"
+      source: google-fonts
+      weights: [400]
+    body:
+      stack: "'IM Fell English', 'EB Garamond', serif"
+      source: google-fonts
+      weights: [400]
+      note: Old-press serif evoking hand-set type on rag paper.
+  scale:
+    base_size: "18px"
+    ratio: 1.25
+    steps:
+      display: "3.433rem"
+      h1: "2.746rem"
+      h2: "2.197rem"
+      h3: "1.758rem"
+      h4: "1.406rem"
+      body_lg: "1.25rem"
+      body: "1.125rem"
+      body_sm: "1rem"
+      caption: "0.875rem"
+      overline: "0.875rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.65
+    relaxed: 1.85
+  letter_spacing:
+    tight: "0em"
+    normal: "0.01em"
+    wide: "0.12em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 1px 0 rgba(255,250,235,0.5)"
+    highlight:
+      color: "#d9c08a"
+      style: marker
+    per_role:
+      display: { text_transform: uppercase, letter_spacing: "0.12em" }
+      heading: { font_style: italic }
+      body: { text_shadow: "none" }
+
+color:
+  light:
+    recommended: true
+    background: "#d8c39a"
+    surface: "#efe2c2"
+    surface_alt: "#e3d2ac"
+    text_primary: "#3a2c16"
+    text_secondary: "#5a4424"
+    text_muted: "#8a7044"
+    text_inverse: "#efe2c2"
+    border: "#9a7a44"
+    accent: "#8a1c12"
+    accent_secondary: "#2a5a3a"
+    accent_tertiary: "#1f3a5c"
+    interactive:
+      default: "#8a1c12"
+      hover: "#6e160e"
+      active: "#56100a"
+      focus_ring: "#1f3a5c"
+      disabled: "#c0aa7c"
+    status:
+      error: "#8a1c12"
+      warning: "#b5862a"
+      success: "#2a5a3a"
+      info: "#1f3a5c"
+    overlay: "rgba(58,44,22,0.45)"
+    gradients:
+      parchment: "radial-gradient(circle at 50% 35%, #f4e8cc 0%, #d8c39a 100%)"
+      foxing: "radial-gradient(circle at 80% 70%, rgba(120,80,30,0.18) 0%, transparent 40%)"
+    note: Aged parchment/rag paper. Ink browns and blacks; oxblood wax-seal red and forest/indigo inks as accents.
+  dark:
+    recommended: false
+    background: "#1f1810"
+    surface: "#2c2418"
+    surface_alt: "#372d1c"
+    text_primary: "#e6d4ac"
+    text_secondary: "#c0a878"
+    text_muted: "#8a7450"
+    text_inverse: "#1f1810"
+    border: "#5a4628"
+    accent: "#c0392b"
+    accent_secondary: "#4a8a5c"
+    accent_tertiary: "#5a7aa0"
+    interactive:
+      default: "#c0392b"
+      hover: "#d24938"
+      active: "#a02c20"
+      focus_ring: "#5a7aa0"
+      disabled: "#4a3c24"
+    status:
+      error: "#c0392b"
+      warning: "#c9a227"
+      success: "#4a8a5c"
+      info: "#5a7aa0"
+    overlay: "rgba(0,0,0,0.6)"
+    gradients:
+      parchment: "radial-gradient(circle at 50% 35%, #3a2e1c 0%, #1f1810 100%)"
+    note: "Off-mode adaptation — candlelit/aged-by-night parchment. Light parchment is the canonical experience."
+
+radius:
+  philosophy: "Object-driven, not uniform — page corners are slightly soft/torn, seals are circular, frames follow the prop. No flat geometric radius."
+  default: "2px"
+  scale:
+    none: "0px"
+    sm: "2px"
+    md: "4px"
+    lg: "8px"
+    xl: "50%"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "40px", "64px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "40px"
+    max_width: "1100px"
+  density: comfortable
+
+border:
+  default_width: "2px"
+  style: solid
+  philosophy: "Borders are the edges of the prop — torn paper, tooled leather, map cartouche, or a frame of stitched parchment (border-image)."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "4px"
+    heavy: "10px"
+
+elevation:
+  type: layered
+  philosophy: "Stacked-paper depth — soft shadows of overlapping sheets, curled corners, pinned notes casting shadow."
+  tokens:
+    sm: "0 2px 6px rgba(58,44,22,0.25)"
+    md: "0 6px 16px rgba(58,44,22,0.3), 0 1px 0 rgba(255,250,235,0.4)"
+    lg: "0 16px 40px rgba(58,44,22,0.4)"
+  dark_tokens:
+    sm: "0 2px 6px rgba(0,0,0,0.5)"
+    md: "0 6px 16px rgba(0,0,0,0.55)"
+    lg: "0 16px 40px rgba(0,0,0,0.65)"
+
+motion:
+  duration:
+    fast: "200ms"
+    base: "450ms"
+    slow: "900ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.2, 0.64, 1)"
+  signature: "diegetic actions — pages turn, maps unroll, wax seals crack open, notes get pinned"
+  reduced_motion_note: "Replace page-turn/unroll with cross-fades; no physics."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "parchment fiber + foxing stains as background texture (PNG/SVG)"
+  overlays: ["vignette", "coffee-stain / foxing blotches", "torn/burnt edges"]
+  patterns: ["map cartography lines", "ruled manuscript lines", "compass rose motif"]
+  glow: "warm candlelight pooling on the page"
+  special:
+    - "The whole UI is one in-world object (book/map/board) — components are its parts"
+    - "Wax seals as buttons/locks; breaking the seal triggers the action"
+    - "Page-turn and map-unroll transitions; pinned/taped notes"
+    - "Handwritten ink annotations and marginalia"
+
+components:
+  button:
+    primary:
+      shape: seal
+      radius: "50%"
+      border: "2px solid #5a100a"
+      padding: "16px"
+      background: "radial-gradient(circle at 40% 35%, #b5302a 0%, #8a1c12 70%)"
+      color: "#f0e0c0"
+      shadow: "0 4px 8px rgba(58,44,22,0.4), inset 0 2px 4px rgba(255,200,180,0.3)"
+      font: "display, uppercase"
+      hover: "filter: brightness(1.06)"
+      active: "transform: scale(0.96)"
+      focus: "outline: 2px solid #1f3a5c; outline-offset: 3px"
+    secondary:
+      shape: parchment-tab
+      radius: "2px"
+      border: "2px solid #9a7a44"
+      padding: "12px 24px"
+      background: "#e3d2ac"
+      color: "#3a2c16"
+      shadow: "0 2px 6px rgba(58,44,22,0.25)"
+    ghost:
+      background: "transparent"
+      color: "#8a1c12"
+      border: "none (underlined ink link)"
+  input:
+    radius: "2px"
+    border: "0 0 2px 0 solid #9a7a44"
+    background: "transparent"
+    padding: "10px 6px"
+    placeholder_color: "#8a7044"
+    focus: "border-bottom-color: #8a1c12"
+    note: "A ruled line to write on, like a ledger or form on parchment."
+  card:
+    radius: "3px"
+    border: "1px solid #b59a64"
+    background: "#efe2c2"
+    padding: "28px"
+    shadow: "0 6px 16px rgba(58,44,22,0.3), 0 1px 0 rgba(255,250,235,0.4)"
+    hover: "transform: rotate(-0.4deg) translateY(-2px)"
+  container:
+    max_width: "1100px"
+    padding: "40px"
+    section_gap: "64px"
+    note: "Framed as a spread/page; sections are leaves of the same book or pinned items."
+  navbar:
+    height: "auto"
+    background: "transparent"
+    border: "none"
+    shadow: "none"
+    blur: "none"
+    item_style: "leather book tabs or rope-tied scroll labels along the page edge; active tab pulled out"
+    note: "Diegetic nav — book ribbon/tabs, not a conventional bar."
+  sidebar:
+    width: "300px"
+    background: "#e3d2ac"
+    border: "0 2px 0 0 solid #9a7a44"
+    item_style: "index/table-of-contents entries in ink; active entry bookmarked with a ribbon"
+  modal:
+    radius: "3px"
+    background: "#efe2c2"
+    border: "1px solid #b59a64"
+    shadow: "0 24px 60px rgba(58,44,22,0.5)"
+    overlay: "rgba(58,44,22,0.45)"
+  badge:
+    radius: "50%"
+    border: "1px solid #5a100a"
+    background: "radial-gradient(circle at 40% 35%, #b5302a 0%, #8a1c12 70%)"
+    color: "#f0e0c0"
+    padding: "6px"
+    font: "display"
+  table:
+    header_background: "#e3d2ac"
+    row_border: "1px solid #cdb888"
+    zebra: "#e9dab6"
+    cell_padding: "12px 18px"
+  tabs:
+    indicator: "active tab is a book ribbon / pulled-out leather tab"
+    radius: "2px"
+    active: "background #efe2c2; ribbon marker"
+    inactive: "background #d8c39a; color #8a7044"
+
+iconography:
+  style: engraved
+  stroke_width: "1.5px"
+  library: "hand-inked map glyphs, compass, keys, runes, marginalia doodles"
+  note: "Looks drawn by hand in ink on the page."
+
+imagery:
+  treatment: ["grain", "duotone", "high-contrast"]
+  border_radius: "2px"
+  filter: "sepia(0.35) contrast(1.05)"
+  note: "Woodcut/engraving-style illustrations; coffee-stained photo edges; map-cartouche frames."
+
+guidelines:
+  do:
+    - "Make the UI a believable in-world object"
+    - "Use diegetic interactions (seals, page turns, unrolling)"
+    - "Texture everything as real paper/leather/wax"
+    - "Hand-letter annotations and marginalia"
+  dont:
+    - "Don't add modern chrome that breaks the illusion (flat toolbars, generic icons)"
+    - "Don't sacrifice all usability — provide clear affordances within the metaphor"
+    - "Don't rely on tiny ornate text for critical content"
+
+implementation_hints:
+  css_variables_prefix: "--dieg-"
+  framework_agnostic: true
+  tailwind_note: "Heavy use of background-image textures and border-image (torn paper, wax seal sprites); page-turn via 3D transforms; keep a 'reduced ornament' mode for a11y."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond&display=swap"
+  accessibility_note: "Diegetic metaphors can obscure function — ensure every interactive prop has an accessible name/role, sufficient text contrast on parchment, and an honored reduced-motion path."

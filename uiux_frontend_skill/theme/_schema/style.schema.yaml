@@ -1,0 +1,293 @@
+# ============================================================================
+# STYLE SCHEMA — the contract every theme/<category>/*.yaml file follows.
+# ----------------------------------------------------------------------------
+# This file is documentation, not data. It lists every field, its type, the
+# allowed values (enums), and notes on intent. When building a UI from a style
+# file, treat the style file as the single source of truth and this schema as
+# the explanation of what each field means.
+#
+# Conventions:
+#   - All color values are CSS-expressible strings: "#rrggbb", "#rrggbbaa",
+#     "rgba(r,g,b,a)", or "hsl(...)". Never prose.
+#   - All dimensions are CSS-expressible: "0px", "16px", "1rem", "999px".
+#     Never "small" / "large" as a value (those are token *names*).
+#   - Every token must be directly usable by a consuming skill without
+#     interpretation. If a value needs explaining, that explanation goes in a
+#     sibling `*_note` field, never inside the value.
+#   - Light and dark are NOT assumed symmetric. See `primary_mode`.
+# ============================================================================
+
+identity:
+  id: string                 # kebab-case, unique, matches filename (without number prefix)
+  name: string               # human-readable display name
+  category: enum             # sharp | rounded | hybrid
+  version: string            # semver, e.g. "1.0.0"
+  primary_mode: enum         # light | dark | both
+                             #   The mode this aesthetic is *native* to. For a
+                             #   native style, the opposite mode under color.*
+                             #   is a deliberate adaptation (see color.<mode>.recommended).
+  summary: string            # one sentence
+  description: string        # 1-3 sentences, the "feel"
+  keywords: [string]         # search/tagging
+  mood: [string]             # emotional adjectives (e.g. aggressive, calm, playful)
+  use_cases: [string]        # where it fits (from kategori.txt "Penerapan")
+  avoid_when: [string]       # where it does NOT fit — critical guardrail
+  references: [string]       # inspiration / canonical sources
+
+typography:
+  font_families:
+    # roles: display, heading, body, mono. A style may omit roles it doesn't use.
+    display:
+      stack: string          # full CSS font-family value incl. fallbacks
+      source: enum           # google-fonts | system | adobe-fonts | custom | bundled
+      weights: [number]      # available weights actually used
+      note: string           # optional: licensing / loading hint
+    heading: { stack: string, source: enum, weights: [number], note: string }
+    body:    { stack: string, source: enum, weights: [number], note: string }
+    mono:    { stack: string, source: enum, weights: [number], note: string }
+  scale:
+    base_size: string        # e.g. "16px" — body baseline
+    ratio: number            # modular scale ratio, e.g. 1.25 (major third)
+    steps:                   # named size tokens -> CSS size. Fill what the style uses.
+      display: string        # e.g. "3.815rem"
+      h1: string
+      h2: string
+      h3: string
+      h4: string
+      body_lg: string
+      body: string
+      body_sm: string
+      caption: string
+      overline: string
+  weights:                   # semantic weight names -> numeric
+    regular: number
+    medium: number
+    bold: number
+    black: number
+  line_height:               # unitless or CSS
+    tight: number
+    normal: number
+    relaxed: number
+  letter_spacing:            # CSS, may be negative
+    tight: string
+    normal: string
+    wide: string
+  treatments:
+    # Where slanted / outlined / tilted / decorative text lives.
+    # Every value here must be directly CSS-applicable.
+    font_style: enum         # normal | italic | oblique
+    transform: string        # CSS transform applied to text, e.g. "skewX(-6deg)" | "rotate(-2deg)" | "none"
+    text_transform: enum     # none | uppercase | lowercase | capitalize
+    text_decoration: string  # e.g. "none" | "underline" | "line-through 2px"
+    text_stroke: string      # CSS -webkit-text-stroke, e.g. "1px #000000" | "none"  (outlined text)
+    text_shadow: string      # CSS text-shadow, e.g. "3px 3px 0 #000000" | "none"
+    highlight:               # marker/highlight behind text
+      color: string          # CSS color or "none"
+      style: enum            # none | marker | box | underline-thick
+    per_role:                # optional overrides keyed by font role (display/heading/body/mono)
+      # example:
+      # display: { transform: "skewX(-8deg)", text_transform: uppercase }
+      "<role>": object
+
+color:
+  # Two full blocks. Each is independent. Do not assume one is the inverse of
+  # the other. For a native-mode style, set `recommended: false` on the off mode.
+  light:
+    recommended: boolean     # is this mode a first-class, designed experience?
+    background: string       # page background
+    surface: string          # default card/panel surface
+    surface_alt: string      # secondary surface (raised/sunken/zebra)
+    text_primary: string
+    text_secondary: string
+    text_muted: string
+    text_inverse: string     # text on accent/inverted surfaces
+    border: string
+    accent: string           # primary brand/action color
+    accent_secondary: string
+    accent_tertiary: string
+    interactive:             # action element colors + states
+      default: string
+      hover: string
+      active: string
+      focus_ring: string
+      disabled: string
+    status:                  # semantic — each style chooses values that fit its palette
+      error: string
+      warning: string
+      success: string
+      info: string
+    overlay: string          # scrim/backdrop, usually rgba
+    gradients:               # optional named gradients (mesh/aurora/etc.), full CSS
+      "<name>": string
+    note: string             # contrast/WCAG guidance, pairing rules
+  dark:
+    recommended: boolean
+    # ... identical key set to `light` ...
+    background: string
+    surface: string
+    surface_alt: string
+    text_primary: string
+    text_secondary: string
+    text_muted: string
+    text_inverse: string
+    border: string
+    accent: string
+    accent_secondary: string
+    accent_tertiary: string
+    interactive: { default: string, hover: string, active: string, focus_ring: string, disabled: string }
+    status: { error: string, warning: string, success: string, info: string }
+    overlay: string
+    gradients: { "<name>": string }
+    note: string
+
+radius:
+  philosophy: string         # the rule, e.g. "border-radius: 0 everywhere"
+  default: string            # the value applied by default
+  scale:                     # named -> CSS. Include only what the style uses.
+    none: string             # "0px"
+    sm: string
+    md: string
+    lg: string
+    xl: string
+    pill: string             # "999px"
+
+spacing:
+  base: string               # base unit, e.g. "8px" (or "4px")
+  scale: [string]            # ordered list of spacing tokens, e.g. ["0px","4px","8px",...]
+  grid:
+    columns: number
+    gutter: string
+    margin: string
+    max_width: string        # content container max width
+  density: enum              # comfortable | compact | dense | airy
+
+border:
+  default_width: string      # e.g. "1px" | "3px"
+  style: enum                # solid | dashed | dotted | double | none
+  philosophy: string
+  width:                     # named -> CSS
+    hairline: string         # "1px"
+    thin: string
+    thick: string
+    heavy: string
+
+elevation:
+  type: enum                 # none | hard-drop | soft | inner | glass-blur | bevel | layered
+  philosophy: string
+  tokens:                    # named -> full CSS box-shadow (provide light + dark where they differ)
+    sm: string
+    md: string
+    lg: string
+  dark_tokens:               # optional: box-shadow overrides for dark mode
+    sm: string
+    md: string
+    lg: string
+
+motion:
+  duration:                  # named -> CSS time
+    fast: string             # "120ms"
+    base: string
+    slow: string
+  easing:                    # named -> CSS easing
+    standard: string         # "cubic-bezier(...)"
+    entrance: string
+    exit: string
+    bounce: string
+  signature: string          # the motion personality, e.g. "instant/none" | "bouncy overshoot" | "smooth"
+  reduced_motion_note: string
+
+texture_and_effects:
+  # The distinctive, hard-to-fake layer. Omit fields a style doesn't use.
+  backdrop_filter: string    # e.g. "blur(16px) saturate(180%)" | "none"
+  noise: string              # grain/noise treatment description + how (svg/png overlay opacity)
+  overlays: [string]         # paper-tear | grime | scanlines | bevel | vignette | halftone ...
+  patterns: [string]         # grid | dot-grid | stripes | none
+  glow: string               # neon/aurora glow recipe (box-shadow/filter) or "none"
+  special: [string]          # signature treatments unique to this style
+
+components:
+  # Each component: how to build it from the tokens above. Values are concrete
+  # (reference real tokens/values). Include states where they matter.
+  button:
+    primary:   { shape: string, radius: string, border: string, padding: string, background: string, color: string, shadow: string, font: string, hover: string, active: string, focus: string }
+    secondary: { shape: string, radius: string, border: string, padding: string, background: string, color: string, shadow: string }
+    ghost:     { background: string, color: string, border: string }
+  input:
+    radius: string
+    border: string
+    background: string
+    padding: string
+    placeholder_color: string
+    focus: string
+    note: string
+  card:
+    radius: string
+    border: string
+    background: string
+    padding: string
+    shadow: string
+    hover: string
+  container:
+    max_width: string
+    padding: string
+    section_gap: string
+    note: string
+  navbar:                    # top navigation / app bar
+    height: string
+    background: string
+    border: string
+    shadow: string
+    blur: string             # backdrop-filter if glassy, else "none"
+    item_style: string
+    note: string
+  sidebar:
+    width: string
+    background: string
+    border: string
+    item_style: string
+  modal:
+    radius: string
+    background: string
+    border: string
+    shadow: string
+    overlay: string
+  badge:                     # badge / tag / chip / pill
+    radius: string
+    border: string
+    background: string
+    color: string
+    padding: string
+    font: string
+  table:
+    header_background: string
+    row_border: string
+    zebra: string            # alt-row background or "none"
+    cell_padding: string
+  tabs:
+    indicator: string        # how active tab is marked
+    radius: string
+    active: string
+    inactive: string
+
+iconography:
+  style: enum                # outline | filled | duotone | pixel | hand-drawn | engraved
+  stroke_width: string       # for outline icons, e.g. "1.5px"
+  library: string            # suggested icon set
+  note: string
+
+imagery:
+  treatment: [string]        # duotone | grain | sharp-crop | rounded-mask | halftone | high-contrast ...
+  border_radius: string      # radius applied to images
+  filter: string             # CSS filter recipe or "none"
+  note: string
+
+guidelines:
+  do: [string]
+  dont: [string]
+
+implementation_hints:
+  css_variables_prefix: string   # e.g. "--nb-"
+  framework_agnostic: boolean
+  tailwind_note: string
+  font_loading: [string]         # how to load the named fonts (link/import URLs or system)
+  accessibility_note: string

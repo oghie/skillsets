@@ -1,0 +1,304 @@
+# Monospace CRT Terminal (Tech-Noir) — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: monospace-crt-terminal
+  name: Monospace CRT Terminal (Tech-Noir)
+  category: sharp
+  version: "1.0.0"
+  primary_mode: dark
+  summary: Command-line aesthetic — pure black background, 1px hairlines, monospace type, phosphor neon accents.
+  description: >
+    The screen pretends to be a CRT terminal. Everything is monospaced and
+    grid-snapped, separators are single-pixel lines, and the only color is the
+    glow of green or amber phosphor. Optional scanline overlay sells the era.
+  keywords: [terminal, crt, monospace, hacker, phosphor, hairline, tech-noir]
+  mood: [technical, focused, retro-future, austere]
+  use_cases: [developer SaaS tools, cybersecurity platforms, API documentation, status pages]
+  avoid_when: [warm consumer brands, marketing pages needing imagery, low-literacy audiences]
+  references: [classic green-screen terminals, Cool Retro Term, hacker UI tropes]
+
+typography:
+  font_families:
+    display:
+      stack: "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [500, 700]
+    body:
+      stack: "'IBM Plex Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400, 500, 700]
+    mono:
+      stack: "'IBM Plex Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400, 700]
+  scale:
+    base_size: "15px"
+    ratio: 1.25
+    steps:
+      display: "2.441rem"
+      h1: "1.953rem"
+      h2: "1.563rem"
+      h3: "1.25rem"
+      h4: "1.125rem"
+      body_lg: "1rem"
+      body: "0.9375rem"
+      body_sm: "0.8125rem"
+      caption: "0.75rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.5
+    relaxed: 1.7
+  letter_spacing:
+    tight: "0em"
+    normal: "0.01em"
+    wide: "0.1em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 0 4px currentColor"
+    highlight:
+      color: "#0aff0a"
+      style: box
+    per_role:
+      display: { text_transform: uppercase, letter_spacing: "0.08em" }
+
+color:
+  light:
+    recommended: false
+    background: "#f4f4f0"
+    surface: "#ffffff"
+    surface_alt: "#eaeae4"
+    text_primary: "#0a3d0a"
+    text_secondary: "#2e6b2e"
+    text_muted: "#5a7a5a"
+    text_inverse: "#f4f4f0"
+    border: "#0a3d0a"
+    accent: "#0a7d0a"
+    accent_secondary: "#9a5b00"
+    accent_tertiary: "#0a3d0a"
+    interactive:
+      default: "#0a7d0a"
+      hover: "#0a5d0a"
+      active: "#073f07"
+      focus_ring: "#0a7d0a"
+      disabled: "#b8c4b8"
+    status:
+      error: "#b30000"
+      warning: "#9a5b00"
+      success: "#0a7d0a"
+      info: "#0a4d7d"
+    overlay: "rgba(10,61,10,0.4)"
+    gradients: {}
+    note: "Off-mode adaptation only — a 'paper terminal'. Glow effects disabled in light mode."
+  dark:
+    recommended: true
+    background: "#000000"
+    surface: "#0a0e0a"
+    surface_alt: "#0f140f"
+    text_primary: "#33ff33"
+    text_secondary: "#1fb81f"
+    text_muted: "#0f7a0f"
+    text_inverse: "#000000"
+    border: "#1a3d1a"
+    accent: "#33ff33"
+    accent_secondary: "#ffb000"
+    accent_tertiary: "#00e0e0"
+    interactive:
+      default: "#33ff33"
+      hover: "#5cff5c"
+      active: "#1fd81f"
+      focus_ring: "#33ff33"
+      disabled: "#1a3d1a"
+    status:
+      error: "#ff3333"
+      warning: "#ffb000"
+      success: "#33ff33"
+      info: "#00e0e0"
+    overlay: "rgba(0,0,0,0.8)"
+    gradients: {}
+    note: Phosphor green is the primary; amber and cyan are alternate terminals. Text glows via text-shadow.
+
+radius:
+  philosophy: "Hard rectangular boxes. border-radius 0."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "4px", "8px", "16px", "24px", "32px", "48px", "64px"]
+  grid:
+    columns: 12
+    gutter: "16px"
+    margin: "16px"
+    max_width: "1100px"
+  density: dense
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Single-pixel hairlines define every box, like a TUI."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "2px"
+
+elevation:
+  type: none
+  philosophy: "No physical shadows; depth implied by glow and hairline framing."
+  tokens:
+    sm: "none"
+    md: "none"
+    lg: "none"
+  dark_tokens:
+    sm: "0 0 4px rgba(51,255,51,0.4)"
+    md: "0 0 8px rgba(51,255,51,0.5)"
+    lg: "0 0 16px rgba(51,255,51,0.6)"
+
+motion:
+  duration:
+    fast: "0ms"
+    base: "80ms"
+    slow: "150ms"
+  easing:
+    standard: "steps(1)"
+    entrance: "steps(2)"
+    exit: "steps(1)"
+    bounce: "linear"
+  signature: "instant, stepped — like character cells redrawing; optional blinking cursor"
+  reduced_motion_note: "Disable cursor blink and scanline animation."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "subtle CRT grain overlay, opacity 0.05"
+  overlays: [scanlines, vignette]
+  patterns: ["character-grid: monospace cell alignment"]
+  glow: "text-shadow: 0 0 4px currentColor; box glow via accent box-shadow"
+  special:
+    - "Blinking block cursor on inputs and headings"
+    - "Optional CRT curvature/flicker (use sparingly, respect reduced-motion)"
+    - "Prompt-style prefixes like '> ' or '$ '"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #33ff33"
+      padding: "8px 16px"
+      background: "transparent"
+      color: "#33ff33"
+      shadow: "none"
+      font: "mono, uppercase"
+      hover: "background: #33ff33; color: #000000"
+      active: "background: #1fd81f"
+      focus: "outline: 1px dashed #33ff33; outline-offset: 2px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #1a3d1a"
+      padding: "8px 16px"
+      background: "transparent"
+      color: "#1fb81f"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#33ff33"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #1a3d1a"
+    background: "#0a0e0a"
+    padding: "8px 10px"
+    placeholder_color: "#0f7a0f"
+    focus: "border-color: #33ff33; caret-color: #33ff33"
+    note: "Caret styled as a block; prefix with a prompt glyph."
+  card:
+    radius: "0px"
+    border: "1px solid #1a3d1a"
+    background: "#0a0e0a"
+    padding: "16px"
+    shadow: "none"
+    hover: "border-color: #33ff33"
+  container:
+    max_width: "1100px"
+    padding: "16px"
+    section_gap: "32px"
+    note: "Tight, terminal-like density."
+  navbar:
+    height: "44px"
+    background: "#000000"
+    border: "0 0 1px 0 solid #1a3d1a"
+    shadow: "none"
+    blur: "none"
+    item_style: "monospace labels, '>' active marker, hover glow"
+    note: "Reads like a status bar."
+  sidebar:
+    width: "220px"
+    background: "#000000"
+    border: "0 1px 0 0 solid #1a3d1a"
+    item_style: "file-tree style rows, active row inverted (green bg / black text)"
+  modal:
+    radius: "0px"
+    background: "#0a0e0a"
+    border: "1px solid #33ff33"
+    shadow: "0 0 16px rgba(51,255,51,0.4)"
+    overlay: "rgba(0,0,0,0.8)"
+  badge:
+    radius: "0px"
+    border: "1px solid #33ff33"
+    background: "transparent"
+    color: "#33ff33"
+    padding: "1px 6px"
+    font: "mono, uppercase"
+  table:
+    header_background: "#0f140f"
+    row_border: "1px solid #1a3d1a"
+    zebra: "none"
+    cell_padding: "6px 12px"
+  tabs:
+    indicator: "active tab inverted or prefixed with '>'"
+    radius: "0px"
+    active: "color #000000; background #33ff33"
+    inactive: "color #1fb81f; background transparent"
+
+iconography:
+  style: outline
+  stroke_width: "1px"
+  library: "ASCII glyphs or pixel-grid line icons"
+  note: "Prefer text glyphs (▸ ✓ ✗ ▮) over illustrative icons."
+
+imagery:
+  treatment: [duotone, halftone, high-contrast]
+  border_radius: "0px"
+  filter: "grayscale(1) brightness(0.9) sepia(0.3) hue-rotate(70deg)"
+  note: "Convert images to monochrome phosphor green or dithered halftone."
+
+guidelines:
+  do:
+    - "Keep everything monospaced and grid-aligned"
+    - "Use 1px hairlines for all separators"
+    - "Add subtle glow via text-shadow on accent text"
+    - "Stay on pure black in dark mode"
+  dont:
+    - "Don't round corners or add soft shadows"
+    - "Don't use multiple bright phosphor colors at once on one screen"
+    - "Don't animate without honoring reduced-motion"
+
+implementation_hints:
+  css_variables_prefix: "--crt-"
+  framework_agnostic: true
+  tailwind_note: "fontFamily mono only; disable radius; add custom green glow shadow utilities; scanline via repeating-linear-gradient overlay."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+  accessibility_note: "Glow can reduce legibility; keep text-shadow blur small. Provide a no-scanline / no-flicker preference."

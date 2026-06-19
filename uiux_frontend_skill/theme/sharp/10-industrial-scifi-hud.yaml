@@ -1,0 +1,312 @@
+# Industrial Sci-Fi HUD — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: industrial-scifi-hud
+  name: Industrial Sci-Fi HUD
+  category: sharp
+  version: "1.0.0"
+  primary_mode: dark
+  summary: Military / spacecraft heads-up display — geometric chamfered (45-degree cut) edges, never rounded, with technical readouts.
+  description: >
+    A fictional cockpit or command console. Panels have angular chamfered
+    corners (cut at 45 degrees, not rounded), thin glowing edges, bracket
+    framing, and dense telemetry. Cyan/amber on deep gunmetal.
+  keywords: [hud, sci-fi, military, chamfered, telemetry, cockpit, technical, brackets]
+  mood: [precise, tactical, futuristic, alert]
+  use_cases: [video game menu UIs, technical simulation platforms, hardware monitoring dashboards, control rooms]
+  avoid_when: [warm lifestyle brands, casual consumer apps, content-first reading sites]
+  references: [game HUDs, aerospace cockpit displays, sci-fi film interfaces, FUI design]
+
+typography:
+  font_families:
+    display:
+      stack: "'Orbitron', 'Rajdhani', sans-serif"
+      source: google-fonts
+      weights: [500, 700, 900]
+      note: Wide technical display face for headers/callsigns.
+    body:
+      stack: "'Rajdhani', 'Inter', sans-serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+    mono:
+      stack: "'Share Tech Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400]
+  scale:
+    base_size: "14px"
+    ratio: 1.25
+    steps:
+      display: "2.728rem"
+      h1: "2.182rem"
+      h2: "1.746rem"
+      h3: "1.397rem"
+      h4: "1.118rem"
+      body_lg: "1rem"
+      body: "0.875rem"
+      body_sm: "0.75rem"
+      caption: "0.6875rem"
+      overline: "0.625rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 900
+  line_height:
+    tight: 1.1
+    normal: 1.4
+    relaxed: 1.6
+  letter_spacing:
+    tight: "0.02em"
+    normal: "0.05em"
+    wide: "0.18em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: uppercase
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "0 0 6px currentColor"
+    highlight:
+      color: "#00e5ff"
+      style: box
+    per_role:
+      display: { letter_spacing: "0.18em" }
+      body: { text_transform: none, text_shadow: "none" }
+
+color:
+  light:
+    recommended: false
+    background: "#dce3e8"
+    surface: "#eef2f5"
+    surface_alt: "#dde4ea"
+    text_primary: "#0a1620"
+    text_secondary: "#2a3a48"
+    text_muted: "#5a6a78"
+    text_inverse: "#eef2f5"
+    border: "#0a7a8a"
+    accent: "#0088a0"
+    accent_secondary: "#b06a00"
+    accent_tertiary: "#0a1620"
+    interactive:
+      default: "#0088a0"
+      hover: "#006a80"
+      active: "#005060"
+      focus_ring: "#b06a00"
+      disabled: "#b0bcc4"
+    status:
+      error: "#c4001a"
+      warning: "#b06a00"
+      success: "#0a7a3a"
+      info: "#0088a0"
+    overlay: "rgba(10,22,32,0.4)"
+    gradients: {}
+    note: "Off-mode adaptation — a 'daylight cockpit'. Glow disabled; chamfers and brackets retained."
+  dark:
+    recommended: true
+    background: "#05090d"
+    surface: "#0c141b"
+    surface_alt: "#12202a"
+    text_primary: "#cfe8ee"
+    text_secondary: "#7fa6b3"
+    text_muted: "#4a6470"
+    text_inverse: "#05090d"
+    border: "#1c3c48"
+    accent: "#00e5ff"
+    accent_secondary: "#ffb000"
+    accent_tertiary: "#39ff8a"
+    interactive:
+      default: "#00e5ff"
+      hover: "#5cf0ff"
+      active: "#00b8cc"
+      focus_ring: "#ffb000"
+      disabled: "#1c3c48"
+    status:
+      error: "#ff3b46"
+      warning: "#ffb000"
+      success: "#39ff8a"
+      info: "#00e5ff"
+    overlay: "rgba(0,0,0,0.75)"
+    gradients:
+      scan: "linear-gradient(180deg, rgba(0,229,255,0.12) 0%, transparent 100%)"
+    note: Gunmetal panels, cyan primary glow, amber for warnings/secondary. Edges and text emit soft glow.
+
+radius:
+  philosophy: "No curves. Corners are chamfered (cut at 45deg) via clip-path, not rounded."
+  default: "0px"
+  scale:
+    none: "0px"
+  chamfer:
+    note: "These are clip-path recipes (the corner-shaping technique for this style), NOT border-radius values. Apply as the element's clip-path."
+    sm: "polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px)"
+    md: "polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "4px", "8px", "12px", "16px", "24px", "32px", "48px"]
+  grid:
+    columns: 12
+    gutter: "12px"
+    margin: "16px"
+    max_width: "1600px"
+  density: dense
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Thin glowing edges plus L-shaped corner brackets frame each panel."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: glass-blur
+  philosophy: "Panels float over a dark void with edge glow rather than drop shadow."
+  tokens:
+    sm: "0 0 0 1px rgba(0,229,255,0.2)"
+    md: "0 0 12px rgba(0,229,255,0.25)"
+    lg: "0 0 24px rgba(0,229,255,0.35)"
+  dark_tokens:
+    sm: "0 0 0 1px rgba(0,229,255,0.25)"
+    md: "0 0 14px rgba(0,229,255,0.3)"
+    lg: "0 0 28px rgba(0,229,255,0.4)"
+
+motion:
+  duration:
+    fast: "100ms"
+    base: "180ms"
+    slow: "320ms"
+  easing:
+    standard: "cubic-bezier(0.2, 0, 0, 1)"
+    entrance: "cubic-bezier(0, 0, 0.2, 1)"
+    exit: "cubic-bezier(0.4, 0, 1, 1)"
+    bounce: "linear"
+  signature: "boot-up sweeps, scanning lines, value counters spinning up, flicker on alerts"
+  reduced_motion_note: "Disable scan sweeps and flicker; snap counters to final values."
+
+texture_and_effects:
+  backdrop_filter: "blur(4px)"
+  noise: "subtle digital grain, opacity 0.05"
+  overlays: ["scanlines", "vignette", "grid: faint targeting grid"]
+  patterns: ["dot-grid: radar/targeting background"]
+  glow: "edge + text glow via box-shadow/text-shadow in accent cyan"
+  special:
+    - "Chamfered panel corners via clip-path"
+    - "L-shaped corner brackets framing key panels"
+    - "Animated scan sweep across panels on load"
+    - "Telemetry readouts, crosshairs, radial gauges"
+
+components:
+  button:
+    primary:
+      shape: chamfered
+      radius: "0px"
+      border: "1px solid #00e5ff"
+      padding: "8px 18px"
+      background: "rgba(0,229,255,0.08)"
+      color: "#00e5ff"
+      shadow: "0 0 12px rgba(0,229,255,0.25)"
+      font: "display, uppercase"
+      hover: "background: rgba(0,229,255,0.18); box-shadow: 0 0 16px rgba(0,229,255,0.4)"
+      active: "background: rgba(0,229,255,0.3)"
+      focus: "outline: 1px solid #ffb000; outline-offset: 2px"
+    secondary:
+      shape: chamfered
+      radius: "0px"
+      border: "1px solid #1c3c48"
+      padding: "8px 18px"
+      background: "transparent"
+      color: "#7fa6b3"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#00e5ff"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #1c3c48"
+    background: "rgba(0,229,255,0.04)"
+    padding: "8px 12px"
+    placeholder_color: "#4a6470"
+    focus: "border-color: #00e5ff; box-shadow: 0 0 8px rgba(0,229,255,0.3)"
+    note: "Field with chamfered corners and cyan focus glow."
+  card:
+    radius: "0px"
+    border: "1px solid #1c3c48"
+    background: "rgba(12,20,27,0.8)"
+    padding: "16px"
+    shadow: "0 0 12px rgba(0,229,255,0.15)"
+    hover: "border-color: #00e5ff"
+  container:
+    max_width: "1600px"
+    padding: "16px"
+    section_gap: "24px"
+    note: "Cockpit-style multi-panel layout."
+  navbar:
+    height: "48px"
+    background: "rgba(5,9,13,0.9)"
+    border: "0 0 1px 0 solid #1c3c48"
+    shadow: "0 0 16px rgba(0,229,255,0.15)"
+    blur: "blur(4px)"
+    item_style: "uppercase callsign labels with glow; active item bracketed"
+    note: "Command bar with system status indicators."
+  sidebar:
+    width: "220px"
+    background: "rgba(5,9,13,0.9)"
+    border: "0 1px 0 0 solid #1c3c48"
+    item_style: "chamfered rows; active row cyan left bracket + glow"
+  modal:
+    radius: "0px"
+    background: "rgba(12,20,27,0.95)"
+    border: "1px solid #00e5ff"
+    shadow: "0 0 32px rgba(0,229,255,0.4)"
+    overlay: "rgba(0,0,0,0.75)"
+  badge:
+    radius: "0px"
+    border: "1px solid #00e5ff"
+    background: "rgba(0,229,255,0.1)"
+    color: "#00e5ff"
+    padding: "1px 8px"
+    font: "mono, uppercase"
+  table:
+    header_background: "rgba(0,229,255,0.08)"
+    row_border: "1px solid #12202a"
+    zebra: "rgba(0,229,255,0.03)"
+    cell_padding: "6px 12px"
+  tabs:
+    indicator: "active tab bracketed with cyan glow"
+    radius: "0px"
+    active: "color #00e5ff; border 1px solid #00e5ff; box-shadow 0 0 8px rgba(0,229,255,0.3)"
+    inactive: "color #4a6470"
+
+iconography:
+  style: outline
+  stroke_width: "1.25px"
+  library: "technical/FUI icon set, crosshairs, gauges"
+  note: "Thin glowing line icons; targeting reticles."
+
+imagery:
+  treatment: ["duotone", "high-contrast", "halftone"]
+  border_radius: "0px"
+  filter: "hue-rotate(160deg) saturate(1.2) brightness(0.9)"
+  note: "Imagery tinted cyan, framed in chamfered brackets; prefer wireframe/schematic visuals."
+
+guidelines:
+  do:
+    - "Chamfer corners with clip-path (never round)"
+    - "Add edge and text glow in cyan, warnings in amber"
+    - "Frame key panels with corner brackets"
+    - "Fill panels with telemetry and gauges"
+  dont:
+    - "Don't round any corners"
+    - "Don't use warm/soft palettes"
+    - "Don't overuse glow to the point of illegibility"
+
+implementation_hints:
+  css_variables_prefix: "--hud-"
+  framework_agnostic: true
+  tailwind_note: "Chamfers via clip-path utilities; cyan/amber accent tokens; glow as custom boxShadow; corner brackets via pseudo-elements."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600&family=Share+Tech+Mono&display=swap"
+  accessibility_note: "Glow + uppercase tracking can hurt legibility; keep body text non-glowing, mixed case, and high contrast. Provide reduced-motion."

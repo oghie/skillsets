@@ -1,0 +1,8 @@
+flowchart LR
+  User[User or avatar] -->|looks at / reaches for| Object[Spatial object]
+  Object --> Attributes[Attributes: position, scale, data, owner]
+  Object --> Actions[Actions: select, inspect, move, resize]
+  Object --> States[States: available, hovered, grabbed, locked]
+  Object --> Relations[Relationships: anchor, group, environment]
+  Actions --> Feedback[Feedback: visual, audio, haptic]
+  Feedback --> Safety[Comfort, boundary, undo, recenter]

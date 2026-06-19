@@ -1,0 +1,300 @@
+# Hyper-Minimalist Wireframe — sharp category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: hyper-minimalist-wireframe
+  name: Hyper-Minimalist Wireframe
+  category: sharp
+  version: "1.0.0"
+  primary_mode: light
+  summary: A UI that looks unfinished on purpose — no fills, only 1px gray/black strokes on sharp 0px corners.
+  description: >
+    Purely structural. Cards have no background, just hairline outlines. Color
+    is almost absent; the interface reads like a blueprint or a Figma wireframe
+    left in lo-fi. Information architecture is the whole aesthetic.
+  keywords: [wireframe, blueprint, lo-fi, outline, structural, minimal, hairline]
+  mood: [clinical, honest, structural, calm]
+  use_cases: [3D modeling software, project management tools, industrial design studios, technical prototypes]
+  avoid_when: [consumer marketing, brands needing emotion or richness, image-led commerce]
+  references: [Figma wireframes, blueprint drawings, lo-fi prototypes]
+
+typography:
+  font_families:
+    display:
+      stack: "'Inter', 'Helvetica Neue', sans-serif"
+      source: google-fonts
+      weights: [400, 500]
+    body:
+      stack: "'Inter', 'Helvetica Neue', sans-serif"
+      source: google-fonts
+      weights: [400, 500]
+    mono:
+      stack: "'IBM Plex Mono', ui-monospace, monospace"
+      source: google-fonts
+      weights: [400]
+      note: Used for annotations/measurements.
+  scale:
+    base_size: "15px"
+    ratio: 1.2
+    steps:
+      display: "2.488rem"
+      h1: "2.074rem"
+      h2: "1.728rem"
+      h3: "1.44rem"
+      h4: "1.2rem"
+      body_lg: "1rem"
+      body: "0.9375rem"
+      body_sm: "0.8125rem"
+      caption: "0.75rem"
+      overline: "0.6875rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 500
+    black: 500
+  line_height:
+    tight: 1.2
+    normal: 1.5
+    relaxed: 1.7
+  letter_spacing:
+    tight: "0em"
+    normal: "0em"
+    wide: "0.04em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "none"
+      style: none
+    per_role:
+      overline: { text_transform: uppercase, letter_spacing: "0.04em" }
+
+color:
+  light:
+    recommended: true
+    background: "#ffffff"
+    surface: "transparent"
+    surface_alt: "#fafafa"
+    text_primary: "#1a1a1a"
+    text_secondary: "#666666"
+    text_muted: "#999999"
+    text_inverse: "#ffffff"
+    border: "#cccccc"
+    accent: "#1a1a1a"
+    accent_secondary: "#666666"
+    accent_tertiary: "#3a7afe"
+    interactive:
+      default: "#1a1a1a"
+      hover: "#000000"
+      active: "#000000"
+      focus_ring: "#3a7afe"
+      disabled: "#dddddd"
+    status:
+      error: "#cc3333"
+      warning: "#cc8800"
+      success: "#2e8b57"
+      info: "#3a7afe"
+    overlay: "rgba(0,0,0,0.3)"
+    gradients: {}
+    note: Grayscale outlines carry everything. Blue is reserved for the single interactive/annotation accent.
+  dark:
+    recommended: true
+    background: "#141414"
+    surface: "transparent"
+    surface_alt: "#1c1c1c"
+    text_primary: "#ededed"
+    text_secondary: "#a0a0a0"
+    text_muted: "#6a6a6a"
+    text_inverse: "#141414"
+    border: "#3a3a3a"
+    accent: "#ededed"
+    accent_secondary: "#a0a0a0"
+    accent_tertiary: "#5b9aff"
+    interactive:
+      default: "#ededed"
+      hover: "#ffffff"
+      active: "#ffffff"
+      focus_ring: "#5b9aff"
+      disabled: "#333333"
+    status:
+      error: "#ff5c5c"
+      warning: "#e0a040"
+      success: "#5cc98a"
+      info: "#5b9aff"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients: {}
+    note: Dark blueprint — light hairlines on near-black, same single blue accent.
+
+radius:
+  philosophy: "Wireframe boxes are rectangular. border-radius 0."
+  default: "0px"
+  scale:
+    none: "0px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "64px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1200px"
+  density: comfortable
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "1px hairline outlines are the ONLY visual device. Everything is defined by stroke, not fill."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "1.5px"
+    heavy: "2px"
+
+elevation:
+  type: none
+  philosophy: "No shadows. Depth is faked only by overlapping outlined boxes."
+  tokens:
+    sm: "none"
+    md: "none"
+    lg: "none"
+
+motion:
+  duration:
+    fast: "100ms"
+    base: "150ms"
+    slow: "200ms"
+  easing:
+    standard: "linear"
+    entrance: "ease-out"
+    exit: "ease-in"
+    bounce: "linear"
+  signature: "minimal, mechanical; outlines appear/disappear with no flourish"
+  reduced_motion_note: "Instant state changes."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: []
+  patterns: ["dot-grid: faint blueprint grid behind content, optional"]
+  glow: "none"
+  special:
+    - "Image placeholders shown as outlined box with diagonal cross (X)"
+    - "Optional dimension/annotation labels in mono font"
+
+components:
+  button:
+    primary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px solid #1a1a1a"
+      padding: "8px 16px"
+      background: "transparent"
+      color: "#1a1a1a"
+      shadow: "none"
+      font: "body, medium"
+      hover: "border-color: #000000; color: #000000"
+      active: "background: #fafafa"
+      focus: "outline: 1px solid #3a7afe; outline-offset: 2px"
+    secondary:
+      shape: rectangle
+      radius: "0px"
+      border: "1px dashed #cccccc"
+      padding: "8px 16px"
+      background: "transparent"
+      color: "#666666"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#3a7afe"
+      border: "none"
+  input:
+    radius: "0px"
+    border: "1px solid #cccccc"
+    background: "transparent"
+    padding: "8px 10px"
+    placeholder_color: "#999999"
+    focus: "border-color: #3a7afe"
+    note: "Plain outlined box; label sits above in caption size."
+  card:
+    radius: "0px"
+    border: "1px solid #cccccc"
+    background: "transparent"
+    padding: "20px"
+    shadow: "none"
+    hover: "border-color: #1a1a1a"
+  container:
+    max_width: "1200px"
+    padding: "24px"
+    section_gap: "48px"
+    note: "Even, predictable spacing — like a wireframe grid."
+  navbar:
+    height: "56px"
+    background: "transparent"
+    border: "0 0 1px 0 solid #cccccc"
+    shadow: "none"
+    blur: "none"
+    item_style: "plain text links, active underlined 1px"
+    note: "Hairline divider only."
+  sidebar:
+    width: "240px"
+    background: "transparent"
+    border: "0 1px 0 0 solid #cccccc"
+    item_style: "outlined rows; active row gets 1px solid border"
+  modal:
+    radius: "0px"
+    background: "#ffffff"
+    border: "1px solid #1a1a1a"
+    shadow: "none"
+    overlay: "rgba(0,0,0,0.3)"
+  badge:
+    radius: "0px"
+    border: "1px solid #cccccc"
+    background: "transparent"
+    color: "#666666"
+    padding: "1px 6px"
+    font: "mono"
+  table:
+    header_background: "transparent"
+    row_border: "1px solid #e6e6e6"
+    zebra: "none"
+    cell_padding: "10px 12px"
+  tabs:
+    indicator: "1px underline under active tab"
+    radius: "0px"
+    active: "color #1a1a1a; border-bottom 1px solid #1a1a1a"
+    inactive: "color #999999"
+
+iconography:
+  style: outline
+  stroke_width: "1px"
+  library: "thin single-weight line icons (Feather)"
+  note: "Hairline icons matching border weight; no fills."
+
+imagery:
+  treatment: ["sharp-crop"]
+  border_radius: "0px"
+  filter: "grayscale(0.2)"
+  note: "Often replaced by placeholder boxes with an X; real images get a 1px frame."
+
+guidelines:
+  do:
+    - "Define everything with 1px strokes"
+    - "Keep fills transparent or near-white"
+    - "Use a single accent color sparingly"
+    - "Let structure and spacing communicate hierarchy"
+  dont:
+    - "Don't add shadows or gradients"
+    - "Don't round corners"
+    - "Don't introduce decorative color"
+
+implementation_hints:
+  css_variables_prefix: "--wf-"
+  framework_agnostic: true
+  tailwind_note: "Disable shadows and radius; use border utilities heavily; one accent color token."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono&display=swap"
+  accessibility_note: "Low-contrast gray borders are fine for structure but ensure text and focus rings meet contrast minimums."

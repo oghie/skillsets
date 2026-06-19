@@ -1,0 +1,313 @@
+# Y2K Bubblegum Pop — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: y2k-bubblegum-pop
+  name: Y2K Bubblegum Pop
+  category: rounded
+  version: "1.0.0"
+  primary_mode: light
+  summary: Glossy bubblegum plastic — super-rounded, light-reflecting 3D elements, chrome accents, and hot pink/purple chromatics.
+  description: >
+    Early-2000s digital optimism. Surfaces look like glossy inflated plastic
+    with specular highlights, chrome and holographic accents, sparkles, and a
+    saturated pink/purple/cyan palette. Loud, shiny, and nostalgic.
+  keywords: [y2k, bubblegum, glossy, chrome, holographic, plastic, sparkle, retro-future]
+  mood: [playful, nostalgic, bold, energetic, fun]
+  use_cases: [Gen-Z social networks, pop-entertainment platforms, fashion collabs, music/merch drops]
+  avoid_when: [enterprise/finance tools, minimalist premium brands, accessibility-first reading apps]
+  references: [Y2K aesthetic, frutiger aero, early iMac/iPod gloss, holographic stickers, MySpace era]
+
+typography:
+  font_families:
+    display:
+      stack: "'Baloo 2', 'Fredoka', cursive"
+      source: google-fonts
+      weights: [600, 700, 800]
+      note: Chunky rounded display; can be given a chrome/gradient fill.
+    body:
+      stack: "'Poppins', 'Inter', sans-serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+  scale:
+    base_size: "16px"
+    ratio: 1.25
+    steps:
+      display: "3.052rem"
+      h1: "2.441rem"
+      h2: "1.953rem"
+      h3: "1.563rem"
+      h4: "1.25rem"
+      body_lg: "1.125rem"
+      body: "1rem"
+      body_sm: "0.875rem"
+      caption: "0.8125rem"
+      overline: "0.8125rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 800
+  line_height:
+    tight: 1.15
+    normal: 1.5
+    relaxed: 1.65
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.05em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "1px rgba(255,255,255,0.6)"
+    text_shadow: "0 2px 4px rgba(214,51,132,0.35)"
+    highlight:
+      color: "#ffd6f5"
+      style: marker
+    per_role:
+      display: { text_shadow: "0 0 1px #ffffff, 0 3px 6px rgba(157,78,221,0.4)" }
+      body: { text_stroke: "none", text_shadow: "none" }
+
+color:
+  light:
+    recommended: true
+    background: "#ffe6f7"
+    surface: "#ffffff"
+    surface_alt: "#ffd6f0"
+    text_primary: "#3a1a4d"
+    text_secondary: "#6a3a82"
+    text_muted: "#a878c0"
+    text_inverse: "#ffffff"
+    border: "#ff5cc8"
+    accent: "#ff3db6"
+    accent_secondary: "#9d4edd"
+    accent_tertiary: "#3dd6ff"
+    interactive:
+      default: "#ff3db6"
+      hover: "#ff5cc8"
+      active: "#e0249a"
+      focus_ring: "#3dd6ff"
+      disabled: "#e6c4dc"
+    status:
+      error: "#ff2d6f"
+      warning: "#ffb02e"
+      success: "#3de0a0"
+      info: "#3dd6ff"
+    overlay: "rgba(58,26,77,0.35)"
+    gradients:
+      gloss: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 45%)"
+      chrome: "linear-gradient(180deg, #e8f0ff 0%, #b0c4e0 45%, #8090b0 50%, #d0dcf0 100%)"
+      candy: "linear-gradient(135deg, #ff3db6 0%, #9d4edd 50%, #3dd6ff 100%)"
+    note: Saturated bubblegum pink/purple/cyan. Gloss + chrome gradients give the plastic shine.
+  dark:
+    recommended: true
+    background: "#1a0f2e"
+    surface: "#2a1845"
+    surface_alt: "#34205a"
+    text_primary: "#ffe6f7"
+    text_secondary: "#d6b8e8"
+    text_muted: "#9a7ab0"
+    text_inverse: "#1a0f2e"
+    border: "#ff5cc8"
+    accent: "#ff5cc8"
+    accent_secondary: "#b06aff"
+    accent_tertiary: "#5ce0ff"
+    interactive:
+      default: "#ff5cc8"
+      hover: "#ff7dd4"
+      active: "#e0249a"
+      focus_ring: "#5ce0ff"
+      disabled: "#3a2a55"
+    status:
+      error: "#ff4d80"
+      warning: "#ffc04d"
+      success: "#5ce0b0"
+      info: "#5ce0ff"
+    overlay: "rgba(0,0,0,0.55)"
+    gradients:
+      gloss: "linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 45%)"
+      chrome: "linear-gradient(180deg, #c0d0f0 0%, #7080b0 45%, #404a70 50%, #a0b0d8 100%)"
+      candy: "linear-gradient(135deg, #ff5cc8 0%, #b06aff 50%, #5ce0ff 100%)"
+    note: Night rave — deep purple base with neon candy accents and glossy highlights.
+
+radius:
+  philosophy: "Very rounded, inflated, bubble-like. Pills and big radii everywhere."
+  default: "24px"
+  scale:
+    none: "0px"
+    sm: "14px"
+    md: "24px"
+    lg: "36px"
+    xl: "50px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "32px", "48px", "64px"]
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1120px"
+  density: comfortable
+
+border:
+  default_width: "2px"
+  style: solid
+  philosophy: "Glossy elements often have a bright/white inner highlight border plus a saturated outer edge."
+  width:
+    hairline: "1px"
+    thin: "2px"
+    thick: "3px"
+    heavy: "4px"
+
+elevation:
+  type: layered
+  philosophy: "Glossy specular highlight on top + colored soft drop shadow below = inflated plastic."
+  tokens:
+    sm: "0 4px 12px rgba(255,61,182,0.25), inset 0 2px 4px rgba(255,255,255,0.7)"
+    md: "0 8px 20px rgba(255,61,182,0.3), inset 0 3px 6px rgba(255,255,255,0.8)"
+    lg: "0 16px 36px rgba(157,78,221,0.35), inset 0 4px 8px rgba(255,255,255,0.85)"
+  dark_tokens:
+    sm: "0 4px 12px rgba(255,92,200,0.3), inset 0 2px 4px rgba(255,255,255,0.25)"
+    md: "0 8px 20px rgba(255,92,200,0.35), inset 0 3px 6px rgba(255,255,255,0.3)"
+    lg: "0 16px 36px rgba(176,106,255,0.4), inset 0 4px 8px rgba(255,255,255,0.35)"
+
+motion:
+  duration:
+    fast: "120ms"
+    base: "240ms"
+    slow: "400ms"
+  easing:
+    standard: "cubic-bezier(0.34, 1.4, 0.64, 1)"
+    entrance: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    exit: "cubic-bezier(0.5, 0, 0.75, 0)"
+    bounce: "cubic-bezier(0.34, 1.8, 0.5, 1)"
+  signature: "bouncy and shiny — elements jiggle, sparkles twinkle, gloss sweeps on hover"
+  reduced_motion_note: "Disable jiggle/sparkle/gloss-sweep; keep static gloss."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "none"
+  overlays: ["sparkle/star accents", "holographic shimmer on hover"]
+  patterns: ["dot/star confetti background"]
+  glow: "soft neon glow on accents"
+  special:
+    - "Top specular gloss highlight (white gradient) on buttons and cards"
+    - "Chrome/holographic gradient fills for headings and badges"
+    - "Sparkle and star decorative elements"
+
+components:
+  button:
+    primary:
+      shape: pill
+      radius: "999px"
+      border: "2px solid rgba(255,255,255,0.6)"
+      padding: "14px 30px"
+      background: "linear-gradient(180deg, #ff5cc8 0%, #ff3db6 100%)"
+      color: "#ffffff"
+      shadow: "0 6px 16px rgba(255,61,182,0.4), inset 0 2px 4px rgba(255,255,255,0.7)"
+      font: "display, bold"
+      hover: "filter: brightness(1.06); gloss sweep"
+      active: "transform: scale(0.97)"
+      focus: "outline: 3px solid rgba(61,214,255,0.6); outline-offset: 3px"
+    secondary:
+      shape: pill
+      radius: "999px"
+      border: "2px solid #ff5cc8"
+      padding: "14px 30px"
+      background: "#ffffff"
+      color: "#ff3db6"
+      shadow: "0 4px 12px rgba(255,61,182,0.2)"
+    ghost:
+      background: "transparent"
+      color: "#9d4edd"
+      border: "none"
+  input:
+    radius: "999px"
+    border: "2px solid #ffb3e6"
+    background: "#ffffff"
+    padding: "12px 20px"
+    placeholder_color: "#a878c0"
+    focus: "border-color: #ff3db6; box-shadow: 0 0 0 3px rgba(255,61,182,0.2)"
+    note: "Glossy pill field."
+  card:
+    radius: "28px"
+    border: "2px solid rgba(255,255,255,0.7)"
+    background: "#ffffff"
+    padding: "24px"
+    shadow: "0 8px 20px rgba(255,61,182,0.2), inset 0 3px 6px rgba(255,255,255,0.8)"
+    hover: "transform: translateY(-3px)"
+  container:
+    max_width: "1120px"
+    padding: "24px"
+    section_gap: "56px"
+    note: "Playful, generous layout with decorative sparkles."
+  navbar:
+    height: "72px"
+    background: "linear-gradient(180deg, #ffffff 0%, #ffe6f7 100%)"
+    border: "0 0 2px 0 solid #ff5cc8"
+    shadow: "0 4px 16px rgba(255,61,182,0.15)"
+    blur: "none"
+    item_style: "glossy pill items; active item candy-gradient fill"
+    note: "Shiny top bar."
+  sidebar:
+    width: "260px"
+    background: "#ffd6f0"
+    border: "none"
+    item_style: "glossy rounded rows; active row candy gradient"
+  modal:
+    radius: "32px"
+    background: "#ffffff"
+    border: "2px solid rgba(255,255,255,0.8)"
+    shadow: "0 24px 60px rgba(157,78,221,0.3)"
+    overlay: "rgba(58,26,77,0.35)"
+  badge:
+    radius: "999px"
+    border: "1px solid rgba(255,255,255,0.7)"
+    background: "linear-gradient(135deg, #ff3db6 0%, #9d4edd 100%)"
+    color: "#ffffff"
+    padding: "3px 12px"
+    font: "display, bold"
+  table:
+    header_background: "#ffd6f0"
+    row_border: "1px solid #ffe0f4"
+    zebra: "#fff2fb"
+    cell_padding: "12px 18px"
+  tabs:
+    indicator: "active tab a glossy candy-gradient pill"
+    radius: "999px"
+    active: "background linear-gradient(180deg,#ff5cc8,#ff3db6); color #ffffff"
+    inactive: "color #6a3a82"
+
+iconography:
+  style: filled
+  stroke_width: "2px"
+  library: "glossy/3D filled icons; star and sparkle glyphs"
+  note: "Shiny, rounded, often with a highlight; emoji-adjacent energy."
+
+imagery:
+  treatment: ["rounded-mask", "high-contrast"]
+  border_radius: "24px"
+  filter: "saturate(1.2) contrast(1.05)"
+  note: "Vivid, high-sat imagery; holographic/chrome frames; sticker-style cutouts."
+
+guidelines:
+  do:
+    - "Add a top white gloss highlight to surfaces"
+    - "Use chrome/holographic gradients for accents"
+    - "Lean into saturated pink/purple/cyan"
+    - "Scatter sparkles/stars as decoration"
+  dont:
+    - "Don't go muted or minimal — it should be loud and shiny"
+    - "Don't use sharp corners"
+    - "Don't forget contrast on the bright palette"
+
+implementation_hints:
+  css_variables_prefix: "--y2k-"
+  framework_agnostic: true
+  tailwind_note: "Gloss as a top white linear-gradient overlay; chrome/candy as gradient backgrounds; large radius scale; bounce easing; sparkle decorations as positioned SVGs."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap"
+  accessibility_note: "Bright saturated palettes risk contrast failures — verify text on gradients (add solid scrim if needed); honor reduced-motion for sparkle/jiggle."

@@ -1,0 +1,307 @@
+# Mid-Century Modern "Pill" Aesthetic — rounded category. See theme/_schema/style.schema.yaml.
+
+identity:
+  id: mid-century-pill
+  name: Mid-Century Modern Pill
+  category: rounded
+  version: "1.0.0"
+  primary_mode: light
+  summary: Pill shapes (border-radius 999px) used everywhere — not just buttons but images, tags, and nav — with retro pastel palettes.
+  description: >
+    Borrows mid-century modern warmth and applies the pill/capsule form
+    liberally: images, containers, tags, and navigation all become rounded
+    capsules. Pairs with retro pastels — mustard, teal, terracotta, cream.
+  keywords: [mid-century, pill, capsule, retro, pastel, mustard, teal, terracotta, warm]
+  mood: [warm, retro, friendly, refined, optimistic]
+  use_cases: [specialty coffee shops, boutique hotel booking, interior-design portfolios, lifestyle brands]
+  avoid_when: [dense data tools, hard-tech products, high-energy gaming UIs]
+  references: [mid-century modern design, 1950s-60s graphics, retro pastel palettes, capsule shapes]
+
+typography:
+  font_families:
+    display:
+      stack: "'Fraunces', 'DM Serif Display', serif"
+      source: google-fonts
+      weights: [400, 500, 600]
+      note: Warm characterful serif for headings.
+    body:
+      stack: "'DM Sans', 'Inter', sans-serif"
+      source: google-fonts
+      weights: [400, 500, 700]
+  scale:
+    base_size: "17px"
+    ratio: 1.25
+    steps:
+      display: "3.242rem"
+      h1: "2.594rem"
+      h2: "2.075rem"
+      h3: "1.66rem"
+      h4: "1.328rem"
+      body_lg: "1.2rem"
+      body: "1.0625rem"
+      body_sm: "0.9375rem"
+      caption: "0.8125rem"
+      overline: "0.75rem"
+  weights:
+    regular: 400
+    medium: 500
+    bold: 700
+    black: 700
+  line_height:
+    tight: 1.2
+    normal: 1.6
+    relaxed: 1.75
+  letter_spacing:
+    tight: "-0.01em"
+    normal: "0em"
+    wide: "0.08em"
+  treatments:
+    font_style: normal
+    transform: "none"
+    text_transform: none
+    text_decoration: "none"
+    text_stroke: "none"
+    text_shadow: "none"
+    highlight:
+      color: "#f4d58d"
+      style: marker
+    per_role:
+      display: { font_style: italic }
+      overline: { text_transform: uppercase, letter_spacing: "0.08em" }
+
+color:
+  light:
+    recommended: true
+    background: "#f7f1e3"
+    surface: "#fffdf6"
+    surface_alt: "#efe6d2"
+    text_primary: "#33291c"
+    text_secondary: "#5c4f3a"
+    text_muted: "#8c7d63"
+    text_inverse: "#fffdf6"
+    border: "#e0d3b8"
+    accent: "#d97742"
+    accent_secondary: "#2a8a82"
+    accent_tertiary: "#e0a93b"
+    interactive:
+      default: "#d97742"
+      hover: "#c4632f"
+      active: "#a85226"
+      focus_ring: "#2a8a82"
+      disabled: "#d8cbb0"
+    status:
+      error: "#c0492f"
+      warning: "#e0a93b"
+      success: "#5a8a4a"
+      info: "#2a8a82"
+    overlay: "rgba(51,41,28,0.4)"
+    gradients: {}
+    note: Retro warm palette — terracotta, teal, mustard, cream. Soft and characterful.
+  dark:
+    recommended: true
+    background: "#231c12"
+    surface: "#2c2418"
+    surface_alt: "#372d1e"
+    text_primary: "#f2ead9"
+    text_secondary: "#cabda3"
+    text_muted: "#968a72"
+    text_inverse: "#231c12"
+    border: "#483d29"
+    accent: "#e89060"
+    accent_secondary: "#3fb0a6"
+    accent_tertiary: "#eec156"
+    interactive:
+      default: "#e89060"
+      hover: "#f0a276"
+      active: "#d07a4a"
+      focus_ring: "#3fb0a6"
+      disabled: "#483d29"
+    status:
+      error: "#d96a4e"
+      warning: "#eec156"
+      success: "#79b069"
+      info: "#3fb0a6"
+    overlay: "rgba(0,0,0,0.5)"
+    gradients: {}
+    note: Dark roast — warm browns with brightened terracotta and teal accents.
+
+radius:
+  philosophy: "Pill/capsule (999px) applied liberally — buttons, images, tags, nav, containers all become capsules."
+  default: "999px"
+  scale:
+    none: "0px"
+    sm: "16px"
+    md: "28px"
+    lg: "44px"
+    xl: "80px"
+    pill: "999px"
+
+spacing:
+  base: "8px"
+  scale: ["0px", "8px", "16px", "24px", "40px", "64px", "96px"]
+  grid:
+    columns: 12
+    gutter: "28px"
+    margin: "28px"
+    max_width: "1120px"
+  density: comfortable
+
+border:
+  default_width: "1px"
+  style: solid
+  philosophy: "Soft warm hairline borders; capsules often outlined in a darker tone of their fill."
+  width:
+    hairline: "1px"
+    thin: "1px"
+    thick: "2px"
+    heavy: "3px"
+
+elevation:
+  type: soft
+  philosophy: "Soft warm-tinted shadows; gentle and low — furniture-catalog softness."
+  tokens:
+    sm: "0 4px 12px rgba(51,41,28,0.08)"
+    md: "0 8px 20px rgba(51,41,28,0.1)"
+    lg: "0 16px 36px rgba(51,41,28,0.12)"
+  dark_tokens:
+    sm: "0 4px 12px rgba(0,0,0,0.4)"
+    md: "0 8px 20px rgba(0,0,0,0.45)"
+    lg: "0 16px 36px rgba(0,0,0,0.5)"
+
+motion:
+  duration:
+    fast: "150ms"
+    base: "300ms"
+    slow: "500ms"
+  easing:
+    standard: "cubic-bezier(0.4, 0, 0.2, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+    exit: "cubic-bezier(0.7, 0, 0.84, 0)"
+    bounce: "cubic-bezier(0.34, 1.3, 0.64, 1)"
+  signature: "smooth and warm; capsules expand/slide gracefully"
+  reduced_motion_note: "Use simple fades."
+
+texture_and_effects:
+  backdrop_filter: "none"
+  noise: "subtle paper grain, opacity 0.04"
+  overlays: []
+  patterns: ["retro geometric shapes (arches, circles) as decorative accents"]
+  glow: "none"
+  special:
+    - "Pill/capsule shapes applied to images, tags, nav, and containers — not just buttons"
+    - "Retro geometric decorations (arches, half-circles, starbursts)"
+    - "Two-tone capsule layouts"
+
+components:
+  button:
+    primary:
+      shape: pill
+      radius: "999px"
+      border: "none"
+      padding: "14px 30px"
+      background: "#d97742"
+      color: "#fffdf6"
+      shadow: "0 4px 12px rgba(217,119,66,0.3)"
+      font: "body, bold"
+      hover: "background: #c4632f"
+      active: "transform: translateY(1px)"
+      focus: "outline: 2px solid #2a8a82; outline-offset: 3px"
+    secondary:
+      shape: pill
+      radius: "999px"
+      border: "1px solid #d97742"
+      padding: "14px 30px"
+      background: "transparent"
+      color: "#a85226"
+      shadow: "none"
+    ghost:
+      background: "transparent"
+      color: "#2a8a82"
+      border: "none"
+  input:
+    radius: "999px"
+    border: "1px solid #e0d3b8"
+    background: "#fffdf6"
+    padding: "12px 22px"
+    placeholder_color: "#8c7d63"
+    focus: "border-color: #d97742; box-shadow: 0 0 0 3px rgba(217,119,66,0.15)"
+    note: "Capsule field."
+  card:
+    radius: "44px"
+    border: "none"
+    background: "#fffdf6"
+    padding: "28px"
+    shadow: "0 8px 20px rgba(51,41,28,0.1)"
+    hover: "transform: translateY(-2px)"
+  container:
+    max_width: "1120px"
+    padding: "28px"
+    section_gap: "96px"
+    note: "Warm, roomy layout; sections can be capsule-shaped panels."
+  navbar:
+    height: "72px"
+    background: "#fffdf6"
+    border: "none"
+    shadow: "0 4px 16px rgba(51,41,28,0.06)"
+    blur: "none"
+    item_style: "pill nav items; active item terracotta capsule fill"
+    note: "Often the whole nav bar is a floating capsule."
+  sidebar:
+    width: "260px"
+    background: "#efe6d2"
+    border: "none"
+    item_style: "pill rows; active row terracotta capsule"
+  modal:
+    radius: "48px"
+    background: "#fffdf6"
+    border: "none"
+    shadow: "0 24px 60px rgba(51,41,28,0.2)"
+    overlay: "rgba(51,41,28,0.4)"
+  badge:
+    radius: "999px"
+    border: "none"
+    background: "#f4d58d"
+    color: "#5c4f3a"
+    padding: "4px 14px"
+    font: "body, bold"
+  table:
+    header_background: "#efe6d2"
+    row_border: "1px solid #e8ddc8"
+    zebra: "#faf4e8"
+    cell_padding: "14px 20px"
+  tabs:
+    indicator: "active tab a filled terracotta capsule"
+    radius: "999px"
+    active: "background #d97742; color #fffdf6"
+    inactive: "color #5c4f3a"
+
+iconography:
+  style: outline
+  stroke_width: "1.75px"
+  library: "rounded line icons; retro geometric motifs"
+  note: "Warm, rounded; pair with arch/circle decorations."
+
+imagery:
+  treatment: ["rounded-mask"]
+  border_radius: "999px"
+  filter: "saturate(0.95) sepia(0.08)"
+  note: "Capsule/arch-masked imagery is signature; warm retro color grade."
+
+guidelines:
+  do:
+    - "Apply pill/capsule shapes broadly (images, tags, nav, containers)"
+    - "Use a warm retro pastel palette"
+    - "Add retro geometric decorations (arches, circles)"
+    - "Pair a characterful serif with a clean sans"
+  dont:
+    - "Don't restrict pills to buttons only"
+    - "Don't use cold or neon palettes"
+    - "Don't use sharp corners or hard shadows"
+
+implementation_hints:
+  css_variables_prefix: "--mcm-"
+  framework_agnostic: true
+  tailwind_note: "Set borderRadius.DEFAULT to 9999px for the capsule motif; warm pastel color tokens; arch decorations via border-radius or SVG."
+  font_loading:
+    - "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap"
+  accessibility_note: "Warm pastels can be low-contrast; verify text on cream/terracotta meets 4.5:1; capsule images must keep important content away from clipped corners."
