@@ -1,6 +1,6 @@
 ---
 name: uiux-frontend-engineering
-description: Use when designing, reviewing, implementing, or validating UI/UX and frontend experiences for web, mobile, responsive apps, design systems, Figma-to-code handoff, accessibility, interaction design, UX research, usability testing, psychology-based UX decisions, theme/token application, or XR/spatial interfaces.
+description: Use when designing, reviewing, implementing, or validating UI/UX and frontend experiences for web, mobile, responsive apps, design systems, Figma-to-code handoff, frontend stack/library selection, accessibility, interaction design, UX research, usability testing, psychology-based UX decisions, theme/token application, or XR/spatial interfaces.
 ---
 
 # UIUX Frontend Engineering
@@ -9,7 +9,7 @@ description: Use when designing, reviewing, implementing, or validating UI/UX an
 Treat UI as a tested product interface, not decoration: connect user goals, business goals, interaction model, visual system, implementation constraints, and validation evidence before shipping screens or components.
 
 ## First Pass
-1. Classify the task: UX strategy, research, IA/user flow, wireframe, visual UI, design system, frontend implementation, responsive/mobile, accessibility, redesign/review, handoff, or XR/spatial interface.
+1. Classify the task: UX strategy, research, IA/user flow, wireframe, visual UI, design system, frontend stack/library selection, frontend implementation, responsive/mobile, accessibility, redesign/review, handoff, or XR/spatial interface.
 2. Identify target surface: web, mobile web, native mobile, desktop web app, kiosk, embedded screen, WebXR, VR, AR, MR, or spatial computing.
 3. Name users, context, primary jobs, failure modes, conversion or task metric, platform constraints, input method, and trust/safety concerns.
 4. Decide fidelity: sketch/flow, low-fidelity wireframe, clickable prototype, high-fidelity visual, coded prototype, production component, or XR graybox.
@@ -20,11 +20,12 @@ Treat UI as a tested product interface, not decoration: connect user goals, busi
 - Psychology laws, cognitive load, target sizing, choice overload, familiarity, aesthetics, memory, complexity, responsiveness, ethics, or dark-pattern risk: `references/psychology-and-interaction-laws.md`.
 - Visual UI composition, Gestalt, hierarchy, color, typography, spacing, affordance, signifiers, navigation, forms, cards, states, icons, illustrations, or motion: `references/visual-interface-composition.md`.
 - Figma, design systems, tokens, components, auto layout, constraints, responsive/adaptive design, plugin/handoff flow, or developer collaboration: `references/responsive-design-systems-and-handoff.md`.
-- Frontend implementation, accessibility, performance, state coverage, visual QA, component contracts, CSS/Tailwind/React/React Native mapping, or production readiness: `references/frontend-implementation-quality.md`.
+- Frontend framework/library selection, styling approach, component library choice, Radix UI, shadcn/ui, Ant Design, Mantine UI, MUI, vanilla CSS, CSS Modules, Linaria, PostCSS, Bulma, Tailwind CSS, or stack trade-offs: `references/frontend-stack-and-library-selection.md`.
+- Frontend implementation, accessibility, performance, state coverage, visual QA, component contracts, framework-neutral CSS/component mapping, or production readiness: `references/frontend-implementation-quality.md`.
 - Mobile/touch design, one-handed use, touch targets, mobile navigation, forms, gestures, device preview, or native-app constraints: `references/mobile-and-touch-ux.md`.
 - XR, spatial computing, WebXR, VR, AR, MR, 3D UI, spatial objects, OOUX, locomotion, comfort, haptics, voice, gaze, avatars, embodiment, safety, or spatial analytics: `references/xr-spatial-ux-and-3d-interfaces.md`.
 - AI-assisted design, generative assets, design copilots, AI disclosure, sourcing, IP, safety, privacy, transparency, or manipulation risk: `references/ai-assisted-and-ethical-design.md`.
-- Theme/style selection, static token database, CSS variables, Tailwind theme mapping, or visual style guardrails: `references/theme-token-database.md` and the relevant file under `theme/`.
+- Theme/style selection, static token database, CSS variables, framework/library token mapping, or visual style guardrails: `references/theme-token-database.md` and the relevant file under `theme/`.
 
 ## Task Playbooks
 - Build or redesign a product UI: `tasks/product-ui-build.md`.
@@ -43,6 +44,7 @@ Treat UI as a tested product interface, not decoration: connect user goals, busi
 
 ## Design Discipline
 - Start with the user's task and failure path, then choose UI structure.
+- Prefer the existing project stack when it is coherent; add or change UI libraries only after naming the accessibility, theming, delivery-speed, density, bundle, SSR, and maintenance trade-offs.
 - Use familiar patterns by default; depart from convention only when the new pattern improves the core task and can be tested.
 - Design every interactive component with states: default, hover, focus, active, disabled, loading, empty, error, success, and reduced-motion where relevant.
 - Make accessibility structural: semantic markup, keyboard path, target size, contrast, labels, focus order, captions/alternatives, motion controls, and screen-reader names.

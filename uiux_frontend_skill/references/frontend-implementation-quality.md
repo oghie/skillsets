@@ -65,7 +65,7 @@ Check:
 
 | Design Decision | Web Mapping | Mobile Mapping | XR Mapping |
 | --- | --- | --- | --- |
-| Token color | CSS variables/Tailwind colors | Theme constants | Material/shader colors |
+| Token color | CSS variables, utility config, or library theme provider | Theme constants | Material/shader colors |
 | Layout grid | CSS grid/flex/container queries | Stack/grid/layout primitives | Spatial anchors and panels |
 | Component states | Props, classes, state machine | Component props/state | Object interaction states |
 | Motion | CSS/JS animation | Native animation primitives | Object transition, gaze/hand feedback |
@@ -77,6 +77,7 @@ Check:
 - Styling before task flow is clear.
 - Treating Figma screenshots as complete specifications.
 - Hardcoding tokens instead of using the selected style system.
+- Choosing Tailwind, shadcn, Radix, MUI, Ant Design, Mantine, Bulma, Linaria, PostCSS, or vanilla CSS without naming why that abstraction fits the product and repo.
 - Building only the happy path.
 - Hiding required labels in placeholders or tooltips.
 - Shipping responsive breakpoints without testing real content.

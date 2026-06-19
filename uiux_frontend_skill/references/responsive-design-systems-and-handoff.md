@@ -7,7 +7,7 @@ Use this for Figma-to-code work, tokens, component systems, responsive/adaptive 
 | Layer | Content | Frontend Mapping |
 | --- | --- | --- |
 | Principles | What trade-offs the UI optimizes. | Product constraints and review rules. |
-| Tokens | Color, type, spacing, radius, border, elevation, motion. | CSS variables, Tailwind theme, native constants, shader/material params. |
+| Tokens | Color, type, spacing, radius, border, elevation, motion. | CSS variables, framework theme providers, utility config, native constants, shader/material params. |
 | Components | Buttons, inputs, cards, nav, dialogs, tables, tabs. | Reusable UI components with state props. |
 | Patterns | Search, checkout, onboarding, dashboard, settings, auth. | Composed flows and route templates. |
 | Guidelines | Do/dont, accessibility, density, content rules. | PR checklist and acceptance criteria. |

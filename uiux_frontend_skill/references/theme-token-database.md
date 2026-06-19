@@ -21,16 +21,16 @@ Use this to consume the existing `theme/` directory. Do not edit `theme/` unless
 
 ## Token Mapping
 
-| Theme Field | Web | Tailwind | React Native | XR/3D |
+| Theme Field | CSS / Vanilla / Modules / PostCSS / Linaria | Utility CSS / Tailwind | Component Libraries | Native / XR |
 | --- | --- | --- | --- | --- |
-| `color.*` | CSS variables | `theme.extend.colors` | theme constants | material/shader colors |
-| `typography.*` | font-family, font-size, line-height | fontFamily/fontSize | Text styles | distance-aware text styles |
-| `spacing.*` | margin, padding, gap | spacing | spacing constants | panel spacing/world units |
-| `radius.*` | border-radius | borderRadius | borderRadius | panel corner mesh/material |
-| `border.*` | border | borderWidth/color | border styles | outlines/strokes |
-| `elevation.*` | box-shadow/filter | boxShadow | shadow/elevation | light, depth, occlusion |
-| `motion.*` | transition/animation | transition tokens | animation config | tween/interaction timing |
-| `texture_and_effects.*` | overlays/filter/background | plugin/custom CSS | image/effect layers | textures/post-process |
+| `color.*` | CSS variables or compiled constants | `theme.extend.colors` | provider theme palette/tokens | theme constants or material colors |
+| `typography.*` | font-family, font-size, line-height | fontFamily/fontSize | typography theme override | text styles or distance-aware text |
+| `spacing.*` | margin, padding, gap variables | spacing scale | spacing token/provider override | spacing constants or world units |
+| `radius.*` | border-radius variables | borderRadius scale | shape/radius theme override | borderRadius or panel mesh shape |
+| `border.*` | border variables/classes | borderWidth/color utilities | component style overrides | border styles, outlines, strokes |
+| `elevation.*` | box-shadow/filter variables | boxShadow scale | shadow/elevation overrides | shadow, light, depth, occlusion |
+| `motion.*` | transition/animation variables | transition tokens | motion/default prop overrides | animation config or tween timing |
+| `texture_and_effects.*` | overlays/filter/background | custom utilities/plugins | wrapper components or slots | textures/post-process/material layers |
 
 ## Implementation Rules
 
@@ -41,6 +41,10 @@ Use this to consume the existing `theme/` directory. Do not edit `theme/` unless
 - For dark/light support, do not mechanically invert; use the mode values defined by the style.
 - Check `implementation_hints.accessibility_note` and `motion.reduced_motion_note`.
 - If a style uses expensive blur, glow, noise, or texture, define a lower-cost fallback.
+- For Radix/headless UI, map tokens to styled parts and states.
+- For shadcn/ui, rewrite generated variants/classes to consume selected tokens.
+- For MUI, Ant Design, and Mantine, map tokens through their theme providers and component overrides.
+- For Bulma, override Sass variables or wrap with project CSS variables; do not expect complex JS behavior.
 
 ## Style Selection Rubric
 
