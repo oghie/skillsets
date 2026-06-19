@@ -16,6 +16,7 @@ instead of surface-level answers.
 | Skill | Scope |
 | --- | --- |
 | `software_architecture_skill` | Design, evaluate, document, and modernize software architecture; IAM/auth design; NFR tactics; ADR/RFC; implementation planning. |
+| `uiux_frontend_skill` | Research, design, implement, and validate UI/UX and frontend interfaces for web, mobile, responsive apps, design systems, theme tokens, and XR/spatial surfaces. |
 | `device_driver_development_skill` | Linux kernel device drivers, modules, device tree bindings, bus clients, DMA/IRQ/memory paths, bring-up, and upstreaming. |
 | `realtime_systems_coding_skill` | Concurrent, parallel, distributed, real-time, and network-dataplane systems; locks/monitors, RMS/EDF scheduling, DPDK/XDP, kernel bypass. |
 | `academic_research_journal_skill` | Evaluate, design, draft, and revise academic articles, literature/systematic reviews, journal submissions, and source/integrity audits. |
