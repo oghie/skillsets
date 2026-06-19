@@ -11,7 +11,7 @@ Use this when asked to critique, improve, modernize, or redesign an existing UI 
    - Entry, scan, decision, input, confirmation, recovery, and exit.
    - Verify: primary task and most likely failure path are named.
 3. Audit heuristics.
-   - Use psychology laws, accessibility, responsive, state, content, performance, and ethical checks.
+   - Use persona fit, IA/findability, UI patterns, psychology laws, accessibility, responsive, state, content, performance, and ethical checks.
    - Verify: findings map to user impact.
 4. Separate severity.
    - Critical: blocks task, trust, accessibility, data loss, safety.
@@ -30,6 +30,8 @@ Use this when asked to critique, improve, modernize, or redesign an existing UI 
 - Clarity: Can users tell what the screen is for?
 - Hierarchy: Is the primary action obvious?
 - Familiarity: Does the interaction match expectations?
+- IA: Can users find content from likely entry points and recover when they land deep?
+- Pattern fit: Does each chosen UI pattern solve the user problem without hiding risk?
 - Accessibility: Can keyboard, screen-reader, low-vision, and motion-sensitive users complete the task?
 - Responsiveness: Does layout survive real content and narrow screens?
 - State: Are empty/loading/error/success/disabled handled?

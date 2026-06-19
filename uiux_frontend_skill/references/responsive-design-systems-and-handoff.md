@@ -34,6 +34,16 @@ Use this for Figma-to-code work, tokens, component systems, responsive/adaptive 
 | Images/media | Define aspect ratios, object fit, safe cropping, and fallback state. |
 | Interaction | Pointer, touch, keyboard, screen reader, and controller/gaze paths may differ. |
 
+## Responsive Versus Adaptive
+
+| Approach | Use When | Trade-off |
+| --- | --- | --- |
+| Responsive design | New builds, maintainable cross-device layouts, flexible content, one code path. | Easier to maintain, but requires careful constraints so every viewport works. |
+| Adaptive design | Existing desktop product needs targeted mobile/tablet layouts, device-specific optimization, or highly controlled experiences. | More control per device, but more layouts to design, build, QA, and maintain. |
+| Mobile-first responsive | Mobile content priority and performance are the highest risk. | Forces essential content first, then progressively enhances for larger screens. |
+
+Choose the approach before component implementation. Name supported viewports, content priority, navigation changes, image/media behavior, and testing widths.
+
 ## Handoff Requirements
 
 - Provide the selected theme/style id and mode.
@@ -44,6 +54,7 @@ Use this for Figma-to-code work, tokens, component systems, responsive/adaptive 
 - Include accessibility requirements: labels, roles, focus order, target size, contrast, reduced motion.
 - Include performance notes for media, animation, fonts, and heavy visual effects.
 - Include QA scenarios: viewport widths, data extremes, empty/error/loading, localization, auth/permission states.
+- Include design files, revision notes, interactive prototypes, assets, style guide, functionality/features, API/integration notes, technical constraints, owners, milestones, and feedback loops when the project spans design and engineering teams.
 
 ## Developer Collaboration
 

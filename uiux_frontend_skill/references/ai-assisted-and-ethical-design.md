@@ -12,6 +12,9 @@ Use this for AI-assisted design, generated visual assets, design copilots, AI ch
 - Generate icons, images, 3D assets, sound, or video.
 - Prototype code, animations, and shader/material ideas.
 - Create conversational characters or virtual guides.
+- Personalize content, recommendations, or interface emphasis from user behavior.
+- Provide AI chat/help surfaces for task guidance and support.
+- Suggest layouts, variants, and experiment candidates for human review.
 
 ## Guardrails
 

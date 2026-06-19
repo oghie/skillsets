@@ -5,7 +5,7 @@ Use this when preparing prototypes for testing, developer handoff, QA, or releas
 ## Steps
 
 1. Select prototype fidelity.
-   - Wireframe, clickable prototype, high-fidelity visual, coded prototype, or XR graybox.
+   - Sketch, wireframe, clickable prototype, high-fidelity visual, mockup, coded prototype, or XR graybox.
    - Verify: fidelity matches the question being tested.
 2. Define validation question.
    - First impression, discoverability, flow completion, comprehension, click target, trust, comfort, performance.
@@ -17,7 +17,7 @@ Use this when preparing prototypes for testing, developer handoff, QA, or releas
    - Capture task success, time, errors, confusion, quotes, click/tap locations, and recovery.
    - Verify: findings can drive a design decision.
 5. Handoff.
-   - Include tokens, components, states, responsive rules, assets, copy, accessibility, animation, and QA cases.
+   - Include design files, specs, tokens, components, states, responsive rules, interactive prototype links, assets, copy, accessibility, animation, functionality, API/integration notes, owners, timeline, and QA cases.
    - Verify: developer can build without interpreting screenshots as the only spec.
 6. QA.
    - Compare code to design intent and user outcomes.
@@ -34,4 +34,6 @@ Use this when preparing prototypes for testing, developer handoff, QA, or releas
 - Accessibility notes.
 - Content rules.
 - Asset export notes.
+- Revision notes, open comments, owners, and timeline.
+- Technical constraints, required APIs, browser/device support, and performance notes.
 - QA checklist.

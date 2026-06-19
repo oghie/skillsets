@@ -14,6 +14,29 @@ Use this when the work needs product framing, discovery, validation, handoff, or
 | Validate | Test assumptions before full production cost. | First-impression results, click tests, usability findings, A/B plan, iteration log. | Problems are prioritized by task impact. |
 | Deliver | Hand off and verify implementation. | Specs, assets, tokens, acceptance criteria, QA notes, release feedback loop. | Coded result matches intent and remains testable. |
 
+## Design Thinking, UCD, And CPS
+
+Use the model that matches uncertainty:
+
+| Model | Best For | Flow |
+| --- | --- | --- |
+| Design thinking | Ambiguous, human-centered problems that need divergent ideas and iteration. | Empathize -> Define -> Ideate -> Prototype -> Test -> Iterate. |
+| User-centered design | Product work where user research should shape each design and build step. | Research -> Align -> Build -> Test -> Iterate. |
+| Creative problem solving | Early framing when the team needs to turn a vague issue into an actionable challenge. | Identify problem -> Research -> Formulate challenge -> Explore ideas -> Evaluate ideas -> Action plan -> Take action. |
+
+Use problem statements, brainstorming, mind maps, SCAMPER, and impact/effort priority matrices to move from discovery to testable alternatives. Do not treat ideation output as validated design.
+
+## UX Fundamentals Checks
+
+| Check | Meaning | Design Question |
+| --- | --- | --- |
+| Consistency | Repeated patterns, language, layout, and behavior teach the interface. | Does the same thing work the same way everywhere? |
+| Continuity | Users can move between steps, devices, and states without losing context. | Does the experience preserve progress and orientation? |
+| Context | The interface adapts to user situation, task, device, and timing. | Is the next action relevant to where the user is now? |
+| Complementary | Content, interaction, visual design, and system behavior support each other. | Do UI, copy, data, and feedback reinforce the same task? |
+
+Use the UX honeycomb as a sanity check: useful, usable, findable, credible, desirable, accessible, and valuable. A design that looks polished but fails one of these dimensions still needs revision.
+
 ## Research Inputs
 
 - User interviews: use for motivations, problems, prior knowledge, vocabulary, and unmet needs.
@@ -23,6 +46,24 @@ Use this when the work needs product framing, discovery, validation, handoff, or
 - Surveys: use for broader preference or segmentation signals, not deep causality.
 - Customer support tickets: mine recurring confusion, error recovery, missing information, and trust blockers.
 - Usability tests: use on wireframes, visual prototypes, and working product.
+
+## Research Method Selection
+
+| Dimension | Methods | Use For |
+| --- | --- | --- |
+| Qualitative | Interviews, focus groups, diary studies, field studies, usability tests. | Why users behave a certain way, motivations, confusion, context. |
+| Quantitative | Surveys, analytics, A/B tests, click tests, completion metrics. | How many, how often, which variant, how much impact. |
+| Behavioral | Usability tests, field studies, tree testing, eye tracking, A/B tests. | What users actually do. |
+| Attitudinal | Interviews, surveys, focus groups, diary studies. | What users say, feel, prefer, or believe. |
+| Generative | Interviews, field studies, diary studies, open card sorting. | Discover opportunities before the solution is fixed. |
+| Evaluative | Usability tests, tree tests, five-second tests, A/B tests. | Validate whether a proposed structure or design works. |
+
+Specialized checks:
+
+- Tree testing evaluates whether users can find items in a proposed IA without visual context.
+- Eye tracking is useful for blind spots, stumbling points, and reading patterns on critical screens.
+- Five-second tests validate first impression, purpose, visual priority, and recall.
+- A/B tests require enough traffic, one primary metric, and controlled variants.
 
 ## Planning Artifacts
 

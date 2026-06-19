@@ -1,6 +1,6 @@
 ---
 name: uiux-frontend-engineering
-description: Use when designing, reviewing, implementing, or validating UI/UX and frontend experiences for web, mobile, responsive apps, design systems, Figma-to-code handoff, frontend stack/library selection, accessibility, interaction design, UX research, usability testing, psychology-based UX decisions, theme/token application, or XR/spatial interfaces.
+description: Use when designing, reviewing, implementing, or validating UI/UX and frontend experiences for web, mobile, responsive apps, design systems, Figma-to-code handoff, frontend stack/library selection, personas, UX mapping, information architecture, UI patterns, accessibility, interaction design, UX research, usability testing, theme/token application, or XR/spatial interfaces.
 ---
 
 # UIUX Frontend Engineering
@@ -9,7 +9,7 @@ description: Use when designing, reviewing, implementing, or validating UI/UX an
 Treat UI as a tested product interface, not decoration: connect user goals, business goals, interaction model, visual system, implementation constraints, and validation evidence before shipping screens or components.
 
 ## First Pass
-1. Classify the task: UX strategy, research, IA/user flow, wireframe, visual UI, design system, frontend stack/library selection, frontend implementation, responsive/mobile, accessibility, redesign/review, handoff, or XR/spatial interface.
+1. Classify the task: UX strategy, research, persona, UX mapping, IA/sitemap, user flow, wireframe, prototype, mockup, UI pattern selection, visual UI, design system, frontend stack/library selection, frontend implementation, responsive/mobile, accessibility, redesign/review, handoff, or XR/spatial interface.
 2. Identify target surface: web, mobile web, native mobile, desktop web app, kiosk, embedded screen, WebXR, VR, AR, MR, or spatial computing.
 3. Name users, context, primary jobs, failure modes, conversion or task metric, platform constraints, input method, and trust/safety concerns.
 4. Decide fidelity: sketch/flow, low-fidelity wireframe, clickable prototype, high-fidelity visual, coded prototype, production component, or XR graybox.
@@ -17,8 +17,12 @@ Treat UI as a tested product interface, not decoration: connect user goals, busi
 
 ## Required Reads By Task
 - End-to-end UX process, discovery, personas, user interviews, analytics, card sorting, surveys, support tickets, wireframes, validation, handoff, or QA: `references/ux-process-and-research.md`.
+- Persona strategy, "Comparing Key Persona Types", buyer/customer/user/proto-persona distinction, goal-directed/role-based/fictional/engaging personas, customer journey maps, empathy maps, experience maps, service blueprints, touchpoints, or friction mapping: `references/personas-and-ux-mapping.md`.
+- Information architecture, IA principles, taxonomy, labels, navigation models, search, card sorting, tree testing, HTML/XML/mobile/image/video/news sitemaps, or sitemap handoff: `references/information-architecture-and-sitemaps.md`.
+- Wireframes, prototypes, mockups, fidelity choice, paper/Wizard-of-Oz/clickable/coded prototypes, microcopy, microinteractions, or mockup-to-implementation readiness: `references/wireframes-prototypes-and-mockups.md`.
+- UI pattern selection, visual hierarchy patterns, Z-pattern/F-pattern layouts, primary actions, forgiving input, breadcrumbs, progressive disclosure, lazy registration, infinite scroll, modals, cards, autocomplete, sticky navigation, mobile UI patterns, or dark-pattern review: `references/ui-patterns-catalog.md`.
 - Psychology laws, cognitive load, target sizing, choice overload, familiarity, aesthetics, memory, complexity, responsiveness, ethics, or dark-pattern risk: `references/psychology-and-interaction-laws.md`.
-- Visual UI composition, Gestalt, hierarchy, color, typography, spacing, affordance, signifiers, navigation, forms, cards, states, icons, illustrations, or motion: `references/visual-interface-composition.md`.
+- Visual UI composition, Gestalt, hierarchy, color, typography, spacing, affordance, signifiers, forms, cards, states, icons, illustrations, or motion: `references/visual-interface-composition.md`.
 - Figma, design systems, tokens, components, auto layout, constraints, responsive/adaptive design, plugin/handoff flow, or developer collaboration: `references/responsive-design-systems-and-handoff.md`.
 - Frontend framework/library selection, styling approach, component library choice, Radix UI, shadcn/ui, Ant Design, Mantine UI, MUI, vanilla CSS, CSS Modules, Linaria, PostCSS, Bulma, Tailwind CSS, or stack trade-offs: `references/frontend-stack-and-library-selection.md`.
 - Frontend implementation, accessibility, performance, state coverage, visual QA, component contracts, framework-neutral CSS/component mapping, or production readiness: `references/frontend-implementation-quality.md`.
@@ -54,7 +58,7 @@ Treat UI as a tested product interface, not decoration: connect user goals, busi
 
 ## Visual And Diagram Standards
 - Use diagrams to clarify process, hierarchy, interaction, object relationships, state transitions, or validation loops.
-- Prefer reusable templates in `templates/` for UX process, validation loop, responsive token mapping, component state matrix, and spatial object maps.
+- Prefer reusable templates in `templates/` for UX process, validation loop, persona comparison, UX mapping, IA/sitemap flow, UI pattern decisions, responsive token mapping, component state matrix, and spatial object maps.
 - For frontend work, verify rendered output with screenshots at mobile and desktop widths; for XR/WebGL/WebXR, verify the scene is nonblank, framed, and interactive.
 
 ## Script Helpers

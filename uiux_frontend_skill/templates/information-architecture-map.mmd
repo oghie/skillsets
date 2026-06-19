@@ -1,0 +1,11 @@
+flowchart TD
+  Users[Users and mental models] --> Taxonomy[Categories and labels]
+  Content[Content inventory and metadata] --> Taxonomy
+  Context[Business, platform, compliance, devices] --> Taxonomy
+  Taxonomy --> Hierarchy[Hierarchy and sitemap]
+  Hierarchy --> Navigation[Global, local, contextual navigation]
+  Hierarchy --> Search[Search, filters, synonyms, no-results]
+  Navigation --> Test[Card sort, tree test, usability, analytics]
+  Search --> Test
+  Test -- revise labels and structure --> Taxonomy
+  Test --> Handoff[IA spec, sitemap, routes, growth rules]
