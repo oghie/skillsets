@@ -1,0 +1,15 @@
+flowchart TB
+  Business[Business Objectives] --> Portfolio[Portfolio Allocation]
+  Portfolio --> Roadmap[Roadmap And Capacity]
+  Roadmap --> Execution[Delivery And Operations]
+  Execution --> Evidence[Metrics And Evidence]
+  Evidence --> Review[Leadership Review Cadence]
+  Review --> Portfolio
+
+  Risk[Risk Appetite] --> Governance[Governance And Decision Rights]
+  Governance --> Portfolio
+  Cyber[Cybersecurity Posture] --> Governance
+  People[People And Organization] --> Roadmap
+  Finance[Budget And ROI] --> Portfolio
+  Stakeholders[Board / Executives / Teams] --> Review
+  Review --> Communication[Communication And Decisions]

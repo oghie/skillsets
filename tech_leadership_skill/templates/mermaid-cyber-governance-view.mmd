@@ -1,0 +1,21 @@
+flowchart TB
+  Board[Board / Risk Committee] --> Appetite[Cyber Risk Appetite]
+  Appetite --> CTO[CTO / Technology Leadership]
+  Appetite --> CISO[CISO / Security Leadership]
+
+  CTO --> Engineering[Engineering / Platform / Operations]
+  CISO --> GRC[GRC And Control Evidence]
+  CISO --> SOC[SOC / Detection / Response]
+  CISO --> AppSec[AppSec / Product Security]
+  CTO --> IAM[IAM / PAM / Identity Platform]
+  CTO --> Cloud[Cloud / Infrastructure Security]
+  CTO --> Data[Data Security / Privacy]
+  CTO --> Vendors[Third-Party Risk]
+
+  Engineering --> Controls[Implemented Controls]
+  GRC --> Evidence[Audit Evidence]
+  SOC --> Incidents[Incident Command]
+  Controls --> Metrics[Cyber KPIs / KRIs]
+  Evidence --> Metrics
+  Incidents --> Metrics
+  Metrics --> Board

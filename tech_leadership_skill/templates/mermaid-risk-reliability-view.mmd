@@ -1,0 +1,12 @@
+flowchart LR
+  Hazard[Hazard / Threat] --> Barrier1[Preventive Barrier]
+  Barrier1 --> Barrier2[Detective Control]
+  Barrier2 --> Barrier3[Corrective / Recovery Control]
+  Barrier3 --> Outcome[Reduced Loss]
+
+  System[System Reliability] --> Barrier1
+  Human[Human Reliability] --> Barrier2
+  Org[Organizational Reliability] --> Barrier3
+  Culture[Culture And Incentives] --> Human
+  Leadership[Leadership Attention] --> Org
+  Metrics[Metrics And Audit Evidence] --> Leadership
