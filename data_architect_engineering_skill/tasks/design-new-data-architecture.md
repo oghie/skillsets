@@ -4,13 +4,13 @@
 1. Define scope and data criticality.
 2. Identify system of record, derived stores, and consumers.
 3. Build workload matrix: reads, writes, analytics, search, graph, vector, stream, retention, and growth.
-4. Build data model: conceptual, logical, and physical depth according to risk.
+4. Build data model: conceptual, logical, and physical depth according to risk; use `explore-and-decompose-data-model.md` when model family or notation is unclear.
 5. Select datastore class, then concrete candidate(s).
 6. Define consistency, transaction, idempotency, and reconciliation rules.
 7. Define security and governance controls.
 8. Define reliability and operations: SLO/SLI, RPO/RTO, backup, restore, failover, monitoring, and runbooks.
 9. Define infrastructure: deployment mode, OS/storage/network/hardware, scaling, orchestration.
-10. Define validation: benchmark, failure test, restore drill, threat model, schema review, and migration if applicable.
+10. Define validation: benchmark, failure test, restore drill, threat model, schema review, preventive database problem review, and migration if applicable.
 
 ## Check
 - Does every query have a data owner, access path, and expected cardinality?

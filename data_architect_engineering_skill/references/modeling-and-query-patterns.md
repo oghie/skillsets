@@ -10,6 +10,8 @@ Do not begin with tables, collections, or vendors. Begin with:
 - Retention and deletion.
 - Tenant and access-control boundaries.
 
+For formal model families and notations, read `data-model-concepts-and-notations.md` before choosing a datastore product.
+
 ## Relational Model
 Use when data correctness depends on relationships and constraints.
 

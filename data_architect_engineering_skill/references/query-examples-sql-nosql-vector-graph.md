@@ -1,4 +1,4 @@
-# Query Examples: SQL, NoSQL, Vector, Graph, Search, And Time-Series
+# Query Examples: SQL, NoSQL, Vector, Graph, Search, Time-Series, Spatial, And Array
 
 These examples are intentionally small `foo`/`bar` patterns. Adapt syntax to the actual engine.
 
@@ -211,6 +211,59 @@ ORDER BY bucket DESC;
 ```
 
 Design check: avoid unbounded cardinality in tags/dimensions.
+
+## Spatial / Geospatial
+
+```sql
+CREATE TABLE foo_place (
+  id BIGSERIAL PRIMARY KEY,
+  tenant_id BIGINT NOT NULL,
+  name TEXT NOT NULL,
+  geom GEOMETRY(Point, 4326) NOT NULL
+);
+
+CREATE INDEX foo_place_geom_idx
+  ON foo_place
+  USING GIST (geom);
+
+SELECT id, name
+FROM foo_place
+WHERE tenant_id = 42
+  AND ST_DWithin(
+    geom::geography,
+    ST_SetSRID(ST_MakePoint(106.8272, -6.1754), 4326)::geography,
+    1000
+  )
+ORDER BY ST_Distance(
+  geom::geography,
+  ST_SetSRID(ST_MakePoint(106.8272, -6.1754), 4326)::geography
+)
+LIMIT 20;
+```
+
+Design check: geometry type, SRID/CRS, precision, topology validity, and spatial index choice are part of the model. Exact functions are engine-specific. This needs verification.
+
+## Array / Matrix
+
+```sql
+CREATE TABLE foo_sensor_grid (
+  tenant_id BIGINT NOT NULL,
+  captured_at TIMESTAMPTZ NOT NULL,
+  rows INT NOT NULL,
+  cols INT NOT NULL,
+  values DOUBLE PRECISION[] NOT NULL,
+  PRIMARY KEY (tenant_id, captured_at)
+);
+
+SELECT tenant_id, captured_at, values[1:10] AS first_window
+FROM foo_sensor_grid
+WHERE tenant_id = 42
+  AND captured_at >= now() - interval '1 hour'
+ORDER BY captured_at DESC
+LIMIT 10;
+```
+
+Design check: dense vs sparse representation, shape, chunking, axis semantics, compression, and slicing patterns decide whether arrays belong in the database, object storage, or a specialized array engine.
 
 ## Columnar Analytics
 

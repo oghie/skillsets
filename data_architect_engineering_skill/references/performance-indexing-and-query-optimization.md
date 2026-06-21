@@ -7,6 +7,8 @@
 4. Capture evidence: `EXPLAIN`, actual plan, query stats, wait events, slow query logs, locks/deadlocks, top statements, index usage, row counts, histograms, and I/O stats.
 5. Change one variable, benchmark, and keep rollback.
 
+For preventive review of locking, blocking, deadlocks, slow queries, connection exhaustion, high I/O wait, bad queries, full table scans, and growth regressions, read `database-problem-prevention-and-diagnosis.md`.
+
 ## Query Plan Review
 Check:
 - Is the plan using the expected index?

@@ -1,8 +1,8 @@
 interface:
   display_name: "Data Architect Engineering"
-  short_description: "Design, review, migrate, optimize, secure, and operate data systems across SQL, NoSQL, DBMS internals, vector, search, cache, big data, and warehouse workloads."
+  short_description: "Design, review, migrate, optimize, secure, and operate data systems across data models, SQL, NoSQL, DBMS internals, vector, search, cache, big data, and warehouse workloads."
   brand_color: "#2563EB"
-  default_prompt: "Use $data-architect-engineering to design, modify, migrate, review, troubleshoot, and operate data architectures with explicit workload evidence, DBMS internals where relevant, data-model fit, consistency, security, reliability, performance validation, and rollback planning."
+  default_prompt: "Use $data-architect-engineering to design, modify, migrate, review, troubleshoot, and operate data architectures with explicit workload evidence, data-model exploration, DBMS internals where relevant, preventive failure-mode analysis, consistency, security, reliability, performance validation, and rollback planning."
 
 policy:
   allow_implicit_invocation: true
