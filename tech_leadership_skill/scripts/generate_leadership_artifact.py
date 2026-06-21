@@ -175,6 +175,137 @@ ARTIFACTS: dict[str, str] = {
         | Manager load | | | | |
         | Team health | | | | |
     """,
+    "sme-coe-model": """
+        # SME / COE Operating Model
+
+        ## Context
+        - Capability/domain:
+        - Business problem:
+        - Sector/geography/regulatory context:
+        - Teams affected:
+        - Current pain:
+
+        ## Decision
+        - Model: SME / COE / SME + COE / neither
+        - Rationale:
+        - Strongest risk:
+        - Review date:
+
+        ## Mission And Non-Mission
+        | Area | Definition |
+        |---|---|
+        | Mission | |
+        | Non-mission | |
+        | Users/customers | |
+        | Accountable executive | |
+        | Operating owner | |
+
+        ## Service Catalog
+        | Service | Mode | SLA/expectation | Output | Owner |
+        |---|---|---|---|---|
+        | Expert review | SME / Advisory | | | |
+        | Pattern / standard | COE / Governance | | | |
+        | Enablement | COE / Enablement | | | |
+        | Platform / tooling | COE / Platform | | | |
+
+        ## Decision Rights
+        | Decision | Owner | SME role | COE role | Escalation |
+        |---|---|---|---|---|
+        | | | Advise / Approve / Block | Recommend / Standardize / Operate | |
+
+        ## Metrics
+        | Metric | Baseline | Target | Source | Cadence |
+        |---|---|---|---|---|
+        | Adoption rate | | | | |
+        | Review cycle time | | | | |
+        | Exceptions age | | | | |
+        | Incident/finding reduction | | | | |
+    """,
+    "requirements-spec": """
+        # Functional And Technical Requirements
+
+        ## Context
+        - Business objective:
+        - Request owner:
+        - User/customer/operator:
+        - Systems in scope:
+        - Systems out of scope:
+        - Constraints:
+        - Verification items:
+
+        ## Facts, Assumptions, Questions, Decisions
+        | Type | Item | Owner | Due |
+        |---|---|---|---|
+        | Fact | | | |
+        | Assumption | | | |
+        | Question | | | |
+        | Decision | | | |
+
+        ## Functional Requirements
+        | ID | Actor | Goal | Preconditions | Main flow | Failure/edge flow | Business rules | Acceptance criteria | Owner |
+        |---|---|---|---|---|---|---|---|---|
+        | FR-001 | | | | | | | | |
+
+        ## Technical Requirements
+        | ID | Related FR | Architecture/interface | Data lifecycle | IAM/security/privacy | NFR target | Observability/ops | Rollout/rollback | Test/evidence | Owner |
+        |---|---|---|---|---|---|---|---|---|---|
+        | TR-001 | FR-001 | | | | | | | | |
+
+        ## Traceability
+        | Business outcome | Functional req | Technical req | Risk/control | Test/evidence | Owner |
+        |---|---|---|---|---|---|
+        | | | | | | |
+    """,
+    "framework-decision": """
+        # Framework Selection Decision Record
+
+        ## Context
+        - Business objective:
+        - Decision needed:
+        - Sector/geography:
+        - Systems/processes in scope:
+        - Data classes:
+        - Audit/customer/regulatory context:
+        - Current pain:
+
+        ## Strongest Reason Not To Add A Framework
+
+        ## Candidate Frameworks
+        | Candidate | Problem fit | Evidence required | Adoption cost | Misuse risk | Verification needed |
+        |---|---|---|---|---|---|
+        | ITSM/ITIL | | | | | |
+        | COBIT | | | | | |
+        | TOGAF | | | | | |
+        | ISO/IEC/IEEE | | | | | |
+        | PCI DSS | | | | | |
+        | PMBOK | | | | | |
+        | CMMI | | | | | |
+        | SOC 2 | | | | | |
+        | CNCF | | | | | |
+        | Gartner Magic Quadrant | | | | | |
+        | HIPAA/GDPR/PDP | | | | | |
+        | SAFe | | | | | |
+        | Lean Six Sigma | | | | | |
+        | DORA/MTTR | | | | | |
+        | No framework | | | | | |
+
+        ## Decision
+        - Selected path:
+        - Rationale:
+        - Scope:
+        - Non-scope:
+        - Accountable owner:
+        - Operating owner:
+        - Review cadence:
+
+        ## Minimum Viable Implementation
+        | Workstream | Action | Owner | Due | Evidence |
+        |---|---|---|---|---|
+        | Policy/process | | | | |
+        | Tooling/evidence | | | | |
+        | Training/adoption | | | | |
+        | Metrics/reporting | | | | |
+    """,
     "skip-level-review": """
         # Skip-Level Signal Map
 

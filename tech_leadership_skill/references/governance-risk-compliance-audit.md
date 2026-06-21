@@ -12,6 +12,8 @@
 ## Governance Model
 Technology governance defines how decisions are made, reviewed, and evidenced.
 
+When the task is to decide whether to use ITSM/ITIL, COBIT, TOGAF, ISO/IEC/IEEE, PCI DSS, PMBOK, CMMI, SOC 2, CNCF, Gartner Magic Quadrant, HIPAA, GDPR, PDP, SAFe, Lean Six Sigma, DORA/MTTR, or no framework, use `framework-selection-and-critical-prompts.md` before recommending a path.
+
 Core forums:
 - Architecture and platform governance.
 - Cybersecurity and risk committee.

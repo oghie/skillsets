@@ -1,0 +1,16 @@
+flowchart TD
+  A[Need expertise or repeated capability] --> B{High-risk one-off decision?}
+  B -- yes --> C[Assign SME review]
+  B -- no --> D{Recurring across teams?}
+  D -- yes --> E[Design COE mode]
+  D -- no --> F[Keep local team ownership]
+  C --> G[Name decision owner and risk owner]
+  E --> H[Choose advisory, enablement, platform, governance, or community mode]
+  G --> I[Record recommendation, evidence, and exception path]
+  H --> J[Create reusable assets and adoption metrics]
+  I --> K[Review outcome and reduce dependency]
+  J --> K
+  K --> L{Capability normalized?}
+  L -- yes --> M[Federate or sunset]
+  L -- no --> N[Adjust scope, support, and decision rights]
+  N --> K

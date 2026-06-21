@@ -12,6 +12,8 @@
 ## Delivery Predictability
 Predictability is not promising exact dates. It is the ability to explain confidence, dependencies, risk, and recovery options.
 
+For DORA/MTTR adoption, SAFe, PMBOK, ITSM/ITIL, Lean Six Sigma, or no-framework decisions, use `framework-selection-and-critical-prompts.md` before adding ceremonies or metrics.
+
 Track:
 - committed vs completed work.
 - cycle time and lead time.

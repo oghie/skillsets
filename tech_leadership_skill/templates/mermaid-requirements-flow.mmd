@@ -1,0 +1,15 @@
+flowchart TD
+  A[Business problem] --> B[Outcome and owner]
+  B --> C[Scope and non-scope]
+  C --> D[Actors, journeys, and business rules]
+  D --> E[Data and integration boundaries]
+  E --> F[Functional requirements]
+  F --> G[Technical requirements]
+  G --> H[Non-functional requirements]
+  H --> I[Security, privacy, and compliance constraints]
+  I --> J[Acceptance criteria and tests]
+  J --> K[Traceability to risks, controls, and roadmap]
+  K --> L{Stakeholder validation complete?}
+  L -- no --> M[Resolve facts, assumptions, questions, decisions]
+  M --> F
+  L -- yes --> N[Ready for implementation planning]

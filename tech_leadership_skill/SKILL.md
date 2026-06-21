@@ -1,6 +1,6 @@
 ---
 name: tech-leadership
-description: Use when advising, planning, reviewing, reporting, operating, or improving CTO and technology leadership work across engineering strategy, cybersecurity management, people, organization, delivery, risk, KPI, roadmap, budgeting, governance, audit, R&D, stakeholder communication, culture, politics, and sector-specific technology leadership.
+description: Use when advising, planning, reviewing, reporting, operating, or improving CTO and technology leadership work across strategy, cybersecurity management, SME/COE, functional and technical requirements, framework selection, people, organization, delivery, risk, KPI, roadmap, budgeting, governance, audit, R&D, stakeholder communication, culture, politics, and sector-specific leadership.
 ---
 
 # Tech Leadership
@@ -9,7 +9,7 @@ description: Use when advising, planning, reviewing, reporting, operating, or im
 Treat technology leadership as an operating system, not a motivational role. Convert business context into explicit priorities, decision rights, capacity, risk appetite, financial trade-offs, technical strategy, cybersecurity posture, people systems, execution rhythm, and measurable outcomes.
 
 ## First Pass
-1. Classify the request: daily operating review, strategy, roadmap, portfolio, cybersecurity strategy, audit/compliance, board/shareholder report, delivery recovery, incident management, organization design, hiring/retention, appraisal, budget, vendor/partner strategy, R&D, AI/data transformation, culture, political risk, or cross-functional advisory.
+1. Classify the request: daily operating review, strategy, roadmap, portfolio, cybersecurity strategy, SME/COE, functional/technical requirements, framework selection, audit/compliance, board/shareholder report, delivery recovery, incident management, organization design, hiring/retention, appraisal, budget, vendor/partner strategy, R&D, AI/data transformation, culture, political risk, or cross-functional advisory.
 2. Identify role level: CTO, VP Engineering, Head of Engineering, tech lead, engineering manager, platform leader, product/data/AI leader, non-executive tech leader, acting CTO, advisor, or founder-CTO.
 3. Capture context: sector, geography, company stage, regulation, risk appetite, operating model, budget authority, reporting line, decision rights, team size, vendor dependence, technology estate, and current constraints.
 4. Separate `Fact`, `Inference`, `Assumption`, and `Question`. Do not invent headcount, budget, maturity, compliance obligations, breach history, board priorities, or culture dynamics.
@@ -24,6 +24,9 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Executive and managerial quantification, CTO metrics, technology value metrics, manager-system metrics, board metric synthesis, team diagnostic metrics, metric harm, or modern technology leadership blind spots: `references/executive-managerial-quantification.md`.
 - Hiring, developing, retaining, mentoring, delegation, 1:1s, skip-level meetings, managing managers, manager accountability, calibration, appraisal, 360 feedback, incentives, team allocation, or succession: `references/people-org-talent-appraisal.md`.
 - Enterprise risk, audit readiness, compliance, policy, controls, regulatory exposure, or governance: `references/governance-risk-compliance-audit.md`.
+- SME, Subject Matter Expert, Center of Excellence, COE, community of practice, expert review, capability enablement, platform/service COE, governance COE, or reusable expert capability: `references/sme-coe-operating-model.md`.
+- Functional requirements, technical requirements, product/engineering specs, non-functional requirements, acceptance criteria, traceability, launch readiness, migration requirements, or requirement review: `references/requirements-engineering-for-tech-leads.md`.
+- Selecting or critiquing ITSM, ITIL, COBIT, TOGAF, ISO/IEC/IEEE, PCI DSS, PMBOK, CMMI, AICPA/SOC 2, CNCF, Gartner Magic Quadrant, HIPAA, GDPR, PDP, SAFe, Lean Six Sigma, DORA, MTTR, or deciding no framework: `references/framework-selection-and-critical-prompts.md`.
 - Socio-technical risk, reliability management, hidden risk, near misses, barriers, redundancies, recoveries, just culture, burnout risk, human reliability, system reliability, organizational reliability, or predictive reliability: `references/risk-reliability-leadership.md`.
 - Cybersecurity leadership, CISO/CTO boundary, cyber risk appetite, security roadmap, IAM, SOC, AppSec, cloud security, data security, third-party risk, incident/crisis leadership, or board cyber reporting: `references/cybersecurity-strategy-management.md`.
 - Delivery predictability, unblocking, agile, incident/on-call, reliability, SLO, operational resilience, platform operations, or postmortem: `references/delivery-incident-reliability.md`.
@@ -48,6 +51,9 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Design engineering culture, structure, and process: `tasks/design-engineering-culture-structure.md`.
 - Run risk and reliability review: `tasks/run-risk-reliability-review.md`.
 - Handle audit, risk, and compliance readiness: `tasks/handle-audit-risk-compliance.md`.
+- Design SME or COE operating model: `tasks/design-sme-coe-operating-model.md`.
+- Write or review functional and technical requirements: `tasks/write-functional-technical-requirements.md`.
+- Select governance, compliance, service-management, architecture, delivery, market, or metrics framework: `tasks/select-governance-compliance-delivery-framework.md`.
 - Conduct performance appraisal and 360 calibration: `tasks/conduct-performance-calibration.md`.
 - Recover delivery predictability and unblock execution: `tasks/recover-delivery-predictability.md`.
 - Evaluate AI, data, R&D, or innovation initiative: `tasks/evaluate-ai-rd-initiative.md`.
@@ -68,6 +74,9 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Engineering culture and structure map: `templates/engineering-culture-structure-map.md`.
 - Risk register: `templates/risk-register.md`.
 - Risk and reliability review: `templates/reliability-review.md`.
+- SME / COE operating model: `templates/sme-coe-operating-model.md`.
+- Functional and technical requirements: `templates/functional-technical-requirements.md`.
+- Framework selection decision record: `templates/framework-selection-decision-record.md`.
 - Cyber risk register: `templates/cyber-risk-register.md`.
 - Technical debt register: `templates/technical-debt-register.md`.
 - Decision memo: `templates/decision-memo.md`.
@@ -79,9 +88,15 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - AI agent governance diagram: `templates/mermaid-ai-agent-governance.mmd`.
 - Risk and reliability diagram: `templates/mermaid-risk-reliability-view.mmd`.
 - Cyber governance diagram: `templates/mermaid-cyber-governance-view.mmd`.
+- SME / COE operating model diagram: `templates/mermaid-sme-coe-operating-model.mmd`.
+- Requirements engineering flow diagram: `templates/mermaid-requirements-flow.mmd`.
+- Framework selection diagram: `templates/mermaid-framework-selection.mmd`.
 
 ## Decision Discipline
 - If current laws, sector regulations, cybersecurity frameworks, privacy rules, audit standards, vendor claims, pricing, market data, or product capabilities matter, say exactly: `This needs verification.`
+- Do not use ITIL, COBIT, TOGAF, ISO/IEC/IEEE, PCI DSS, PMBOK, CMMI, SOC 2, CNCF, Gartner Magic Quadrant, HIPAA, GDPR, PDP, SAFe, Lean Six Sigma, DORA, or MTTR as a brand list. State the problem driver, applicability, owner, evidence, minimum viable adoption, and misuse risk.
+- Do not create SME or COE structures without decision rights, service catalog, adoption metrics, exception path, and a plan to avoid bottlenecks.
+- Do not accept functional or technical requirements that lack actor, business objective, measurable NFRs, acceptance criteria, data lifecycle, IAM/security/privacy implications, rollout/rollback, and validation evidence.
 - When working inside this repository and reference accuracy matters, recalibrate against `../REFERENCE/LEADER/*.pdf|epub`. Do not cite book names or page numbers unless the user asks for citation.
 - Lead with the strongest concern when a proposed strategy is under-evidenced, politically naive, unaffordable, un-auditable, or operationally fragile.
 - Do not turn every leadership problem into process. Check incentives, decision rights, capacity, trust, technical constraints, and business trade-offs first.
@@ -94,5 +109,5 @@ Treat technology leadership as an operating system, not a motivational role. Con
 Lead with the leadership judgment and the recommended path. State business objective, role accountability, constraints, stakeholders, current evidence, risks, trade-offs, operating model, roadmap, metrics, cybersecurity implications, financial impact, people impact, communication plan, validation, and next decision needed.
 
 ## Script Helpers
-- Run `scripts/generate_leadership_artifact.py --type <artifact> --output <file>` to create a starter report, roadmap, risk register, cyber strategy, appraisal, or meeting brief.
-- Run `scripts/tech_leadership_static_audit.py <file-or-dir>` to scan leadership docs for missing strategy, metrics, risk, cybersecurity, people, finance, delivery, governance, stakeholder, and validation coverage.
+- Run `scripts/generate_leadership_artifact.py --type <artifact> --output <file>` to create a starter report, roadmap, risk register, cyber strategy, SME/COE model, requirements spec, framework decision, appraisal, or meeting brief.
+- Run `scripts/tech_leadership_static_audit.py <file-or-dir>` to scan leadership docs for missing strategy, metrics, risk, cybersecurity, SME/COE, requirements, framework selection, people, finance, delivery, governance, stakeholder, and validation coverage.

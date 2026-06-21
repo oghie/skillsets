@@ -13,6 +13,9 @@ CHECKS = {
     "metrics": ["kpi", "kra", "okr", "metric", "dashboard", "scorecard", "target"],
     "performance_management": ["csf", "critical success factor", "balanced scorecard", "benchmarking", "root cause", "fmea"],
     "executive_quantification": ["executive scorecard", "managerial", "quantification", "decision trigger", "metric harm"],
+    "sme_coe": ["sme", "subject matter expert", "coe", "center of excellence", "community of practice", "service catalog"],
+    "requirements_engineering": ["functional requirement", "technical requirement", "acceptance criteria", "non-functional", "traceability"],
+    "framework_selection": ["itil", "itsm", "cobit", "togaf", "pci", "soc 2", "hipaa", "gdpr", "pdp", "safe", "dora", "mttr"],
     "cybersecurity": ["cyber", "security", "iam", "soc", "appsec", "vulnerability", "incident", "control"],
     "risk": ["risk", "audit", "compliance", "resilience", "reliability", "governance", "control"],
     "reliability_leadership": ["barrier", "redundancy", "recovery", "near miss", "just culture", "human reliability"],
@@ -39,6 +42,10 @@ RED_FLAGS = [
     "manual forever",
     "no budget",
     "no decision",
+    "framework-first",
+    "certification theater",
+    "fast and secure",
+    "coe owns everything",
 ]
 
 

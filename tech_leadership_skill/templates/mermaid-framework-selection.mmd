@@ -1,0 +1,27 @@
+flowchart TD
+  A[Leadership problem] --> B[State strongest reason not to add framework]
+  B --> C{Problem driver}
+  C -- service operations --> D[ITSM / ITIL]
+  C -- board governance --> E[COBIT]
+  C -- enterprise architecture --> F[TOGAF / ISO 42010]
+  C -- legal or audit exposure --> G[PCI / HIPAA / GDPR / PDP / SOC 2]
+  C -- project control --> H[PMBOK]
+  C -- process variation --> I[Lean Six Sigma]
+  C -- cloud-native platform --> J[CNCF plus architecture review]
+  C -- vendor market scan --> K[Gartner plus due diligence]
+  C -- delivery performance --> L[DORA / MTTR]
+  C -- scale coordination --> M[SAFe or lighter portfolio model]
+  D --> N[Define owner, scope, evidence, metrics]
+  E --> N
+  F --> N
+  G --> O[Mark legal/version items: This needs verification]
+  H --> N
+  I --> N
+  J --> N
+  K --> N
+  L --> N
+  M --> N
+  O --> N
+  N --> P{Adoption cost proportional to risk?}
+  P -- yes --> Q[Adopt or adapt minimum viable implementation]
+  P -- no --> R[Reject, defer, or use smaller artifact]
