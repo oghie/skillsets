@@ -1,0 +1,64 @@
+flowchart LR
+  Client[Client Query] --> Parser[Parser and Binder]
+  Parser --> Optimizer[Optimizer]
+  Optimizer --> Plan[Physical Plan]
+
+  subgraph Execution[Execution Engine]
+    Scan[Scan or Index Scan]
+    Join[Join or Aggregate]
+    Sort[Sort or Pipeline Breaker]
+  end
+
+  Plan --> Scan
+  Scan --> Join
+  Join --> Sort
+
+  subgraph Storage[Storage Engine]
+    Buffer[Buffer Pool]
+    PageTable[Page Table]
+    PageDir[Page Directory]
+    Heap[(Heap or Table Pages)]
+    Index[(Index Pages)]
+    Temp[(Temp Spill)]
+  end
+
+  Scan --> Buffer
+  Join --> Temp
+  Buffer --> PageTable
+  PageTable --> Heap
+  PageTable --> Index
+  PageDir --> Heap
+  PageDir --> Index
+
+  subgraph Recovery[Recovery Path]
+    WAL[WAL or Redo Log]
+    Checkpoint[Checkpoint]
+    Backup[Backup and PITR]
+  end
+
+  Buffer --> WAL
+  WAL --> Checkpoint
+  Checkpoint --> Backup
+
+  subgraph Concurrency[Concurrency Control]
+    Locks[Locks]
+    Latches[Latches]
+    MVCC[MVCC Versions and GC]
+  end
+
+  Execution --> Locks
+  Storage --> Latches
+  Storage --> MVCC
+
+  subgraph Observability[Required Evidence]
+    PlanStats[Estimated vs Actual Rows]
+    Waits[Lock and Latch Waits]
+    IO[Page Reads, Writes, Fsync]
+    Lag[Replica, CDC, Vacuum, Compaction Lag]
+  end
+
+  Optimizer --> PlanStats
+  Locks --> Waits
+  Latches --> Waits
+  WAL --> IO
+  MVCC --> Lag

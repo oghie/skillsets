@@ -6,6 +6,7 @@ TPS and QPS are insufficient. Profile the system as data, workload, engine, infr
 - Read/write ratio by endpoint/job.
 - Top queries by total time, p95/p99, calls, rows read, rows returned, temp spill, and lock wait.
 - Query shape: point lookup, range scan, join, aggregate, search, vector, graph, batch scan.
+- Physical execution shape: sequential scan, index scan, multi-index scan, join algorithm, pipeline breaker, vectorized execution, parallel worker, exchange/shuffle operator.
 - Parameter skew and tenant skew.
 - Burst pattern, peak windows, batch jobs, cron jobs.
 - Connection concurrency and pool wait.
@@ -27,8 +28,10 @@ TPS and QPS are insufficient. Profile the system as data, workload, engine, infr
 ## Engine Profile
 - Query plans and estimate error.
 - Buffer/cache hit ratio.
+- Page size, page read/write rate, dirty page rate, eviction rate, pinned page pressure, and sequential flooding symptoms.
 - Checkpoint, redo/WAL/binlog volume, fsync latency.
 - Lock waits, deadlocks, MVCC bloat, vacuum/compaction debt.
+- Long transactions, transaction ID wraparound risk, version garbage collection debt, and index/table fragmentation.
 - Replication lag and apply rate.
 - Isolation level usage.
 - Stored procedures, triggers, functions, sequences, generated columns.

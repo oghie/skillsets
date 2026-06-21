@@ -18,6 +18,10 @@ Check:
 - Are statistics stale?
 - Are partitions pruned?
 - Is the query reading far more rows than returned?
+- Is the operator model row-at-a-time, materialized, vectorized, pushed down, parallel, or distributed?
+- Which operators are pipeline breakers?
+- Which access method is used: sequential scan, index scan, multi-index scan, bitmap scan, zone-map/data-skipping scan, or remote scan?
+- Do actual page reads, buffer hits, temp spills, and WAL/checkpoint events match the optimizer's assumptions?
 
 ## Index Design
 Good indexes follow query predicates, join keys, ordering, uniqueness, and selectivity.
@@ -76,12 +80,15 @@ Mitigate:
 - Columnar engines favor scans, compression, vectorized execution, and aggregates.
 - In-memory engines favor low latency but require explicit durability and memory pressure strategy.
 - Search/vector engines need index build, merge/compaction, refresh, segment, and recall behavior understood.
+- Page layout, tuple layout, overflow values, buffer pool policy, dirty-page flushing, WAL/checkpoint behavior, and MVCC garbage collection are part of the performance model.
+- For detailed internals review, read `database-storage-engine-internals.md`, `query-execution-and-optimizer-internals.md`, and `transactions-concurrency-recovery-internals.md`.
 
 ## Benchmark Discipline
 - Use realistic data volume and skew.
 - Include warm and cold cache tests.
 - Measure p95/p99, not only average.
 - Include writes, reads, maintenance, compaction, backup, and failover where relevant.
+- Include cold cache, warm cache, long transaction, checkpoint, vacuum/compaction, and temp-spill scenarios where relevant.
 - Validate correctness after load.
 - State the hardware, OS, filesystem, DB config, schema, indexes, client concurrency, and dataset generator.
 

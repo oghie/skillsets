@@ -50,11 +50,17 @@
 - CPU headroom:
 - CPU cache/SIMD/NUMA concerns:
 - Memory headroom:
+- Working set in pages:
+- Buffer pool/cache hit target:
 - Disk headroom:
 - IOPS headroom:
 - Connection pool:
 - WAL/binlog/logical replication headroom:
+- Dirty page/checkpoint headroom:
+- Temp spill headroom:
+- Vacuum/compaction debt:
 - Replication lag threshold:
+- Restore/recovery time evidence:
 - Cost threshold:
 
 ## Validation

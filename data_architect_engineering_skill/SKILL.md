@@ -1,6 +1,6 @@
 ---
 name: data-architect-engineering
-description: Use when designing, reviewing, modifying, migrating, optimizing, securing, operating, troubleshooting, or decommissioning data architectures across SQL, ISO SQL conformance, NoSQL, vector, graph, document, time-series, NewSQL, search, in-memory, SQLite, CDC/Debezium, hardware acceleration, cache, big-data, lakehouse, and warehouse systems.
+description: Use when designing, reviewing, modifying, migrating, optimizing, securing, operating, troubleshooting, or decommissioning data architectures across SQL, ISO SQL conformance, NoSQL, vector, graph, document, time-series, NewSQL, search, in-memory, SQLite, CDC/Debezium, DBMS storage/query/recovery internals, hardware acceleration, cache, big-data, lakehouse, and warehouse systems.
 ---
 
 # Data Architect Engineering
@@ -9,12 +9,12 @@ description: Use when designing, reviewing, modifying, migrating, optimizing, se
 Treat data architecture as a safety-critical engineering system: define workload, data model, access pattern, consistency, security, reliability, operational ownership, and validation before choosing a database, schema, index, shard key, cache, warehouse, or migration path.
 
 ## First Pass
-1. Classify the task: database necessity assessment, greenfield design, new datastore creation, data model change, enhancement, migration, legacy modernization, decommissioning, performance tuning, security review, reliability review, incident troubleshooting, stack selection, hardware/storage sizing, monitoring, CDC/data movement, or orchestration.
+1. Classify the task: database necessity assessment, greenfield design, new datastore creation, data model change, enhancement, migration, legacy modernization, decommissioning, performance tuning, security review, reliability review, incident troubleshooting, stack selection, DBMS internals review, hardware/storage sizing, monitoring, CDC/data movement, or orchestration.
 2. Identify workload shape: OLTP, OLAP, HTAP, stream, event log, search, vector retrieval/RAG, graph traversal, document CRUD, time-series ingest/query, key-value/session/cache, queue-like, ML feature store, data lake, data warehouse, or hybrid.
 3. Ask whether the application needs a database at all, a local embedded database, a file/object store, a cache, an event log, a search/vector index, or a full client/server DBMS.
 4. Capture non-negotiables: data criticality, RPO/RTO, SLO/SLI, latency percentiles, throughput, data volume/growth, write/read ratio, retention, tenant isolation, compliance, confidentiality, integrity, availability, and recovery evidence.
 5. Name the data model and query path before naming technology: entities, relationships, aggregates, documents, keys, partitions, series, embeddings, graph edges, search fields, analytical facts/dimensions, lineage, and access patterns.
-6. Decide validation before recommendation: schema review, ISO SQL/dialect compatibility check, EXPLAIN/plan analysis, benchmark, load test, migration rehearsal, CDC replay test, restore drill, failover test, consistency check, threat model, data-quality test, or rollback simulation.
+6. Decide validation before recommendation: schema review, ISO SQL/dialect compatibility check, EXPLAIN/plan analysis, storage/page/buffer/WAL evidence, benchmark, load test, migration rehearsal, CDC replay test, restore drill, failover test, consistency check, threat model, data-quality test, or rollback simulation.
 
 ## Required Reads By Task
 - Intake, decision forces, unknowns, or task classification: `references/data-system-intake-and-decision-forces.md`.
@@ -24,9 +24,13 @@ Treat data architecture as a safety-critical engineering system: define workload
 - Data modeling, schema design, ERD/document/graph/time-series/vector models, query-language fit, SQL vs non-SQL access patterns, or example queries: `references/modeling-and-query-patterns.md` and `references/query-examples-sql-nosql-vector-graph.md`.
 - Traditional RDBMS, SQL correctness, normalization, referential integrity, indexing discipline, SQL antipatterns, legacy database constraints, or navigational/mainframe migration: `references/sql-antipatterns-and-legacy-modernization.md`.
 - Query performance, indexing, partitioning, sharding, cardinality, plan review, caching, buffer/I/O, hot partitions, or database internals: `references/performance-indexing-and-query-optimization.md`.
+- DBMS storage internals, storage hierarchy, pages, page directory, slotted pages, tuple layout, record IDs, buffer pool, OS cache/direct I/O, row/column/PAX storage, compression, hash tables, B+Trees, filters, search/vector index internals, or compaction/vacuum: `references/database-storage-engine-internals.md`.
+- Query execution internals, logical vs physical plans, Volcano/iterator/materialization/vectorized models, access methods, sequential/index/multi-index scans, join algorithms, optimizer statistics, histograms, cardinality estimation, pipeline breakers, or distributed query execution: `references/query-execution-and-optimizer-internals.md`.
+- Transaction internals, locks vs latches, 2PL, deadlocks, OCC/timestamp ordering, isolation anomalies, MVCC storage/GC/index management, WAL, checkpoints, ARIES-style recovery, or crash-safety evidence: `references/transactions-concurrency-recovery-internals.md`.
 - Migration profiling beyond TPS/QPS, workload capture, query plan inventory, data-shape profiling, lock/log/WAL/binlog metrics, storage/network/CPU/memory profiling, or migration readiness: `references/migration-profiling-dimensions.md`.
 - CDC, Debezium, logical replication, binlog, outbox, schema-change streams, event ordering, replays, dual writes, and sink propagation: `references/cdc-debezium-and-data-movement.md`.
 - Distributed SQL, NewSQL, TiDB, Vitess, Cassandra/Scylla-style wide-column systems, big-data processing, stream/batch, lakehouse, data warehouse, or HTAP: `references/distributed-scaling-newsql-bigdata-warehouse.md`.
+- Distributed DBMS internals, shared-nothing/shared-disk architecture, query routing, push vs pull, partitioning schemes, replication timing, 2PC/Paxos/Raft-style coordination, CAP/PACELC framing, distributed joins, shuffle/broadcast/semi-join, or federated database risk: `references/distributed-dbms-internals.md`.
 - Security, privacy, IAM-to-data boundaries, roles, privileges, TLS, encryption, hashing, masking, row/column/table-level access, audit logs, injection risk, CIA, or governance: `references/security-governance-and-cia.md`.
 - Reliability, SLO/SLI, backup/restore, replication, failover, observability, release management, operational visibility, runbooks, or incident response: `references/reliability-operations-monitoring.md`.
 - Hardware, OS, filesystem, RAID, NVMe/SSD/HDD, SAN/NAS/object storage, network, RDMA, CPU/GPU/FPGA, virtualization, containers, cloud DBaaS, or Kubernetes operators: `references/infrastructure-storage-os-and-hardware.md`.
@@ -36,6 +40,7 @@ Treat data architecture as a safety-critical engineering system: define workload
 ## Task Playbooks
 - Design a new data architecture: `tasks/design-new-data-architecture.md`.
 - Decide whether a database is needed and how much DBMS is enough: `tasks/database-necessity-and-scale-assessment.md`.
+- Review DBMS storage, query execution, concurrency, recovery, and distributed internals: `tasks/database-internals-storage-query-recovery-review.md`.
 - Select a datastore or data platform and define next steps: `tasks/stack-selection-and-next-steps.md`.
 - Modify, enhance, remove, or decommission a data component: `tasks/modify-enhance-or-remove-data-system.md`.
 - Migrate or modernize legacy data systems: `tasks/migration-and-modernization.md`.
@@ -48,6 +53,8 @@ Treat data architecture as a safety-critical engineering system: define workload
 - Migration runbook: `templates/migration-runbook.md`.
 - Data model review checklist: `templates/data-model-review-checklist.md`.
 - Data architecture view starters: `templates/mermaid-data-architecture-views.mmd`.
+- DBMS internals diagram starter: `templates/mermaid-dbms-internals-views.mmd`.
+- DBMS internals review checklist: `templates/dbms-internals-review-checklist.md`.
 
 ## Decision Discipline
 - Separate `Fact`, `Inference`, `Assumption`, and `Question` when evidence is incomplete.
@@ -55,6 +62,7 @@ Treat data architecture as a safety-critical engineering system: define workload
 - Do not recommend "NoSQL", "vector DB", "distributed SQL", "data lake", "warehouse", "cache", or "microservice database per service" without access patterns and operational constraints.
 - Do not claim ISO/IEC 9075 conformance. State which SQL features are standard, optional, dialect-specific, or require live verification.
 - Do not introduce Debezium/CDC as a generic migration fix without WAL/binlog/logical-replication readiness, schema-change handling, ordering, idempotency, offset storage, replay, and sink validation.
+- Do not discuss performance or migration using only TPS/QPS. Include physical evidence: page/cache behavior, working set, index shape, query plan, lock/latch waits, WAL/checkpoint pressure, compaction/vacuum debt, and recovery evidence.
 - Prefer boring, well-understood stores when they satisfy the workload and team can operate them. Add distribution, multi-model abstraction, global replication, or exotic storage only when the forces justify the operational cost.
 - Prefer no database, a local file, SQLite, or object storage when the application only needs immutable/static/local data, low-write embedded state, or a portable application file.
 - Treat caches, search indexes, vector stores, materialized views, and replicas as derived data unless explicitly designed as systems of record with durability, recovery, and reconciliation.
@@ -71,9 +79,11 @@ Treat data architecture as a safety-critical engineering system: define workload
 - NewSQL/distributed SQL fits strong consistency with horizontal scale, but demands explicit latency, region, transaction, hotspot, and operational trade-off analysis.
 - Big-data/lakehouse/warehouse designs need lineage, schema evolution, partition strategy, compaction, quality gates, cost controls, and consumer contracts.
 - Accelerator-aware DB design only helps after profiling proves the bottleneck matches the accelerator: scan, join, aggregation, decompression, encryption, vector search, ML-adjacent retrieval, or memory bandwidth.
+- Storage engine choice is a query-execution and recovery choice: row/column/PAX layout, B+Tree/LSM/hash/index organization, buffer pool policy, compression, WAL/checkpoints, MVCC garbage collection, and distributed partitioning must align with access patterns.
 
 ## Visual And Diagram Standards
 - Use diagrams to clarify system of record, derived stores, ingestion, query paths, replication, consistency boundaries, migration phases, failure domains, backup/restore, and security enforcement points.
+- For DBMS internals, use diagrams for slotted page layout, page directory vs page table, buffer pool/dirty-page flow, B+Tree/index access, query plan pipeline, WAL/checkpoint/recovery, MVCC version chains, partition routing, and distributed commit.
 - Prefer ERD/data model diagrams for relational design, document shape examples for document stores, key/partition diagrams for wide-column/key-value stores, node-edge diagrams for graph systems, timeline diagrams for time-series, embedding/index lifecycle diagrams for vector systems, and pipeline diagrams for big-data/warehouse flows.
 - Every diagram must state ownership, consistency boundary, durability path, and failure mode; decorative diagrams are not useful.
 
