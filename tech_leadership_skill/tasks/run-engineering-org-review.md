@@ -9,7 +9,7 @@ Use this for org health, team topology, Conway mapping, manager effectiveness, c
 3. Review capacity and load.
    - Verify: roadmap, support, incidents, security work, technical debt, meetings, and manager load are included.
 4. Review manager system.
-   - Verify: manager expectations, skip-level signal, team health, delegation, first-time manager support, and manager accountability are assessed.
+   - Verify: manager expectations, skip-level coverage, team health themes, delegation, first-time manager support, manager accountability, and manager-system metrics are assessed.
 5. Review talent system.
    - Verify: hiring, retention, performance, career path, succession, and critical person risk are assessed.
 6. Review governance and decision rights.

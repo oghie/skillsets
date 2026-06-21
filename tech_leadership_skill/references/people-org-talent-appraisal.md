@@ -5,6 +5,9 @@
 - Hiring And Retention
 - Manager System
 - Managing Managers
+- Skip-Level Operating Model
+- Manager Accountability
+- Debugging Dysfunctional Teams
 - Technical Relevance For Managers
 - Performance Appraisal
 - Continuous Feedback
@@ -52,7 +55,7 @@ Expected manager behaviors:
 Managing managers is not simply managing more people. Information arrives through another abstraction layer, so the leader must actively inspect team health and manager behavior.
 
 Required practices:
-- proactive skip-level meetings.
+- proactive skip-level meetings with explicit cadence and purpose.
 - manager accountability based on team health and outcomes.
 - explicit expectations for managers.
 - coaching first-time managers differently from experienced managers.
@@ -60,6 +63,97 @@ Required practices:
 - reviewing goals, recruiting, postmortems, delivery health, and people issues without taking the manager's job away.
 
 The open-door policy is not enough. People rarely escalate serious issues upward just because the door is open. Leaders must seek signal before attrition, missed projects, or team dysfunction becomes expensive.
+
+## Skip-Level Operating Model
+Skip-level meetings help a leader see team health and focus beyond the manager's upward report. They are not a replacement for the manager and should not become a bypass channel for normal decisions.
+
+Use formats by scale:
+
+| Format | Use when | Cadence | What it gives | Limitation |
+|---|---|---|---|---|
+| Individual skip-level 1:1 | org is small enough or signal is sensitive | quarterly or risk-triggered | relationship, career signal, candid concerns | does not scale indefinitely |
+| Team/group skip-level | org is larger or team dynamics matter | one or more times per quarter per team | focus, group dynamics, strategy questions | people may avoid sensitive manager feedback |
+| Office hours | follow-up path after familiarity exists | recurring | opt-in access | weak as the only mechanism |
+| Meeting observation | team output is unclear or dysfunction suspected | targeted | actual dynamics, not only reports | leader presence changes behavior |
+
+Rules:
+- Explain that the meeting is mostly for the employee or team, not for surveillance.
+- Provide prompts in advance.
+- Ask for patterns, examples, and constraints; avoid treating one anecdote as fact.
+- Do not quote sensitive feedback to the manager without permission.
+- Convert individual comments into pattern-level coaching or system changes.
+- Tell managers that skip-levels are part of leadership hygiene, not a sign of distrust.
+- Increase frequency temporarily when onboarding a new manager, inheriting an unhealthy team, seeing attrition, or entering an unfamiliar function.
+
+Skip-level 1:1 prompts:
+- What is best and worst about the work or project right now?
+- Who on the team is doing particularly strong work?
+- What is your manager doing that helps the team?
+- What should your manager do more, less, or differently?
+- What is blocking you from doing your best work?
+- Which business or product strategy is unclear?
+- What opportunities are we missing?
+- Which product, technical, or process change would most improve outcomes?
+- How healthy is the team overall?
+- What should I know that may not naturally escalate?
+- How happy are you working here, and what would improve that?
+
+Group skip-level prompts:
+- What can your manager's manager provide for this team?
+- Which other teams are hardest to work with and why?
+- Which organizational question should be answered more clearly?
+- Where is the team spending too much effort for too little value?
+- Which recurring issue has become normalized?
+- What do you wish executives understood about this work?
+
+Signals to quantify from skip-levels:
+- coverage: percentage of target people/teams reached per quarter.
+- themes: top repeated blockers by team and severity.
+- escalation quality: issues surfaced before they became attrition, incident, or delivery miss.
+- manager follow-through: coaching actions closed after pattern review.
+- trust signal: willingness to raise hard topics over time.
+
+Red flags:
+- skip-levels are held only after resignations.
+- leader asks for candor but leaks exact quotes.
+- people use skip-levels to bypass accountable managers for ordinary work.
+- manager is surprised by every skip-level theme.
+- team says the same thing for two cycles with no action.
+
+## Manager Accountability
+Managers are accountable for team health and productivity even when product, tech lead, legacy systems, or other teams create constraints. Accountability does not mean blame; it means the manager must identify the issue, make it visible, and drive or escalate a path forward.
+
+Common scenarios:
+
+| Scenario | Manager accountability | Senior leader support |
+|---|---|---|
+| Unstable roadmap | surface churn impact, partner with product, refocus priorities | resolve executive/product conflict |
+| Tech lead rabbit hole | make design progress visible, bring mentors/reviewers, unblock decisions | provide senior technical help or decision authority |
+| Full-time firefighting | quantify incident/support load, create stabilization plan, request capacity | fund capacity, reduce roadmap, shift support burden |
+| Inbound support overload | triage requests, define service model, refuse or route work when appropriate | back manager when saying no |
+| Team attrition or low morale | identify causes, create retention/growth actions, escalate systemic constraints | fix incentives, compensation, staffing, or culture issues |
+
+A manager is not making the leader's job easier by hiding problems. A good manager brings clear problems early, with context, options, and asks.
+
+## Debugging Dysfunctional Teams
+Treat organizational dysfunction like debugging a complex system.
+
+Process:
+1. Form a hypothesis about why output, morale, quality, or trust is weak.
+2. Check data: tickets, code reviews, incident load, meetings, chat/email patterns, unclear goals, support interrupts, planning churn.
+3. Observe carefully: meetings, standups, planning, decision dynamics, who speaks, where conflict is suppressed.
+4. Ask questions: goals, purpose, customer/business value, decision ownership, blockers, team dynamics.
+5. Inspect team dynamics: collaboration, adjacent-team relationships, manager/product/tech-lead partnership, isolated work.
+6. Jump in to help when needed, while teaching the manager how to debug the team next time.
+
+Be minimally invasive. Senior leader observation can change behavior and hide the problem.
+
+Manager failure modes:
+- People pleaser: liked by many, avoids hard choices, overpromises, hides trade-offs, burns out.
+- External pleaser: manages up well, says yes externally, hides team problems.
+- Neglectful new manager: avoids core management work, misses 1:1s, does not provide feedback.
+- Control manager: takes away team decisions, demands unnecessary detail, fights peers, hides work from their manager.
+- Culture mismatch: imports a subculture that breaks collaboration, speed, transparency, or decision norms.
 
 ## Technical Relevance For Managers
 Senior managers do not need to be the deepest engineer, but must remain technical enough to:

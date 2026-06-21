@@ -125,6 +125,8 @@ Minimum system:
 
 Do not let the dashboard become a report-only artifact. If no decision changes after repeated red metrics, the operating system is broken.
 
+For CTO, VP Engineering, board, or manager-system quantification, use `executive-managerial-quantification.md` to separate executive decision metrics from managerial diagnostic metrics.
+
 ## Dashboard Design
 Recommended dashboard panels:
 - Strategic outcomes: revenue enablement, cost reduction, risk reduction, customer commitments.

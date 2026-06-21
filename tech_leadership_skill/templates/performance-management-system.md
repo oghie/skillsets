@@ -12,6 +12,11 @@
 |---|---|---|---|---|---|---|---|
 | | | | | | | | |
 
+## Metric Altitude
+| Metric | Executive decision metric | Managerial diagnostic metric | Individual accountability metric | Notes |
+|---|---|---|---|---|
+| | yes/no | yes/no | yes/no | |
+
 ## Balanced Scorecard
 | Perspective | Objective | KPI | Target | Trend | Current status | Decision needed |
 |---|---|---|---|---|---|---|
@@ -33,6 +38,16 @@
 | Department review | | | | | |
 | Executive review | | | | | |
 | Board report | | | | | |
+
+## Manager System Metrics
+| Signal | Current | Threshold | Owner | Action |
+|---|---|---|---|---|
+| 1:1 health | | | | |
+| Skip-level coverage | | | | |
+| Feedback quality | | | | |
+| Delegation | | | | |
+| Manager load | | | | |
+| Team health | | | | |
 
 ## RCA And Improvement Backlog
 | Metric miss | RCA method | Likely system cause | Action | Owner | Due date | Evidence of improvement |

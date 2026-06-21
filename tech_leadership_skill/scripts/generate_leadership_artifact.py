@@ -143,6 +143,63 @@ ARTIFACTS: dict[str, str] = {
         |---|---|---|---|---|---|
         | | 5 Whys / Fishbone / FMEA / CRT / DMAIC / Inquiry | | | | |
     """,
+    "quantification-map": """
+        # Executive And Managerial Quantification Map
+
+        ## Context
+        - Role:
+        - Audience:
+        - Business objective:
+        - Reporting cadence:
+
+        ## Executive Scorecard
+        | Domain | Metric | Trend | Target/appetite | Interpretation | Decision ask | Confidence |
+        |---|---|---|---|---|---|---|
+        | Business value | | | | | | |
+        | Portfolio allocation | | | | | | |
+        | Roadmap confidence | | | | | | |
+        | Reliability/resilience | | | | | | |
+        | Cyber/IAM | | | | | | |
+        | Financial discipline | | | | | | |
+        | Technical debt/architecture | | | | | | |
+        | People/org | | | | | | |
+        | AI/data | | | | | | |
+
+        ## Manager System Metrics
+        | Signal | Metric | Current | Risk | Action |
+        |---|---|---|---|---|
+        | 1:1 health | | | | |
+        | Skip-level coverage | | | | |
+        | Feedback quality | | | | |
+        | Delegation | | | | |
+        | Manager load | | | | |
+        | Team health | | | | |
+    """,
+    "skip-level-review": """
+        # Skip-Level Signal Map
+
+        ## Scope
+        - Organization/team:
+        - Leader:
+        - Managers in scope:
+        - Review period:
+        - Confidentiality boundary:
+
+        ## Coverage
+        | Team | Format | People reached | Target coverage | Date | Notes |
+        |---|---|---:|---:|---|---|
+        | | 1:1 / Group / Office hours / Observation | | | | |
+
+        ## Themes
+        | Theme | Evidence | Teams affected | Severity | Confidence | Manager/system owner | Action |
+        |---|---|---|---|---|---|---|
+        | | | | Low / Medium / High | Low / Medium / High | | |
+
+        ## Manager Accountability Review
+        | Manager | Team health | Escalation quality | Delegation | Feedback/1:1 health | Follow-through | Support needed |
+        |---|---|---|---|---|---|---|
+        | | | | | | | |
+    """,
     "ai-data-rd-evaluation": """
         # AI / Data / R&D Evaluation
 

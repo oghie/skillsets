@@ -21,7 +21,8 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Strategy, short/mid/long-term planning, roadmap, portfolio trade-offs, technology bets, technical debt, scalability, resilience, sustaining engineering, roadmap uncertainty, or over-engineering: `references/strategy-roadmap-portfolio.md`.
 - Senior technology leadership role design, CTO vs VP Engineering, executive peer trust, senior leadership tasks, technical True North, role modeling, or business/technology executive alignment: `references/senior-technology-leadership.md`.
 - KPI, KRA, OKR, CSF, scorecard, dashboard, performance reporting, root cause analysis, balanced scorecard, benchmarking, performance management system, or metric design: `references/metrics-kpi-dashboard.md`.
-- Hiring, developing, retaining, mentoring, delegation, 1:1s, calibration, appraisal, 360 feedback, incentives, team allocation, or succession: `references/people-org-talent-appraisal.md`.
+- Executive and managerial quantification, CTO metrics, technology value metrics, manager-system metrics, board metric synthesis, team diagnostic metrics, metric harm, or modern technology leadership blind spots: `references/executive-managerial-quantification.md`.
+- Hiring, developing, retaining, mentoring, delegation, 1:1s, skip-level meetings, managing managers, manager accountability, calibration, appraisal, 360 feedback, incentives, team allocation, or succession: `references/people-org-talent-appraisal.md`.
 - Enterprise risk, audit readiness, compliance, policy, controls, regulatory exposure, or governance: `references/governance-risk-compliance-audit.md`.
 - Socio-technical risk, reliability management, hidden risk, near misses, barriers, redundancies, recoveries, just culture, burnout risk, human reliability, system reliability, organizational reliability, or predictive reliability: `references/risk-reliability-leadership.md`.
 - Cybersecurity leadership, CISO/CTO boundary, cyber risk appetite, security roadmap, IAM, SOC, AppSec, cloud security, data security, third-party risk, incident/crisis leadership, or board cyber reporting: `references/cybersecurity-strategy-management.md`.
@@ -39,8 +40,10 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Build a technology strategy and roadmap: `tasks/build-technology-roadmap.md`.
 - Build a cybersecurity strategy and management plan: `tasks/build-cybersecurity-strategy.md`.
 - Build a performance management system, KPI cascade, dashboard, or scorecard: `tasks/build-performance-management-system.md`.
+- Quantify executive and managerial technology leadership system: `tasks/quantify-technology-leadership-system.md`.
 - Prepare board, shareholder, or executive report: `tasks/prepare-board-shareholder-report.md`.
 - Run engineering organization review: `tasks/run-engineering-org-review.md`.
+- Run skip-level and manager system review: `tasks/run-skip-level-manager-system-review.md`.
 - Define senior technology leadership role boundaries and True North: `tasks/define-senior-tech-leadership-role.md`.
 - Design engineering culture, structure, and process: `tasks/design-engineering-culture-structure.md`.
 - Run risk and reliability review: `tasks/run-risk-reliability-review.md`.
@@ -56,8 +59,10 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Cybersecurity strategy brief: `templates/cybersecurity-strategy-brief.md`.
 - KPI dashboard: `templates/kpi-dashboard.md`.
 - Performance management system: `templates/performance-management-system.md`.
+- Executive and managerial quantification map: `templates/executive-managerial-quantification-map.md`.
 - AI/data/R&D evaluation: `templates/ai-data-rd-evaluation.md`.
 - Organization and capacity map: `templates/org-capacity-map.md`.
+- Skip-level signal map: `templates/skip-level-signal-map.md`.
 - Senior technology leadership role map: `templates/senior-tech-leadership-role-map.md`.
 - Technical True North: `templates/technical-true-north.md`.
 - Engineering culture and structure map: `templates/engineering-culture-structure-map.md`.
