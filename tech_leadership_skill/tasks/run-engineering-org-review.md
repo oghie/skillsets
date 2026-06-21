@@ -8,13 +8,15 @@ Use this for org health, team topology, Conway mapping, manager effectiveness, c
    - Verify: team boundaries align or conflict with product/platform/architecture boundaries.
 3. Review capacity and load.
    - Verify: roadmap, support, incidents, security work, technical debt, meetings, and manager load are included.
-4. Review talent system.
+4. Review manager system.
+   - Verify: manager expectations, skip-level signal, team health, delegation, first-time manager support, and manager accountability are assessed.
+5. Review talent system.
    - Verify: hiring, retention, performance, career path, succession, and critical person risk are assessed.
-5. Review governance and decision rights.
+6. Review governance and decision rights.
    - Verify: architectural, security, product, operational, and budget decisions have owners.
-6. Identify options.
+7. Identify options.
    - Verify: improve interfaces, clarify ownership, add platform model, change reporting, hire/develop, or reduce scope are compared.
-7. Define transition plan.
+8. Define transition plan.
    - Verify: communication, risk, morale, decision freeze points, and metrics are included.
 
-Output: org map, Conway map, capacity view, risks, options, and recommended operating model.
+Output: org map, Conway map, manager-system review, capacity view, risks, options, and recommended operating model.

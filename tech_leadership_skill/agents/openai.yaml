@@ -1,8 +1,8 @@
 interface:
   display_name: "Tech Leadership"
-  short_description: "CTO strategy, cyber, people, delivery, risk, KPI, finance, and board leadership."
+  short_description: "CTO strategy, cyber, people, delivery, reliability, KPI, finance, AI/data, and board leadership."
   brand_color: "#0F766E"
-  default_prompt: "Use $tech-leadership to create a CTO-grade plan, report, roadmap, cybersecurity strategy, org review, KPI dashboard, or leadership decision memo with explicit business context, risk, people, finance, governance, and validation."
+  default_prompt: "Use $tech-leadership to create a CTO-grade plan, report, roadmap, cybersecurity strategy, org review, KPI/performance system, reliability review, AI/data/R&D evaluation, or leadership decision memo with explicit business context, risk, people, finance, governance, and validation."
 
 policy:
   allow_implicit_invocation: true

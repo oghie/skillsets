@@ -22,6 +22,11 @@
 |---|---:|---|---|---|
 | | | | | |
 
+## Manager System
+| Manager | Team health signal | Skip-level signal | Delegation quality | First-time manager support | Accountability gap |
+|---|---|---|---|---|---|
+| | | | | | |
+
 ## Succession And Key Person Risk
 | Capability/system | Current owner | Backup | Risk | Action |
 |---|---|---|---|---|

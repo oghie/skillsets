@@ -97,6 +97,84 @@ ARTIFACTS: dict[str, str] = {
         |---|---|---|---|---|---|---|---|---|---|
         | R-001 | Because ..., ... may ..., causing ... | Delivery / Cyber / Finance / People / Compliance / Reliability | | | | Mitigate / Accept / Avoid / Transfer | | | |
     """,
+    "reliability-review": """
+        # Risk And Reliability Review
+
+        ## Scope
+        - Business process / system:
+        - Critical users / customers:
+        - Risk owner:
+        - Risk appetite:
+
+        ## Iceberg Scan
+        | Visible event/signal | Hidden contributor | Evidence | Confidence | Next data needed |
+        |---|---|---|---|---|
+        | | | | | |
+
+        ## Control Map
+        | Risk | Barrier | Redundancy | Recovery | Last tested | Gap |
+        |---|---|---|---|---|---|
+        | | | | | | |
+
+        ## Human Reliability
+        | Behavior/event | Classification | Context/system factors | Response |
+        |---|---|---|---|
+        | | Error / At-risk choice / Reckless choice / Intentional harm | | |
+    """,
+    "performance-system": """
+        # Performance Management System
+
+        ## KRA / CSF / KPI Cascade
+        | KRA | Critical success factor | Critical information | KPI | Owner | Source | Threshold | Decision trigger |
+        |---|---|---|---|---|---|---|---|
+        | | | | | | | | |
+
+        ## Balanced Scorecard
+        | Perspective | Objective | KPI | Target | Trend | Decision needed |
+        |---|---|---|---|---|---|
+        | Business value | | | | | |
+        | Customer/stakeholder | | | | | |
+        | Internal process | | | | | |
+        | Learning/capability | | | | | |
+        | Risk/resilience | | | | | |
+
+        ## Improvement Backlog
+        | Metric miss | RCA method | Action | Owner | Due date | Evidence |
+        |---|---|---|---|---|---|
+        | | 5 Whys / Fishbone / FMEA / CRT / DMAIC / Inquiry | | | | |
+    """,
+    "ai-data-rd-evaluation": """
+        # AI / Data / R&D Evaluation
+
+        ## Decision Context
+        - Initiative:
+        - Business problem:
+        - User / customer:
+        - Requested decision:
+
+        ## Hypothesis And Evaluation
+        | Hypothesis | Type | Prediction | Evaluation method | Success threshold |
+        |---|---|---|---|---|
+        | | Universal / Existential / Statistical / Working / Compound | | | |
+
+        ## Agent / AI Governance
+        | Layer | Design | Risk | Control |
+        |---|---|---|---|
+        | Inputs/context | | | |
+        | Memory/state | | | |
+        | Decision engine | | | |
+        | Learning loop | | | |
+        | Actions/tools | | | |
+        | Monitoring/logging | | | |
+
+        ## ROI And Value
+        | Value type | Baseline | Expected impact | Confidence | Evidence |
+        |---|---|---|---|---|
+        | Cost | | | | |
+        | Revenue/mission | | | | |
+        | Risk reduction | | | | |
+        | Customer trust | | | | |
+    """,
     "org-review": """
         # Engineering Organization Review
 

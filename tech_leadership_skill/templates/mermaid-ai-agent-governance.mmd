@@ -1,0 +1,21 @@
+flowchart LR
+  Inputs[Environment Interface / Inputs] --> Context[Context Layer / Grounding]
+  Context --> State[State / Memory / Knowledge Store]
+  State --> Decision[Decision Engine]
+  Decision --> Plan[Planning / Policy / Reasoning]
+  Plan --> Action[Action And Tool Execution]
+  Action --> Monitor[Monitoring / Logging / Audit Trail]
+  Monitor --> Feedback[Feedback / Evaluation / Learning Loop]
+  Feedback --> State
+
+  Governance[Governance] --> Context
+  Governance --> Decision
+  Governance --> Action
+  Governance --> Monitor
+
+  Human[Human Approval / Escalation] --> Action
+  Kill[Kill Switch / Fallback] --> Action
+  Security[Security / Privacy / Prompt Injection Controls] --> Inputs
+  Security --> Context
+  Security --> Action
+  ROI[ROI / Value Tracking] --> Monitor

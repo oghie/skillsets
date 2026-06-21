@@ -1,0 +1,14 @@
+flowchart TD
+  Strategy[Strategic Objective] --> CSF[Critical Success Factors]
+  CSF --> CIS[Critical Information Set]
+  CIS --> KPI[KPI Dictionary]
+  KPI --> Dashboard[Dashboard / Scorecard]
+  Dashboard --> Review[Operating Review Cadence]
+  Review --> Decision[Decision / Risk Acceptance / Investment]
+  Decision --> Action[Improvement Backlog]
+  Action --> Evidence[Evidence Of Improvement]
+  Evidence --> Dashboard
+
+  RCA[Root Cause Analysis] --> Action
+  Incentives[Incentive And Goodhart Check] --> KPI
+  Audit[Evidence / Audit Trail] --> Dashboard

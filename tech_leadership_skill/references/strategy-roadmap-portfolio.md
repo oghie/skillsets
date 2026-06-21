@@ -56,6 +56,29 @@ Classify debt by consequence:
 | Compliance risk | missing evidence, manual controls, unclear ownership | control design and audit pack |
 | Talent risk | few people understand critical systems | documentation, pairing, succession |
 
+## Roadmap Uncertainty
+Roadmaps change as business conditions, market evidence, and executive priorities change. The leader's job is to keep teams oriented without pretending uncertainty does not exist.
+
+Practices:
+- Avoid promising distant technical projects unless they are funded and scheduled.
+- Break large technical work into smaller deliverables that still create value if strategy changes.
+- Frame technical work with business value, risk reduction, delivery speed, or operational resilience.
+- Involve engineering early when direction changes so teams can close loose ends and understand the new goal.
+- Push back for transition time when teams are disbanded, moved, or redirected.
+
+## Sustaining Engineering
+Make sustaining work visible in every planning cycle:
+- refactoring.
+- outstanding bugs.
+- engineering process improvements.
+- developer tooling.
+- support.
+- on-call burden reduction.
+- security remediation.
+- minor cleanup.
+
+Use a recurring capacity allocation for generic sustaining work, then separately justify major rewrites or large remediation as portfolio initiatives.
+
 ## Scalability And Resilience
 Do not treat scale as only throughput. Review:
 - user growth, transaction growth, data growth, regional growth, vendor growth, integration growth, compliance growth.

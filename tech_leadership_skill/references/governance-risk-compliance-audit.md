@@ -3,6 +3,7 @@
 ## Table Of Contents
 - Governance Model
 - Risk Management
+- Reliability Leadership Link
 - Audit Readiness
 - Policy System
 - Evidence
@@ -33,6 +34,11 @@ Risk owner is [name/role]. Review date is [date].
 ```
 
 Use risk appetite to decide if a risk is acceptable. Do not accept risks informally in chat.
+
+## Reliability Leadership Link
+For socio-technical risk, recurring incidents, hidden weak signals, burnout, safety-like concerns, or risk that depends on people operating inside complex systems, use `risk-reliability-leadership.md`.
+
+Governance answers who decides and how evidence is retained. Reliability leadership answers how risk becomes visible, how systems prevent harm, how people make errors or at-risk choices, and how the organization learns before losses happen.
 
 ## Audit Readiness
 Audit readiness requires:

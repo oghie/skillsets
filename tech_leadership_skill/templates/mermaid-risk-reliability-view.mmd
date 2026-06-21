@@ -1,12 +1,16 @@
 flowchart LR
-  Hazard[Hazard / Threat] --> Barrier1[Preventive Barrier]
-  Barrier1 --> Barrier2[Detective Control]
-  Barrier2 --> Barrier3[Corrective / Recovery Control]
+  Signal[Visible Signal / Event] --> Iceberg[Hidden Risk Contributors]
+  Iceberg --> Hazard[Hazard / Threat]
+  Hazard --> Barrier1[Barrier]
+  Barrier1 --> Barrier2[Redundancy]
+  Barrier2 --> Barrier3[Recovery]
   Barrier3 --> Outcome[Reduced Loss]
 
   System[System Reliability] --> Barrier1
   Human[Human Reliability] --> Barrier2
   Org[Organizational Reliability] --> Barrier3
   Culture[Culture And Incentives] --> Human
+  Reporting[Trusted Reporting / Near Misses] --> Iceberg
   Leadership[Leadership Attention] --> Org
-  Metrics[Metrics And Audit Evidence] --> Leadership
+  Metrics[Metrics / Audit / Weak Signals] --> Leadership
+  Leadership --> Reporting

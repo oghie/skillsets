@@ -82,6 +82,23 @@ Postmortem output:
 
 Avoid blame. Human error is usually a signal to inspect system design, workload, training, guardrails, incentives, and escalation.
 
+## Process As Risk Management
+Engineering processes should make hidden risk visible:
+- code review socializes changes and catches missing context.
+- architecture review forces major system/tooling risk articulation.
+- release/change policy controls high-impact changes.
+- incident learning review converts failure into selected improvements.
+
+Do not put heavy process in front of common low-risk activities. Put explicit process around rare, high-risk, hard-to-reverse, or poorly understood changes.
+
+## Architecture Review Questions
+- How many people can operate and maintain this?
+- Are production standards defined?
+- What rollout, training, and support are needed?
+- What new operational, security, cost, and data risks appear?
+- Who is directly affected and must be represented in the review?
+- What makes this review worth the delay it introduces?
+
 ## Reliability Operating Model
 Use reliability controls:
 - SLO/SLI and error budget.
@@ -92,6 +109,8 @@ Use reliability controls:
 - change failure rate.
 - repeat incident elimination.
 - resilience backlog.
+
+For broader socio-technical reliability review, including human behavior classification, trusted reporting, barriers/redundancies/recoveries, and burnout as reliability risk, use `risk-reliability-leadership.md`.
 
 ## Red Flags
 - Roadmaps ignore incident load.
