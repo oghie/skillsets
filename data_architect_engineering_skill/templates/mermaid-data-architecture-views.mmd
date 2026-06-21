@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph Writers
+    App[Application]
+    Job[Batch or Stream Job]
+  end
+
+  subgraph SystemOfRecord[System Of Record]
+    DB[(Primary Database)]
+  end
+
+  subgraph Derived[Derived Stores]
+    Cache[(Cache)]
+    Search[(Search Index)]
+    Vector[(Vector Index)]
+    Warehouse[(Warehouse or Lakehouse)]
+  end
+
+  subgraph Controls[Controls]
+    IAM[AuthZ and Roles]
+    Audit[Audit Log]
+    Backup[Backup and Restore]
+    Monitor[SLI/SLO Monitoring]
+  end
+
+  App --> DB
+  Job --> DB
+  DB --> Cache
+  DB --> Search
+  DB --> Vector
+  DB --> Warehouse
+  IAM --> App
+  IAM --> DB
+  IAM --> Search
+  IAM --> Vector
+  DB --> Audit
+  Search --> Audit
+  Vector --> Audit
+  DB --> Backup
+  DB --> Monitor
+  Cache --> Monitor
+  Search --> Monitor
+  Vector --> Monitor
+  Warehouse --> Monitor
