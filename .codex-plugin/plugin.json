@@ -1,0 +1,38 @@
+{
+  "name": "skillsets",
+  "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
+  "version": "0.1.0",
+  "author": {
+    "name": "oghie",
+    "email": "anggi.b.prakoso@gmail.com"
+  },
+  "homepage": "https://github.com/oghie/skillsets",
+  "repository": "https://github.com/oghie/skillsets",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "claude",
+    "codex",
+    "antigravity",
+    "software-architecture",
+    "realtime-systems",
+    "device-drivers",
+    "data-engineering",
+    "uiux",
+    "tech-leadership",
+    "academic-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Skillsets",
+    "shortDescription": "Model-agnostic engineering and research skills.",
+    "longDescription": "A personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity. Each skill is a self-contained, disciplined workflow covering software architecture, UI/UX and frontend, data architecture, Linux device drivers, real-time and dataplane systems, technology leadership, and academic research.",
+    "developerName": "oghie",
+    "category": "Engineering",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ]
+  }
+}

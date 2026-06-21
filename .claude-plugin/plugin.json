@@ -1,0 +1,25 @@
+{
+  "name": "skillsets",
+  "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
+  "version": "0.1.0",
+  "author": {
+    "name": "oghie",
+    "email": "anggi.b.prakoso@gmail.com"
+  },
+  "homepage": "https://github.com/oghie/skillsets",
+  "repository": "https://github.com/oghie/skillsets",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "claude",
+    "codex",
+    "antigravity",
+    "software-architecture",
+    "realtime-systems",
+    "device-drivers",
+    "data-engineering",
+    "uiux",
+    "tech-leadership",
+    "academic-research"
+  ]
+}
