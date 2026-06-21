@@ -19,9 +19,14 @@
 - Reads/sec:
 - Writes/sec:
 - Peak concurrency:
+- Active users:
+- Concurrent users:
+- Write-active users:
 - Batch/stream ingest:
 - Top queries/jobs:
 - p50/p95/p99 target:
+- Largest tenant/key/partition:
+- Cache hit ratio:
 
 ## Reliability
 - Availability SLO:
@@ -43,10 +48,12 @@
 
 ## Headroom And Limits
 - CPU headroom:
+- CPU cache/SIMD/NUMA concerns:
 - Memory headroom:
 - Disk headroom:
 - IOPS headroom:
 - Connection pool:
+- WAL/binlog/logical replication headroom:
 - Replication lag threshold:
 - Cost threshold:
 

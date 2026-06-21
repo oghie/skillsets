@@ -1,12 +1,13 @@
 # Stack Selection And Next Steps
 
 ## Step
-1. List candidate datastore classes before products.
-2. Score each class against workload, model fit, consistency, latency, scale, security, operations, migration, and cost.
-3. Shortlist concrete products already used by the organization first.
-4. Verify current product capabilities from official docs when product behavior matters.
-5. Define proof-of-concept workload and success criteria.
-6. Define next engineering steps after selection.
+1. Decide whether any DBMS is required.
+2. List candidate datastore classes before products.
+3. Score each class against workload, model fit, consistency, latency, scale, security, operations, migration, and cost.
+4. Shortlist concrete products already used by the organization first.
+5. Verify current product capabilities, SQL conformance, CDC support, and accelerator support from official docs when product behavior matters.
+6. Define proof-of-concept workload and success criteria.
+7. Define next engineering steps after selection.
 
 ## Selection Prompts
 - Need SQL joins and constraints? Start relational.
@@ -20,6 +21,8 @@
 - Need high-ingest metrics/time windows? Evaluate time-series.
 - Need billion-row analytics? Evaluate columnar warehouse/OLAP/lakehouse.
 - Need low-latency ephemeral lookups? Evaluate cache/in-memory KV.
+- Need local embedded state, app file format, or low-write edge state? Evaluate SQLite or embedded KV before client/server DBMS.
+- Need log-based migration or derived stores? Evaluate CDC/Debezium readiness.
 
 ## Check
 - Did the choice follow access patterns, not trend?
@@ -27,6 +30,7 @@
 - Does the team have operational competence?
 - Can data be exported/migrated out?
 - Are backup, restore, monitoring, and upgrades understood?
+- Is the simplest adequate option documented, including no DB or SQLite when appropriate?
 
 ## Validate
 - Benchmark with realistic data and skew.

@@ -9,11 +9,15 @@ from pathlib import Path
 
 CHECKS = {
     "workload": ["workload", "oltp", "olap", "htap", "read", "write", "query", "access pattern"],
+    "necessity": ["need a database", "no db", "sqlite", "embedded", "file", "object storage"],
     "data_model": ["schema", "model", "entity", "document", "graph", "vector", "time-series", "key"],
+    "sql_standard": ["iso", "9075", "standard", "dialect", "portable", "compatibility"],
     "consistency": ["consistency", "transaction", "isolation", "staleness", "idempotent", "conflict"],
+    "cdc": ["cdc", "debezium", "binlog", "wal", "logical replication", "outbox", "change data"],
     "security": ["security", "tenant", "privilege", "role", "encryption", "tls", "audit", "mask"],
     "reliability": ["slo", "sli", "rpo", "rto", "backup", "restore", "failover", "availability"],
     "performance": ["index", "partition", "shard", "latency", "throughput", "explain", "p99"],
+    "hardware": ["cpu", "gpu", "fpga", "nvme", "rdma", "cxl", "numa", "simd", "accelerat"],
     "observability": ["monitor", "metric", "log", "trace", "replication lag", "lock", "wait"],
     "migration": ["migration", "backfill", "cutover", "rollback", "decommission", "validation"],
 }
@@ -40,14 +44,25 @@ def iter_files(path: Path) -> list[Path]:
     )
 
 
-def audit_file(path: Path) -> tuple[list[str], list[str]]:
-    text = path.read_text(encoding="utf-8", errors="ignore").lower()
+def audit_text(text: str) -> tuple[list[str], list[str]]:
+    text = text.lower()
     missing = [
         name for name, terms in CHECKS.items()
         if not any(term in text for term in terms)
     ]
     red_flags = [flag for flag in RED_FLAGS if flag in text]
     return missing, red_flags
+
+
+def audit_file(path: Path) -> tuple[list[str], list[str]]:
+    return audit_text(path.read_text(encoding="utf-8", errors="ignore"))
+
+
+def audit_directory(path: Path) -> tuple[list[str], int]:
+    files = iter_files(path)
+    corpus = "\n".join(p.read_text(encoding="utf-8", errors="ignore") for p in files)
+    missing, _red_flags = audit_text(corpus)
+    return missing, len(files)
 
 
 def main() -> int:
@@ -61,6 +76,16 @@ def main() -> int:
         if not target.exists():
             print(f"[missing] {target}")
             exit_code = 2
+            continue
+        if target.is_dir():
+            missing, file_count = audit_directory(target)
+            if missing:
+                exit_code = max(exit_code, 1)
+                print(f"[review] {target}")
+                print(f"  files: {file_count}")
+                print(f"  missing: {', '.join(missing)}")
+            else:
+                print(f"[ok] {target} corpus ({file_count} files)")
             continue
         for path in iter_files(target):
             missing, red_flags = audit_file(path)
