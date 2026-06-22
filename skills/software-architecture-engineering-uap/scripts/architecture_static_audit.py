@@ -101,8 +101,50 @@ STYLE_RISKS = (
     (
         "microservices_without_forces",
         r"\bmicroservice(s)?\b",
-        (r"\bindependent deploy", r"\bteam autonomy\b", r"\bbounded context(s)?\b", r"\bdata ownership\b"),
-        "Microservices mentioned without common justifying forces such as independent deployment, team autonomy, bounded contexts, or data ownership.",
+        (r"\bindependent deploy", r"\bteam autonomy\b", r"\bbounded context(s)?\b", r"\bbusiness capabilit(y|ies)\b", r"\bsubdomain(s)?\b", r"\bdata ownership\b"),
+        "Microservices mentioned without common justifying forces such as independent deployment, team autonomy, business capabilities/subdomains, bounded contexts, or data ownership.",
+    ),
+    (
+        "microservices_without_production_readiness",
+        r"\bmicroservice(s)?\b",
+        (r"\bhealth(check)?\b", r"\breadiness\b", r"\bdistributed tracing\b", r"\bmetrics\b", r"\blog aggregation\b", r"\bcontract test(s)?\b", r"\brunbook\b"),
+        "Microservices mentioned without production-readiness signals such as health/readiness, tracing, metrics, logs, contract tests, or runbooks.",
+    ),
+    (
+        "saga_without_compensation",
+        r"\bsaga(s)?\b",
+        (r"\bcompensat(e|ing|ion)\b", r"\bretriable\b", r"\bidempotenc(y|e)\b", r"\btimeout\b", r"\breconciliation\b"),
+        "Saga mentioned without compensation, retriable steps, idempotency, timeout, or reconciliation.",
+    ),
+    (
+        "outbox_without_idempotency",
+        r"\boutbox\b|\btransactional messaging\b",
+        (r"\bidempotenc(y|e)\b", r"\bdedup(lication)?\b", r"\brelay\b", r"\bat[- ]least[- ]once\b", r"\bmessage id\b"),
+        "Outbox/transactional messaging mentioned without relay, at-least-once delivery, deduplication, idempotency, or message IDs.",
+    ),
+    (
+        "cqrs_without_projection_controls",
+        r"\bcqrs\b|\bmaterialized view(s)?\b|\bquery service\b",
+        (r"\bprojection\b", r"\brebuild\b", r"\bstale\b", r"\bfreshness\b", r"\blag\b", r"\beventual consistency\b"),
+        "CQRS/materialized views mentioned without projection, rebuild, lag/freshness, stale-read, or eventual-consistency controls.",
+    ),
+    (
+        "api_gateway_without_ownership",
+        r"\bapi gateway\b|\bbff\b|\bbackends? for frontends?\b",
+        (r"\bowner(ship)?\b", r"\bbackward compatib", r"\bversion(ing)?\b", r"\bauth", r"\brate limit", r"\bcomposition\b"),
+        "API gateway/BFF mentioned without ownership, backward compatibility/versioning, auth, rate limit, or composition responsibility.",
+    ),
+    (
+        "strangler_without_acl_or_coexistence",
+        r"\bstrangler\b|\banti[- ]corruption layer\b|\bacl\b",
+        (r"\bcoexist(ence|ing)?\b", r"\bintegration glue\b", r"\badapter(s)?\b", r"\bdomain translation\b", r"\bcutover\b", r"\brollback\b"),
+        "Strangler/ACL migration mentioned without coexistence, integration glue/adapters, domain translation, cutover, or rollback.",
+    ),
+    (
+        "service_mesh_without_operating_model",
+        r"\bservice mesh\b|\bsidecar\b",
+        (r"\btraffic\b", r"\bmtls\b", r"\btelemetry\b", r"\bpolicy\b", r"\bowner(ship)?\b", r"\brollout\b"),
+        "Service mesh/sidecar mentioned without traffic policy, mTLS/security, telemetry, ownership, or rollout model.",
     ),
     (
         "event_driven_without_semantics",

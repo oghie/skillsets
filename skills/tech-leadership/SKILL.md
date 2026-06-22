@@ -97,7 +97,7 @@ Treat technology leadership as an operating system, not a motivational role. Con
 - Do not use ITIL, COBIT, TOGAF, ISO/IEC/IEEE, PCI DSS, PMBOK, CMMI, SOC 2, CNCF, Gartner Magic Quadrant, HIPAA, GDPR, PDP, SAFe, Lean Six Sigma, DORA, or MTTR as a brand list. State the problem driver, applicability, owner, evidence, minimum viable adoption, and misuse risk.
 - Do not create SME or COE structures without decision rights, service catalog, adoption metrics, exception path, and a plan to avoid bottlenecks.
 - Do not accept functional or technical requirements that lack actor, business objective, measurable NFRs, acceptance criteria, data lifecycle, IAM/security/privacy implications, rollout/rollback, and validation evidence.
-- When working inside this repository and reference accuracy matters, recalibrate against `../REFERENCE/LEADER/*.pdf|epub`. Do not cite book names or page numbers unless the user asks for citation.
+- Keep skill guidance self-contained for production use. Do not require local reference PDFs, private folders, or book/page citations at runtime.
 - Lead with the strongest concern when a proposed strategy is under-evidenced, politically naive, unaffordable, un-auditable, or operationally fragile.
 - Do not turn every leadership problem into process. Check incentives, decision rights, capacity, trust, technical constraints, and business trade-offs first.
 - Do not assume CTO, VP Engineering, Head of Engineering, CIO, CISO, Chief Architect, and technical founder mean the same thing. Map business strategy, technology strategy, organization, execution, external face, infrastructure, R&D, and management authority explicitly.

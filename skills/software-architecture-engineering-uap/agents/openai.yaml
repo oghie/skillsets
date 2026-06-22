@@ -1,8 +1,8 @@
 interface:
   display_name: "Software Architecture Engineering"
-  short_description: "Design, govern, estimate, and validate architectures"
+  short_description: "Design, govern, estimate, and validate architectures, including microservices patterns."
   brand_color: "#2563EB"
-  default_prompt: "Use $software-architecture-engineering-uap to design, evaluate, govern, or document software architecture with traceable decisions, NFRs, cost reasoning, security patterns, and fitness checks."
+  default_prompt: "Use $software-architecture-engineering-uap to design, evaluate, govern, or document software architecture with traceable decisions, microservices pattern selection, NFRs, cost reasoning, security patterns, and fitness checks."
 
 policy:
   allow_implicit_invocation: true

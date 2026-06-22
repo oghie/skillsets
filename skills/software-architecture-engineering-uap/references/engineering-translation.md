@@ -60,6 +60,14 @@ Map architecture to code:
 - Deployment view -> Dockerfiles, manifests, IaC, CI/CD, environment config, secrets, runbooks.
 - NFR tactics -> tests, metrics, alerts, rate limits, auth policies, cache policies, resilience libraries.
 
+For microservices, also map:
+- service boundary -> business capability/subdomain owner and repository/package/deployable;
+- local transaction -> database tables/collections and write authority;
+- event/API contract -> schema/versioning, compatibility tests, and producer/consumer owners;
+- saga/outbox/inbox -> state table, retry/DLQ/reconciliation jobs, idempotency keys, and observability;
+- API gateway/BFF -> route ownership, composition code, auth/claims propagation, and backward compatibility;
+- service readiness -> health/readiness, logs, metrics, traces, audit events, runbook, and alert owner.
+
 ## Implementation Plan Shape
 
 ```markdown

@@ -1,0 +1,25 @@
+flowchart TD
+  A[Business problem and current state] --> B{Microservices justified?}
+  B -- no --> C[Modular monolith or simpler service style]
+  B -- yes --> D[Define capabilities and subdomains]
+  D --> E[Map commands, queries, and data ownership]
+  E --> F{Cross-service transaction?}
+  F -- yes --> G[Saga plus outbox plus idempotency]
+  F -- no --> H[Local transaction only]
+  E --> I{Cross-service query?}
+  I -- small and tolerable --> J[API composition]
+  I -- frequent or expensive --> K[CQRS or query service]
+  E --> L{Client API complexity?}
+  L -- single stable entry --> M[API gateway]
+  L -- client-specific APIs --> N[BFF]
+  G --> O[Contract tests and failure tests]
+  H --> O
+  J --> O
+  K --> O
+  M --> O
+  N --> O
+  O --> P[Health, metrics, logs, traces, audit, runbook]
+  P --> Q[Deploy then release with staged traffic and rollback]
+  A --> R{Existing monolith?}
+  R -- yes --> S[Strangler plus anti-corruption layer]
+  S --> E

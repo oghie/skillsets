@@ -43,6 +43,16 @@ Use this checklist before finalizing architecture, ADRs, RFCs, modernization pla
 - State transitions have triggers and owners.
 - Failure, compensation, and recovery paths are not ignored.
 
+## Microservices Pattern Readiness
+- Microservices are justified by business capability, team ownership, independent deployability, scale/fault isolation, or incremental legacy replacement.
+- Service boundaries are not technical layers and each service owns its write data.
+- Cross-service transactions use local transactions plus saga/outbox/reconciliation, or the trade-off is explicitly rejected.
+- Cross-service queries choose API composition, CQRS/materialized view, query service, or a simpler data model with explicit freshness and latency expectations.
+- API gateway/BFF responsibilities, ownership, backward compatibility, and auth/claims propagation are defined.
+- APIs/events have schemas, owners, compatibility rules, consumer-driven contract tests, and versioning strategy.
+- Each service has health/readiness, logs, metrics, traces, exception tracking, audit logging when needed, runbook, SLO/alert owner, and rollback.
+- Strangler migrations define routing, integration glue, anti-corruption layer, data coexistence, cutover, and rollback.
+
 ## Deployment View
 - Runtime nodes and execution environments are clear.
 - Artifacts are allocated to nodes.

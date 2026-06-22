@@ -47,6 +47,7 @@ For major recommendations, use:
 - Use cases and user-visible workflows.
 - Functional components and interfaces.
 - Domain objects, persistence, data ownership, and schemas.
+- Microservices pattern language: modular monolith vs microservices, decomposition by capability/subdomain, service APIs/events, service discovery, circuit breaker, sagas, outbox, CQRS, API composition, API gateway/BFF, service chassis, service mesh/sidecar, contract testing, strangler migration, and anti-corruption layers.
 - Identity, authentication, authorization, sessions, MFA, admin controls, and audit logging.
 - Behavior flows, async semantics, retries, ordering, idempotency, and failure paths.
 - Deployment nodes, execution environments, networks, secrets, and operational ownership.
@@ -60,6 +61,7 @@ Convert architecture into concrete work:
 - ADR/RFC decisions and alternatives.
 - Module/package boundaries and dependency rules.
 - API/event/schema contracts.
+- Microservice service contracts, ownership, idempotency keys, outbox/inbox, saga state, CQRS projections, gateway/BFF modules, contract tests, and production readiness controls when distribution is selected.
 - Database migrations and compatibility plans.
 - Infrastructure and CI/CD changes.
 - Test strategy, observability, rollout, rollback, and ownership.

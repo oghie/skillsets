@@ -71,6 +71,8 @@ Use styles as reusable structural ideas. Most systems combine styles, so evaluat
 | Representational State Transfer (REST) | Resource-style APIs and stateless request/response fit | Chatty APIs, weak domain boundaries |
 | Space-Based | In-memory distributed state reduces database contention | Consistency, operational complexity, recovery |
 
+For microservices pattern selection, decomposition, sagas, outbox, CQRS, API composition, API gateway/BFF, service mesh, strangler, and coding readiness, use `microservices-pattern-language.md`.
+
 ## Adaptability And Plugin Styles
 
 | Style | Use When | Watch For |
