@@ -41,7 +41,7 @@ AGENTS.md             # Cross-platform agent orientation
 hooks/
   hooks.json          # SessionStart orientation hook (Claude Code)
   session-start.sh    # emits the skillset orientation as additionalContext
-.mcp.json             # MCP servers (empty)
+.mcp.json             # MCP servers (Context7, GitHub, Postgres, arXiv)
 LICENSE               # MIT
 skills/
   <skill>/
@@ -77,6 +77,28 @@ skills through its interface block.
 Install this repository as a Gemini extension. Antigravity reads
 `gemini-extension.json` and loads `GEMINI.md`, which pulls in `AGENTS.md` for shared
 agent orientation.
+
+## MCP servers
+
+The plugin ships a `.mcp.json` with four optional MCP servers. They are lazy-loaded
+and only matter for skills that benefit from live external data; each needs its own
+runtime and, where noted, configuration. A server that is not configured simply fails
+to start and shows up in `/mcp` — it does not block a session.
+
+| Server | Backs | Runtime | Configuration |
+| --- | --- | --- | --- |
+| `context7` | All engineering skills (current library/API docs) | Node 18+ (`npx`) | None required; set `CONTEXT7_API_KEY` for higher rate limits. |
+| `github` | tech-leadership, software-architecture (repos, issues, PRs) | none (remote HTTP) | OAuth on first use against `https://api.githubcopilot.com/mcp/`. |
+| `postgres` | data-architect-engineering (schema, EXPLAIN, index tuning) | `uv` (`uvx postgres-mcp`) | Set `DATABASE_URI` to your connection string. Runs in `restricted` (read-only) mode. |
+| `arxiv` | academic-research-journal (paper search, source audits) | `uv` (`uvx arxiv-mcp-server`) | None required. |
+
+Notes:
+- `postgres` uses Postgres MCP Pro (`postgres-mcp`), not the archived
+  `@modelcontextprotocol/server-postgres`. `restricted` access mode wraps queries in
+  read-only transactions.
+- Install `uv` (https://docs.astral.sh/uv/) for the `postgres` and `arxiv` servers, and
+  Node 18+ for `context7`.
+- Remove any server you do not use by deleting its entry from `.mcp.json`.
 
 ## Usage
 

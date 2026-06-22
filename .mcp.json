@@ -1,3 +1,26 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "postgres": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["postgres-mcp", "--access-mode=restricted"],
+      "env": {
+        "DATABASE_URI": "${DATABASE_URI}"
+      }
+    },
+    "arxiv": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["arxiv-mcp-server"]
+    }
+  }
 }
