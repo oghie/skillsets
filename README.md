@@ -38,6 +38,9 @@ own manifest:
 gemini-extension.json # Antigravity (Gemini) extension manifest
 GEMINI.md             # Antigravity context file (includes AGENTS.md)
 AGENTS.md             # Cross-platform agent orientation
+hooks/
+  hooks.json          # SessionStart orientation hook (Claude Code)
+  session-start.sh    # emits the skillset orientation as additionalContext
 .mcp.json             # MCP servers (empty)
 LICENSE               # MIT
 skills/
