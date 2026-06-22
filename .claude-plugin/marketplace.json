@@ -3,7 +3,7 @@
   "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
   "owner": {
     "name": "oghie",
-    "email": "anggi.b.prakoso@gmail.com"
+    "email": "oghie@perkamindo.org"
   },
   "plugins": [
     {
@@ -13,7 +13,7 @@
       "source": "./",
       "author": {
         "name": "oghie",
-        "email": "anggi.b.prakoso@gmail.com"
+        "email": "oghie@perkamindo.org"
       }
     }
   ]
