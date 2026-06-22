@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.py[cod]
+
+# iCloud/Finder sync-conflict duplicates (e.g. "knowledge-map 2.md")
+* [0-9].*
