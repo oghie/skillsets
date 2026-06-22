@@ -107,6 +107,58 @@ description, the agent reads that skill's `skills/<name>/SKILL.md` and follows i
 workflow. All runtimes read the same `tasks/`, `references/`, and `scripts/`, so
 behavior stays consistent regardless of the host.
 
+### For newbies (install from scratch)
+
+If you have none of these tools yet, pick a platform and follow two steps: install the
+CLI, then install skillsets.
+
+**Claude Code**
+
+1. Install the CLI:
+   - macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
+   - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
+   - Any OS with Node 18+: `npm install -g @anthropic-ai/claude-code`
+   - Check it works: `claude --version`
+2. Install skillsets:
+   ```
+   claude plugin marketplace add oghie/skillsets
+   claude plugin install skillsets
+   ```
+
+**Codex**
+
+1. Install the CLI:
+   - Any OS with Node 18+: `npm install -g @openai/codex`
+   - macOS (Homebrew): `brew install codex`
+   - Check it works: `codex --version`
+2. Install skillsets:
+   ```
+   codex plugin marketplace add oghie/skillsets
+   codex plugin install skillsets
+   ```
+   Or run `/plugins` inside Codex to browse and install it.
+
+**Antigravity**
+
+1. Download and install the Antigravity desktop app for Windows, macOS, or Linux from
+   https://antigravity.google, then sign in.
+2. Install skillsets as a Gemini extension:
+   ```
+   gemini extensions install https://github.com/oghie/skillsets
+   ```
+   Antigravity loads the repo's `gemini-extension.json` and `GEMINI.md`. Update later
+   with `gemini extensions update skillsets`.
+
+**After installing (all platforms)**
+
+- Restart the CLI or app so the skills load, then start a session and ask about one of
+  the skill domains; the matching skill loads on its own.
+- The optional MCP servers need extra runtimes — Node 18+ for `context7`, and `uv` for
+  `postgres` and `arxiv` (see [MCP servers](#mcp-servers)). Quick installs:
+  - macOS: `brew install node uv`
+  - Linux: Node from your package manager or nvm; uv via `curl -LsSf https://astral.sh/uv/install.sh | sh`
+  - Windows (PowerShell): install Node from nodejs.org; uv via `irm https://astral.sh/uv/install.ps1 | iex`
+
 ## Conventions
 
 - Evidence over assertion: name the forces, trade-offs, and verification path before
