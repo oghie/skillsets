@@ -1,5 +1,7 @@
 # Performance Troubleshooting
 
+For MongoDB, WiredTiger, or document/NoSQL engines, also read `references/nosql-mongodb-performance-tuning.md`: the generic triage below applies, but explain plans, ESR index order, embed-vs-link schema, aggregation pipelines, write concern, transaction contention, cache/checkpoint behavior, and shard-key/scatter-gather have engine-specific evidence and fixes.
+
 ## Step
 1. State symptom and blast radius.
 2. Confirm data safety before aggressive mitigation.

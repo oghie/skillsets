@@ -31,6 +31,8 @@ Examples:
 
 ## Tactic Catalog
 
+For data-tier performance and scalability tactics (query plans, index design, partitioning/sharding, caching, and SQL/NoSQL/document-store engine tuning), the `data-architect-engineering` skill carries the evidence-level detail behind the Performance and Scalability rows below.
+
 | Attribute | Candidate Tactics |
 |---|---|
 | Performance | Profiling, indexing, caching, batching, pooling, async processing, compression, pagination, load shedding, backpressure |

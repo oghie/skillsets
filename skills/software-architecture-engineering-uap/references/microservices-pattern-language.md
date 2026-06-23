@@ -108,6 +108,8 @@ Boundary checklist:
 - service can be tested and deployed independently;
 - data migration and compatibility path are defined.
 
+When a service owns a datastore, its choice and performance (schema/document model, index and shard-key design, read/write scaling, consistency cost) belong to data-tier engineering: route polyglot-persistence and per-service datastore tuning to the `data-architect-engineering` skill.
+
 ## Communication And Reliability
 Choose interaction style by semantics:
 

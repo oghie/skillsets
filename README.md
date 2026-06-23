@@ -166,5 +166,4 @@ CLI, then install skillsets.
 - Version-sensitive facts (kernel APIs, library behavior) are verified against
   current sources, not assumed.
 - `references/` is the source of truth per domain; `tasks/` orchestrates the workflow.
-- Shipped skills are self-contained. Private study references under local `REFERENCE/`
-  folders are build inputs only and are not runtime dependencies.
+- Shipped skills are self-contained and carry no external runtime dependencies.

@@ -173,6 +173,8 @@ Data work should be customer and product oriented:
 
 Do not build data platforms whose customers are undefined.
 
+For the engineering depth behind a data platform — datastore selection, schema/index/shard design, query and pipeline performance, and SQL/NoSQL/document-store tuning — route to the `data-architect-engineering` skill rather than deciding it at the leadership layer.
+
 ## Data Value And Customer Operating Model
 Data leaders should be customer-driven, not data-first in a way that places data above business process outcomes.
 
