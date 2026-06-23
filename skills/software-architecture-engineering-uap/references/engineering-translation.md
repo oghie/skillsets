@@ -59,6 +59,7 @@ Map architecture to code:
 - Behavior flows -> handlers, workflows, queues, jobs, state machines, orchestration/saga logic.
 - Deployment view -> Dockerfiles, manifests, IaC, CI/CD, environment config, secrets, runbooks.
 - NFR tactics -> tests, metrics, alerts, rate limits, auth policies, cache policies, resilience libraries.
+- Clean-code decisions -> names, function boundaries, class/module responsibilities, adapter seams, error translation, tests, and dependency rules.
 
 For microservices, also map:
 - service boundary -> business capability/subdomain owner and repository/package/deployable;
@@ -82,12 +83,21 @@ For microservices, also map:
 8. Monitor, validate, and clean up old paths.
 ```
 
+For refactoring or clean-code implementation, insert these gates:
+1. Characterize existing behavior with tests or documented scenarios.
+2. Separate behavior changes from cleanup.
+3. Refactor in small steps: names -> functions -> classes/modules -> boundaries -> error paths -> tests.
+4. Run verification after each risky step.
+5. Record residual cleanup triggers instead of starting a broad rewrite.
+
 ## Test Strategy
 
 | Concern | Test/Evidence |
 |---|---|
 | API contract | Contract tests, schema validation, backwards compatibility tests |
 | Component logic | Unit and integration tests |
+| Refactoring safety | Characterization tests, focused unit tests, diff review proving behavior-preserving changes |
+| Clean-code boundary | Static dependency checks, import rules, module/package fitness functions |
 | Data migration | Migration dry run, rollback test, data validation |
 | Behavior flow | Workflow tests, sequence scenario tests, failure injection |
 | Event-driven behavior | Idempotency tests, replay tests, consumer contract tests |

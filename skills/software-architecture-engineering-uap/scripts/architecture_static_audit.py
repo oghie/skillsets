@@ -191,7 +191,7 @@ ARCHITECTURE_AS_CODE_RISKS = (
     (
         "layered_without_fitness_function",
         r"\blayered\b|\blayer(s)?\b",
-        (r"\bfitness function\b", r"\bdependency rule\b", r"\barchitecture[- ]as[- ]code\b", r"\bimport rule\b", r"\bconstraint\b"),
+        (r"\bfitness function(s)?\b", r"\bdependency rule\b", r"\barchitecture[- ]as[- ]code\b", r"\bimport rule\b", r"\bconstraint\b"),
         "Layered architecture mentioned without dependency constraints, fitness functions, or architecture-as-code checks.",
     ),
     (
@@ -223,6 +223,68 @@ PRINCIPLE_RISKS = (
         r"\bmodule(s)?\b|\bcomponent(s)?\b|\bpackage(s)?\b|\bservice(s)?\b",
         (r"\bcohesion\b", r"\bcoupling\b", r"\bKISS\b", r"\bYAGNI\b", r"\bDRY\b", r"\bSOLID\b", r"\bseparation of concerns\b"),
         "Modularity mentioned without coupling/cohesion or design-principle reasoning.",
+    ),
+)
+
+
+CLEAN_CODE_RISKS = (
+    (
+        "refactor_without_behavior_baseline",
+        r"\brefactor(ing)?\b|\bclean code\b|\bcode smell(s)?\b|\btechnical debt\b|\bcleanup\b",
+        (
+            r"\bbehavior\b",
+            r"\bcharacterization test(s)?\b",
+            r"\bunit test(s)?\b",
+            r"\bcontract test(s)?\b",
+            r"\btest(s|ing)?\b",
+            r"\bverification\b",
+            r"\bvalidation\b",
+        ),
+        "Refactor/clean-code work mentioned without behavior baseline, tests, or verification.",
+    ),
+    (
+        "clean_code_without_architecture_force",
+        r"\bclean code\b|\bcode smell(s)?\b|\brefactor(ing)?\b|\bcleanup\b",
+        (
+            r"\bcorrectness\b",
+            r"\bmodifiability\b",
+            r"\bmaintainability\b",
+            r"\bsecurity\b",
+            r"\bperformance\b",
+            r"\bconcurrency\b",
+            r"\boperation(s|al)?\b",
+            r"\bcost\b",
+            r"\brisk\b",
+            r"\bchange cost\b",
+        ),
+        "Clean-code/refactoring discussion should name the force it protects, not only style preference.",
+    ),
+    (
+        "boundary_cleanup_without_tests",
+        r"\bthird[- ]party\b|\bsdk\b|\bframework\b|\bORM\b|\badapter(s)?\b|\bboundar(y|ies)\b",
+        (
+            r"\blearning test(s)?\b",
+            r"\bcontract test(s)?\b",
+            r"\bcharacterization test(s)?\b",
+            r"\bunit test(s)?\b",
+            r"\bintegration test(s)?\b",
+            r"\bverification\b",
+        ),
+        "Boundary/adapter cleanup mentioned without tests or verification around the boundary.",
+    ),
+    (
+        "concurrency_refactor_without_stress_tests",
+        r"\bconcurrency\b|\bthread(s|ed)?\b|\bsynchronized\b|\block(s|ing)?\b|\bshared mutable\b",
+        (
+            r"\bstress test(s)?\b",
+            r"\bfailure injection\b",
+            r"\binterleav(ing|e)\b",
+            r"\bscheduler\b",
+            r"\btunable\b",
+            r"\bdifferent platform(s)?\b",
+            r"\bverification\b",
+        ),
+        "Concurrency-related cleanup mentioned without stress, interleaving, scheduler, platform, or failure-path verification.",
     ),
 )
 
@@ -317,6 +379,10 @@ def audit_file(path: Path) -> list[str]:
             findings.append(f"{path}: warn: {name}: {message}")
 
     for name, trigger, guards, message in PRINCIPLE_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in CLEAN_CODE_RISKS:
         if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
             findings.append(f"{path}: warn: {name}: {message}")
 

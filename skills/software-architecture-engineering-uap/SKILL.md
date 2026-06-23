@@ -1,6 +1,6 @@
 ---
 name: software-architecture-engineering-uap
-description: Use when designing, evaluating, documenting, modernizing, or implementing software architecture, including requirements refinement, context analysis, architecture style selection, microservices patterns, functional/information/behavior/deployment/development/operation views, NFR tactics, IAM/auth, security patterns, cost estimation, architecture-as-code fitness functions, ADR/RFC work, and engineering execution plans.
+description: Use when designing, evaluating, documenting, modernizing, reviewing, refactoring, or implementing software architecture and code-level structure, including requirements, context, architecture style selection, microservices patterns, clean code, code smells, modularity, views, NFR tactics, IAM/auth, security patterns, cost estimation, architecture-as-code fitness functions, ADR/RFC work, and engineering execution plans.
 ---
 
 # Software Architecture Engineering UAP
@@ -9,7 +9,7 @@ description: Use when designing, evaluating, documenting, modernizing, or implem
 Treat architecture as traceable engineering: requirements -> context -> schematic style choices -> architecture views -> NFR tactics -> evaluation -> implementation work. Do not recommend structure, technology, or patterns without naming the forces, trade-offs, evidence, and validation path.
 
 ## First Pass
-1. Classify the task: greenfield design, architecture review, modernization, decomposition, microservices pattern design, API/service design, data architecture, IAM/auth design, security-pattern design, cost-aware decision, deployment/operation planning, architecture-as-code governance, NFR design, evaluation, ADR/RFC, or implementation planning.
+1. Classify the task: greenfield design, architecture review, modernization, decomposition, clean-code review/refactoring, microservices pattern design, API/service design, data architecture, IAM/auth design, security-pattern design, cost-aware decision, deployment/operation planning, architecture-as-code governance, NFR design, evaluation, ADR/RFC, or implementation planning.
 2. Identify scope and risk: users, stakeholders, business goals, current system evidence, constraints, critical workflows, quality attributes, team/deployment context, and reversibility.
 3. Tailor the Unified Architecture Process: lightweight for local low-risk changes; full A1-A6 for high-risk, distributed, regulated, long-lived, or irreversible decisions.
 4. Decide the visual artifacts needed: boundary/context, use case, component, class/data, activity, sequence, state, deployment, development/operation, style schematic, NFR conformance map, policy enforcement map, or fitness-function map.
@@ -22,6 +22,7 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - Architecture style choice, schematic structure, decomposition, or modernization target: `tasks/schematic-architecture-design.md` and `references/architecture-style-catalog.md`.
 - Microservices, modular monolith vs microservices, service decomposition, saga compensation/retry/idempotency, outbox relay/deduplication, CQRS projection/rebuild/lag, API composition, API gateway, BFF, service discovery, circuit breaker, event schema/order/replay/DLQ, contract testing, service chassis, service mesh, sidecar, strangler migration, anti-corruption layer, or production-ready service design: `tasks/microservices-pattern-architecture-design.md` and `references/microservices-pattern-language.md`.
 - Design principles, modularity, coupling/cohesion, KISS, SOLID, DRY, YAGNI, SoC, package boundaries, or code-level architecture heuristics: `references/design-principles-and-modularity.md`.
+- Clean code, code smells, refactoring, code review, craftsmanship, naming/functions/classes/comments/error handling/tests, behavior-preserving cleanup, technical debt reduction, or implementation hygiene: `tasks/clean-code-refactoring-and-review.md`, `references/clean-code-craftsmanship.md`, and `templates/clean-code-review-checklist.md`.
 - Functional, information, behavior, deployment, development, or operation design: `tasks/architecture-view-design.md`, `references/context-and-views.md`, `references/development-and-operation-views.md`, and `references/diagram-visualization-guide.md`.
 - Identity, IAM, authentication, authorization, sessions, tokens, MFA, passwordless, account lifecycle, admin users, audit logs, or auth API design: `tasks/identity-access-design.md` and `references/iam-auth-architecture.md`.
 - Security patterns, access-control models, policy engines, reference monitor, RBAC/ABAC/PBAC/ACL/capability, security logger/auditor, secure middleware/network patterns, misuse cases, or threat-driven design: `tasks/security-pattern-architecture-design.md` and `references/security-architecture-patterns.md`.
@@ -31,6 +32,7 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 - Architecture evaluation, review gate, design risk assessment, or validation plan: `tasks/architecture-evaluation.md` and `references/architecture-evaluation-methods.md`.
 - Existing system review, refactor, migration, or modernization: `tasks/architecture-review-and-modernization.md`.
 - ADR/RFC writing, implementation breakdown, rollout, tests, or repository mapping: `tasks/implementation-planning.md` and `references/engineering-translation.md`.
+- When a prompt primarily belongs to another skill but code-level maintainability is material, use the cross-skill map in `references/clean-code-craftsmanship.md`; do not load clean-code material for pure strategy, research, or architecture-only prompts without code/refactoring/testability impact.
 - Quick UAP activity-step-task reminders or SRS intake extraction: `references/uap-appendix-artifact-playbooks.md`.
 - Final architecture quality check: `references/review-checklist.md`.
 
@@ -44,9 +46,11 @@ Treat architecture as traceable engineering: requirements -> context -> schemati
 
 ## Architecture Heuristics
 - Preserve dependency direction and data ownership before optimizing for frameworks.
+- Treat clean code as component-level architecture: names, functions, classes, tests, error paths, and boundary adapters must preserve architecture decisions in executable form.
 - Prefer modular monoliths when independent deployment, team autonomy, or scale isolation is not yet justified.
 - Use layered, MVC-family, N-tier, client-server, broker, dispatcher, event-driven, pub-sub, service-oriented, microservice, pipe-filter, repository, edge, controller, or plugin styles only when their forces match the system.
 - For microservices, require business capability/subdomain decomposition, data ownership, transaction/consistency strategy, API/event contracts, testing strategy, production-readiness baseline, team ownership, deployment/release path, and migration strategy when relevant.
+- For refactoring, require behavior evidence first. Do not approve style-only churn unless it reduces ambiguity, coupling, risk, or change cost.
 - Treat identity and access as a cross-cutting architecture boundary: session/token design, authorization checks, MFA recovery, admin surfaces, audit logs, and key management must be explicit.
 - Treat security as pattern-driven architecture, not only auth endpoints: define protected resources, subjects, policy model, enforcement points, decisions, audit events, and misuse cases.
 - Never accept "scalable", "secure", "fast", "reliable", or "cloud native" without measurable scenarios and verification such as SLO, p95/p99, RTO/RPO, workload, or load-test evidence.

@@ -16,7 +16,7 @@ instead of surface-level answers.
 
 | Skill | Scope |
 | --- | --- |
-| `skills/software-architecture-engineering-uap` | Design, evaluate, document, and modernize software architecture; microservices pattern language; IAM/auth design; NFR tactics; ADR/RFC; implementation planning. |
+| `skills/software-architecture-engineering-uap` | Design, evaluate, document, modernize, and refactor software architecture and code structure; microservices patterns; clean code; IAM/auth; NFR tactics; ADR/RFC; implementation planning. |
 | `skills/uiux-frontend-engineering` | Research, design, implement, and validate UI/UX and frontend interfaces for web, mobile, responsive apps, design systems, theme tokens, and XR/spatial surfaces. |
 | `skills/data-architect-engineering` | Design, review, migrate, optimize, secure, and operate SQL, NoSQL, vector, graph, search, cache, big-data, lakehouse, and warehouse systems. |
 | `skills/device-driver-development` | Linux kernel device drivers, modules, device tree bindings, bus clients, DMA/IRQ/memory paths, bring-up, and upstreaming. |

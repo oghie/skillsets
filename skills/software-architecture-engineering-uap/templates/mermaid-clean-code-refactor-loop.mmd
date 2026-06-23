@@ -1,0 +1,14 @@
+flowchart TD
+    A[Observe code risk] --> B[Classify force]
+    B --> C{Behavior known?}
+    C -- no --> D[Add characterization tests]
+    C -- yes --> E[Select smallest refactor]
+    D --> E
+    E --> F[Transform one step]
+    F --> G[Run verification]
+    G --> H{Behavior preserved?}
+    H -- no --> I[Revert or fix with evidence]
+    I --> G
+    H -- yes --> J{Target force addressed?}
+    J -- no --> E
+    J -- yes --> K[Record residual risk and cleanup trigger]

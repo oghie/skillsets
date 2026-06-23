@@ -12,6 +12,7 @@ Require:
 - Cost/estimate assumptions and uncertainty drivers when delivery or runtime cost matters.
 - Compatibility and migration constraints.
 - Repository and ownership context.
+- Clean-code constraints when implementation hygiene matters: behavior baseline, naming/module conventions, dependency direction, boundary adapters, error/null semantics, and test commands.
 
 ## Work Breakdown
 
@@ -25,6 +26,8 @@ Plan in this order:
 7. Architecture fitness checks and CI guardrails.
 8. Deployment, rollout, monitoring, and rollback.
 9. Cleanup and documentation.
+
+For clean-code/refactoring work, do not start with broad rewrites. Start with behavior characterization, then apply small transformations with verification after each risky change.
 
 ## Task Template
 
@@ -47,6 +50,7 @@ Plan in this order:
 
 Include:
 - Unit tests for local behavior.
+- Characterization tests for legacy or unclear behavior before refactoring.
 - Integration tests for components and data.
 - Contract tests for APIs/events.
 - Migration tests and rollback dry run.

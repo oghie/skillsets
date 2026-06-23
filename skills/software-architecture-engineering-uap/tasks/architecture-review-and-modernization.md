@@ -13,6 +13,7 @@ Inspect before judging:
 - Infrastructure and deployment manifests.
 - CI/CD, tests, observability, logs, alerts, and runbooks.
 - Architecture fitness functions, dependency rules, package boundaries, and import constraints.
+- Code-level structure when maintainability is in scope: names, functions, classes/modules, comments, error handling, tests, third-party boundaries, and concurrency policy.
 - Existing ADRs, RFCs, diagrams, incidents, and support tickets.
 
 ## Current-State Model
@@ -68,6 +69,8 @@ Build a concise current-state view:
 - Security and privacy controls added only at the edge.
 - Diagrams and ADRs no longer match repository/package/service structure.
 - No cost or uncertainty model for modernization alternatives.
+- Refactoring proposed without behavior characterization, tests, or rollback.
+- Clean-code findings framed as taste instead of correctness, modifiability, security, performance, concurrency, operations, or cost risk.
 
 ## Output
 

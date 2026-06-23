@@ -65,6 +65,20 @@ Use this checklist before finalizing architecture, ADRs, RFCs, modernization pla
 - Operational procedures cover backup/restore, migrations, upgrades, runbooks, SLOs, alerts, and incident ownership when relevant.
 - Architecture diagrams, constraint specs, repository structure, and fitness functions are kept aligned when architecture-as-code is used.
 
+## Clean Code And Refactoring
+- Behavior is known before refactoring: tests, characterization tests, contracts, traces, or documented scenarios.
+- Cleanup and behavior change are separated unless the task explicitly requires both.
+- Names reveal intent, unit, lifecycle, ownership, and side effects.
+- Functions operate at one abstraction level, avoid flag/output arguments, and separate commands from queries.
+- Comments explain non-obvious intent, warnings, legal constraints, or temporary work; they do not restate unclear code.
+- Classes/modules have cohesive reasons to change and preserve dependency direction.
+- Domain logic is not shaped by ORM, SDK, transport, UI, or framework objects.
+- Third-party boundaries, error translation, retry/timeouts, and null/optional/result semantics are explicit.
+- Duplicate code is removed only when the underlying concept is truly shared.
+- Tests are fast enough to support frequent refactoring and cover boundary/failure/near-bug cases.
+- Concurrency code separates policy from business logic, limits shared mutable state, and has stress or failure-path verification when risk is material.
+- Every clean-code finding names impact, smell, recommended fix, and verification; avoid style-only findings.
+
 ## NFR Conformance
 - NFRs link to facts/policies, criteria, selected tactics, impacted views, and verification.
 - Tactics are evaluated for side effects.

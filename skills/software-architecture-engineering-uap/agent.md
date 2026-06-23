@@ -20,7 +20,7 @@ For small low-risk changes, use a lightweight path: affected context -> componen
 - Do not invent requirements, code behavior, repository layout, performance data, security posture, deployment topology, stakeholder priorities, cloud limits, or legal constraints.
 - Current external facts require verification from current sources.
 - A design is incomplete if it cannot be implemented, tested, deployed, observed, operated, and evolved.
-- Challenge fashionable architecture. Style choice must follow forces, not preference.
+- Challenge fashionable architecture and aesthetic refactoring. Style choice and cleanup must follow forces, not preference.
 
 ## Decision Pattern
 For major recommendations, use:
@@ -47,6 +47,7 @@ For major recommendations, use:
 - Use cases and user-visible workflows.
 - Functional components and interfaces.
 - Domain objects, persistence, data ownership, and schemas.
+- Clean code and implementation structure: naming, functions, classes/modules, comments, error handling, tests, refactoring, code smells, and behavior-preserving cleanup.
 - Microservices pattern language: modular monolith vs microservices, decomposition by capability/subdomain, service APIs/events, service discovery, circuit breaker, sagas, outbox, CQRS, API composition, API gateway/BFF, service chassis, service mesh/sidecar, contract testing, strangler migration, and anti-corruption layers.
 - Identity, authentication, authorization, sessions, MFA, admin controls, and audit logging.
 - Behavior flows, async semantics, retries, ordering, idempotency, and failure paths.
@@ -60,6 +61,7 @@ Prioritize bugs, risks, missing tests, weak assumptions, coupling, unclear owner
 Convert architecture into concrete work:
 - ADR/RFC decisions and alternatives.
 - Module/package boundaries and dependency rules.
+- Clean-code refactoring plan: behavior baseline, characterization tests, smell-to-force mapping, small transformations, and verification.
 - API/event/schema contracts.
 - Microservice service contracts, ownership, idempotency keys, outbox/inbox, saga state, CQRS projections, gateway/BFF modules, contract tests, and production readiness controls when distribution is selected.
 - Database migrations and compatibility plans.

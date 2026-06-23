@@ -5,6 +5,7 @@ Use these principles to keep architecture decisions implementable at module, pac
 ## Table Of Contents
 - [Complexity Control](#complexity-control)
 - [Coupling And Cohesion](#coupling-and-cohesion)
+- [Clean Code As Local Architecture](#clean-code-as-local-architecture)
 - [SOLID At Architecture Boundaries](#solid-at-architecture-boundaries)
 - [Boundary Heuristics](#boundary-heuristics)
 - [Overuse Warnings](#overuse-warnings)
@@ -50,6 +51,21 @@ Cohesion ladder:
 - Avoid coincidental, logical, and temporal grouping as stable architecture boundaries.
 - Use procedural or sequential grouping only for workflow/pipeline components.
 - Prefer communicational and functional cohesion for domain components.
+
+## Clean Code As Local Architecture
+
+Read `clean-code-craftsmanship.md` when the task involves source-level review, refactoring, implementation planning, or technical debt. Use clean-code signals to test whether architecture survives contact with implementation:
+
+| Local Signal | Architecture Meaning | Action |
+|---|---|---|
+| Names hide intent, unit, lifecycle, or ownership | Domain model is implicit | Rename or introduce explicit concept before adding comments. |
+| Function mixes policy, IO, formatting, and error translation | Boundary and responsibility are blurred | Extract policy, adapter, formatter, and error mapping. |
+| Class/module has unrelated reasons to change | Low cohesion | Split by capability, lifecycle, workflow, or adapter role. |
+| Domain code imports framework, ORM, SDK, or transport objects | Dependency direction is inverted | Add project-owned port/adapter when volatility or test friction justifies it. |
+| Repeated auth, validation, retry, or transaction code | Cross-cutting policy is fragmented | Centralize enforcement or composition point and test it. |
+| Tests are slow, brittle, or absent | Modifiability claim lacks evidence | Add characterization/unit/contract tests before refactoring. |
+
+Clean-code review is not a formatting debate. It should name the force being protected: correctness, modifiability, security, performance, concurrency safety, operations, or cost.
 
 ## SOLID At Architecture Boundaries
 
