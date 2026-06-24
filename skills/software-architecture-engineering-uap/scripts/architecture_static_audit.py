@@ -289,6 +289,58 @@ CLEAN_CODE_RISKS = (
 )
 
 
+RUST_LIBRARY_RISKS = (
+    (
+        "rust_library_without_public_contract",
+        r"\brust\b|\bcrate(s)?\b|\bcargo\b|\bCargo\.toml\b",
+        (r"\bpublic API\b", r"\bpublic contract\b", r"\bpub\b", r"\bre-export(s|ed)?\b", r"\bdownstream\b"),
+        "Rust crate/library work mentioned without mapping public API contract, pub items, re-exports, or downstream compatibility.",
+    ),
+    (
+        "rust_library_without_semver_msrv",
+        r"\brust\b|\bcrate(s)?\b|\bcargo\b|\bCargo\.toml\b",
+        (r"\bSemVer\b", r"\bsemantic version", r"\bMSRV\b", r"\brust-version\b", r"\bbreaking change\b"),
+        "Rust crate/library work mentioned without SemVer, MSRV/rust-version, or breaking-change policy.",
+    ),
+    (
+        "cargo_features_without_matrix",
+        r"\bfeature flag(s)?\b|\bCargo feature(s)?\b|\b--all-features\b|\b--no-default-features\b",
+        (r"\badditive\b", r"\bfeature matrix\b", r"\bfeature powerset\b", r"\bcargo hack\b", r"\bno-default-features\b"),
+        "Cargo features mentioned without additive-feature policy or feature-matrix verification.",
+    ),
+    (
+        "rust_unsafe_without_safety_review",
+        r"\bunsafe\b|\bunsafe fn\b|\bunsafe trait\b|\bMiri\b",
+        (r"SAFETY:", r"\b# Safety\b", r"\binvariant(s)?\b", r"\bMiri\b", r"\bsanitizer(s)?\b"),
+        "Rust unsafe code mentioned without safety invariants, SAFETY comments/docs, Miri, or sanitizer-style verification.",
+    ),
+    (
+        "rust_ffi_without_boundary_contract",
+        r"\bFFI\b|\bextern\b|\bcdylib\b|\bstaticlib\b|\bbindgen\b|\bcbindgen\b",
+        (r"\bABI\b", r"\brepr\(C\)\b", r"\ballocat(or|ion)\b", r"\bfree\b", r"\bpanic\b", r"\blifetime(s)?\b"),
+        "Rust FFI mentioned without ABI/layout, allocator/free pairing, panic, or lifetime boundary contract.",
+    ),
+    (
+        "rust_no_std_without_target_policy",
+        r"\bno_std\b|\balloc\b|\bembedded\b",
+        (r"\btarget\b", r"\bstd feature\b", r"\bpanic\b", r"\bOOM\b", r"\ballocat(or|ion)\b", r"\bfallible\b"),
+        "Rust no_std/alloc mentioned without target build, std feature, panic/OOM, allocation, or fallible API policy.",
+    ),
+    (
+        "rust_async_without_runtime_contract",
+        r"\basync\b|\bawait\b|\bfuture(s)?\b|\btokio\b|\basync-std\b",
+        (r"\bruntime\b", r"\bexecutor\b", r"\bblocking\b", r"\bcancel(lation)?\b", r"\bspawn(ed)?\b", r"\bshutdown\b"),
+        "Rust async library/API mentioned without runtime, executor, blocking, cancellation, spawned-task, or shutdown contract.",
+    ),
+    (
+        "rust_library_without_release_gate",
+        r"\brust\b|\bcrate(s)?\b|\bcargo\b|\bCargo\.toml\b",
+        (r"\bcargo package\b", r"\bdoctest(s)?\b", r"\bcargo doc\b", r"\bchangelog\b", r"\brelease gate\b"),
+        "Rust crate/library work mentioned without package/docs/doctest/changelog/release-gate checks.",
+    ),
+)
+
+
 AUTH_RISKS = (
     (
         "auth_without_session_model",
@@ -383,6 +435,10 @@ def audit_file(path: Path) -> list[str]:
             findings.append(f"{path}: warn: {name}: {message}")
 
     for name, trigger, guards, message in CLEAN_CODE_RISKS:
+        if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
+            findings.append(f"{path}: warn: {name}: {message}")
+
+    for name, trigger, guards, message in RUST_LIBRARY_RISKS:
         if re.search(trigger, text, re.IGNORECASE) and not has_any(text, guards):
             findings.append(f"{path}: warn: {name}: {message}")
 

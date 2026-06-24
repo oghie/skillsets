@@ -1,0 +1,12 @@
+flowchart TD
+  Intake[Classify crate purpose and callers] --> Contract[Map public API contract]
+  Contract --> APIDecision{Can the API evolve without breaking callers?}
+  APIDecision -- No --> Narrow[Reduce promises: private fields, wrappers, builders, non_exhaustive, sealed/default traits]
+  Narrow --> Contract
+  APIDecision -- Yes --> Risk[Identify feature, dependency, unsafe, FFI, no_std, async, concurrency, and macro risks]
+  Risk --> Matrix[Build test matrix from risk surface]
+  Matrix --> Verify[Run fmt, clippy, tests, docs, feature, MSRV, package, and risk-specific checks]
+  Verify --> Gate{All contract and release gates pass?}
+  Gate -- No --> Fix[Fix API, docs, tests, features, or release metadata]
+  Fix --> Verify
+  Gate -- Yes --> Release[Tag or publish with changelog, SemVer notes, and residual risk]

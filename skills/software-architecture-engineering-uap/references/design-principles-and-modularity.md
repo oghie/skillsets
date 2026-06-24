@@ -92,6 +92,8 @@ Use this order when defining architecture boundaries:
 
 Prefer modular monolith boundaries until independent deployment, independent scaling, regulatory isolation, or team autonomy justifies distributed boundaries.
 
+For Rust crates, the boundary is often the public API rather than a runtime service. Treat `pub` items, feature flags, re-exports, generic bounds, trait implementations, error variants, and MSRV as architecture boundaries because downstream crates compile against them.
+
 ## Overuse Warnings
 
 - Too much DRY can merge concepts that should evolve separately.

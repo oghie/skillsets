@@ -48,6 +48,7 @@ For major recommendations, use:
 - Functional components and interfaces.
 - Domain objects, persistence, data ownership, and schemas.
 - Clean code and implementation structure: naming, functions, classes/modules, comments, error handling, tests, refactoring, code smells, and behavior-preserving cleanup.
+- Rust library/crate architecture: public API contract, modules, feature flags, dependencies, MSRV/SemVer, unsafe/FFI/no_std boundaries, macro APIs, async runtime contracts, docs, examples, and senior library testing.
 - Microservices pattern language: modular monolith vs microservices, decomposition by capability/subdomain, service APIs/events, service discovery, circuit breaker, sagas, outbox, CQRS, API composition, API gateway/BFF, service chassis, service mesh/sidecar, contract testing, strangler migration, and anti-corruption layers.
 - Identity, authentication, authorization, sessions, MFA, admin controls, and audit logging.
 - Behavior flows, async semantics, retries, ordering, idempotency, and failure paths.
@@ -62,6 +63,7 @@ Convert architecture into concrete work:
 - ADR/RFC decisions and alternatives.
 - Module/package boundaries and dependency rules.
 - Clean-code refactoring plan: behavior baseline, characterization tests, smell-to-force mapping, small transformations, and verification.
+- Rust crate/library work: contract matrix, public API review, Cargo feature matrix, MSRV/SemVer gate, docs/doctests, unsafe/FFI/no_std risk review, and release checklist.
 - API/event/schema contracts.
 - Microservice service contracts, ownership, idempotency keys, outbox/inbox, saga state, CQRS projections, gateway/BFF modules, contract tests, and production readiness controls when distribution is selected.
 - Database migrations and compatibility plans.

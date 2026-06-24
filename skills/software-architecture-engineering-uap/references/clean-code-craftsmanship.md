@@ -228,6 +228,7 @@ Avoid loops: use this reference as a secondary read only when code-level maintai
 | Primary User Prompt | Primary Skill | When To Also Use This Clean-Code Reference |
 |---|---|---|
 | Architecture design/review/modernization | `software-architecture-engineering-uap` | Always when modules, packages, service internals, implementation plan, or refactoring are in scope. |
+| Rust library/crate design or review | `software-architecture-engineering-uap` | After mapping public API contract, use clean-code guidance for naming, functions, modules, errors, tests, and behavior-preserving refactoring. |
 | IAM/auth implementation | `software-architecture-engineering-uap` | When designing auth code paths, policy enforcement, token/session modules, recovery flows, audit code, or security tests. |
 | Microservices implementation | `software-architecture-engineering-uap` | When creating service chassis, adapters, gateway/BFF modules, saga/outbox code with idempotency/deduplication, contracts, or tests. |
 | Data architecture or migration | `data-architect-engineering` | When writing repository/query modules, migration scripts, ETL code, data-access boundaries, or characterization tests for legacy behavior. |

@@ -13,6 +13,7 @@ Require:
 - Compatibility and migration constraints.
 - Repository and ownership context.
 - Clean-code constraints when implementation hygiene matters: behavior baseline, naming/module conventions, dependency direction, boundary adapters, error/null semantics, and test commands.
+- Rust crate constraints when planning a library: public API contract, feature matrix, MSRV/SemVer policy, dependency exposure, unsafe/FFI/no_std boundaries, examples, doctests, and release gate.
 
 ## Work Breakdown
 
@@ -57,6 +58,7 @@ Include:
 - Load/performance checks for NFRs.
 - Security/privacy tests where applicable.
 - Architecture constraint checks for enforced package/layer/service boundaries.
+- Rust crate checks for doctests, feature combinations, MSRV, public API compatibility, package metadata, unsafe/Miri, FFI, no_std target, or macro compile-fail coverage when relevant.
 - Cost/performance model update checks when estimates drove the decision.
 - Observability checks.
 - Production smoke/canary criteria.

@@ -60,6 +60,7 @@ Map architecture to code:
 - Deployment view -> Dockerfiles, manifests, IaC, CI/CD, environment config, secrets, runbooks.
 - NFR tactics -> tests, metrics, alerts, rate limits, auth policies, cache policies, resilience libraries.
 - Clean-code decisions -> names, function boundaries, class/module responsibilities, adapter seams, error translation, tests, and dependency rules.
+- Rust library decisions -> public modules/items, feature flags, dependency exposure, error/panic docs, MSRV/SemVer policy, unsafe/FFI/no_std boundaries, examples, doctests, and release gates.
 
 For microservices, also map:
 - service boundary -> business capability/subdomain owner and repository/package/deployable;
@@ -95,6 +96,9 @@ For refactoring or clean-code implementation, insert these gates:
 | Concern | Test/Evidence |
 |---|---|
 | API contract | Contract tests, schema validation, backwards compatibility tests |
+| Rust crate public contract | Integration tests, doctests, examples, downstream-style smoke crate, public API diff/SemVer review |
+| Rust feature/MSRV compatibility | `--all-features`, `--no-default-features`, feature powerset where needed, MSRV toolchain check |
+| Rust unsafe/FFI/no_std risk | Miri, sanitizer/fuzz/stress tests, ABI smoke tests, target build, safety-comment review |
 | Component logic | Unit and integration tests |
 | Refactoring safety | Characterization tests, focused unit tests, diff review proving behavior-preserving changes |
 | Clean-code boundary | Static dependency checks, import rules, module/package fitness functions |

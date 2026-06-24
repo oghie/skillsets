@@ -79,6 +79,21 @@ Use this checklist before finalizing architecture, ADRs, RFCs, modernization pla
 - Concurrency code separates policy from business logic, limits shared mutable state, and has stress or failure-path verification when risk is material.
 - Every clean-code finding names impact, smell, recommended fix, and verification; avoid style-only findings.
 
+## Rust Library And Crate Readiness
+- Public API surface is mapped: modules, re-exports, functions, structs, fields, enum variants, traits, associated types, feature flags, docs, examples, and observed auto-traits.
+- Public fields, tuple structs, and exhaustive enums are deliberate; `#[non_exhaustive]`, private fields, builders, or constructors are used when evolution is expected.
+- Public traits have an evolution strategy: downstream implementation is intended, sealed, or protected by default methods.
+- Dependency types are not exposed accidentally through return types, errors, iterators, re-exports, or macro output.
+- Error and panic contracts are documented; recoverable input failures use `Result` or fallible APIs.
+- Cargo features are additive, default features are intentional, optional dependencies are justified, and feature combinations are tested when public.
+- MSRV, supported targets, package metadata, SemVer classification, changelog, and release process are explicit.
+- `unsafe` is isolated, each unsafe block has a `SAFETY:` rationale, and every public unsafe function or trait documents `# Safety`.
+- FFI boundaries define ABI, layout, ownership, allocator/free pairing, panic behavior, and safe wrappers.
+- `no_std`/`alloc` claims are tested on relevant targets and state panic/OOM/allocation assumptions.
+- Async APIs state runtime, blocking, cancellation, spawned-task, shutdown, and `Send` expectations.
+- Macro APIs have compile-fail tests, useful diagnostics, generated-code visibility, and compile-time cost awareness.
+- Library tests cover public contract, docs, examples, invalid input, features, MSRV, downstream-style usage, and risk-specific Miri/fuzz/loom/bench/ABI checks.
+
 ## NFR Conformance
 - NFRs link to facts/policies, criteria, selected tactics, impacted views, and verification.
 - Tactics are evaluated for side effects.
