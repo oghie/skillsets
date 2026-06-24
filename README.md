@@ -89,7 +89,7 @@ to start and shows up in `/mcp` — it does not block a session.
 | --- | --- | --- | --- |
 | `context7` | All engineering skills (current library/API docs) | Node 18+ (`npx`) | None required; set `CONTEXT7_API_KEY` for higher rate limits. |
 | `github` | tech-leadership, software-architecture (repos, issues, PRs) | none (remote HTTP) | OAuth on first use against `https://api.githubcopilot.com/mcp/`. |
-| `postgres` | data-architect-engineering (schema, EXPLAIN, index tuning) | `uv` (`uvx postgres-mcp`) | Set `DATABASE_URI` to your connection string. Runs in `restricted` (read-only) mode. |
+| `postgres` | data-architect-engineering (schema, EXPLAIN, index tuning) | `uv` (`uvx postgres-mcp`) | Optional. Set `DATABASE_URI` to your connection string to activate it; if unset it stays inactive and the plugin loads normally. Runs in `restricted` (read-only) mode. |
 | `arxiv` | academic-research-journal (paper search, source audits) | `uv` (`uvx arxiv-mcp-server`) | None required. |
 
 Notes:

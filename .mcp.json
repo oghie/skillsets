@@ -14,7 +14,7 @@
       "command": "uvx",
       "args": ["postgres-mcp", "--access-mode=restricted"],
       "env": {
-        "DATABASE_URI": "${DATABASE_URI}"
+        "DATABASE_URI": "${DATABASE_URI:-}"
       }
     },
     "arxiv": {
