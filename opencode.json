@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "permission": {
+    "skill": {
+      "academic-research-journal": "allow",
+      "data-architect-engineering": "allow",
+      "device-driver-development": "allow",
+      "realtime-systems-coding": "allow",
+      "software-architecture-engineering-uap": "allow",
+      "tech-leadership": "allow",
+      "uiux-frontend-engineering": "allow"
+    }
+  }
+}

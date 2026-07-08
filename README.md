@@ -2,8 +2,8 @@
 
 A personal collection of agent skills for software and research engineering, packaged
 as a single cross-platform plugin. Each skill is a self-contained, model-agnostic
-instruction set that runs on Claude (Claude Code), Codex, and Antigravity (Gemini) from
-the same source.
+instruction set that runs on Claude (Claude Code), Codex, OpenCode, and Antigravity
+(Gemini) from the same source.
 
 ## About
 
@@ -35,6 +35,9 @@ own manifest:
   marketplace.json    # Claude Code marketplace entry
 .codex-plugin/
   plugin.json         # Codex plugin metadata + interface
+.opencode/
+  skills/             # OpenCode project-local skill mirror (symlinks to skills/)
+opencode.json         # OpenCode config and project instruction wiring
 gemini-extension.json # Antigravity (Gemini) extension manifest
 GEMINI.md             # Antigravity context file (includes AGENTS.md)
 AGENTS.md             # Cross-platform agent orientation
@@ -72,6 +75,19 @@ Install the plugin from the same repository (`oghie/skillsets`). Codex reads
 `.codex-plugin/plugin.json`, which points at `./skills/` and exposes the bundled
 skills through its interface block.
 
+### OpenCode
+
+Clone this repository and run OpenCode from the repo root:
+
+```
+opencode
+```
+
+OpenCode reads `AGENTS.md`, `opencode.json`, and the project-local
+`.opencode/skills/<name>/SKILL.md` paths. The `.opencode/skills/` entries are symlinks
+to the committed `skills/` directories, so Claude, Codex, OpenCode, and Antigravity use
+the same source material.
+
 ### Antigravity (Gemini)
 
 Install this repository as a Gemini extension. Antigravity reads
@@ -103,9 +119,9 @@ Notes:
 ## Usage
 
 Each skill auto-surfaces by name and description. When a task matches a skill's
-description, the agent reads that skill's `skills/<name>/SKILL.md` and follows its
-workflow. All runtimes read the same `tasks/`, `references/`, and `scripts/`, so
-behavior stays consistent regardless of the host.
+description, the agent reads that skill's `skills/<name>/SKILL.md` or platform-local
+mirror and follows its workflow. All runtimes read the same `tasks/`, `references/`,
+and `scripts/`, so behavior stays consistent regardless of the host.
 
 ### For newbies (install from scratch)
 
@@ -137,6 +153,21 @@ CLI, then install skillsets.
    codex plugin install skillsets
    ```
    Or run `/plugins` inside Codex to browse and install it.
+
+**OpenCode**
+
+1. Install the CLI:
+   - macOS / Linux: `curl -fsSL https://opencode.ai/install | bash`
+   - Any OS with Node 18+: `npm install -g opencode-ai`
+   - macOS (Homebrew): `brew install anomalyco/tap/opencode`
+   - Check it works: `opencode --version`
+2. Use skillsets:
+   ```
+   git clone https://github.com/oghie/skillsets.git
+   cd skillsets
+   opencode
+   ```
+   OpenCode loads `AGENTS.md`, `opencode.json`, and `.opencode/skills/*`.
 
 **Antigravity**
 

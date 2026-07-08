@@ -4,6 +4,8 @@ This repository is a single plugin that bundles seven self-contained engineering
 
 Each skill auto-surfaces by its name and description. When a task matches a skill's description, read that skill's `skills/<name>/SKILL.md` first and follow its workflow. The detailed `tasks/`, `references/`, and `scripts/` under each skill directory are the source of truth.
 
+OpenCode reads this `AGENTS.md` as project instructions and discovers the same skills through `.opencode/skills/`, which points back to `skills/`. Do not duplicate skill source material across platform-specific mirrors.
+
 ## Skills
 
 - `skills/academic-research-journal` — Evaluate, design, draft, revise, and stress-test academic articles, literature and systematic reviews, journal submissions, reviewer responses, and source/integrity audits.
