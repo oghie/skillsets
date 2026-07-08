@@ -1,6 +1,6 @@
 # skillsets
 
-This repository is a single plugin that bundles seven self-contained engineering and research skills. Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
+This repository is a single plugin that bundles eight self-contained engineering and research skills. Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
 
 Each skill auto-surfaces by its name and description. When a task matches a skill's description, read that skill's `skills/<name>/SKILL.md` first and follow its workflow. The detailed `tasks/`, `references/`, and `scripts/` under each skill directory are the source of truth.
 
@@ -8,6 +8,7 @@ OpenCode reads this `AGENTS.md` as project instructions and discovers the same s
 
 ## Skills
 
+- `skills/android-offsec` — Android offensive security, forensic extraction, mobile app exploitation: lock screen bypass, APK reversing, deeplink fuzzing, kernel/GPU exploit research, rogue WiFi attacks, deepfake social engineering, and chain-of-custody device investigation.
 - `skills/academic-research-journal` — Evaluate, design, draft, revise, and stress-test academic articles, literature and systematic reviews, journal submissions, reviewer responses, and source/integrity audits.
 - `skills/data-architect-engineering` — Design, review, migrate, optimize, secure, and operate SQL, NoSQL, vector, graph, document, time-series, search, cache, big-data, lakehouse, and warehouse systems, including DBMS internals.
 - `skills/device-driver-development` — Develop, review, debug, port, and engineer Linux kernel device drivers, kernel modules, device tree bindings, bus clients, DMA/IRQ/memory paths, userspace ABIs, and hardware bring-up.
