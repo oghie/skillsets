@@ -2,8 +2,8 @@
 
 A personal collection of agent skills for software and research engineering, packaged
 as a single cross-platform plugin. Each skill is a self-contained, model-agnostic
-instruction set that runs on Claude (Claude Code), Codex, OpenCode, and Antigravity
-(Gemini) from the same source.
+instruction set that runs on Claude (Claude Code), Codex, OpenCode, Antigravity
+(Gemini), and Hermes from the same source.
 
 ## About
 
@@ -180,6 +180,17 @@ CLI, then install skillsets.
    ```
    Antigravity loads the repo's `gemini-extension.json` and `GEMINI.md`. Update later
    with `gemini extensions update skillsets`.
+
+**Hermes**
+
+1. Install Hermes Agent:
+   - macOS / Linux: `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`
+   - Check it works: `hermes --version`
+2. Install skillsets:
+   ```
+   hermes skills tap add https://github.com/oghie/skillsets
+   ```
+   Then restart Hermes or run `/reload-skills`. Skills auto-surface by name and description.
 
 **After installing (all platforms)**
 

@@ -1,6 +1,13 @@
 ---
 name: tech-leadership
 description: Use when advising, planning, reviewing, reporting, operating, or improving CTO and technology leadership work across strategy, cybersecurity management, SME/COE, functional and technical requirements, framework selection, people, organization, delivery, risk, KPI, roadmap, budgeting, governance, audit, R&D, stakeholder communication, culture, politics, and sector-specific leadership.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['software-development', 'leadership', 'management', 'cto']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Tech Leadership

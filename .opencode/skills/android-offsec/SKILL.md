@@ -1,6 +1,13 @@
 ---
 name: android-offsec
 description: "Android device offensive security, forensic extraction, and mobile app exploitation. Use this whenever the user needs to: break into or bypass the lock screen of an Android phone, extract data from a seized Android device for evidence, analyze or reverse-engineer an APK to find vulnerabilities, intercept communications on an Android device, exploit Android apps via deeplinks, steal crypto wallets or app data, set up rogue WiFi to target a phone, or plan any mobile device investigation or penetration test. Also trigger when the user mentions Android forensics, mobile pentesting, law enforcement phone extraction, device exploitation, WhatsApp or Telegram extraction from a phone, Android app reversing, CVE research for Android, or needing a chain of custody for mobile evidence. Even if the user describes the scenario casually or in another language, if they need to gain access to or pull data from an Android phone, use this skill."
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: [security, android, forensics, offensive, mobile]
+    source: https://github.com/oghie/skillsets
 ---
 
 # Android Offensive Security & Forensic Investigation

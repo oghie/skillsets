@@ -1,6 +1,13 @@
 ---
 name: uiux-frontend-engineering
 description: Use when designing, reviewing, implementing, or validating UI/UX and frontend experiences for web, mobile, responsive apps, design systems, Figma-to-code handoff, frontend stack/library selection, personas, UX mapping, information architecture, UI patterns, accessibility, interaction design, UX research, usability testing, theme/token application, or XR/spatial interfaces.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['creative', 'uiux', 'frontend', 'design']
+    source: https://github.com/oghie/skillsets
 ---
 
 # UIUX Frontend Engineering

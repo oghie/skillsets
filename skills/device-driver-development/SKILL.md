@@ -1,6 +1,13 @@
 ---
 name: device-driver-development
 description: Use when developing, reviewing, debugging, porting, or engineering Linux kernel device drivers, kernel modules, device tree bindings, bus clients, subsystem drivers, DMA/IRQ/memory paths, userspace interfaces, or hardware bring-up plans.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['software-development', 'linux', 'kernel', 'drivers', 'embedded']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Device Driver Development

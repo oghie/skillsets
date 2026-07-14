@@ -1,6 +1,13 @@
 ---
 name: data-architect-engineering
 description: Use when designing, reviewing, modifying, migrating, optimizing, securing, operating, troubleshooting, or decommissioning data architectures across data model exploration, SQL, ISO SQL conformance, NoSQL, vector, graph, document, time-series, NewSQL, search, in-memory, SQLite, CDC/Debezium, DBMS storage/query/recovery internals, database incident prevention, hardware acceleration, cache, big-data, lakehouse, and warehouse systems.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['data-science', 'database', 'architecture', 'sql', 'nosql']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Data Architect Engineering

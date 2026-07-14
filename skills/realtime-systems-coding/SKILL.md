@@ -1,6 +1,13 @@
 ---
 name: realtime-systems-coding
 description: Use when designing, implementing, reviewing, debugging, testing, profiling, or porting concurrent, parallel, distributed, high-performance, network dataplane, kernel-bypass, or real-time software, including locks, semaphores, monitors, MPI, CSP rendezvous, DPDK, VPP, eBPF, XDP, AF_XDP, SR-IOV, RSS, RoCEv2/RDMA, RMS/EDF, priority inversion, and environment selection from silicon to edge.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['software-development', 'realtime', 'concurrency', 'systems']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Realtime Systems Coding

@@ -1,6 +1,13 @@
 ---
 name: academic-research-journal
 description: Use when evaluating, designing, drafting, revising, stress-testing, or preparing academic articles, empirical research reports, literature reviews, systematic reviews, meta-analyses, journal submissions, reviewer responses, research methods, sampling, measurement, analysis, publication readiness, or citation/source audits.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['research', 'academic', 'writing', 'journal']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Academic Research Journal

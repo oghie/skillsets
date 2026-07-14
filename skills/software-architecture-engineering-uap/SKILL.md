@@ -1,6 +1,13 @@
 ---
 name: software-architecture-engineering-uap
 description: Use when designing, evaluating, documenting, modernizing, reviewing, refactoring, or implementing software architecture and code-level structure, including requirements, context, architecture style selection, microservices patterns, clean code, code smells, Rust crate/library API architecture, Cargo feature/MSRV/SemVer policy, unsafe/FFI/no_std/library testing, modularity, views, NFR tactics, IAM/auth, security patterns, cost estimation, architecture-as-code fitness functions, ADR/RFC work, and engineering execution plans.
+version: 0.1.0
+author: oghie
+license: MIT
+metadata:
+  hermes:
+    tags: ['software-development', 'architecture', 'design', 'patterns']
+    source: https://github.com/oghie/skillsets
 ---
 
 # Software Architecture Engineering UAP

@@ -1,10 +1,10 @@
 # skillsets
 
-This repository is a single plugin that bundles eight self-contained engineering and research skills. Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
+This repository is a single plugin that bundles eight self-contained engineering and research skills compatible with Hermes, Claude Code, Codex, OpenCode, and Antigravity (Gemini). Each skill is a model-agnostic instruction set: it classifies the task, gathers evidence, applies domain references, and verifies before handoff.
 
 Each skill auto-surfaces by its name and description. When a task matches a skill's description, read that skill's `skills/<name>/SKILL.md` first and follow its workflow. The detailed `tasks/`, `references/`, and `scripts/` under each skill directory are the source of truth.
 
-OpenCode reads this `AGENTS.md` as project instructions and discovers the same skills through `.opencode/skills/`, which points back to `skills/`. Do not duplicate skill source material across platform-specific mirrors.
+Hermes reads `HERMES.md` for project context and discovers skills through the plugin manifest at `.hermes-plugin/plugin.json`. OpenCode reads `AGENTS.md` and discovers skills through `.opencode/skills/`, which points back to `skills/`. Do not duplicate skill source material across platform-specific mirrors.
 
 ## Skills
 
