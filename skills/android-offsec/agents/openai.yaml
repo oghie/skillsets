@@ -1,0 +1,8 @@
+interface:
+  display_name: "Android Offensive Security"
+  short_description: "Android device exploitation, forensic extraction, APK reversing, deeplink fuzzing, lock screen bypass, and mobile pentesting."
+  brand_color: "#7C3AED"
+  default_prompt: "Use $android-offsec to conduct authorized Android device investigation - lock screen bypass, forensic extraction, APK reverse engineering, deeplink exploitation, rogue WiFi attacks, crypto wallet data theft, mobile app pentesting, and chain-of-custody device acquisition under signed rules of engagement."
+
+policy:
+  allow_implicit_invocation: true
