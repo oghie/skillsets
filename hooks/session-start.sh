@@ -16,7 +16,7 @@ ctx=$(printf '%s\n' \
 "- device-driver-development: Linux kernel drivers, modules, device tree, DMA/IRQ, bring-up, upstreaming." \
 "- realtime-systems-coding: concurrency, real-time, dataplane; locks/monitors, RMS/EDF, DPDK/XDP, kernel bypass." \
 "- tech-leadership: CTO and technology leadership; strategy, delivery, risk, KPIs, roadmap, governance." \
-"- android-offsec: Android offensive security, forensic extraction, APK reversing, deeplink exploits, mobile pentesting."
+"- android-offsec: Android offensive security, forensic extraction, APK reversing, deeplink exploits, mobile pentesting." \
 "- cyber-security-operations: cyber security operations; detection/hunting, DFIR, SOC, vuln management, DevSecOps, crypto/AI threats."
 "- academic-research-journal: academic articles, literature/systematic reviews, journal submissions, source audits.")
 

@@ -1,6 +1,6 @@
 {
   "name": "skillsets",
-  "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
+  "description": "Personal collection of model-agnostic engineering and research skills for Hermes, Claude Code, Codex, OpenCode, and Antigravity (Gemini).",
   "version": "0.3.0",
   "author": {
     "name": "oghie",
@@ -14,6 +14,8 @@
     "claude",
     "codex",
     "antigravity",
+    "hermes",
+    "opencode",
     "software-architecture",
     "clean-code",
     "realtime-systems",
@@ -29,7 +31,7 @@
   "interface": {
     "displayName": "Skillsets",
     "shortDescription": "Model-agnostic engineering and research skills.",
-    "longDescription": "A personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity. Each skill is a self-contained, disciplined workflow covering Android offensive security and forensics, cyber security operations, software architecture, UI/UX and frontend, data architecture, Linux device drivers, real-time and dataplane systems, technology leadership, and academic research.",
+    "longDescription": "A personal collection of model-agnostic engineering and research skills for Hermes, Claude Code, Codex, OpenCode, and Antigravity (Gemini). Each skill is a self-contained, disciplined workflow covering Android offensive security and forensics, cyber security operations, software architecture, UI/UX and frontend, data architecture, Linux device drivers, real-time and dataplane systems, technology leadership, and academic research.",
     "developerName": "oghie",
     "category": "Engineering",
     "capabilities": [
