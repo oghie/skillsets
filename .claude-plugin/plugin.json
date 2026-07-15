@@ -1,7 +1,7 @@
 {
   "name": "skillsets",
   "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "author": {
     "name": "oghie",
     "email": "oghie@perkamindo.org"
@@ -22,6 +22,7 @@
     "uiux",
     "tech-leadership",
     "academic-research",
-    "android-offsec"
+    "android-offsec",
+    "cyber-security-operations"
   ]
 }

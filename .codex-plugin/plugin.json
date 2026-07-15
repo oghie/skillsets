@@ -1,7 +1,7 @@
 {
   "name": "skillsets",
   "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity.",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "author": {
     "name": "oghie",
     "email": "oghie@perkamindo.org"
@@ -22,13 +22,14 @@
     "uiux",
     "tech-leadership",
     "academic-research",
-    "android-offsec"
+    "android-offsec",
+    "cyber-security-operations"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Skillsets",
     "shortDescription": "Model-agnostic engineering and research skills.",
-    "longDescription": "A personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity. Each skill is a self-contained, disciplined workflow covering Android offensive security and forensics, software architecture, UI/UX and frontend, data architecture, Linux device drivers, real-time and dataplane systems, technology leadership, and academic research.",
+    "longDescription": "A personal collection of model-agnostic engineering and research skills for Claude, Codex, and Antigravity. Each skill is a self-contained, disciplined workflow covering Android offensive security and forensics, cyber security operations, software architecture, UI/UX and frontend, data architecture, Linux device drivers, real-time and dataplane systems, technology leadership, and academic research.",
     "developerName": "oghie",
     "category": "Engineering",
     "capabilities": [

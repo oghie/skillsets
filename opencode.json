@@ -10,7 +10,8 @@
       "software-architecture-engineering-uap": "allow",
       "tech-leadership": "allow",
       "android-offsec": "allow",
-      "uiux-frontend-engineering": "allow"
-    }
+"uiux-frontend-engineering": "allow",
+      "cyber-security-operations": "allow"
+  }
   }
 }
