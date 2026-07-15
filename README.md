@@ -186,6 +186,8 @@ CLI, then install skillsets.
 
 1. Install Hermes Agent:
    - macOS / Linux: `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`
+   - Windows (PowerShell): `irm https://hermes-agent.nousresearch.com/install.ps1 | iex`
+   - Windows (desktop): download from https://hermes-assets.nousresearch.com/Hermes-Setup.exe
    - Check it works: `hermes --version`
 2. Install skillsets:
    ```
