@@ -177,6 +177,8 @@ MSRV and SemVer:
 
 ## Async And Runtime Contract
 
+For a crate exported to Wasm/WASI or used as a sandboxed plugin, combine this reference with `../tasks/wasm-portable-capability-architecture.md` and `wasm-contracts-and-runtime-boundaries.md`. Rust API/SemVer, WIT/component ABI, and host-policy compatibility are separate contracts. Keep generated bindings and host adapters outside the portable domain core; validate the actual compiled imports/exports and supported targets, not only `cargo check` or a `no_std` label.
+
 Async libraries must state their runtime assumptions.
 
 Decide and document:

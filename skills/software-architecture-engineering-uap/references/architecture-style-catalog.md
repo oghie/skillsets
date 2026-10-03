@@ -83,6 +83,9 @@ For microservices pattern selection, decomposition, sagas, outbox, CQRS, API com
 | Plug-In Architecture | Optional capabilities can be added independently | Compatibility matrix, lifecycle management |
 | Reflective Architecture | System behavior must adapt by inspecting/modifying metadata | Debuggability, safety, performance |
 | Whiteboard | Components dynamically register capabilities for discovery | Runtime dependency ambiguity |
+| Portable Capability / UMA-Inspired Composition | A stable business outcome must run under materially different host APIs or runtime constraints | ABI/import support, adapter semantics, trust boundaries, state migration, and unimplemented metadata enforcement |
+
+Portable capabilities are orthogonal to deployment style: they can be plugins in a monolith or components hosted by containers, VMs, edge nodes, or browsers. UMA is a proposed architectural model, not a WebAssembly/WASI specification. Compare it with shared source/libraries and remote APIs before introducing runtime discovery. Use `wasm-portability-decisions.md` and `../tasks/wasm-portable-capability-architecture.md` for the decision and verification path.
 
 ## Style Combination Examples
 

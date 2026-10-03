@@ -20,6 +20,8 @@ Use diagrams to expose architecture decisions. A diagram is useful when it clari
 | Show NFR traceability | Conformance map |
 | Show security enforcement | Reference Monitor / PEP-PDP policy flow |
 | Show architecture-as-code alignment | Diagram/spec/repo/fitness-function alignment map |
+| Show portable logic vs host authority | Capability-core/envelope and runtime enforcement flow |
+| Show governed agent execution | Proposal/approval/invocation sequence with denial and bounded revision |
 
 ## Visual Conventions
 
@@ -145,3 +147,7 @@ Use these Mermaid templates as starting points:
 - `templates/nfr-conformance-map.mmd`
 - `templates/reference-monitor.mmd`
 - `templates/architecture-as-code-alignment.mmd`
+- `templates/mermaid-portable-capability-flow.mmd`
+- `templates/mermaid-governed-capability-execution.mmd`
+
+For portable systems, distinguish declared graph edges from observed calls, and supported targets from tested targets. Show host imports, authorization, persistence, and rejection paths; do not draw a universal runtime box that conceals different enforcement mechanisms.

@@ -23,6 +23,8 @@ Design, review, or modernize a microservice architecture with explicit pattern c
 9. Choose deployment/release pattern: container/VM/serverless, service mesh/sidecar if justified, traffic shifting, rollback.
 10. Translate to coding tasks: contracts, schemas, migrations, service skeleton, outbox/inbox, saga state, tests, observability, deployment manifests.
 
+If the same business behavior must execute across browser, edge, cloud, or native hosts, also use `wasm-portable-capability-architecture.md`. Decide portable component boundaries separately from service boundaries; a Wasm plugin can remain inside a modular monolith. For metadata-derived bindings or MCP/agent composition, use `../references/capability-graphs-and-governed-agents.md` rather than assuming event-name matching implements a correct workflow.
+
 ## Verification
 - Service boundaries are not technical layers.
 - Service boundaries preserve coupling/cohesion and avoid low-cohesion technical splits.

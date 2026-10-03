@@ -1,0 +1,45 @@
+sequenceDiagram
+    actor U as Caller
+    participant A as Planner
+    participant D as Discovery / MCP
+    participant P as Policy Authority
+    participant R as Host Executor
+    participant S as State Authority
+    participant E as Evidence Store
+    U->>A: Goal and trusted caller context
+    A->>D: Discover eligible versioned descriptors
+    D-->>A: Descriptors, not authority grants
+    loop Until approved or bounded revision budget exhausted
+        A->>P: Proposed path, inputs, profiles, effects, budgets
+        P->>P: Check grants, semantics, state, locality, quality
+        alt Proposal denied
+            P-->>A: Rejection and permitted remediation
+            P->>E: Record rejected proposal and reason
+        else Proposal approved
+            P-->>A: Scoped approval, digest, expiry, policy revision
+            P->>E: Record approved plan
+        end
+    end
+    alt No valid approval
+        A-->>U: Terminate or escalate without privileged effects
+    else Valid approval exists
+        A->>D: Invoke approved capability through exposed interface
+        D->>R: Scoped invocation and approval identity
+        R->>P: Recheck authority and freshness at effect boundary
+        alt Approval stale or material plan change
+            P-->>R: Reject and require reapproval
+            R->>E: Record rejection without privileged effect
+            R-->>D: Denied without privileged effect
+            D-->>A: Approval invalid, require reapproval
+            A-->>U: Denial or explicit escalation
+        else Invocation remains permitted
+            P-->>R: Permit bounded execution
+            R->>R: Validate input, execute, validate output
+            R->>S: Atomic transition or explicit effect protocol
+            S-->>R: Committed, rejected, or effect status unknown
+            R->>E: Record versions, output, effects, quality, correlation
+            R-->>D: Explicit result or reconciliation requirement
+            D-->>A: Result with allowed degradation and provenance
+            A-->>U: Outcome and concise decision evidence
+        end
+    end

@@ -1,0 +1,22 @@
+package skillsets:portable-quote@1.0.0;
+
+interface quote {
+    record request {
+        subtotal-minor: u64,
+        discount-bps: u16,
+    }
+
+    record response {
+        total-minor: u64,
+    }
+
+    enum quote-error {
+        invalid-discount,
+    }
+
+    evaluate: func(input: request) -> result<response, quote-error>;
+}
+
+world portable-quote {
+    export quote;
+}

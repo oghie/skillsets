@@ -1,0 +1,26 @@
+flowchart TD
+    Need[Business outcome and target constraints] --> Choice{Portability justified?}
+    Choice -->|No| Simple[Local module or remote API]
+    Choice -->|Yes| Contract[Versioned semantic contract and core]
+    Contract --> Load[Load bounded artifact and contract]
+    Load --> Identity{Trusted provenance and binding?}
+    Identity -->|No| Reject[Reject and record reason]
+    Identity -->|Yes| Shape{Structure and semantics valid?}
+    Shape -->|No| Reject
+    Shape -->|Yes| Policy{Authority and fresh policy permit?}
+    Policy -->|No| Reject
+    Policy -->|Yes| Target{Actual ABI and imports supported?}
+    Target -->|No| Reject
+    Target -->|Yes| Envelope[Bind host envelope and scoped grants]
+    Envelope --> Bounds[Input and state preconditions; guest and host limits]
+    Bounds --> Run[Execute portable core; mediate host effects]
+    Run --> Output{Output and effect preconditions valid?}
+    Output -->|No| Recover[Fail or reconcile ambiguous effects]
+    Output -->|Yes| Commit[Commit with required state and event atomicity]
+    Commit --> Evidence[Lifecycle evidence and observed quality]
+    Recover --> Evidence
+    Reject --> Evidence
+    Evidence --> Result[Explicit success, degradation, denial, or failure]
+    Envelope -. Browser JS adapter .-> Browser[Browser engine and Worker lifecycle]
+    Envelope -. Versioned WASI adapter .-> Server[Edge or cloud embedding]
+    Envelope -. Native adapter .-> Native[OS and process controls]

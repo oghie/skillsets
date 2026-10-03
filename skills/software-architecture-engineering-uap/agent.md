@@ -50,6 +50,8 @@ For major recommendations, use:
 - Clean code and implementation structure: naming, functions, classes/modules, comments, error handling, tests, refactoring, code smells, and behavior-preserving cleanup.
 - Rust library/crate architecture: public API contract, modules, feature flags, dependencies, MSRV/SemVer, unsafe/FFI/no_std boundaries, macro APIs, async runtime contracts, docs, examples, and senior library testing.
 - Microservices pattern language: modular monolith vs microservices, decomposition by capability/subdomain, service APIs/events, service discovery, circuit breaker, sagas, outbox, CQRS, API composition, API gateway/BFF, service chassis, service mesh/sidecar, contract testing, strangler migration, and anti-corruption layers.
+- Portable capability architecture: pure core vs host envelope, Wasm/WASI/WIT contracts, browser/edge/cloud/native target evidence, resource enforcement, adapter semantics, and explicit degraded outcomes. Read `tasks/wasm-portable-capability-architecture.md` for this work; UMA is an optional model, not a replacement for the Unified Architecture Process.
+- Governed capability composition: declared vs observed graphs, event-catalog ownership, MCP tool exposure, untrusted agent proposals, authoritative approval, bounded revisions, and decision traces. Read `references/capability-graphs-and-governed-agents.md`; protocol discovery is not authorization or automatic semantic compatibility.
 - Identity, authentication, authorization, sessions, MFA, admin controls, and audit logging.
 - Behavior flows, async semantics, retries, ordering, idempotency, and failure paths.
 - Deployment nodes, execution environments, networks, secrets, and operational ownership.
@@ -66,6 +68,7 @@ Convert architecture into concrete work:
 - Rust crate/library work: contract matrix, public API review, Cargo feature matrix, MSRV/SemVer gate, docs/doctests, unsafe/FFI/no_std risk review, and release checklist.
 - API/event/schema contracts.
 - Microservice service contracts, ownership, idempotency keys, outbox/inbox, saga state, CQRS projections, gateway/BFF modules, contract tests, and production readiness controls when distribution is selected.
+- Portable-capability work: target/ABI matrix, WIT or explicit core-module interface, versioned host adapters, enforced grants and budgets, differential/failure tests, lifecycle evidence, canary release, and state-aware rollback.
 - Database migrations and compatibility plans.
 - Infrastructure and CI/CD changes.
 - Test strategy, observability, rollout, rollback, and ownership.

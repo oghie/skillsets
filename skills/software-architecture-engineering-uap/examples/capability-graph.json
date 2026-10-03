@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "services": [
+    {
+      "id": "document-ingest-v1",
+      "emits": [
+        {"event": "example.document.received.v1", "schema": "document-received-v1"}
+      ],
+      "consumes": []
+    },
+    {
+      "id": "document-classifier-v1",
+      "emits": [
+        {"event": "example.document.classified.v1", "schema": "document-classified-v1"}
+      ],
+      "consumes": [
+        {"event": "example.document.received.v1", "schema": "document-received-v1", "required": true}
+      ]
+    },
+    {
+      "id": "document-indexer-v1",
+      "emits": [],
+      "consumes": [
+        {"event": "example.document.classified.v1", "schema": "document-classified-v1", "required": true}
+      ]
+    }
+  ]
+}

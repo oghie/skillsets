@@ -2,5 +2,7 @@
 __pycache__/
 *.py[cod]
 
-# iCloud/Finder sync-conflict duplicates (e.g. "knowledge-map 2.md")
+# iCloud/Finder sync-conflict duplicates (e.g. "knowledge-map 2.md", "LICENSE 2", "references 2/")
+* [0-9]
 * [0-9].*
+* [0-9]/

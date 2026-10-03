@@ -59,6 +59,19 @@ Use this checklist before finalizing architecture, ADRs, RFCs, modernization pla
 - Network paths, protocols, regions/zones, trust boundaries, and secrets are addressed.
 - Build, release, health check, rollback, and operational ownership are defined.
 
+## Portable Capabilities And Governed Composition
+- Portability is justified against shared libraries/source, native deployment, or a remote API; component boundaries do not automatically become microservices.
+- Outcome, quality tier, resource budget, semantic invariants, ownership, state authority, and degraded outcomes are explicit.
+- Core module vs component, WASI/interface versions, required imports/features, toolchain, adapter versions, and each tested host profile are recorded.
+- Every enforced contract field maps to a real mechanism and negative test; requested permissions are distinct from authoritative grants.
+- Browser/client results are not trusted payment, identity, or authorization decisions; host/runtime and adapter threats are modeled.
+- Determinism claims account for clocks, randomness, external I/O, state, numerical behavior, concurrency, and model versions; equal schemas or one hash are insufficient.
+- Cold/warm end-to-end latency, sustained load, total memory, host-call cost, cancellation, offline storage, and mobile energy are measured where relevant.
+- Event bindings preserve delivery, atomic effect/deduplication, ordering scope, backpressure, retention, and reconciliation; metadata does not supply these mechanisms.
+- Declared/observed graph drift, required consumers, ambiguous provider selection, cycles, policy freshness, and ungoverned dependencies are reviewed.
+- Agent proposals cannot grant authority or silently replace an approved plan; revisions, invocations, cost, wall time, and side effects are bounded.
+- Releases bind artifact, contract, adapters, policies, state schema, and evidence; rollback and revocation handle cached/offline clients explicitly.
+
 ## Development And Operation Views
 - Logical components map to repositories, packages, modules, namespaces, services, or generated-code areas when implementation structure matters.
 - Dependency rules, layer constraints, and database-access rules have checks or clear review criteria.
