@@ -1,7 +1,7 @@
 {
   "name": "skillsets",
   "description": "Personal collection of model-agnostic engineering and research skills for Claude, Codex, OpenCode, Antigravity, and Hermes.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": {
     "name": "oghie",
     "email": "oghie@perkamindo.org"
